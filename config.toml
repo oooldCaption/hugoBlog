@@ -1,0 +1,5 @@
+baseURL = 'http://example.org/'
+languageCode = 'zh-cn'
+title = '煎人寿'
+theme = "hugo-theme-stack"
+DefaultContentLanguage = "zh-cn"
