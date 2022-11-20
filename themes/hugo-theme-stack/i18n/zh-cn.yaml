@@ -11,7 +11,7 @@ article:
     tableOfContents:
         other: 目录
 
-    relatedContents:
+    relatedContent:
         other: 相关文章
 
     lastUpdatedOn:
@@ -55,8 +55,6 @@ search:
 footer:
     builtWith:
         other: Built with {{ .Generator }}
-    icpInfo:
-        other: "备案信息: {{ .ICP }}"
 
     designedBy:
         other: 主题 {{ .Theme }} 由 {{ .DesignedBy }} 设计

@@ -2,6 +2,8 @@
 title: 使用thinkphp分页&上传图片
 date: 2018-04-17T14:49:42+08:00 
 draft: false
+tags: ['后端']
+categories: ['南腔北调']
 ---
 
 使用 thinkPHP 实现分页: 新建控制器LoginController.class.php 在 LoginController 中创建 index 方法:

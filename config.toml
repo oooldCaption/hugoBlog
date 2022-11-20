@@ -1,5 +1,8 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://47.99.84.217'
 languageCode = 'zh-cn'
 title = '煎人寿'
 theme = "hugo-theme-stack"
 DefaultContentLanguage = "zh-cn"
+[taxonomies]
+  tag = "tags"
+  category = 'categories'

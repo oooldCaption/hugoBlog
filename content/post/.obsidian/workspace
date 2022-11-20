@@ -1,0 +1,103 @@
+{
+  "main": {
+    "id": "d254f113722ac9cd",
+    "type": "split",
+    "children": [
+      {
+        "id": "f6e74e3d1afb7d29",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "2019getticket.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "51210bdaf640716b",
+    "type": "split",
+    "children": [
+      {
+        "id": "6290822c4df575e9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "96ec94c6b92732fd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "5eb9023698ede46f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d827e6af258e4f70",
+    "type": "split",
+    "children": [
+      {
+        "id": "86c4179575fa34e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8437497949cd98ea",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2019getticket.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f6e74e3d1afb7d29",
+  "lastOpenFiles": [
+    "2019getticket.md",
+    "喜悦.md",
+    "天才与英雄.md",
+    "使用thinkphp分页上传图片.md",
+    "使用hexocoding搭建个人博客.md",
+    "使用cookie实现自动登录.md",
+    "小程序之位置信息.md",
+    "小程序练手项目之五抽取模板.md",
+    "小程序初识.md",
+    "小程序之练手项目二.md"
+  ]
+}
