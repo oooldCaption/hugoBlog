@@ -52,7 +52,7 @@ categories: ['奇巧淫技']
     vhost_http_port = 8080
     dashboard_port = 7500
     dashboard_user = you's name
-    dashboard_pwd = you's psw
+    dashboard_pwd = 
     max_pool_count = 5
     authentication_timeout = 900
     subdomain_host = lekee.cc
