@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='事情是这样的
+&amp;hellip;&amp;hellip;&amp;hellip;.
+巴拉巴拉巴拉巴拉巴拉巴拉
+巴拉巴拉巴拉巴拉巴拉巴拉
+巴拉巴拉巴拉巴拉巴拉巴拉
+&amp;hellip;&amp;hellip;&amp;hellip;.
+我下载了一个 MP3 版本的&amp;lt;天龙八部&amp;gt;想着上下班通勤的时候听, 结果导入到本地播放器(EverPlayer)的时候发现播放顺序是乱的.
+这样的话可能剧情上就会断断续续, 听起来有点前言不搭后语的, 毕竟不是按照播讲顺序听的.
+本来我想应该是因为文件名读取的问题, 因为文件名格式并不是按照 01 , 02, 03.... 33, 34这种顺序排列的, 所以写了一个小脚本, 用来序列化文件名, 保证文件名是 从 1,2,3....32,33,34 这样的逻辑顺序. 然后重新新导入到播放器, 发现还是不对.
+认真打量了一眼播放器的页面信息, 发现排序根据音频文件的元数据信息进行排序的. 找到了问题的所在, 我们就可以解决这个问题啦.
+为什么要修改音频文件的元数据标签 举个🌰:
+我现在有一个 mp3 文件, 文件名叫做, 001 青衫磊落险峰行1.mp3,
+在电脑中, 我们可以查看文件的详细信息, 如图所示: 可以看到, 在红色方框中显示标题是 vx 听书, 但是文件名却是带序列号的文件名, 因为有些音频播放器会读取 标题 , 来当做歌曲名, 而不是将文件名作为歌曲名的读取对象
+我们可以按照以下的方式来读取 mp3 文件的 标签 或者 元数据
+from mutagen.id3 import ID3, TIT1, TIT2 name = &amp;#34;001青衫磊落险峰行1.mp3&amp;#34; def read_mp3(): audio = ID3(name) for tag in audio.'>
+<title>Python修改音频文件元信息</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/python%E4%BF%AE%E6%94%B9%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%85%83%E4%BF%A1%E6%81%AF/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='Python修改音频文件元信息'>
+<meta property='og:description' content='事情是这样的
+&amp;hellip;&amp;hellip;&amp;hellip;.
+巴拉巴拉巴拉巴拉巴拉巴拉
+巴拉巴拉巴拉巴拉巴拉巴拉
+巴拉巴拉巴拉巴拉巴拉巴拉
+&amp;hellip;&amp;hellip;&amp;hellip;.
+我下载了一个 MP3 版本的&amp;lt;天龙八部&amp;gt;想着上下班通勤的时候听, 结果导入到本地播放器(EverPlayer)的时候发现播放顺序是乱的.
+这样的话可能剧情上就会断断续续, 听起来有点前言不搭后语的, 毕竟不是按照播讲顺序听的.
+本来我想应该是因为文件名读取的问题, 因为文件名格式并不是按照 01 , 02, 03.... 33, 34这种顺序排列的, 所以写了一个小脚本, 用来序列化文件名, 保证文件名是 从 1,2,3....32,33,34 这样的逻辑顺序. 然后重新新导入到播放器, 发现还是不对.
+认真打量了一眼播放器的页面信息, 发现排序根据音频文件的元数据信息进行排序的. 找到了问题的所在, 我们就可以解决这个问题啦.
+为什么要修改音频文件的元数据标签 举个🌰:
+我现在有一个 mp3 文件, 文件名叫做, 001 青衫磊落险峰行1.mp3,
+在电脑中, 我们可以查看文件的详细信息, 如图所示: 可以看到, 在红色方框中显示标题是 vx 听书, 但是文件名却是带序列号的文件名, 因为有些音频播放器会读取 标题 , 来当做歌曲名, 而不是将文件名作为歌曲名的读取对象
+我们可以按照以下的方式来读取 mp3 文件的 标签 或者 元数据
+from mutagen.id3 import ID3, TIT1, TIT2 name = &amp;#34;001青衫磊落险峰行1.mp3&amp;#34; def read_mp3(): audio = ID3(name) for tag in audio.'>
+<meta property='og:url' content='http://47.99.84.217/post/python%E4%BF%AE%E6%94%B9%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%85%83%E4%BF%A1%E6%81%AF/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='巧篆' /><meta property='article:tag' content='Python' /><meta property='article:published_time' content='2022-12-03T21:44:50&#43;08:00'/><meta property='article:modified_time' content='2022-12-03T21:44:50&#43;08:00'/>
+<meta name="twitter:title" content="Python修改音频文件元信息">
+<meta name="twitter:description" content="事情是这样的
+&amp;hellip;&amp;hellip;&amp;hellip;.
+巴拉巴拉巴拉巴拉巴拉巴拉
+巴拉巴拉巴拉巴拉巴拉巴拉
+巴拉巴拉巴拉巴拉巴拉巴拉
+&amp;hellip;&amp;hellip;&amp;hellip;.
+我下载了一个 MP3 版本的&amp;lt;天龙八部&amp;gt;想着上下班通勤的时候听, 结果导入到本地播放器(EverPlayer)的时候发现播放顺序是乱的.
+这样的话可能剧情上就会断断续续, 听起来有点前言不搭后语的, 毕竟不是按照播讲顺序听的.
+本来我想应该是因为文件名读取的问题, 因为文件名格式并不是按照 01 , 02, 03.... 33, 34这种顺序排列的, 所以写了一个小脚本, 用来序列化文件名, 保证文件名是 从 1,2,3....32,33,34 这样的逻辑顺序. 然后重新新导入到播放器, 发现还是不对.
+认真打量了一眼播放器的页面信息, 发现排序根据音频文件的元数据信息进行排序的. 找到了问题的所在, 我们就可以解决这个问题啦.
+为什么要修改音频文件的元数据标签 举个🌰:
+我现在有一个 mp3 文件, 文件名叫做, 001 青衫磊落险峰行1.mp3,
+在电脑中, 我们可以查看文件的详细信息, 如图所示: 可以看到, 在红色方框中显示标题是 vx 听书, 但是文件名却是带序列号的文件名, 因为有些音频播放器会读取 标题 , 来当做歌曲名, 而不是将文件名作为歌曲名的读取对象
+我们可以按照以下的方式来读取 mp3 文件的 标签 或者 元数据
+from mutagen.id3 import ID3, TIT1, TIT2 name = &amp;#34;001青衫磊落险峰行1.mp3&amp;#34; def read_mp3(): audio = ID3(name) for tag in audio.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">唯见月寒日暖来煎人寿</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#为什么要修改音频文件的元数据标签">为什么要修改音频文件的元数据标签</a></li>
+        <li><a href="#mp3-格式标签属性列表">MP3 格式标签属性列表</a></li>
+        <li><a href="#修改音频文件标签">修改音频文件标签</a></li>
+        <li><a href="#给-mp3-添加一张图片">给 mp3 添加一张图片</a></li>
+        <li><a href="#修改-flac-格式">修改 FLAC 格式</a></li>
+        <li><a href="#修改-ogg-格式">修改 OGG 格式</a></li>
+        <li><a href="#修改-wav-格式">修改 WAV 格式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" >
+                软件开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/python%E4%BF%AE%E6%94%B9%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%85%83%E4%BF%A1%E6%81%AF/">Python修改音频文件元信息</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 03, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>事情是这样的</p>
+<p>&hellip;&hellip;&hellip;.</p>
+<p>巴拉巴拉巴拉巴拉巴拉巴拉</p>
+<p>巴拉巴拉巴拉巴拉巴拉巴拉</p>
+<p>巴拉巴拉巴拉巴拉巴拉巴拉</p>
+<p>&hellip;&hellip;&hellip;.</p>
+<p>我下载了一个 MP3 版本的&lt;<strong>天龙八部</strong>&gt;想着上下班通勤的时候听, 结果导入到本地播放器(EverPlayer)的时候发现播放顺序是乱的.</p>
+<p>这样的话可能剧情上就会断断续续, 听起来有点前言不搭后语的, 毕竟不是按照播讲顺序听的.</p>
+<p>本来我想应该是因为文件名读取的问题,  因为文件名格式并不是按照<code> 01 , 02,  03.... 33, 34</code>这种顺序排列的, 所以写了一个小脚本, 用来序列化文件名, 保证文件名是 从 <code>1,2,3....32,33,34</code> 这样的逻辑顺序. 然后重新新导入到播放器, 发现还是不对.</p>
+<p>认真打量了一眼播放器的页面信息, 发现排序根据音频文件的元数据信息进行排序的. 找到了问题的所在, 我们就可以解决这个问题啦.</p>
+<h3 id="为什么要修改音频文件的元数据标签">为什么要修改音频文件的元数据标签</h3>
+<p>举个🌰:</p>
+<p>我现在有一个 mp3 文件, 文件名叫做, <code>001 青衫磊落险峰行1.mp3</code>,</p>
+<p>在电脑中, 我们可以查看文件的详细信息, 如图所示:
+可以看到, 在红色方框中显示标题是 vx 听书, 但是文件名却是带序列号的文件名, 因为有些音频播放器会读取 标题 , 来当做歌曲名, 而不是将文件名作为歌曲名的读取对象</p>
+<p><img src="https://img.52smile.vip/1678871232.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1678871232.png"
+	
+	
+></p>
+<p>我们可以按照以下的方式来读取 <code>mp3</code> 文件的 <code>标签</code>  或者 <code>元数据</code></p>
+<pre tabindex="0"><code>from mutagen.id3 import ID3, TIT1, TIT2
+
+name = &#34;001青衫磊落险峰行1.mp3&#34;
+def read_mp3():
+    audio = ID3(name)
+    for tag in audio.keys():
+        print(tag + &#34;: &#34; + str(audio.get(tag)))
+
+read_mp3()
+</code></pre><p>运行之后你会在控制台看到如下输出结果, 结果中包含云数据标签的 <strong>标签名</strong> <code>(eg:TIT2)</code> 和 <strong>标签对应的值</strong> <code>(eg: vx听书)</code></p>
+<pre tabindex="0"><code>TIT2: vx听书
+TPE1: 唯一拼课微信：****
+TALB: 唯一拼课微信：****
+TCOM: 唯一拼课微信：****
+TPE2: 唯一拼课微信：****
+COMM::eng: 唯一拼课微信：****
+COMM:ID3v1 Comment:eng: ****
+APIC:: APIC(encoding=&lt;Encoding.LATIN1: 0&gt;, mime=&#39;image/jpeg&#39;, type=&lt;PictureType.COVER_FRONT: 3&gt;, desc=&#39;&#39;, data=b&#39;...&#39;)
+</code></pre><p>我们要做的就是 去弄明白 这些标签名 对应的是什么意思, 这个你可以在相关第三方的 api 文档中得到答案,  我在下面将 mp3 类型的文件做了一下统计和整理, 列表如下:</p>
+<h3 id="mp3-格式标签属性列表">MP3 格式标签属性列表</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APIC</td>
+<td>封面图像，包括图片类型、描述、二进制数据等。</td>
+</tr>
+<tr>
+<td>COMM</td>
+<td>评论，包括语言、评论文本等。</td>
+</tr>
+<tr>
+<td>TALB</td>
+<td>专辑名称。</td>
+</tr>
+<tr>
+<td>TBPM</td>
+<td>每分钟节拍数。</td>
+</tr>
+<tr>
+<td>TCOM</td>
+<td>作曲家。</td>
+</tr>
+<tr>
+<td>TCON</td>
+<td>音频类型，如流行、摇滚、古典等。</td>
+</tr>
+<tr>
+<td>TCOP</td>
+<td>版权信息。</td>
+</tr>
+<tr>
+<td>TDAT</td>
+<td>日期。</td>
+</tr>
+<tr>
+<td>TDRC</td>
+<td>录制日期。</td>
+</tr>
+<tr>
+<td>TENC</td>
+<td>编码器。</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>作词家。</td>
+</tr>
+<tr>
+<td>TFLT</td>
+<td>文件类型。</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>时间。</td>
+</tr>
+<tr>
+<td>TIT1</td>
+<td>内容组描述。</td>
+</tr>
+<tr>
+<td>TIT2</td>
+<td>歌曲名称。</td>
+</tr>
+<tr>
+<td>TIT3</td>
+<td>副标题。</td>
+</tr>
+<tr>
+<td>TLEN</td>
+<td>音频长度。</td>
+</tr>
+<tr>
+<td>TMED</td>
+<td>媒体类型。</td>
+</tr>
+<tr>
+<td>TOAL</td>
+<td>原始专辑/电影/节目名称。</td>
+</tr>
+<tr>
+<td>TOFN</td>
+<td>原始文件名。</td>
+</tr>
+<tr>
+<td>TOLY</td>
+<td>原始歌词作者。</td>
+</tr>
+<tr>
+<td>TOPE</td>
+<td>原始表演者。</td>
+</tr>
+<tr>
+<td>TORY</td>
+<td>原始发行年份。</td>
+</tr>
+<tr>
+<td>TOWN</td>
+<td>文件所有者。</td>
+</tr>
+<tr>
+<td>TPE1</td>
+<td>艺术家。</td>
+</tr>
+<tr>
+<td>TPE2</td>
+<td>乐队。</td>
+</tr>
+<tr>
+<td>TPE3</td>
+<td>指挥者/演奏团体。</td>
+</tr>
+<tr>
+<td>TPE4</td>
+<td>翻译/修改者。</td>
+</tr>
+<tr>
+<td>TPOS</td>
+<td>作品集部分。</td>
+</tr>
+<tr>
+<td>TPUB</td>
+<td>出版者。</td>
+</tr>
+<tr>
+<td>TRCK</td>
+<td>曲目号。</td>
+</tr>
+<tr>
+<td>TRDA</td>
+<td>录制日期。</td>
+</tr>
+<tr>
+<td>TRSN</td>
+<td>Internet电台名称。</td>
+</tr>
+<tr>
+<td>TRSO</td>
+<td>Internet电台所有者。</td>
+</tr>
+<tr>
+<td>TSIZ</td>
+<td>音频大小。</td>
+</tr>
+<tr>
+<td>TSRC</td>
+<td>国际标准录音编码(ISRC)。</td>
+</tr>
+<tr>
+<td>TSSE</td>
+<td>编码器设置。</td>
+</tr>
+<tr>
+<td>TYER</td>
+<td>年份。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="修改音频文件标签">修改音频文件标签</h3>
+<p>看完上面那个 长长的表格, 我们就会知道自己有哪些属性是想要修改的, 比如想要在播放的时候, 文件播放序列是从 01 -&gt; 10 的正序进行播放, 我们就可以修改音频文件的 <code>TIT2</code> 属性为 为你想要播放的序号, 比如修改如下 :</p>
+<pre tabindex="0"><code>001青衫磊落险峰行1.MP3  TIT2 ---&gt;  01
+001青衫磊落险峰行2.MP3  TIT2 ---&gt;  02
+001青衫磊落险峰行3.MP3  TIT2 ---&gt;  03
+</code></pre><p>在代码里面可以使用如下方式进行修改:</p>
+<pre tabindex="0"><code>from mutagen.id3 import ID3, TIT1, TIT2
+
+name = &#34;001青衫磊落险峰行1.mp3&#34;
+def mod_mp3():
+    audio = ID3(name)
+    audio[&#34;TIT2&#34;] = TIT2(encoding=3, text=[&#34;01:青衫磊落险峰行1&#34;]);
+    audio.save()
+mod_mp3()
+</code></pre><p>通过这种方式, 我们可以修改音频文件所有的原信息, 比如 我给 mp3 添加一个专辑图</p>
+<h3 id="给-mp3-添加一张图片">给 mp3 添加一张图片</h3>
+<p>下面的代码提供了一个修改 mp3 文件元数据标签的实例, 修改了 标题, 副标题, 作曲, 以及封面图:</p>
+<p><img src="https://img.52smile.vip/1678927491.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1678927491.png"
+	
+	
+></p>
+<pre tabindex="0"><code>
+def mod_tag():
+    audio = ID3(name)
+    with open(&#34;cover.png&#34;, &#34;rb&#34;) as f:
+        image_data = BytesIO(f.read())
+
+    apic = APIC(
+        encoding=3,  # UTF-8
+        mime=&#39;image/png&#39;,
+        type=3,  # cover front
+        desc=u&#39;Cover&#39;,
+        data=image_data.getvalue()
+    )
+    #修改标题/专辑/作者信息
+    audio[&#39;TABL&#39;] = TALB(encoding=3, text=&#34;天龙八部&#34;)
+    audio[&#39;TIT2&#39;] = TIT2(encodings = 3, text=&#39;青衫磊落险峰行&#39;)
+    audio[&#39;TIT3&#39;] = TIT3(encodings = 3, text=&#39;01&#39;)
+    audio[&#39;TCOM&#39;] = TCOM(encodings = 3, text=&#39;金庸&#39;)
+    # 修改专辑封面图
+    audio[&#39;APIC&#39;] = apic
+    audio.save()
+</code></pre><h3 id="修改-flac-格式">修改 FLAC 格式</h3>
+<pre tabindex="0"><code>from mutagen.flac import FLAC
+
+# 打开FLAC文件
+audio = FLAC(&#34;example.flac&#34;)
+
+# 获取元数据信息
+title = audio.get(&#34;title&#34;, &#34;Unknown Title&#34;)
+artist = audio.get(&#34;artist&#34;, &#34;Unknown Artist&#34;)
+album = audio.get(&#34;album&#34;, &#34;Unknown Album&#34;)
+bitrate = audio.info.bitrate
+length = audio.info.length
+
+# 打印元数据信息
+print(&#34;Title:&#34;, title)
+print(&#34;Artist:&#34;, artist)
+print(&#34;Album:&#34;, album)
+print(&#34;Bitrate:&#34;, bitrate)
+print(&#34;Length:&#34;, length)
+</code></pre><h3 id="修改-ogg-格式">修改 OGG 格式</h3>
+<pre tabindex="0"><code>from mutagen.oggvorbis import OggVorbis
+
+# 打开OGG文件
+audio = OggVorbis(&#34;example.ogg&#34;)
+
+# 获取元数据信息
+title = audio.get(&#34;title&#34;, &#34;Unknown Title&#34;)
+artist = audio.get(&#34;artist&#34;, &#34;Unknown Artist&#34;)
+album = audio.get(&#34;album&#34;, &#34;Unknown Album&#34;)
+bitrate = audio.info.bitrate
+length = audio.info.length
+
+# 打印元数据信息
+print(&#34;Title:&#34;, title)
+print(&#34;Artist:&#34;, artist)
+print(&#34;Album:&#34;, album)
+print(&#34;Bitrate:&#34;, bitrate)
+print(&#34;Length:&#34;, length)
+</code></pre><h3 id="修改-wav-格式">修改 WAV 格式</h3>
+<pre tabindex="0"><code>from mutagen.oggvorbis import OggVorbis
+
+# 打开OGG文件
+audio = OggVorbis(&#34;example.ogg&#34;)
+
+# 获取元数据信息
+title = audio.get(&#34;title&#34;, &#34;Unknown Title&#34;)
+artist = audio.get(&#34;artist&#34;, &#34;Unknown Artist&#34;)
+album = audio.get(&#34;album&#34;, &#34;Unknown Album&#34;)
+bitrate = audio.info.bitrate
+length = audio.info.length
+
+# 打印元数据信息
+print(&#34;Title:&#34;, title)
+print(&#34;Artist:&#34;, artist)
+print(&#34;Album:&#34;, album)
+print(&#34;Bitrate:&#34;, bitrate)
+print(&#34;Length:&#34;, length)
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%B7%A7%E7%AF%86/">巧篆</a>
+        
+            <a href="/tags/python/">Python</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/installrrshare/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Nas 安装人人影视</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/macworkspace/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">给你的Mac搭建开发环境</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/frpnas/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Frp 内网穿透,把你的 NAS 放到公网上</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/usealfred/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">成吨节约您时间的效率神器--Alfred</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/vi%E7%BC%96%E8%BE%91%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VI编辑器</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2023 煎人寿
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://beian.miit.gov.cn/" target="_blank">备案号</a> <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备18022498号</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

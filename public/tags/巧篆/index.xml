@@ -6,7 +6,328 @@
         <description>Recent content in 巧篆 on 煎人寿</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 10 Nov 2018 09:04:33 +0800</lastBuildDate><atom:link href="http://47.99.84.217/tags/%E5%B7%A7%E7%AF%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 Dec 2022 21:44:50 +0800</lastBuildDate><atom:link href="http://47.99.84.217/tags/%E5%B7%A7%E7%AF%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Python修改音频文件元信息</title>
+        <link>http://47.99.84.217/post/python%E4%BF%AE%E6%94%B9%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%85%83%E4%BF%A1%E6%81%AF/</link>
+        <pubDate>Sat, 03 Dec 2022 21:44:50 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/python%E4%BF%AE%E6%94%B9%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%85%83%E4%BF%A1%E6%81%AF/</guid>
+        <description>&lt;p&gt;事情是这样的&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;巴拉巴拉巴拉巴拉巴拉巴拉&lt;/p&gt;
+&lt;p&gt;巴拉巴拉巴拉巴拉巴拉巴拉&lt;/p&gt;
+&lt;p&gt;巴拉巴拉巴拉巴拉巴拉巴拉&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;我下载了一个 MP3 版本的&amp;lt;&lt;strong&gt;天龙八部&lt;/strong&gt;&amp;gt;想着上下班通勤的时候听, 结果导入到本地播放器(EverPlayer)的时候发现播放顺序是乱的.&lt;/p&gt;
+&lt;p&gt;这样的话可能剧情上就会断断续续, 听起来有点前言不搭后语的, 毕竟不是按照播讲顺序听的.&lt;/p&gt;
+&lt;p&gt;本来我想应该是因为文件名读取的问题,  因为文件名格式并不是按照&lt;code&gt; 01 , 02,  03.... 33, 34&lt;/code&gt;这种顺序排列的, 所以写了一个小脚本, 用来序列化文件名, 保证文件名是 从 &lt;code&gt;1,2,3....32,33,34&lt;/code&gt; 这样的逻辑顺序. 然后重新新导入到播放器, 发现还是不对.&lt;/p&gt;
+&lt;p&gt;认真打量了一眼播放器的页面信息, 发现排序根据音频文件的元数据信息进行排序的. 找到了问题的所在, 我们就可以解决这个问题啦.&lt;/p&gt;
+&lt;h3 id=&#34;为什么要修改音频文件的元数据标签&#34;&gt;为什么要修改音频文件的元数据标签&lt;/h3&gt;
+&lt;p&gt;举个🌰:&lt;/p&gt;
+&lt;p&gt;我现在有一个 mp3 文件, 文件名叫做, &lt;code&gt;001 青衫磊落险峰行1.mp3&lt;/code&gt;,&lt;/p&gt;
+&lt;p&gt;在电脑中, 我们可以查看文件的详细信息, 如图所示:
+可以看到, 在红色方框中显示标题是 vx 听书, 但是文件名却是带序列号的文件名, 因为有些音频播放器会读取 标题 , 来当做歌曲名, 而不是将文件名作为歌曲名的读取对象&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/1678871232.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1678871232.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;我们可以按照以下的方式来读取 &lt;code&gt;mp3&lt;/code&gt; 文件的 &lt;code&gt;标签&lt;/code&gt;  或者 &lt;code&gt;元数据&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;from mutagen.id3 import ID3, TIT1, TIT2
+
+name = &amp;#34;001青衫磊落险峰行1.mp3&amp;#34;
+def read_mp3():
+    audio = ID3(name)
+    for tag in audio.keys():
+        print(tag + &amp;#34;: &amp;#34; + str(audio.get(tag)))
+
+read_mp3()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行之后你会在控制台看到如下输出结果, 结果中包含云数据标签的 &lt;strong&gt;标签名&lt;/strong&gt; &lt;code&gt;(eg:TIT2)&lt;/code&gt; 和 &lt;strong&gt;标签对应的值&lt;/strong&gt; &lt;code&gt;(eg: vx听书)&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;TIT2: vx听书
+TPE1: 唯一拼课微信：****
+TALB: 唯一拼课微信：****
+TCOM: 唯一拼课微信：****
+TPE2: 唯一拼课微信：****
+COMM::eng: 唯一拼课微信：****
+COMM:ID3v1 Comment:eng: ****
+APIC:: APIC(encoding=&amp;lt;Encoding.LATIN1: 0&amp;gt;, mime=&amp;#39;image/jpeg&amp;#39;, type=&amp;lt;PictureType.COVER_FRONT: 3&amp;gt;, desc=&amp;#39;&amp;#39;, data=b&amp;#39;...&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们要做的就是 去弄明白 这些标签名 对应的是什么意思, 这个你可以在相关第三方的 api 文档中得到答案,  我在下面将 mp3 类型的文件做了一下统计和整理, 列表如下:&lt;/p&gt;
+&lt;h3 id=&#34;mp3-格式标签属性列表&#34;&gt;MP3 格式标签属性列表&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;标签&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;APIC&lt;/td&gt;
+&lt;td&gt;封面图像，包括图片类型、描述、二进制数据等。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;COMM&lt;/td&gt;
+&lt;td&gt;评论，包括语言、评论文本等。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TALB&lt;/td&gt;
+&lt;td&gt;专辑名称。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TBPM&lt;/td&gt;
+&lt;td&gt;每分钟节拍数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TCOM&lt;/td&gt;
+&lt;td&gt;作曲家。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TCON&lt;/td&gt;
+&lt;td&gt;音频类型，如流行、摇滚、古典等。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TCOP&lt;/td&gt;
+&lt;td&gt;版权信息。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TDAT&lt;/td&gt;
+&lt;td&gt;日期。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TDRC&lt;/td&gt;
+&lt;td&gt;录制日期。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TENC&lt;/td&gt;
+&lt;td&gt;编码器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TEXT&lt;/td&gt;
+&lt;td&gt;作词家。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TFLT&lt;/td&gt;
+&lt;td&gt;文件类型。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TIME&lt;/td&gt;
+&lt;td&gt;时间。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TIT1&lt;/td&gt;
+&lt;td&gt;内容组描述。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TIT2&lt;/td&gt;
+&lt;td&gt;歌曲名称。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TIT3&lt;/td&gt;
+&lt;td&gt;副标题。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TLEN&lt;/td&gt;
+&lt;td&gt;音频长度。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TMED&lt;/td&gt;
+&lt;td&gt;媒体类型。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TOAL&lt;/td&gt;
+&lt;td&gt;原始专辑/电影/节目名称。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TOFN&lt;/td&gt;
+&lt;td&gt;原始文件名。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TOLY&lt;/td&gt;
+&lt;td&gt;原始歌词作者。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TOPE&lt;/td&gt;
+&lt;td&gt;原始表演者。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TORY&lt;/td&gt;
+&lt;td&gt;原始发行年份。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TOWN&lt;/td&gt;
+&lt;td&gt;文件所有者。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TPE1&lt;/td&gt;
+&lt;td&gt;艺术家。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TPE2&lt;/td&gt;
+&lt;td&gt;乐队。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TPE3&lt;/td&gt;
+&lt;td&gt;指挥者/演奏团体。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TPE4&lt;/td&gt;
+&lt;td&gt;翻译/修改者。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TPOS&lt;/td&gt;
+&lt;td&gt;作品集部分。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TPUB&lt;/td&gt;
+&lt;td&gt;出版者。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TRCK&lt;/td&gt;
+&lt;td&gt;曲目号。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TRDA&lt;/td&gt;
+&lt;td&gt;录制日期。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TRSN&lt;/td&gt;
+&lt;td&gt;Internet电台名称。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TRSO&lt;/td&gt;
+&lt;td&gt;Internet电台所有者。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TSIZ&lt;/td&gt;
+&lt;td&gt;音频大小。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TSRC&lt;/td&gt;
+&lt;td&gt;国际标准录音编码(ISRC)。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TSSE&lt;/td&gt;
+&lt;td&gt;编码器设置。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TYER&lt;/td&gt;
+&lt;td&gt;年份。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;修改音频文件标签&#34;&gt;修改音频文件标签&lt;/h3&gt;
+&lt;p&gt;看完上面那个 长长的表格, 我们就会知道自己有哪些属性是想要修改的, 比如想要在播放的时候, 文件播放序列是从 01 -&amp;gt; 10 的正序进行播放, 我们就可以修改音频文件的 &lt;code&gt;TIT2&lt;/code&gt; 属性为 为你想要播放的序号, 比如修改如下 :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;001青衫磊落险峰行1.MP3  TIT2 ---&amp;gt;  01
+001青衫磊落险峰行2.MP3  TIT2 ---&amp;gt;  02
+001青衫磊落险峰行3.MP3  TIT2 ---&amp;gt;  03
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在代码里面可以使用如下方式进行修改:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;from mutagen.id3 import ID3, TIT1, TIT2
+
+name = &amp;#34;001青衫磊落险峰行1.mp3&amp;#34;
+def mod_mp3():
+    audio = ID3(name)
+    audio[&amp;#34;TIT2&amp;#34;] = TIT2(encoding=3, text=[&amp;#34;01:青衫磊落险峰行1&amp;#34;]);
+    audio.save()
+mod_mp3()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过这种方式, 我们可以修改音频文件所有的原信息, 比如 我给 mp3 添加一个专辑图&lt;/p&gt;
+&lt;h3 id=&#34;给-mp3-添加一张图片&#34;&gt;给 mp3 添加一张图片&lt;/h3&gt;
+&lt;p&gt;下面的代码提供了一个修改 mp3 文件元数据标签的实例, 修改了 标题, 副标题, 作曲, 以及封面图:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/1678927491.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1678927491.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+def mod_tag():
+    audio = ID3(name)
+    with open(&amp;#34;cover.png&amp;#34;, &amp;#34;rb&amp;#34;) as f:
+        image_data = BytesIO(f.read())
+
+    apic = APIC(
+        encoding=3,  # UTF-8
+        mime=&amp;#39;image/png&amp;#39;,
+        type=3,  # cover front
+        desc=u&amp;#39;Cover&amp;#39;,
+        data=image_data.getvalue()
+    )
+    #修改标题/专辑/作者信息
+    audio[&amp;#39;TABL&amp;#39;] = TALB(encoding=3, text=&amp;#34;天龙八部&amp;#34;)
+    audio[&amp;#39;TIT2&amp;#39;] = TIT2(encodings = 3, text=&amp;#39;青衫磊落险峰行&amp;#39;)
+    audio[&amp;#39;TIT3&amp;#39;] = TIT3(encodings = 3, text=&amp;#39;01&amp;#39;)
+    audio[&amp;#39;TCOM&amp;#39;] = TCOM(encodings = 3, text=&amp;#39;金庸&amp;#39;)
+    # 修改专辑封面图
+    audio[&amp;#39;APIC&amp;#39;] = apic
+    audio.save()
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;修改-flac-格式&#34;&gt;修改 FLAC 格式&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;from mutagen.flac import FLAC
+
+# 打开FLAC文件
+audio = FLAC(&amp;#34;example.flac&amp;#34;)
+
+# 获取元数据信息
+title = audio.get(&amp;#34;title&amp;#34;, &amp;#34;Unknown Title&amp;#34;)
+artist = audio.get(&amp;#34;artist&amp;#34;, &amp;#34;Unknown Artist&amp;#34;)
+album = audio.get(&amp;#34;album&amp;#34;, &amp;#34;Unknown Album&amp;#34;)
+bitrate = audio.info.bitrate
+length = audio.info.length
+
+# 打印元数据信息
+print(&amp;#34;Title:&amp;#34;, title)
+print(&amp;#34;Artist:&amp;#34;, artist)
+print(&amp;#34;Album:&amp;#34;, album)
+print(&amp;#34;Bitrate:&amp;#34;, bitrate)
+print(&amp;#34;Length:&amp;#34;, length)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;修改-ogg-格式&#34;&gt;修改 OGG 格式&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;from mutagen.oggvorbis import OggVorbis
+
+# 打开OGG文件
+audio = OggVorbis(&amp;#34;example.ogg&amp;#34;)
+
+# 获取元数据信息
+title = audio.get(&amp;#34;title&amp;#34;, &amp;#34;Unknown Title&amp;#34;)
+artist = audio.get(&amp;#34;artist&amp;#34;, &amp;#34;Unknown Artist&amp;#34;)
+album = audio.get(&amp;#34;album&amp;#34;, &amp;#34;Unknown Album&amp;#34;)
+bitrate = audio.info.bitrate
+length = audio.info.length
+
+# 打印元数据信息
+print(&amp;#34;Title:&amp;#34;, title)
+print(&amp;#34;Artist:&amp;#34;, artist)
+print(&amp;#34;Album:&amp;#34;, album)
+print(&amp;#34;Bitrate:&amp;#34;, bitrate)
+print(&amp;#34;Length:&amp;#34;, length)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;修改-wav-格式&#34;&gt;修改 WAV 格式&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;from mutagen.oggvorbis import OggVorbis
+
+# 打开OGG文件
+audio = OggVorbis(&amp;#34;example.ogg&amp;#34;)
+
+# 获取元数据信息
+title = audio.get(&amp;#34;title&amp;#34;, &amp;#34;Unknown Title&amp;#34;)
+artist = audio.get(&amp;#34;artist&amp;#34;, &amp;#34;Unknown Artist&amp;#34;)
+album = audio.get(&amp;#34;album&amp;#34;, &amp;#34;Unknown Album&amp;#34;)
+bitrate = audio.info.bitrate
+length = audio.info.length
+
+# 打印元数据信息
+print(&amp;#34;Title:&amp;#34;, title)
+print(&amp;#34;Artist:&amp;#34;, artist)
+print(&amp;#34;Album:&amp;#34;, album)
+print(&amp;#34;Bitrate:&amp;#34;, bitrate)
+print(&amp;#34;Length:&amp;#34;, length)
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
         <title>Nas 安装人人影视</title>
         <link>http://47.99.84.217/post/installrrshare/</link>
         <pubDate>Sat, 10 Nov 2018 09:04:33 +0800</pubDate>
@@ -228,7 +549,7 @@ bind_port = 7000
 vhost_http_port = 8080
 dashboard_port = 7500
 dashboard_user = you&amp;#39;s name
-dashboard_pwd = you&amp;#39;s psw
+dashboard_pwd = 
 max_pool_count = 5
 authentication_timeout = 900
 subdomain_host = lekee.cc
@@ -714,7 +1035,7 @@ vim /System/Library/Extensions/Natit.kext/Info.plist&lt;/p&gt;
         <pubDate>Tue, 17 Apr 2018 15:10:01 +0800</pubDate>
         
         <guid>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-        <description>&lt;p&gt;前言 之前博客挂在 github pages 上,回到新疆之后发现访问不了了.一琢磨就买个个主机使用 wordpress搭建了个个人博客,当使用 wordpress 实在是不能提起我的写作欲望,又麻溜的切换到了 hexo.在网上看到了coding 也提供了类似 github pages 的服务 coding-pages,瞬间觉得太好了.于是我又开始了 hexo 之旅;&lt;/p&gt;
+        <description>&lt;p&gt;前言 之前博客挂在 github pages 上,回到工作地之后发现访问不了了.一琢磨就买个个主机使用 wordpress搭建了个个人博客,当使用 wordpress 实在是不能提起我的写作欲望,又麻溜的切换到了 hexo.在网上看到了coding 也提供了类似 github pages 的服务 coding-pages,瞬间觉得太好了.于是我又开始了 hexo 之旅;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;正文&lt;/p&gt;
 &lt;ul&gt;

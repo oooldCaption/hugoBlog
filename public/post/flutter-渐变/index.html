@@ -1,24 +1,72 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='太久没写技术博客啦. 最近一直在用fluter做app, 前几天有个功能需要用渐变色来做一个文本.
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='太久没写技术博客啦~~~~~~~
+最近一直在用fluter做app, 前几天有个功能需要用渐变色来做一个文本.
 我回想起几年前被我们UI设计师支配的恐惧, 那个UI特别喜欢用渐变色跟圆角, 以至于天天跟CALayer之类的打交道.
-如果想要在flutter上实现渐变色就太简单了, 在Container容器中有一个修饰器decoration中 有一个 gradient属性, 你只要给这个属性设置值, 就可以对容器设置渐变色了. 代码如下:'>
+如果想要在flutter上实现渐变色就太简单了, 在Container容器中有一个修饰器decoration中 有一个 gradient属性, 你只要给这个属性设置值, 就可以对容器设置渐变色了. 对修饰器有以下几种创建渐变色的方式:
+ LinearGradient RadialGradient SweepGradient  我会在下面的内容分别对上面这 3 种实现渐变色的方法给出具体的实例和相关代码:
+LinearGradient LinearGradient 是 Flutter 中实现线性渐变效果的类，它可以用来创建两个或多个颜色之间的线性渐变。下面是 LinearGradient 的一些适用场景和利弊：
+适用场景：
+需要实现颜色的线性渐变效果，例如从一个颜色平滑过渡到另一个颜色；可以在任何需要使用颜色的地方使用，例如背景、边框、文本等。
+利弊：
+优点：简单易用，可以创建平滑过渡的颜色效果，适用于各种需要渐变色的场景。
+缺点：不适合实现复杂的渐变效果，例如径向渐变或多个颜色之间的复杂渐变。对于这种情况，可以考虑使用 RadialGradient 或 SweepGradient 等其他类型的渐变。
+LinearGradient中也有很多其他的属性, 你可以自己尝试一下都有什么效果
+  begin：定义渐变的起点位置，它是一个Alignment类型的对象。Alignment类型包含两个属性：x和y，分别表示水平和垂直方向上的偏移量。默认值是Alignment.centerLeft，表示从左到右进行渐变。
+  end：定义渐变的终点位置，也是一个Alignment类型的对象。默认值是Alignment.centerRight，表示从右到左进行渐变。
+  colors：定义渐变的颜色数组。渐变将从数组的第一个颜色过渡到最后一个颜色。至少需要提供两个颜色。
+  stops：定义颜色数组中每个颜色的位置。每个位置的值必须在0.0到1.0之间。如果不提供stops属性，则渐变中每个颜色的位置将均匀分布。
+  tileMode：定义渐变在超出定义范围时的重复方式。默认值是TileMode.clamp，表示渐变将延伸到起点和终点之外的区域，并使用最近的颜色。模式如下图所示:
+    LinearGradient 的简单应用, 代码 以及 图例 如下:
+ // LinearGradient _linear() { return Center( child: Container( height: 100, width: 100, decoration: const BoxDecoration( gradient: LinearGradient( begin: Alignment.'>
 <title>Flutter 渐变</title>
 
 <link rel='canonical' href='http://47.99.84.217/post/flutter-%E6%B8%90%E5%8F%98/'>
 
 <link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='Flutter 渐变'>
-<meta property='og:description' content='太久没写技术博客啦. 最近一直在用fluter做app, 前几天有个功能需要用渐变色来做一个文本.
+<meta property='og:description' content='太久没写技术博客啦~~~~~~~
+最近一直在用fluter做app, 前几天有个功能需要用渐变色来做一个文本.
 我回想起几年前被我们UI设计师支配的恐惧, 那个UI特别喜欢用渐变色跟圆角, 以至于天天跟CALayer之类的打交道.
-如果想要在flutter上实现渐变色就太简单了, 在Container容器中有一个修饰器decoration中 有一个 gradient属性, 你只要给这个属性设置值, 就可以对容器设置渐变色了. 代码如下:'>
+如果想要在flutter上实现渐变色就太简单了, 在Container容器中有一个修饰器decoration中 有一个 gradient属性, 你只要给这个属性设置值, 就可以对容器设置渐变色了. 对修饰器有以下几种创建渐变色的方式:
+ LinearGradient RadialGradient SweepGradient  我会在下面的内容分别对上面这 3 种实现渐变色的方法给出具体的实例和相关代码:
+LinearGradient LinearGradient 是 Flutter 中实现线性渐变效果的类，它可以用来创建两个或多个颜色之间的线性渐变。下面是 LinearGradient 的一些适用场景和利弊：
+适用场景：
+需要实现颜色的线性渐变效果，例如从一个颜色平滑过渡到另一个颜色；可以在任何需要使用颜色的地方使用，例如背景、边框、文本等。
+利弊：
+优点：简单易用，可以创建平滑过渡的颜色效果，适用于各种需要渐变色的场景。
+缺点：不适合实现复杂的渐变效果，例如径向渐变或多个颜色之间的复杂渐变。对于这种情况，可以考虑使用 RadialGradient 或 SweepGradient 等其他类型的渐变。
+LinearGradient中也有很多其他的属性, 你可以自己尝试一下都有什么效果
+  begin：定义渐变的起点位置，它是一个Alignment类型的对象。Alignment类型包含两个属性：x和y，分别表示水平和垂直方向上的偏移量。默认值是Alignment.centerLeft，表示从左到右进行渐变。
+  end：定义渐变的终点位置，也是一个Alignment类型的对象。默认值是Alignment.centerRight，表示从右到左进行渐变。
+  colors：定义渐变的颜色数组。渐变将从数组的第一个颜色过渡到最后一个颜色。至少需要提供两个颜色。
+  stops：定义颜色数组中每个颜色的位置。每个位置的值必须在0.0到1.0之间。如果不提供stops属性，则渐变中每个颜色的位置将均匀分布。
+  tileMode：定义渐变在超出定义范围时的重复方式。默认值是TileMode.clamp，表示渐变将延伸到起点和终点之外的区域，并使用最近的颜色。模式如下图所示:
+    LinearGradient 的简单应用, 代码 以及 图例 如下:
+ // LinearGradient _linear() { return Center( child: Container( height: 100, width: 100, decoration: const BoxDecoration( gradient: LinearGradient( begin: Alignment.'>
 <meta property='og:url' content='http://47.99.84.217/post/flutter-%E6%B8%90%E5%8F%98/'>
 <meta property='og:site_name' content='煎人寿'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='flutter' /><meta property='article:published_time' content='2022-11-20T17:52:38&#43;08:00'/><meta property='article:modified_time' content='2022-11-20T17:52:38&#43;08:00'/>
 <meta name="twitter:title" content="Flutter 渐变">
-<meta name="twitter:description" content="太久没写技术博客啦. 最近一直在用fluter做app, 前几天有个功能需要用渐变色来做一个文本.
+<meta name="twitter:description" content="太久没写技术博客啦~~~~~~~
+最近一直在用fluter做app, 前几天有个功能需要用渐变色来做一个文本.
 我回想起几年前被我们UI设计师支配的恐惧, 那个UI特别喜欢用渐变色跟圆角, 以至于天天跟CALayer之类的打交道.
-如果想要在flutter上实现渐变色就太简单了, 在Container容器中有一个修饰器decoration中 有一个 gradient属性, 你只要给这个属性设置值, 就可以对容器设置渐变色了. 代码如下:">
+如果想要在flutter上实现渐变色就太简单了, 在Container容器中有一个修饰器decoration中 有一个 gradient属性, 你只要给这个属性设置值, 就可以对容器设置渐变色了. 对修饰器有以下几种创建渐变色的方式:
+ LinearGradient RadialGradient SweepGradient  我会在下面的内容分别对上面这 3 种实现渐变色的方法给出具体的实例和相关代码:
+LinearGradient LinearGradient 是 Flutter 中实现线性渐变效果的类，它可以用来创建两个或多个颜色之间的线性渐变。下面是 LinearGradient 的一些适用场景和利弊：
+适用场景：
+需要实现颜色的线性渐变效果，例如从一个颜色平滑过渡到另一个颜色；可以在任何需要使用颜色的地方使用，例如背景、边框、文本等。
+利弊：
+优点：简单易用，可以创建平滑过渡的颜色效果，适用于各种需要渐变色的场景。
+缺点：不适合实现复杂的渐变效果，例如径向渐变或多个颜色之间的复杂渐变。对于这种情况，可以考虑使用 RadialGradient 或 SweepGradient 等其他类型的渐变。
+LinearGradient中也有很多其他的属性, 你可以自己尝试一下都有什么效果
+  begin：定义渐变的起点位置，它是一个Alignment类型的对象。Alignment类型包含两个属性：x和y，分别表示水平和垂直方向上的偏移量。默认值是Alignment.centerLeft，表示从左到右进行渐变。
+  end：定义渐变的终点位置，也是一个Alignment类型的对象。默认值是Alignment.centerRight，表示从右到左进行渐变。
+  colors：定义渐变的颜色数组。渐变将从数组的第一个颜色过渡到最后一个颜色。至少需要提供两个颜色。
+  stops：定义颜色数组中每个颜色的位置。每个位置的值必须在0.0到1.0之间。如果不提供stops属性，则渐变中每个颜色的位置将均匀分布。
+  tileMode：定义渐变在超出定义范围时的重复方式。默认值是TileMode.clamp，表示渐变将延伸到起点和终点之外的区域，并使用最近的颜色。模式如下图所示:
+    LinearGradient 的简单应用, 代码 以及 图例 如下:
+ // LinearGradient _linear() { return Center( child: Container( height: 100, width: 100, decoration: const BoxDecoration( gradient: LinearGradient( begin: Alignment.">
     </head>
     <body class="
     article-page
@@ -76,7 +124,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">煎人寿</a></h1>
-            <h2 class="site-description">潮平两岸阔</h2>
+            <h2 class="site-description">唯见月寒日暖来煎人寿</h2>
         </div>
     </header><ol class="menu" id="main-menu">
         
@@ -109,7 +157,45 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#lineargradient">LinearGradient</a></li>
+        <li><a href="#radialgradient">RadialGradient</a></li>
+        <li><a href="#sweepgradient">SweepGradient</a></li>
+        <li><a href="#文本渐变">文本渐变</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -165,7 +251,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -180,11 +266,223 @@
     <section class="article-content">
     
     
-    <p>太久没写技术博客啦.    最近一直在用<code>fluter</code>做app,  前几天有个功能需要用渐变色来做一个文本.</p>
+    <p>太久没写技术博客啦~~~~~~~</p>
+<p>最近一直在用<code>fluter</code>做app,  前几天有个功能需要用渐变色来做一个文本.</p>
 <p>我回想起几年前被我们UI设计师支配的恐惧, 那个UI特别喜欢用渐变色跟圆角, 以至于天天跟CALayer之类的打交道.</p>
 <p>如果想要在flutter上实现渐变色就太简单了, 在<code>Container</code>容器中有一个修饰器<code>decoration</code>中 有一个 <code>gradient</code>属性,  你只要给这个属性设置值, 就可以对容器设置渐变色了.
-代码如下:</p>
-<pre tabindex="0"><code></code></pre>
+对修饰器有以下几种创建渐变色的方式:</p>
+<ul>
+<li>LinearGradient</li>
+<li>RadialGradient</li>
+<li>SweepGradient</li>
+</ul>
+<p>我会在下面的内容分别对上面这 3 种实现渐变色的方法给出具体的实例和相关代码:</p>
+<h3 id="lineargradient">LinearGradient</h3>
+<p>LinearGradient 是 Flutter 中实现线性渐变效果的类，它可以用来创建两个或多个颜色之间的线性渐变。下面是 LinearGradient 的一些适用场景和利弊：</p>
+<p><strong>适用场景：</strong></p>
+<p>需要实现颜色的线性渐变效果，例如从一个颜色平滑过渡到另一个颜色；可以在任何需要使用颜色的地方使用，例如背景、边框、文本等。</p>
+<p><strong>利弊：</strong></p>
+<p>优点：简单易用，可以创建平滑过渡的颜色效果，适用于各种需要渐变色的场景。</p>
+<p>缺点：不适合实现复杂的渐变效果，例如径向渐变或多个颜色之间的复杂渐变。对于这种情况，可以考虑使用 RadialGradient 或 SweepGradient 等其他类型的渐变。</p>
+<p>LinearGradient中也有很多其他的属性, 你可以自己尝试一下都有什么效果</p>
+<ul>
+<li>
+<p><code>begin</code>：定义渐变的起点位置，它是一个Alignment类型的对象。Alignment类型包含两个属性：x和y，分别表示水平和垂直方向上的偏移量。默认值是Alignment.centerLeft，表示从左到右进行渐变。</p>
+</li>
+<li>
+<p><code>end</code>：定义渐变的终点位置，也是一个Alignment类型的对象。默认值是Alignment.centerRight，表示从右到左进行渐变。</p>
+</li>
+<li>
+<p><code>colors</code>：定义渐变的颜色数组。渐变将从数组的第一个颜色过渡到最后一个颜色。至少需要提供两个颜色。</p>
+</li>
+<li>
+<p><code>stops</code>：定义颜色数组中每个颜色的位置。每个位置的值必须在0.0到1.0之间。如果不提供stops属性，则渐变中每个颜色的位置将均匀分布。</p>
+</li>
+<li>
+<p><code>tileMode</code>：定义渐变在超出定义范围时的重复方式。默认值是TileMode.clamp，表示渐变将延伸到起点和终点之外的区域，并使用最近的颜色。模式如下图所示:</p>
+</li>
+<li>
+<p><img src="https://flutter.github.io/assets-for-api-docs/assets/dart-ui/tile_mode_clamp_linear.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+<img src="https://flutter.github.io/assets-for-api-docs/assets/dart-ui/tile_mode_decal_linear.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+<img src="https://flutter.github.io/assets-for-api-docs/assets/dart-ui/tile_mode_mirror_linear.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+<img src="https://flutter.github.io/assets-for-api-docs/assets/dart-ui/tile_mode_repeated_linear.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+</ul>
+<p>LinearGradient 的简单应用, 代码 以及 图例 如下:</p>
+<pre tabindex="0"><code> // LinearGradient
+  _linear() {
+    return Center(
+      child: Container(
+          height: 100,
+          width: 100,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [Colors.blue, Colors.black38,Colors.green],
+            ),
+          ),
+          child: Text(&#34;LinearGradient_渐变&#34;) 
+          ),
+    );
+  }
+</code></pre><p><img src="https://img.52smile.vip/1678863878.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1678863878.png"
+	
+	
+></p>
+<p>以上是LinearGradient的一些重要属性，您可以根据需要进行自定义和扩展，以创建更复杂和有趣的渐变效果。</p>
+<h3 id="radialgradient">RadialGradient</h3>
+<p>RadialGradient 是 Flutter 中实现径向渐变效果的类，它可以用来创建从一个中心点向周围扩散的渐变效果。下面是 RadialGradient 的一些适用场景和利弊：</p>
+<p><strong>适用场景</strong>：</p>
+<p>需要实现从一个中心点向周围扩散的渐变效果，例如圆形背景、圆形边框等；
+可以在任何需要使用颜色的地方使用，例如背景、边框、文本等。
+利弊：</p>
+<p><strong>优点</strong>：可以创建从一个中心点向周围扩散的渐变效果，适用于多种需要径向渐变的场景；</p>
+<p><strong>缺点</strong>：不适合实现复杂的渐变效果，例如多个颜色之间的复杂渐变。对于这种情况，可以考虑使用 LinearGradient 或 SweepGradient 等其他类型的渐变。</p>
+<p>RadialGradient 属性列表以及说明:</p>
+<p><code>center</code>：定义渐变的中心点位置，它是一个Alignment类型的对象。Alignment类型包含两个属性：x和y，分别表示水平和垂直方向上的偏移量。默认值是Alignment.center，表示渐变从中心点开始。</p>
+<p><code>radius</code>：定义渐变的半径，它是一个浮点数，表示从中心点开始的半径。默认值是0.5。</p>
+<p><code>colors</code>：定义渐变的颜色数组。渐变将从数组的第一个颜色过渡到最后一个颜色。至少需要提供两个颜色。</p>
+<p><code>stops</code>：定义颜色数组中每个颜色的位置。每个位置的值必须在0.0到1.0之间。如果不提供stops属性，则渐变中每个颜色的位置将均匀分布。</p>
+<p><code>tileMode</code>：定义渐变在超出定义范围时的重复方式。默认值是TileMode.clamp，表示渐变将延伸到半径之外的区域，并使用最近的颜色。</p>
+<p>RadialGradient  的简单应用, 代码 以及 图例 如下:</p>
+<pre tabindex="0"><code>  _radial() {
+    return Center(
+      child: Container(
+          height: 100,
+          width: 100,
+          decoration: const BoxDecoration(
+            gradient: RadialGradient(
+              center: Alignment(0.0, 0.0),
+              radius: 0.5,
+              colors: [Colors.red, Colors.yellow, Colors.green],
+              stops: [0.0, 0.5, 1.0],
+              tileMode: TileMode.repeated,
+            ),
+          ),
+          child: Text(&#34;RadialGradient 渐变&#34;)),
+    );
+  }
+</code></pre><p><img src="https://img.52smile.vip/1678865491.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1678865491.png"
+	
+	
+></p>
+<p>在上面的代码中，我们创建了一个 <code>Container</code> 组件，并使用 <code>RadialGradient</code> 作为其背景。我们将渐变的中心点位置设置为<code>Alignment(0.0, 0.0)</code>，将半径设置为0.5，将颜色数组设置为<code>[Colors.red, Colors.yellow, Colors.green]</code>，并将停止位置数组设置为<code>[0.0, 0.5, 1.0]</code>。这意味着渐变将从红色开始，到黄色中间停止，然后到绿色结束。我们还将<code>tileMode</code>设置为<code>TileMode.repeated</code>，表示渐变将在超出定义范围时重复。</p>
+<h3 id="sweepgradient">SweepGradient</h3>
+<p>SweepGradient 是 Flutter 中实现扫描渐变效果的类，它可以用来创建在一个圆圈内均匀分布的颜色渐变效果。下面是 SweepGradient 的一些适用场景和利弊：</p>
+<p><strong>适用场景</strong>：</p>
+<p>需要实现在一个圆圈内均匀分布的颜色渐变效果，例如圆形背景、圆形边框等；
+可以在任何需要使用颜色的地方使用，例如背景、边框、文本等。
+利弊：</p>
+<p><strong>优点</strong>：可以创建在一个圆圈内均匀分布的颜色渐变效果，适用于多种需要扫描渐变的场景；</p>
+<p><strong>缺点</strong>：不适合实现复杂的渐变效果，例如多个颜色之间的复杂渐变。对于这种情况，可以考虑使用 LinearGradient 或 RadialGradient 等其他类型的渐变。</p>
+<p>SweepGradient 属性列表以及说明:</p>
+<p><code>center</code>：定义渐变的中心点位置，它是一个Alignment类型的对象。Alignment类型包含两个属性：x和y，分别表示水平和垂直方向上的偏移量。默认值是Alignment.center，表示渐变从中心点开始。</p>
+<p><code>startAngle</code>：定义渐变的起始角度，它是一个浮点数，表示从中心点开始的起始角度。默认值是0.0，表示从正右方开始扫描。</p>
+<p><code>endAngle</code>：定义渐变的结束角度，它是一个浮点数，表示从中心点开始的结束角度。默认值是2 * pi，表示扫描一周结束。</p>
+<p><code>colors</code>：定义渐变的颜色数组。渐变将从数组的第一个颜色过渡到最后一个颜色。至少需要提供两个颜色。</p>
+<p><code>stops</code>：定义颜色数组中每个颜色的位置。每个位置的值必须在0.0到1.0之间。如果不提供stops属性，则渐变中每个颜色的位置将均匀分布。</p>
+<p>SweepGradient 的简单应用, 代码 以及 图例 如下:</p>
+<pre tabindex="0"><code>  _sweepGradient(){
+    return Center(
+      child: Container(
+          decoration: const BoxDecoration(
+            gradient: SweepGradient(
+              center: Alignment.center,
+              startAngle: 0.0,
+              endAngle: 2 * pi,
+              colors: [Colors.red, Colors.yellow, Colors.green],
+              stops: [0.0, 0.5, 1.0],
+            ),
+          ),
+          child: Text(&#34;SweepGradient 渐变&#34;))
+    );
+
+  }
+</code></pre><p><img src="https://img.52smile.vip/1678866078.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1678866078.png"
+	
+	
+></p>
+<p>在上面的代码中，我们创建了一个Container组件，并使用SweepGradient作为其背景。我们将渐变的中心点位置设置为Alignment.center，将起始角度设置为0.0，将结束角度设置为2 * pi，将颜色数组设置为[Colors.red, Colors.yellow, Colors.green]，并将停止位置数组设置为[0.0, 0.5, 1.0]。这意味着渐变将从红色开始，到黄色中间停止，然后到绿色结束。</p>
+<h3 id="文本渐变">文本渐变</h3>
+<p>这个是经常会在苹果官网看到, 绚丽多彩的渐变文本. 我们也可以用 flutter 轻松实现:</p>
+<p><img src="https://img.52smile.vip/1678866568.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1678866568.png"
+	
+	
+></p>
+<pre tabindex="0"><code>  _colorfulText() {
+    return ShaderMask(
+      shaderCallback: (bounds) {
+        return const LinearGradient(
+          colors: [Colors.blue, Colors.red],
+          stops: [0.0, 1.0],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ).createShader(bounds);
+      },
+      child: const Text(
+        &#34;this is way&#34;,
+        style: TextStyle(
+          fontSize: 32.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+</code></pre>
 </section>
 
 
@@ -218,10 +516,12 @@
         
             2017 - 
         
-        2022 煎人寿
+        2023 煎人寿
     </section>
     
     <section class="powerby">
+        
+            <a href="https://beian.miit.gov.cn/" target="_blank">备案号</a> <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备18022498号</a> <br/>
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
