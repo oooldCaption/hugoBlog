@@ -12,7 +12,8 @@ params:
 
     footer:
         since: 2017
-        customText: ""
+        customText: <a href="https://beian.miit.gov.cn/" target="_blank">备案号</a>
+                    <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备18022498号</a>
 
     dateFormat:
         published: Jan 02, 2006
@@ -21,7 +22,7 @@ params:
     sidebar:
         compact: false
         emoji: 🥰
-        subtitle: '潮平两岸阔'
+        subtitle: '唯见月寒日暖来煎人寿'
         avatar:
             enabled: true
             local: true
