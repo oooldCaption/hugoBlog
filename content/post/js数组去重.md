@@ -3,7 +3,7 @@ title: js数组去重
 date: 2018-09-12T15:25:33+08:00 
 draft: false
 tags: ['前端']
-categories: ['南腔北调']
+categories: ['软件开发']
 ---
 
 ### 前言

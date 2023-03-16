@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='单例模式的意思就是这个类只有一个实例，这个类就是单例类。在iOS中有不少都是单例NSNull，NSFileManager ，UIApplication，NSUserDefaults ，UIDevice，还有一些第三方也有能用到了这种设计模式例如Afhttpmanger。。。
+（1）单例模式的作用 :可以保证在程序运行过程，一个类只有一个实例，而且该实例易于供外界访问，从而方便地控制了实例个数，并节约系统资源。 （2）单例模式的使用场合：在整个应用程序中，共享一份资源（这份资源只需要创建初始化1次），应该让这个类创建出来的对象永远只有一个。 实现思路： 创建一个一个全局的static的实例 static id _instance; 提供1个类方法让外界访问唯一的实例 重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。
+ // 实现copyWithZone:方法 // AudioPlayer.m // 单例 // // Created by 两好三坏 on 16/2/21. // Copyright © 2016年 ;. All rights reserved. // #import &amp;amp;amp;quot;AudioPlayer.h&amp;amp;amp;quot; &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;@interface&amp;lt;/spanAudioPlayer&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; () @end @implementation&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s4&amp;#34;&amp;gt;AudioPlayer //创建一个一个全局的static的实例 static id _instance; &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; //提供1个类方法让外界访问唯一的实例 &#43;(instancetype)shareAudioPlayer{ &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/spandispatch_once_t&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; onceToken; &amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;dispatch_once&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(&amp;amp;amp;amp;onceToken, ^{ _instance = [[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;self&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; alloc] init]; }); &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; } //重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。 &#43;(instancetype)allocWithZone:(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;struct&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSZone&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; *)zone{ &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/spandispatch_once_t&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; onceToken; &amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;dispatch_once&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(&amp;amp;amp;amp;onceToken, ^{ _instance = [&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;super&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; allocWithZone:zone]; }); &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;//实现copyWithZone:方法 &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;-(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)copyWithZone:(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSZone&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; *)zone{ &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;@end &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;在控制其中创建单例类的对象，打印地址： &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;- (&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;void&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)viewDidLoad { &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;super&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; viewDidLoad]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player1 = [AudioPlayer shareAudioPlayer]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player2 = [[AudioPlayer alloc] init]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player3 = [AudioPlayer new]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player4 = [player1 &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;copy&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;]; &amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSLog&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(@&amp;amp;amp;quot;%p,%p,%p,%p&amp;amp;amp;quot;,player1,player2,player3,player4); &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;//打印结果 &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;2016&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;-&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;02&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;-&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;21&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;23&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;27&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;13.'>
+<title>iOS设计模式之单例</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/ios%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='iOS设计模式之单例'>
+<meta property='og:description' content='单例模式的意思就是这个类只有一个实例，这个类就是单例类。在iOS中有不少都是单例NSNull，NSFileManager ，UIApplication，NSUserDefaults ，UIDevice，还有一些第三方也有能用到了这种设计模式例如Afhttpmanger。。。
+（1）单例模式的作用 :可以保证在程序运行过程，一个类只有一个实例，而且该实例易于供外界访问，从而方便地控制了实例个数，并节约系统资源。 （2）单例模式的使用场合：在整个应用程序中，共享一份资源（这份资源只需要创建初始化1次），应该让这个类创建出来的对象永远只有一个。 实现思路： 创建一个一个全局的static的实例 static id _instance; 提供1个类方法让外界访问唯一的实例 重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。
+ // 实现copyWithZone:方法 // AudioPlayer.m // 单例 // // Created by 两好三坏 on 16/2/21. // Copyright © 2016年 ;. All rights reserved. // #import &amp;amp;amp;quot;AudioPlayer.h&amp;amp;amp;quot; &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;@interface&amp;lt;/spanAudioPlayer&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; () @end @implementation&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s4&amp;#34;&amp;gt;AudioPlayer //创建一个一个全局的static的实例 static id _instance; &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; //提供1个类方法让外界访问唯一的实例 &#43;(instancetype)shareAudioPlayer{ &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/spandispatch_once_t&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; onceToken; &amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;dispatch_once&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(&amp;amp;amp;amp;onceToken, ^{ _instance = [[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;self&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; alloc] init]; }); &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; } //重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。 &#43;(instancetype)allocWithZone:(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;struct&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSZone&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; *)zone{ &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/spandispatch_once_t&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; onceToken; &amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;dispatch_once&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(&amp;amp;amp;amp;onceToken, ^{ _instance = [&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;super&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; allocWithZone:zone]; }); &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;//实现copyWithZone:方法 &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;-(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)copyWithZone:(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSZone&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; *)zone{ &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;@end &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;在控制其中创建单例类的对象，打印地址： &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;- (&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;void&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)viewDidLoad { &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;super&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; viewDidLoad]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player1 = [AudioPlayer shareAudioPlayer]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player2 = [[AudioPlayer alloc] init]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player3 = [AudioPlayer new]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player4 = [player1 &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;copy&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;]; &amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSLog&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(@&amp;amp;amp;quot;%p,%p,%p,%p&amp;amp;amp;quot;,player1,player2,player3,player4); &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;//打印结果 &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;2016&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;-&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;02&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;-&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;21&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;23&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;27&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;13.'>
+<meta property='og:url' content='http://47.99.84.217/post/ios%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='iOS' /><meta property='article:published_time' content='2018-04-17T14:45:14&#43;08:00'/><meta property='article:modified_time' content='2018-04-17T14:45:14&#43;08:00'/>
+<meta name="twitter:title" content="iOS设计模式之单例">
+<meta name="twitter:description" content="单例模式的意思就是这个类只有一个实例，这个类就是单例类。在iOS中有不少都是单例NSNull，NSFileManager ，UIApplication，NSUserDefaults ，UIDevice，还有一些第三方也有能用到了这种设计模式例如Afhttpmanger。。。
+（1）单例模式的作用 :可以保证在程序运行过程，一个类只有一个实例，而且该实例易于供外界访问，从而方便地控制了实例个数，并节约系统资源。 （2）单例模式的使用场合：在整个应用程序中，共享一份资源（这份资源只需要创建初始化1次），应该让这个类创建出来的对象永远只有一个。 实现思路： 创建一个一个全局的static的实例 static id _instance; 提供1个类方法让外界访问唯一的实例 重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。
+ // 实现copyWithZone:方法 // AudioPlayer.m // 单例 // // Created by 两好三坏 on 16/2/21. // Copyright © 2016年 ;. All rights reserved. // #import &amp;amp;amp;quot;AudioPlayer.h&amp;amp;amp;quot; &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;@interface&amp;lt;/spanAudioPlayer&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; () @end @implementation&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s4&amp;#34;&amp;gt;AudioPlayer //创建一个一个全局的static的实例 static id _instance; &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; //提供1个类方法让外界访问唯一的实例 &#43;(instancetype)shareAudioPlayer{ &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/spandispatch_once_t&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; onceToken; &amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;dispatch_once&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(&amp;amp;amp;amp;onceToken, ^{ _instance = [[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;self&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; alloc] init]; }); &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; } //重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。 &#43;(instancetype)allocWithZone:(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;struct&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSZone&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; *)zone{ &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/spandispatch_once_t&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; onceToken; &amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;dispatch_once&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(&amp;amp;amp;amp;onceToken, ^{ _instance = [&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;super&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; allocWithZone:zone]; }); &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;//实现copyWithZone:方法 &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;-(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)copyWithZone:(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSZone&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; *)zone{ &amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;@end &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;在控制其中创建单例类的对象，打印地址： &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;- (&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;void&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)viewDidLoad { &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;super&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; viewDidLoad]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player1 = [AudioPlayer shareAudioPlayer]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player2 = [[AudioPlayer alloc] init]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player3 = [AudioPlayer new]; &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player4 = [player1 &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;copy&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;]; &amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSLog&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(@&amp;amp;amp;quot;%p,%p,%p,%p&amp;amp;amp;quot;,player1,player2,player3,player4); &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;//打印结果 &amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;2016&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;-&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;02&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;-&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;21&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;23&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;27&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;13.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ios/" >
+                iOS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/ios%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B/">iOS设计模式之单例</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 17, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>单例模式的意思就是这个类只有一个实例，这个类就是单例类。在iOS中有不少都是单例NSNull，NSFileManager ，UIApplication，NSUserDefaults ，UIDevice，还有一些第三方也有能用到了这种设计模式例如Afhttpmanger。。。</p>
+<!-- raw HTML omitted -->
+<p>（1）单例模式的作用 :可以保证在程序运行过程，一个类只有一个实例，而且该实例易于供外界访问，从而方便地控制了实例个数，并节约系统资源。 （2）单例模式的使用场合：在整个应用程序中，共享一份资源（这份资源只需要创建初始化1次），应该让这个类创建出来的对象永远只有一个。 实现思路： 创建一个一个全局的static的实例 static id _instance; 提供1个类方法让外界访问唯一的实例 重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。</p>
+<pre tabindex="0"><code>
+// 实现copyWithZone:方法 
+// AudioPlayer.m 
+// 单例 
+// 
+// Created by 两好三坏 on 16/2/21. 
+// Copyright © 2016年 ;. All rights reserved. 
+// 
+#import &amp;amp;quot;AudioPlayer.h&amp;amp;quot; 
+&gt; &lt;span class=&#34;s2&#34;&gt;@interface&lt;/spanAudioPlayer&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt; () 
+@end 
+@implementation&lt;/span&gt; &lt;span class=&#34;s4&#34;&gt;AudioPlayer 
+//创建一个一个全局的static的实例 static id _instance; 
+&gt; &lt;span class=&#34;s2&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; _instance; 
+//提供1个类方法让外界访问唯一的实例 
++(instancetype)shareAudioPlayer{ 
+&gt; &lt;span class=&#34;s2&#34;&gt;static&lt;/spandispatch_once_t&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt; onceToken; 
+&gt; &lt;span class=&#34;s5&#34;&gt;dispatch_once&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;(&amp;amp;amp;onceToken, ^{ 
+_instance = [[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; alloc] init]; 
+}); 
+&gt; &lt;span class=&#34;s2&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; _instance; 
+} 
+//重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。 
++(instancetype)allocWithZone:(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; _&lt;/span&gt;&lt;span class=&#34;s5&#34;&gt;NSZone&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; *)zone{ 
+&gt; &lt;span class=&#34;s2&#34;&gt;static&lt;/spandispatch_once_t&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt; onceToken; 
+&gt; &lt;span class=&#34;s5&#34;&gt;dispatch_once&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;(&amp;amp;amp;onceToken, ^{ 
+_instance = [&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; allocWithZone:zone]; 
+}); 
+&gt; &lt;span class=&#34;s2&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; _instance; 
+&gt; &lt;span class=&#34;s1&#34;&gt;} 
+&gt; &lt;span class=&#34;s1&#34;&gt;//实现copyWithZone:方法 
+&gt; &lt;span class=&#34;s1&#34;&gt;-(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;)copyWithZone:(&lt;/span&gt;&lt;span class=&#34;s5&#34;&gt;NSZone&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; *)zone{ 
+&gt; &lt;span class=&#34;s2&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; _instance; 
+&gt; &lt;span class=&#34;s1&#34;&gt;} 
+&gt; &lt;span class=&#34;s1&#34;&gt;@end 
+&gt; &lt;span class=&#34;s1&#34;&gt;在控制其中创建单例类的对象，打印地址： 
+&gt; &lt;span class=&#34;s1&#34;&gt;- (&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;)viewDidLoad { 
+&gt; &lt;span class=&#34;s1&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; viewDidLoad]; 
+&gt; &lt;span class=&#34;s1&#34;&gt;AudioPlayer *player1 = [AudioPlayer shareAudioPlayer]; 
+&gt; &lt;span class=&#34;s1&#34;&gt;AudioPlayer *player2 = [[AudioPlayer alloc] init]; 
+&gt; &lt;span class=&#34;s1&#34;&gt;AudioPlayer *player3 = [AudioPlayer new]; 
+&gt; &lt;span class=&#34;s1&#34;&gt;AudioPlayer *player4 = [player1 &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;copy&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;]; 
+&gt; &lt;span class=&#34;s5&#34;&gt;NSLog&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;(@&amp;amp;quot;%p,%p,%p,%p&amp;amp;quot;,player1,player2,player3,player4); 
+&gt; &lt;span class=&#34;s1&#34;&gt;} 
+&gt; &lt;span class=&#34;s1&#34;&gt;//打印结果 
+&gt; &lt;span class=&#34;s1&#34;&gt;2016&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;02&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;21&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;13.990&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt; 单例[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;2847&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;329685&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt;] &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;0x7fb6e3e080a0&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;0x7fb6e3e080a0&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;0x7fb6e3e080a0&lt;/span&gt;&lt;span class=&#34;s3&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;0x7fb6e3e080a0 
+&gt; &lt;span class=&#34;s1&#34;&gt;四个实例的内存地址是一样的，证明只创建了一个实例； 
+&gt; &lt;span class=&#34;s1&#34;&gt;MRC环境下通常需要在实现下面几个方法： 
+&gt; &lt;span class=&#34;s1&#34;&gt;- (&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;oneway&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;)release {} 
+&gt; &lt;span class=&#34;s1&#34;&gt;- (&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;)retain { &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; _instance; } 
+&gt; &lt;span class=&#34;s1&#34;&gt;- (&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;)autorelease { &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; _instance; } 
+&gt; &lt;span class=&#34;s1&#34;&gt;- (&lt;/span&gt;&lt;span class=&#34;s5&#34;&gt;NSUInteger&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;)retainCount { &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s5&#34;&gt;UINT_MAX&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;; } 
+&gt; &lt;span class=&#34;s1&#34;&gt;[/objc] 
+&gt; &lt;span class=&#34;s1&#34;&gt;可以使用宏判断是否为mrc， 
+&gt; &lt;span class=&#34;s1&#34;&gt;#if __has_feature(objc_arc) 
+&gt; &lt;span class=&#34;s1&#34;&gt;// ARC 
+&gt; &lt;span class=&#34;s1&#34;&gt;#else 
+&gt; &lt;span class=&#34;s1&#34;&gt;// MRC 
+&gt; &lt;span class=&#34;s1&#34;&gt;#endif 
+&gt; &amp;nbsp;
+&lt;span class=&#34;s1&#34;&gt;当然还可以把单例也抽取成为宏，用起来还挺方便的；你们也可以试试试～～～&lt;/span&gt;
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ios/">iOS</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/ios-%E7%95%8C%E9%9D%A2%E4%BC%A0%E5%80%BC/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS 界面传值</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

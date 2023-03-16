@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='喜欢看美剧和电影, 大二以后一直在人人看美剧和电影, 偶尔从射手下载字母来看生肉;好景不长,因为版权问题人人和射手被勒令关停, 我现在还依稀记得当年人人影视和射手字幕网被关停时候的心痛; 买了个 Nas , 发现 Docker 可以安装人人影视客户端, 我说着还得了, 咱赶紧弄一个呀; 网上研究了一下怎么安装, 花了十几分钟装好了; 美美哒,仿佛又回到了看美剧的时候啦; 哈哈哈
+安装 Docker  安装Docker, 在群辉的套件中心安装 Docker, 直接安装就好了  安装人人影视 打开 Docker
+选择注册表, 输入auska, 下载安装docker-rrshareweb 下载完成后对容器进行设置, 勾选使用最高权限执行容器
+ 在 fileStation docker 文件夹中新建子文件夹, eg:rrshare 给 人人影视容器 设置卷,点击添加文件夹, 选择刚刚创建的 rrshare; 然后选择一个文件夹用来存放下载后的资源, 我选择的是 video 设置端口, 可以默认, 也可以自定义一个  ￼ ￼
+ 设置环境改变量
+通过 ssh 登录 Nas, 在终端执行 cat 命令获取UGID 和 PGID, 选择 admin的就可以1204,100
+￼  到这就完成安装了,不要忘记点击应用 然后在浏览器中输入你的群辉 IP, 端口号是刚才设置的端口号; 如果需要解锁, 默认解锁码是123456; tip: 如果不能下载,先停止容器类, 将 P/UGID 设置成 0;'>
+<title>Nas 安装人人影视</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/installrrshare/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='Nas 安装人人影视'>
+<meta property='og:description' content='喜欢看美剧和电影, 大二以后一直在人人看美剧和电影, 偶尔从射手下载字母来看生肉;好景不长,因为版权问题人人和射手被勒令关停, 我现在还依稀记得当年人人影视和射手字幕网被关停时候的心痛; 买了个 Nas , 发现 Docker 可以安装人人影视客户端, 我说着还得了, 咱赶紧弄一个呀; 网上研究了一下怎么安装, 花了十几分钟装好了; 美美哒,仿佛又回到了看美剧的时候啦; 哈哈哈
+安装 Docker  安装Docker, 在群辉的套件中心安装 Docker, 直接安装就好了  安装人人影视 打开 Docker
+选择注册表, 输入auska, 下载安装docker-rrshareweb 下载完成后对容器进行设置, 勾选使用最高权限执行容器
+ 在 fileStation docker 文件夹中新建子文件夹, eg:rrshare 给 人人影视容器 设置卷,点击添加文件夹, 选择刚刚创建的 rrshare; 然后选择一个文件夹用来存放下载后的资源, 我选择的是 video 设置端口, 可以默认, 也可以自定义一个  ￼ ￼
+ 设置环境改变量
+通过 ssh 登录 Nas, 在终端执行 cat 命令获取UGID 和 PGID, 选择 admin的就可以1204,100
+￼  到这就完成安装了,不要忘记点击应用 然后在浏览器中输入你的群辉 IP, 端口号是刚才设置的端口号; 如果需要解锁, 默认解锁码是123456; tip: 如果不能下载,先停止容器类, 将 P/UGID 设置成 0;'>
+<meta property='og:url' content='http://47.99.84.217/post/installrrshare/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='巧篆' /><meta property='article:published_time' content='2018-11-10T09:04:33&#43;08:00'/><meta property='article:modified_time' content='2018-11-10T09:04:33&#43;08:00'/>
+<meta name="twitter:title" content="Nas 安装人人影视">
+<meta name="twitter:description" content="喜欢看美剧和电影, 大二以后一直在人人看美剧和电影, 偶尔从射手下载字母来看生肉;好景不长,因为版权问题人人和射手被勒令关停, 我现在还依稀记得当年人人影视和射手字幕网被关停时候的心痛; 买了个 Nas , 发现 Docker 可以安装人人影视客户端, 我说着还得了, 咱赶紧弄一个呀; 网上研究了一下怎么安装, 花了十几分钟装好了; 美美哒,仿佛又回到了看美剧的时候啦; 哈哈哈
+安装 Docker  安装Docker, 在群辉的套件中心安装 Docker, 直接安装就好了  安装人人影视 打开 Docker
+选择注册表, 输入auska, 下载安装docker-rrshareweb 下载完成后对容器进行设置, 勾选使用最高权限执行容器
+ 在 fileStation docker 文件夹中新建子文件夹, eg:rrshare 给 人人影视容器 设置卷,点击添加文件夹, 选择刚刚创建的 rrshare; 然后选择一个文件夹用来存放下载后的资源, 我选择的是 video 设置端口, 可以默认, 也可以自定义一个  ￼ ￼
+ 设置环境改变量
+通过 ssh 登录 Nas, 在终端执行 cat 命令获取UGID 和 PGID, 选择 admin的就可以1204,100
+￼  到这就完成安装了,不要忘记点击应用 然后在浏览器中输入你的群辉 IP, 端口号是刚才设置的端口号; 如果需要解锁, 默认解锁码是123456; tip: 如果不能下载,先停止容器类, 将 P/UGID 设置成 0;">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装-docker">安装 Docker</a></li>
+        <li><a href="#安装人人影视">安装人人影视</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%A5%87%E5%B7%A7%E6%B7%AB%E6%8A%80/" >
+                奇巧淫技
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/installrrshare/">Nas 安装人人影视</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 10, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>喜欢看美剧和电影, 大二以后一直在人人看美剧和电影, 偶尔从射手下载字母来看生肉;好景不长,因为版权问题人人和射手被勒令关停, 我现在还依稀记得当年人人影视和射手字幕网被关停时候的心痛; 买了个 Nas , 发现 Docker 可以安装人人影视客户端, 我说着还得了, 咱赶紧弄一个呀; 网上研究了一下怎么安装, 花了十几分钟装好了; 美美哒,仿佛又回到了看美剧的时候啦; 哈哈哈</p>
+<h3 id="安装-docker">安装 Docker</h3>
+<ul>
+<li>安装Docker, 在群辉的套件中心安装 Docker, 直接安装就好了</li>
+</ul>
+<h3 id="安装人人影视">安装人人影视</h3>
+<p>打开 Docker<br>
+<img src="https://img.52smile.vip/2018-11-10-014820.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+> 选择注册表, 输入<code>auska</code>, 下载安装docker-rrshareweb 下载完成后对容器进行设置, 勾选<code>使用最高权限执行容器</code><br>
+<img src="https://img.52smile.vip/2018-11-10-014956.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ol>
+<li>在 fileStation docker 文件夹中新建子文件夹, eg:<code>rrshare</code></li>
+<li>给 人人影视容器 设置卷,点击添加文件夹, 选择刚刚创建的 rrshare; 然后选择一个文件夹用来存放下载后的资源, 我选择的是 video</li>
+<li>设置端口, 可以默认, 也可以自定义一个</li>
+</ol>
+<p><img src="https://52smile.vip/wp-content/uploads/2018/11/15418148858533.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+>￼ <img src="https://img.52smile.vip/2018-11-10-015148.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+> <img src="https://52smile.vip/wp-content/uploads/2018/11/15418149291359.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+>￼</p>
+<ul>
+<li>设置环境改变量<br>
+通过 ssh 登录 Nas, 在终端执行 cat 命令获取UGID 和 PGID, 选择 admin的就可以1204,100<br>
+<img src="https://img.52smile.vip/2018-11-10-015913.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+> <img src="https://52smile.vip/wp-content/uploads/2018/11/15418155867170.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+>￼</li>
+</ul>
+<p>到这就完成安装了,不要忘记点击<strong>应用</strong> 然后在浏览器中输入你的群辉 IP, 端口号是刚才设置的端口号; 如果需要解锁, 默认解锁码是123456; tip: 如果不能下载,先停止容器类, 将 P/UGID 设置成 0;</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%B7%A7%E7%AF%86/">巧篆</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/macworkspace/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">给你的Mac搭建开发环境</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/frpnas/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Frp 内网穿透,把你的 NAS 放到公网上</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/usealfred/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">成吨节约您时间的效率神器--Alfred</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/vi%E7%BC%96%E8%BE%91%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VI编辑器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">mac终端命令</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='在计算机科学中, 数据结构是计算机中存储, 组织数据的方式.为编程语言提供数据类型; 一个好的数据结构应该尽可能的使用较少的空间和时间资源, 支持各种程序的运行. 忘记在哪里看到的了, 一个程序就是数据结构&#43;算法; 常见的数据结构如下:
+ 链表 数组 堆 栈 队列 哈希表 树 图 &amp;hellip;  链表 在物理内存上不一定是一段连续的存储空间, 增删的效率高于数组,因为他的特点是将数据与指标进行配对并指导计算机根据指标在内存中进行上/下一条数据的数据操作;增删的效率要比数组高, 因为不需要修改内存结构. 但是在查询上与数组一样, 都是线性查找;
+单向链表 单向链表是链表中最简单的一种, 一个元素包含两个域,一个信息域和指针域;, 一个元素被分成两个部分, 信息域保存或者显示有关元素的信息, 另外一个部分存储链表中的下一个元素,形成链接, 最后一个元素的节点指针指向空.单向链表只能通过next指针指向下一个节点; 双向链表 双向链表比单向链表复杂一些, 比单向链表多了一个prev指针指向上一个节点, 也就是说第二个元素可以知道我上一个节点和下一个节点在 位置信息; 循环链表 循环链表中的首节点元素和末尾节点元素连接在一起. 常见算法:  输入一个单向链表, 输出反转链表  //单链表的转置,循环方法 Node* reverseByLoop(Node *head) { if(head == NULL head-&amp;gt;next == NULL) return head; Node *pre = NULL; Node *next = NULL; while(head != NULL) { next = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = next; } return pre; } //单链表的转置,递归方法 Node* reverseByRecursion(Node *head) { //第一个条件是判断异常，第二个条件是结束判断 if(head == NULL head-&amp;gt;next == NULL) return head; Node *newHead = reverseByRecursion(head-&amp;gt;next); head-&amp;gt;next-&amp;gt;next = head; head-&amp;gt;next = NULL; return newHead; //返回新链表的头指针 } '>
+<title>数据结构(1)</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/datastructureone/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='数据结构(1)'>
+<meta property='og:description' content='在计算机科学中, 数据结构是计算机中存储, 组织数据的方式.为编程语言提供数据类型; 一个好的数据结构应该尽可能的使用较少的空间和时间资源, 支持各种程序的运行. 忘记在哪里看到的了, 一个程序就是数据结构&#43;算法; 常见的数据结构如下:
+ 链表 数组 堆 栈 队列 哈希表 树 图 &amp;hellip;  链表 在物理内存上不一定是一段连续的存储空间, 增删的效率高于数组,因为他的特点是将数据与指标进行配对并指导计算机根据指标在内存中进行上/下一条数据的数据操作;增删的效率要比数组高, 因为不需要修改内存结构. 但是在查询上与数组一样, 都是线性查找;
+单向链表 单向链表是链表中最简单的一种, 一个元素包含两个域,一个信息域和指针域;, 一个元素被分成两个部分, 信息域保存或者显示有关元素的信息, 另外一个部分存储链表中的下一个元素,形成链接, 最后一个元素的节点指针指向空.单向链表只能通过next指针指向下一个节点; 双向链表 双向链表比单向链表复杂一些, 比单向链表多了一个prev指针指向上一个节点, 也就是说第二个元素可以知道我上一个节点和下一个节点在 位置信息; 循环链表 循环链表中的首节点元素和末尾节点元素连接在一起. 常见算法:  输入一个单向链表, 输出反转链表  //单链表的转置,循环方法 Node* reverseByLoop(Node *head) { if(head == NULL head-&amp;gt;next == NULL) return head; Node *pre = NULL; Node *next = NULL; while(head != NULL) { next = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = next; } return pre; } //单链表的转置,递归方法 Node* reverseByRecursion(Node *head) { //第一个条件是判断异常，第二个条件是结束判断 if(head == NULL head-&amp;gt;next == NULL) return head; Node *newHead = reverseByRecursion(head-&amp;gt;next); head-&amp;gt;next-&amp;gt;next = head; head-&amp;gt;next = NULL; return newHead; //返回新链表的头指针 } '>
+<meta property='og:url' content='http://47.99.84.217/post/datastructureone/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='实用' /><meta property='article:published_time' content='2019-07-31T15:03:49&#43;08:00'/><meta property='article:modified_time' content='2019-07-31T15:03:49&#43;08:00'/>
+<meta name="twitter:title" content="数据结构(1)">
+<meta name="twitter:description" content="在计算机科学中, 数据结构是计算机中存储, 组织数据的方式.为编程语言提供数据类型; 一个好的数据结构应该尽可能的使用较少的空间和时间资源, 支持各种程序的运行. 忘记在哪里看到的了, 一个程序就是数据结构&#43;算法; 常见的数据结构如下:
+ 链表 数组 堆 栈 队列 哈希表 树 图 &amp;hellip;  链表 在物理内存上不一定是一段连续的存储空间, 增删的效率高于数组,因为他的特点是将数据与指标进行配对并指导计算机根据指标在内存中进行上/下一条数据的数据操作;增删的效率要比数组高, 因为不需要修改内存结构. 但是在查询上与数组一样, 都是线性查找;
+单向链表 单向链表是链表中最简单的一种, 一个元素包含两个域,一个信息域和指针域;, 一个元素被分成两个部分, 信息域保存或者显示有关元素的信息, 另外一个部分存储链表中的下一个元素,形成链接, 最后一个元素的节点指针指向空.单向链表只能通过next指针指向下一个节点; 双向链表 双向链表比单向链表复杂一些, 比单向链表多了一个prev指针指向上一个节点, 也就是说第二个元素可以知道我上一个节点和下一个节点在 位置信息; 循环链表 循环链表中的首节点元素和末尾节点元素连接在一起. 常见算法:  输入一个单向链表, 输出反转链表  //单链表的转置,循环方法 Node* reverseByLoop(Node *head) { if(head == NULL head-&amp;gt;next == NULL) return head; Node *pre = NULL; Node *next = NULL; while(head != NULL) { next = head-&amp;gt;next; head-&amp;gt;next = pre; pre = head; head = next; } return pre; } //单链表的转置,递归方法 Node* reverseByRecursion(Node *head) { //第一个条件是判断异常，第二个条件是结束判断 if(head == NULL head-&amp;gt;next == NULL) return head; Node *newHead = reverseByRecursion(head-&amp;gt;next); head-&amp;gt;next-&amp;gt;next = head; head-&amp;gt;next = NULL; return newHead; //返回新链表的头指针 } ">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#链表">链表</a></li>
+        <li><a href="#常见算法">常见算法:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" >
+                软件开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/datastructureone/">数据结构(1)</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 31, 2019</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>在计算机科学中, 数据结构是计算机中存储, 组织数据的方式.为编程语言提供数据类型; 一个好的数据结构应该尽可能的使用较少的空间和时间资源, 支持各种程序的运行. 忘记在哪里看到的了, 一个程序就是<strong>数据结构+算法</strong>; 常见的数据结构如下:</p>
+<ul>
+<li>链表</li>
+<li>数组</li>
+<li>堆</li>
+<li>栈</li>
+<li>队列</li>
+<li>哈希表</li>
+<li>树</li>
+<li>图</li>
+<li>&hellip;</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="链表">链表</h3>
+<p>在物理内存上不一定是一段连续的存储空间, 增删的效率高于数组,因为他的特点是将<strong>数据与指标</strong>进行配对并指导计算机根据指标在内存中进行上/下一条数据的数据操作;增删的效率要比数组高, 因为不需要修改内存结构. 但是在查询上与数组一样, 都是线性查找;</p>
+<h4 id="单向链表">单向链表</h4>
+<p>单向链表是链表中最简单的一种, 一个元素包含两个域,一个<strong>信息域</strong>和<strong>指针域</strong>;, 一个元素被分成两个部分, 信息域保存或者显示有关元素的信息, 另外一个部分存储链表中的下一个元素,形成链接, 最后一个元素的节点指针指向空.单向链表只能通过<code>next</code>指针指向下一个节点; <img src="http://img.52smile.vip/blog/2019-07-31-073150.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="单向链表"
+	
+	
+></p>
+<h4 id="双向链表">双向链表</h4>
+<p>双向链表比单向链表复杂一些, 比单向链表多了一个<code>prev</code>指针指向上一个节点, 也就是说第二个元素可以知道我上一个节点和下一个节点在 位置信息; <img src="http://img.52smile.vip/blog/2019-07-31-075456.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="双向链表"
+	
+	
+></p>
+<h4 id="循环链表">循环链表</h4>
+<p>循环链表中的首节点元素和末尾节点元素连接在一起. <img src="http://img.52smile.vip/blog/2019-08-01-015725.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="循环链表"
+	
+	
+></p>
+<h3 id="常见算法">常见算法:</h3>
+<ol>
+<li>输入一个单向链表, 输出反转链表</li>
+</ol>
+<pre tabindex="0"><code>//单链表的转置,循环方法
+Node* reverseByLoop(Node *head)
+{
+    if(head == NULL  head-&gt;next == NULL)
+        return head;
+    Node *pre = NULL;
+    Node *next = NULL;
+    while(head != NULL)
+    {
+        next = head-&gt;next;
+        head-&gt;next = pre;
+        pre = head;
+        head = next;
+    }
+    return pre;
+}
+//单链表的转置,递归方法
+Node* reverseByRecursion(Node *head)
+{
+    //第一个条件是判断异常，第二个条件是结束判断
+    if(head == NULL  head-&gt;next == NULL)
+        return head;
+    Node *newHead = reverseByRecursion(head-&gt;next);
+    head-&gt;next-&gt;next = head;
+    head-&gt;next = NULL;
+    return newHead;    //返回新链表的头指针
+}
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%AE%9E%E7%94%A8/">实用</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

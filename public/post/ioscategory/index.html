@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='分类的好处 用分类声明一些私有方法;
+分类一些体积庞大的类文件,eg: AppDelegate, 组织代码更灵活
+把 framework 的私有方法公开
+分类的特点  运行时决议, 在 runtime 添加到类中, 在编辑的时候分类会将分类方法作为一个数组,动态的添加到宿主类中, 如果存在同名的扩展方法, 那么最后一个参与编译的方法生效并覆盖之前的同名方法(但是还是实际存在的,不过优先级没有分类中的高), 但是可以通过一些代码决定调用最后一个参与编译的方法还是调用其他同名方法memcopy(array-&amp;gt;lists, addedLists,addedCount *sizeof*array()-&amp;gt;lists[0])) 覆盖宿主 方法的原因,; 为系统类添加分类 名字相同的分类会引起编译报错  分类中可以添加哪些内容  可以添加实例方法 类方法 协议 属性 只声明了 set get , 并没有在分类中添加实例变量 添加分类的实例变量, 需要通过关联对象进行设置  分类的结构体构成 //分类文件 struct category_t{  //分类名称  const char *name;  //分类所属的数组类  classref_t cls;  //实例方法列表  struct method_list_t *instanceMethods;  //类方法列表  struct method_list_t *classMethods;  //所有协议的方法列表  struct protocol_list_t *protocols;  //添加的所有属性  struct protocol_list_t *instanceProperties;  method_list_t *methodsForMeta(bool isMeta) {  if(isMeta) return classMethods;  else return instanceMethods;  }  protocol_list_t *propertiesForMeta(bool isMeta) {  if(isMeta) return nil;  else return instanceProperties;  } } 分类的加载调用栈   _objec_init'>
+<title>iOS 分类源码解读</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/ioscategory/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='iOS 分类源码解读'>
+<meta property='og:description' content='分类的好处 用分类声明一些私有方法;
+分类一些体积庞大的类文件,eg: AppDelegate, 组织代码更灵活
+把 framework 的私有方法公开
+分类的特点  运行时决议, 在 runtime 添加到类中, 在编辑的时候分类会将分类方法作为一个数组,动态的添加到宿主类中, 如果存在同名的扩展方法, 那么最后一个参与编译的方法生效并覆盖之前的同名方法(但是还是实际存在的,不过优先级没有分类中的高), 但是可以通过一些代码决定调用最后一个参与编译的方法还是调用其他同名方法memcopy(array-&amp;gt;lists, addedLists,addedCount *sizeof*array()-&amp;gt;lists[0])) 覆盖宿主 方法的原因,; 为系统类添加分类 名字相同的分类会引起编译报错  分类中可以添加哪些内容  可以添加实例方法 类方法 协议 属性 只声明了 set get , 并没有在分类中添加实例变量 添加分类的实例变量, 需要通过关联对象进行设置  分类的结构体构成 //分类文件 struct category_t{  //分类名称  const char *name;  //分类所属的数组类  classref_t cls;  //实例方法列表  struct method_list_t *instanceMethods;  //类方法列表  struct method_list_t *classMethods;  //所有协议的方法列表  struct protocol_list_t *protocols;  //添加的所有属性  struct protocol_list_t *instanceProperties;  method_list_t *methodsForMeta(bool isMeta) {  if(isMeta) return classMethods;  else return instanceMethods;  }  protocol_list_t *propertiesForMeta(bool isMeta) {  if(isMeta) return nil;  else return instanceProperties;  } } 分类的加载调用栈   _objec_init'>
+<meta property='og:url' content='http://47.99.84.217/post/ioscategory/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='iOS' /><meta property='article:published_time' content='2018-12-13T11:27:31&#43;08:00'/><meta property='article:modified_time' content='2018-12-13T11:27:31&#43;08:00'/>
+<meta name="twitter:title" content="iOS 分类源码解读">
+<meta name="twitter:description" content="分类的好处 用分类声明一些私有方法;
+分类一些体积庞大的类文件,eg: AppDelegate, 组织代码更灵活
+把 framework 的私有方法公开
+分类的特点  运行时决议, 在 runtime 添加到类中, 在编辑的时候分类会将分类方法作为一个数组,动态的添加到宿主类中, 如果存在同名的扩展方法, 那么最后一个参与编译的方法生效并覆盖之前的同名方法(但是还是实际存在的,不过优先级没有分类中的高), 但是可以通过一些代码决定调用最后一个参与编译的方法还是调用其他同名方法memcopy(array-&amp;gt;lists, addedLists,addedCount *sizeof*array()-&amp;gt;lists[0])) 覆盖宿主 方法的原因,; 为系统类添加分类 名字相同的分类会引起编译报错  分类中可以添加哪些内容  可以添加实例方法 类方法 协议 属性 只声明了 set get , 并没有在分类中添加实例变量 添加分类的实例变量, 需要通过关联对象进行设置  分类的结构体构成 //分类文件 struct category_t{  //分类名称  const char *name;  //分类所属的数组类  classref_t cls;  //实例方法列表  struct method_list_t *instanceMethods;  //类方法列表  struct method_list_t *classMethods;  //所有协议的方法列表  struct protocol_list_t *protocols;  //添加的所有属性  struct protocol_list_t *instanceProperties;  method_list_t *methodsForMeta(bool isMeta) {  if(isMeta) return classMethods;  else return instanceMethods;  }  protocol_list_t *propertiesForMeta(bool isMeta) {  if(isMeta) return nil;  else return instanceProperties;  } } 分类的加载调用栈   _objec_init">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#分类的好处">分类的好处</a></li>
+        <li><a href="#分类的特点">分类的特点</a></li>
+        <li><a href="#分类中可以添加哪些内容">分类中可以添加哪些内容</a></li>
+        <li><a href="#分类的结构体构成">分类的结构体构成</a></li>
+        <li><a href="#分类是如何加载的">分类是如何加载的</a></li>
+        <li><a href="#方法覆盖">方法覆盖</a></li>
+        <li><a href="#通过关联对象给分类添加成员变量">通过关联对象给分类添加成员变量</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ios/" >
+                iOS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/ioscategory/">iOS 分类源码解读</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 13, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h3 id="分类的好处">分类的好处</h3>
+<p>用分类声明一些私有方法;<br>
+分类一些体积庞大的类文件,eg: AppDelegate, 组织代码更灵活<br>
+把 framework 的私有方法公开</p>
+<h3 id="分类的特点">分类的特点</h3>
+<ul>
+<li>运行时决议, 在 runtime 添加到类中, 在编辑的时候分类会将分类方法作为一个数组,动态的添加到宿主类中, 如果存在同名的扩展方法, 那么最后一个参与编译的方法生效并覆盖之前的同名方法(<strong>但是还是实际存在的,不过优先级没有分类中的高</strong>), 但是可以通过一些代码决定调用最后一个参与编译的方法还是调用其他同名方法<code>memcopy(array-&gt;lists, addedLists,addedCount *sizeof*array()-&gt;lists[0])) 覆盖宿主 方法的原因,</code>;</li>
+<li>为系统类添加分类</li>
+<li>名字相同的分类会引起编译报错</li>
+</ul>
+<h3 id="分类中可以添加哪些内容">分类中可以添加哪些内容</h3>
+<ul>
+<li>可以添加实例方法</li>
+<li>类方法</li>
+<li>协议</li>
+<li>属性 只声明了 set get , 并没有在分类中添加实例变量</li>
+<li>添加分类的实例变量, 需要通过关联对象进行设置</li>
+</ul>
+<h3 id="分类的结构体构成">分类的结构体构成</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//分类文件
+</span></span><span style="display:flex;"><span>struct category_t{
+</span></span><span style="display:flex;"><span>    //分类名称
+</span></span><span style="display:flex;"><span>    const char *name;
+</span></span><span style="display:flex;"><span>    //分类所属的数组类
+</span></span><span style="display:flex;"><span>    classref_t cls;
+</span></span><span style="display:flex;"><span>    //实例方法列表
+</span></span><span style="display:flex;"><span>    struct method_list_t *instanceMethods;
+</span></span><span style="display:flex;"><span>    //类方法列表
+</span></span><span style="display:flex;"><span>    struct method_list_t *classMethods;
+</span></span><span style="display:flex;"><span>    //所有协议的方法列表
+</span></span><span style="display:flex;"><span>    struct protocol_list_t *protocols;
+</span></span><span style="display:flex;"><span>    //添加的所有属性
+</span></span><span style="display:flex;"><span>    struct protocol_list_t *instanceProperties;
+</span></span><span style="display:flex;"><span>    method_list_t *methodsForMeta(bool isMeta) {
+</span></span><span style="display:flex;"><span>        if(isMeta) return classMethods;
+</span></span><span style="display:flex;"><span>        else return instanceMethods;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    protocol_list_t *propertiesForMeta(bool isMeta) {
+</span></span><span style="display:flex;"><span>        if(isMeta) return nil;
+</span></span><span style="display:flex;"><span>        else return instanceProperties;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="分类的加载调用栈">分类的加载调用栈</h4>
+<ol>
+<li>
+<p>_objec_init<br>
+入口调用</p>
+</li>
+<li>
+<p>map_2_images<br>
+数据镜像映射之类的吧, 我也不怎么懂</p>
+</li>
+<li>
+<p>map_images_nolock<br>
+数据镜像映射之类的吧, 我也不怎么懂</p>
+</li>
+<li>
+<p>read_images<br>
+objec 源代码中, map_images_noloc会调用此方法, 将读取到的数据镜像,将解析到的信息(方法和协议)传递给<code>remethodizeClass</code>(猜的), 添加到类和类的元类上<br>
+<img src="https://img.52smile.vip/2018-12-13-070041.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>remethodizeClass<br>
+整合class 中的所有分类, 进行操作;<br>
+此过程会将分类的属性,协议,方法都添加到类中;<br>
+下面会有详细的说明关于<strong>分类是如何加载的</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>static void remethodizeClass(Class cls)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    category_list *cats;
+</span></span><span style="display:flex;"><span>    bool isMeta;
+</span></span><span style="display:flex;"><span>    runtimeLock.assertWriting();
+</span></span><span style="display:flex;"><span>    isMeta = cls-&gt;isMetaClass();
+</span></span></code></pre></div></li>
+</ol>
+<p>[       // Re-methodizing: check for more categories]
+if ((cats = unattachedCategoriesForClass(cls, false/<em>not realizing</em>/))) {
+if (PrintConnecting) {
+[               _objc_inform(&ldquo;CLASS: attaching categories to class &lsquo;%s&rsquo; %s&rdquo;, ]
+cls-&gt;nameForLogging(), isMeta ? &ldquo;(meta)&rdquo; : &ldquo;&rdquo;);
+}
+attachCategories(cls, cats, true /<em>flush caches</em>/);     <br>
+free(cats);
+}
+}
+```</p>
+<h3 id="分类是如何加载的">分类是如何加载的</h3>
+<p><img src="https://img.52smile.vip/2018-12-13-072228.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="remethodizeClass"
+	
+	
+> <img src="https://img.52smile.vip/2018-12-13-073451.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="方法覆盖">方法覆盖</h3>
+<p>我们上面说了一些<code>category</code>原理, 如果存在同名方法的话, 宿主类中的方法会被覆盖掉, 那么我们如何调用宿主类中被覆盖的方法呢?<br>
+刚才说了, 并不是被覆盖掉了, 而是优先级的问题, 我们只要顺着方法列表找到最后一个对应名字的方法就可以啦~</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Class currentClass = [MyClass class];
+</span></span><span style="display:flex;"><span>MyClass *my = [[MyClass alloc] init];
+</span></span><span style="display:flex;"><span>if (currentClass) {
+</span></span><span style="display:flex;"><span>    unsigned int methodCount;
+</span></span><span style="display:flex;"><span>    Method *methodList = class_copyMethodList(currentClass, &amp;methodCount);
+</span></span><span style="display:flex;"><span>    IMP lastImp = NULL;
+</span></span><span style="display:flex;"><span>    SEL lastSel = NULL;
+</span></span><span style="display:flex;"><span>    for (NSInteger i = 0; i &lt; methodCount; i++) {
+</span></span><span style="display:flex;"><span>        Method method = methodList[i];
+</span></span><span style="display:flex;"><span>        NSString *methodName = [NSString stringWithCString:sel_getName(method_getName(method))
+</span></span><span style="display:flex;"><span>                                        encoding:NSUTF8StringEncoding];
+</span></span><span style="display:flex;"><span>        if ([@&#34;printName&#34; isEqualToString:methodName]) {
+</span></span><span style="display:flex;"><span>            lastImp = method_getImplementation(method);
+</span></span><span style="display:flex;"><span>            lastSel = method_getName(method);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    typedef void (*fn)(id,SEL);
+</span></span><span style="display:flex;"><span>    if (lastImp != NULL) {
+</span></span><span style="display:flex;"><span>        fn f = (fn)lastImp;
+</span></span><span style="display:flex;"><span>        f(my,lastSel);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    free(methodList);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="通过关联对象给分类添加成员变量">通过关联对象给分类添加成员变量</h3>
+<p>关联对象由<code>AssociationsManager</code>管理并在 <code>AssociationsHashMap</code>中存储;<br>
+<code>AssociationsHashMap</code> 是一个全局容器, 通过一个映射表来操作到具体不同的类</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#import &#34;MyClass.h&#34;
+</span></span><span style="display:flex;"><span>@interface MyClass (Category1)
+</span></span><span style="display:flex;"><span>@property(nonatomic,copy) NSString *name;
+</span></span><span style="display:flex;"><span>@end
+</span></span><span style="display:flex;"><span>#import &#34;MyClass+Category1.h&#34;
+</span></span><span style="display:flex;"><span>#import &lt;objc/runtime.h&gt;
+</span></span><span style="display:flex;"><span>@implementation MyClass (Category1)
+</span></span><span style="display:flex;"><span>+ (void)load
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    NSLog(@&#34;%@&#34;,@&#34;load in Category1&#34;);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>- (void)setName:(NSString *)name
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    objc_setAssociatedObject(self,
+</span></span><span style="display:flex;"><span>                             &#34;name&#34;,
+</span></span><span style="display:flex;"><span>                             name,
+</span></span><span style="display:flex;"><span>                             OBJC_ASSOCIATION_COPY);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>- (NSString*)name
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    NSString *nameObject = objc_getAssociatedObject(self, &#34;name&#34;);
+</span></span><span style="display:flex;"><span>    return nameObject;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>@end
+</span></span></code></pre></div><p>关联对象实现原理<br>
+<img src="https://img.52smile.vip/2018-12-13-083719.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="关联对象实现原理"
+	
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ios/">iOS</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/iostouchevent/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">UI事件传递以及事件响应原理</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/reusecell/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">模仿 tableViewCell 实现一个简易的重用视图</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/groupwithtime/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">对 tableView 数据源中的时间进行分组排序</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/uitableview%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">UITableView性能优化</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/ios%E4%B9%8Buiappearance/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS之UIAppearance</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

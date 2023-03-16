@@ -3,7 +3,7 @@ title: Ajax 初识
 date: 2018-04-17T15:01:46+08:00 
 draft: false
 tags: ['前端']
-categories: ['南腔北调']
+categories: ['软件开发']
 ---
 
 Ajax AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。并不是一种开发语言,是聪明的程序员对 javascript 的创造性用法; Ajax 提供与服务器异步通信的能力,最简单的应用就是无需刷新整个页面而更新网页某一个部分的数据,更快,更高,更强~~~ 使用这个技术还是很简单的.

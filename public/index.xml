@@ -1,19 +1,3761 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title></title>
-      <link>http://example.org/</link>
-      <pubDate>Thu, 12 May 2022 13:24:43 +0800</pubDate>
-      
-      <guid>http://example.org/</guid>
-      <description>this is Code</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>煎人寿</title>
+        <link>http://47.99.84.217/</link>
+        <description>Recent content on 煎人寿</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sun, 20 Nov 2022 17:52:38 +0800</lastBuildDate><atom:link href="http://47.99.84.217/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Flutter 渐变</title>
+        <link>http://47.99.84.217/post/flutter-%E6%B8%90%E5%8F%98/</link>
+        <pubDate>Sun, 20 Nov 2022 17:52:38 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/flutter-%E6%B8%90%E5%8F%98/</guid>
+        <description>&lt;p&gt;太久没写技术博客啦.    最近一直在用&lt;code&gt;fluter&lt;/code&gt;做app,  前几天有个功能需要用渐变色来做一个文本.&lt;/p&gt;
+&lt;p&gt;我回想起几年前被我们UI设计师支配的恐惧, 那个UI特别喜欢用渐变色跟圆角, 以至于天天跟CALayer之类的打交道.&lt;/p&gt;
+&lt;p&gt;如果想要在flutter上实现渐变色就太简单了, 在&lt;code&gt;Container&lt;/code&gt;容器中有一个修饰器&lt;code&gt;decoration&lt;/code&gt;中 有一个 &lt;code&gt;gradient&lt;/code&gt;属性,  你只要给这个属性设置值, 就可以对容器设置渐变色了.
+代码如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>2019买票记</title>
+        <link>http://47.99.84.217/post/2019getticket/</link>
+        <pubDate>Mon, 30 Dec 2019 16:10:39 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/2019getticket/</guid>
+        <description>&lt;p&gt;不知道何时, 电脑已经开始运行了;&lt;/p&gt;
+&lt;p&gt;第一个启动的用户进程, 白衣飘雪, 赫然是归家心切人心中白衣剑仙, 智行;&lt;/p&gt;
+&lt;p&gt;他看起来很疲惫, 似乎是经历了一场残酷的争斗.身上的白衣渗出点点血梅.&lt;/p&gt;
+&lt;p&gt;就在此时, 忽然剑光一闪, 如匹练,如瀑布,如流星,如闪电, 智行不能抵挡, 也挡不住, 他开始后退, 他脚不点地的后退.&lt;/p&gt;
+&lt;p&gt;但是剑光如惊鸿掣电般追击. 真正的绝世高手对自己每一分寸的力量都会计算的恰到好处,他已经避无可避.&lt;/p&gt;
+&lt;p&gt;这时, 只见智行轻轻地伸出两根手指一夹, 这无匹的剑光竟然被着灵犀一指给夹住了剑锋.&lt;/p&gt;
+&lt;p&gt;没有人能够看清楚这两个手指是如何精妙的取到了这剑锋;&lt;/p&gt;
+&lt;p&gt;铁总无论如何也想不到, 自己这去势汹涌一剑竟然会被如此轻描淡写的化解.&lt;/p&gt;
+&lt;p&gt;铁总身子已然落下, 剑上也在没有力量传出, 寒星般的眼睛冷冷的盯着智行; 智行的戏谑的目光也在毫无顾忌的在铁总身上扫来扫去,&lt;/p&gt;
+&lt;p&gt;忽然道:&amp;ldquo;铁总?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;铁总道:&amp;ldquo;你看得出?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;智行叹了口气, :&amp;quot; 除了铁总, 世上还有谁能使得出这种剑法, 上有姚明蜂蜜打篮球, 下有餐盘鞭炮交通灯. 多少人倒在了这个扑朔迷离的验证码上&amp;quot;;&lt;/p&gt;
+&lt;p&gt;铁总点了点头然后道:&amp;ldquo;那么 , 继续吧&amp;rdquo;;&lt;/p&gt;
+&lt;p&gt;铁总挽了个剑花, 抖出万千剑光 ;&lt;/p&gt;
+&lt;p&gt;智行分出千万线程, 去拼命的截住这些剑光, 智行眼光明亮, 亮如明灯;&lt;/p&gt;
+&lt;p&gt;铁总看到毫不在意, 绣口一吐, 又是万千剑花纷纷扬扬;&lt;/p&gt;
+&lt;p&gt;智行这个时候已经无心再分出身体去截这些光了, 更何况, 他已经无力去做这件事情了, 铁总的剑早已穿透他的身体, 如梅花 如流星, 飞向每一个迫切想回家的人;&lt;/p&gt;
+&lt;p&gt;得到的人欣喜若狂, 泣涕涟涟;&lt;/p&gt;
+&lt;p&gt;智行的血已经凉了, 骨头也已经凉了. 智行的眼睛充满了怨毒与愤怒, 凉了就凉了吧;&lt;/p&gt;
+&lt;p&gt;钱, 我已经赚足够多了;&lt;/p&gt;
+&lt;p&gt;铁总挥了挥手, 对正在观战的众人说 说到底, 你们只是开始想家了; 加钱加速, 给钱黄牛, 玄学抢票;&lt;/p&gt;
+&lt;p&gt;我会努力加班加点, 带你们更多人回家;&lt;/p&gt;
+&lt;p&gt;让你能回家吃上团圆的饺子;&lt;/p&gt;
+&lt;p&gt;小苏静静地躺在候补席中, 悄无声息的啃着烧饼, 想着远处，一花一叶，一木一石,悄然落泪;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>人间世</title>
+        <link>http://47.99.84.217/post/ren-jian-shi/</link>
+        <pubDate>Thu, 21 Nov 2019 11:57:56 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ren-jian-shi/</guid>
+        <description>&lt;h4 id=&#34;机场小记&#34;&gt;机场小记&lt;/h4&gt;
+&lt;p&gt;那一年我从怡利离职离开新疆, 当时第一次坐飞机, 好多事情都不知道, 我就把无线游戏手柄装到了行李箱里. 后来过安检, 滴滴滴响个不停, 两个武警上来就把我围住了, 问我是什么东西. 我想了很久, 我说没什么违禁物品啊; 武警小哥就让我开箱检查, 我衬衣T恤都拿出来了,我的键盘被裹挟这也带了出来, 小哥看了一眼, 嗯, 那个金属应该是里面的钢板了, 另外一个小哥看到了我的游戏手柄, 问我是不是无线的,里面有电池吧. 行了行了收起来吧, 武警小哥说; 然后问我键盘是什么轴的啊, 手柄好不好用啊, 跟我唠了会家常让我去值机去了; 坐上飞机后我看着天上的云层我想这, 那两个小哥哥也是跟我一样大的年龄啊; 他们已经为保卫人民财产而奋斗了; 祝福他们&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>诗词摘抄</title>
+        <link>http://47.99.84.217/post/shi-ci-zhai-chao/</link>
+        <pubDate>Mon, 23 Sep 2019 09:41:37 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/shi-ci-zhai-chao/</guid>
+        <description>&lt;p&gt;小时候唐诗三百首买过好多套, 也背了不少,当然啦,中学写作文也没少引用,哈哈哈; 工作之后越来越多的焦虑和压力袭来, 那份诗词带来的绝美可以慰藉一下心灵; 每读怦然心动的都会记下来, 共赏之;&lt;/p&gt;
+&lt;h3 id=&#34;一愿郎君千岁二愿妾身常健三愿如同梁上燕岁岁常相见&#34;&gt;一愿郎君千岁，二愿妾身常健。三愿如同梁上燕，岁岁常相见。&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;春日宴，绿酒一杯歌一遍。再拜陈三愿：一愿郎君千岁，二愿妾身常健，三愿如同梁上燕，岁岁长相见。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这首词是当时看&amp;lt;琅琊榜&amp;gt;大结局林殊写给霓凰的信时. 想到的; 信的原文也挺感人的:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;吾妹霓凰，见字如面。 兄有三愿，一愿长安康，二愿常喜乐，三愿莫痴候。 戎马倥偬，逝水如斯，不可彷徨独宿。今生奈何，情深缘浅。偷得朝夕已是奢，苍天怜我。承君一诺，来生必践。青青河畔，寻常人家，粗衣淡茶，共白头，长相守。 ——天佑六年十一月二十三日 兄林殊字&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;君埋泉下泥销骨我寄人间雪满头&#34;&gt;君埋泉下泥销骨，我寄人间雪满头.&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;夜来携手梦同游，晨起盈巾泪莫收。 漳浦老身三度病，咸阳宿草八回秋。 君埋泉下泥销骨，我寄人间雪满头。 阿卫韩郎相次去，夜台茫昧得知不？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;白居易和元稹真的是好基友啊&lt;/p&gt;
+&lt;h3 id=&#34;君住长江头-我住长江尾&#34;&gt;君住长江头, 我住长江尾&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我住长江头，君住长江尾。日日思君不见君，共饮长江水。 此水几时休，此恨何时已。只愿君心似我心，定不负相思意。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;醉后不知天在水满船清梦压星河&#34;&gt;醉后不知天在水，满船清梦压星河。&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;唐温如《题龙阳县青草湖》 西风吹老洞庭波，一夜湘君白发多。 醉后不知天在水，满船清梦压星河。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;写的太好了, 如果这首词不被收在全唐诗中, 恐怕就流失在漫长的历史长河中, 所幸得以保存, 搁着千年的时光温暖我&lt;/p&gt;
+&lt;h3 id=&#34;飞光飞光-劝尔一杯酒吾不识青天高-黄地厚&#34;&gt;飞光飞光, 劝尔一杯酒,吾不识青天高 黄地厚&lt;/h3&gt;
+&lt;p&gt;飞光飞光，劝尔一杯酒。吾不识青天高，黄地厚。 惟见月寒日暖，来煎人寿。食熊则肥，食蛙则瘦。 神君何在？太一安有？天东有若木，下置衔烛龙。 吾将斩龙足，嚼龙肉，使之朝不得回，夜不得伏。 自然老者不死，少者不哭。 何为服黄金，吞白玉？ 谁似任公子，云中骑碧驴？ 刘彻茂陵多滞骨，嬴政梓棺费鲍鱼。 真不负诗鬼之称, 光怪陆离; 感情去的话可以去看看他的诗&lt;/p&gt;
+&lt;h3 id=&#34;月光还是少年的月光-九州一色还是李白的霜&#34;&gt;月光还是少年的月光, 九州一色还是李白的霜&lt;/h3&gt;
+&lt;p&gt;月光还是少年的月光, 九州一色还是李白的霜 祖国已非少年的祖国 纵我见青山一发多妩媚 余光中笔下的李白, 是如一道闪电击中混沌的内心 &amp;mdash;&amp;ndash; &amp;lt;独白&amp;gt;, 余光中 [TOC]&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>自记杂感</title>
+        <link>http://47.99.84.217/post/self/</link>
+        <pubDate>Tue, 17 Sep 2019 14:15:30 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/self/</guid>
+        <description>&lt;p&gt;观书常有感触,作文以记之;&lt;/p&gt;
+&lt;p&gt;想起来小时候等父母回家, 冬天趴在院墙头瞧着旷野处的大雪被来来回回的车轧出黑色的车辙, 远处的麻雀飞向没有叶子的巢,灰色的云彩低垂在天边,时间渐渐的流动,大地上的光芒被缓缓抽离,最后一丝夕阳的余晖也渐渐消失; 然后清冷的月光铺散到地面上,倾泻下来,像缓缓流动的香,村子里家家户户开始飘出炊烟的味道,月光映着,缕缕升起; &amp;mdash;- 2019-09-17&lt;/p&gt;
+&lt;p&gt;今天阳光灿烂, 刚好随机播放到了周董的等你下课, 觉得好好玩啊;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;高中三年 我为什么 为什么不好好读书 没考上跟你一样的大学&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为什么不好好读书心里没点数嘛 晴天里 为你翘课的那一天 听妈妈的话里 用功读书怎么会从我嘴巴说出 蒲公英的约定里面 在走廊上罚站打手心 我们却注意窗外的蜻蜓 哈哈哈哈哈哈&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>转战Spotify</title>
+        <link>http://47.99.84.217/post/gossiptwo/</link>
+        <pubDate>Tue, 03 Sep 2019 11:11:07 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/gossiptwo/</guid>
+        <description>&lt;p&gt;我使用网易云音乐很久了.&lt;/p&gt;
+&lt;p&gt;最久远的记忆不知道是不是当时去大学找朋友回来的路上听得许巍的难忘的一天;&lt;/p&gt;
+&lt;p&gt;当时临近14年毕业, 工作的事情也已经定好,余下的两个月时间就在家里的地里帮忙.&lt;/p&gt;
+&lt;p&gt;有一天我心血来潮特别想她, 就去学校找她了; 记得当时脸没洗牙没刷头发乱哄哄的, 她没嫌弃我哈哈哈; 真是个好朋友;&lt;/p&gt;
+&lt;p&gt;后来也一直用网易云, 毕业后做了化学, 经常需要倒班, 那段时间因为倒班搞得我长时间心情压抑, 每天翻来覆去就是民谣,花粥马頔宋冬野, 赵雷李志张玮玮,贰佰老狼尧十三;听得我更压抑了;&lt;/p&gt;
+&lt;p&gt;到15年年初转行撸代码,心情终于好了些,没那么压抑,没有难受了; 曲风也渐转,又重新听许巍崔健朴树郑钧汪峰了, 感觉自己更有激情了呢;哈哈哈;&lt;/p&gt;
+&lt;p&gt;再往后,网易版权越来越弱, 再加上有些歌手因为发表一些政治不正确的言论被封禁, 网易上变灰的越来越多,最可怕的是下面的评论越来越让人脑壳疼, 强行加戏把我都尴尬的不行;&lt;/p&gt;
+&lt;p&gt;主要是优越感太他娘的重了, 这是音乐, 听古典的鄙视听爵士的,听爵士的鄙视听摇滚的, 听摇滚的鄙视听民谣的;好好听歌不成嘛, 非得编故事, 编故事就好好编呀, 85年的歌你说爷爷奶奶刚认识的时候特别喜欢,爷爷还用这首歌追到了奶奶,小宝贝啊, 是1985年的歌, 不是1885年的歌啊,不过这无论是1885还是1985都挺可怕的啊哈哈哈哈哈;我就是来听歌的,想看故事我就去啥乎了啊;&lt;/p&gt;
+&lt;p&gt;好好做人, 认真编故事好伐; 真当自己是乎,要与世界分享您刚编的故事呢; 所以我来Sootify听歌了;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>一想到你我就...</title>
+        <link>http://47.99.84.217/post/teasingone/</link>
+        <pubDate>Tue, 03 Sep 2019 10:10:08 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/teasingone/</guid>
+        <description>&lt;p&gt;一想到你我就,空恨别梦久;
+为什么不是想起了爱荷华州美丽的平原。我们之间相隔的距离，使我意志消沉，没有你的时光和旅程对我来说毫无意义。与你相爱是我做过的最轻松的事，没有什么比你更重要，在我活着的每一天我都会深深地感觉到，遇见你的那天，我就已爱上你，余生也会继续爱你;&lt;/p&gt;
+&lt;p&gt;一想到你我就,空恨别梦久; 为什么不是想起了一个幽静的湖泊，岸边是茂密的白桦林，深秋的白桦林色彩斑斓，秋风轻轻掠过，白桦林飒飒作响……我们的小船静静地划动，桨声轻柔，水波荡漾，林中的夜莺在婉转歌唱……&lt;/p&gt;
+&lt;p&gt;一想到你我就,空恨别梦久; 为什么不是想起来锦书难托,枯坐窗前,咽泪装欢,任阶前雨,点滴到天明. 为什么偏偏是一想到你我就空恨别梦久; 为什么身骑白马的不是至尊宝 为什么身骑白马的不是陈庆之 为什么身骑白马的不是李文秀 为什么偏偏是这个薛平贵&lt;/p&gt;
+&lt;p&gt;这几天想吐槽的事情挺多的, 我才知道鱼由七秒钟的记忆竟然是徐志摩这个渣男编造出来的.这厮真是个孙贼;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>射雕英雄传-闲话(一)</title>
+        <link>http://47.99.84.217/post/gossipthree/</link>
+        <pubDate>Tue, 13 Aug 2019 09:10:04 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/gossipthree/</guid>
+        <description>&lt;p&gt;射雕英雄传 喜欢武侠, 有的时候会写一些感触或者是摘抄; 中学时代很喜欢李商隐的诗词,&lt;strong&gt;昨夜星辰昨夜风，画楼西畔桂堂东&lt;/strong&gt;。有一次在网上看到这一句:&lt;strong&gt;&amp;ldquo;似此星辰非昨夜，为谁风露立中宵;&amp;rdquo;&lt;/strong&gt; 忽然想到了射雕里面的这一段:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一灯黯然道：“此后大半年中，我没召见刘贵妃，但睡梦之中却常和她相会。一天晚上半夜梦回，再也忍耐不住，决意前去探望。我也不让宫女太监知晓，悄悄去她寝宫，想瞧瞧她在干些甚么。刚到她寝宫屋顶，便听得里面传出一阵儿啼之声。咳，屋面上霜浓风寒，我竟怔怔的站了半夜，直到黎明方才下来，就此得了一场大病。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;金花婆婆道：“谢三哥，你向来心肠软，我当时真没料到，武林中那许多成名的英雄豪杰，都是你一手所杀。” 谢逊,字退思呀; 阳顶天让他做代副教主,想来应该也是个谦谦君子温润如玉的人吧. 好可惜, 好恨成昆;如果不是成昆怎么会成为这样一个人&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>数据结构(1)</title>
+        <link>http://47.99.84.217/post/datastructureone/</link>
+        <pubDate>Wed, 31 Jul 2019 15:03:49 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/datastructureone/</guid>
+        <description>&lt;p&gt;在计算机科学中, 数据结构是计算机中存储, 组织数据的方式.为编程语言提供数据类型; 一个好的数据结构应该尽可能的使用较少的空间和时间资源, 支持各种程序的运行. 忘记在哪里看到的了, 一个程序就是&lt;strong&gt;数据结构+算法&lt;/strong&gt;; 常见的数据结构如下:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;链表&lt;/li&gt;
+&lt;li&gt;数组&lt;/li&gt;
+&lt;li&gt;堆&lt;/li&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;li&gt;队列&lt;/li&gt;
+&lt;li&gt;哈希表&lt;/li&gt;
+&lt;li&gt;树&lt;/li&gt;
+&lt;li&gt;图&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;链表&#34;&gt;链表&lt;/h3&gt;
+&lt;p&gt;在物理内存上不一定是一段连续的存储空间, 增删的效率高于数组,因为他的特点是将&lt;strong&gt;数据与指标&lt;/strong&gt;进行配对并指导计算机根据指标在内存中进行上/下一条数据的数据操作;增删的效率要比数组高, 因为不需要修改内存结构. 但是在查询上与数组一样, 都是线性查找;&lt;/p&gt;
+&lt;h4 id=&#34;单向链表&#34;&gt;单向链表&lt;/h4&gt;
+&lt;p&gt;单向链表是链表中最简单的一种, 一个元素包含两个域,一个&lt;strong&gt;信息域&lt;/strong&gt;和&lt;strong&gt;指针域&lt;/strong&gt;;, 一个元素被分成两个部分, 信息域保存或者显示有关元素的信息, 另外一个部分存储链表中的下一个元素,形成链接, 最后一个元素的节点指针指向空.单向链表只能通过&lt;code&gt;next&lt;/code&gt;指针指向下一个节点; &lt;img src=&#34;http://img.52smile.vip/blog/2019-07-31-073150.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;单向链表&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;双向链表&#34;&gt;双向链表&lt;/h4&gt;
+&lt;p&gt;双向链表比单向链表复杂一些, 比单向链表多了一个&lt;code&gt;prev&lt;/code&gt;指针指向上一个节点, 也就是说第二个元素可以知道我上一个节点和下一个节点在 位置信息; &lt;img src=&#34;http://img.52smile.vip/blog/2019-07-31-075456.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;双向链表&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;循环链表&#34;&gt;循环链表&lt;/h4&gt;
+&lt;p&gt;循环链表中的首节点元素和末尾节点元素连接在一起. &lt;img src=&#34;http://img.52smile.vip/blog/2019-08-01-015725.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;循环链表&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;常见算法&#34;&gt;常见算法:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;输入一个单向链表, 输出反转链表&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//单链表的转置,循环方法
+Node* reverseByLoop(Node *head)
+{
+    if(head == NULL  head-&amp;gt;next == NULL)
+        return head;
+    Node *pre = NULL;
+    Node *next = NULL;
+    while(head != NULL)
+    {
+        next = head-&amp;gt;next;
+        head-&amp;gt;next = pre;
+        pre = head;
+        head = next;
+    }
+    return pre;
+}
+//单链表的转置,递归方法
+Node* reverseByRecursion(Node *head)
+{
+    //第一个条件是判断异常，第二个条件是结束判断
+    if(head == NULL  head-&amp;gt;next == NULL)
+        return head;
+    Node *newHead = reverseByRecursion(head-&amp;gt;next);
+    head-&amp;gt;next-&amp;gt;next = head;
+    head-&amp;gt;next = NULL;
+    return newHead;    //返回新链表的头指针
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>分身不乏术,Objective-C的多线程</title>
+        <link>http://47.99.84.217/post/ios-gcd-nsoperation/</link>
+        <pubDate>Fri, 03 May 2019 20:48:49 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ios-gcd-nsoperation/</guid>
+        <description>&lt;p&gt;我们在现实生活中,往往会在统一调时间线上同时做好几件事情, 比如刷牙的时候看手机,为了不浪费时间,我们总是同时进行两件三件甚至更多的事情;而在编程的世界中, 我们可以通过软件或者硬件上实现多个线程并发执行的技术来做到类似现实世界中的行为, 这就叫做多线程;能够大大提升整体处理性能;&lt;/p&gt;
+&lt;p&gt;很多编程语言都实现了这种功能,java, .net,C++, php的pthreads和swoole,oc当然也不例外, 下面我们就来了解一下我们在oc中会经常用到的多线程技术GCD和NSOperation,NSOperationQueue;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;gcd&#34;&gt;GCD&lt;/h2&gt;
+&lt;h3 id=&#34;gcd的好处&#34;&gt;GCD的好处&lt;/h3&gt;
+&lt;p&gt;能够充分利用iOS或者macOS多核心的特性,大大提高整体的处理性能和计算能力;&lt;/p&gt;
+&lt;h3 id=&#34;gcd的队列和任务&#34;&gt;GCD的队列和任务&lt;/h3&gt;
+&lt;h4 id=&#34;任务&#34;&gt;任务&lt;/h4&gt;
+&lt;p&gt;即一个操作行为,或者是要执行的代码块; 类似买票的行为,即一个任务;&lt;/p&gt;
+&lt;h4 id=&#34;队列&#34;&gt;队列&lt;/h4&gt;
+&lt;p&gt;执行任务的调度池, 用来存放任务,一个一个的任务被创建好之后放入队列中等待执行; 采用先进先出的原则,类似排队买票的行为;&lt;/p&gt;
+&lt;h5 id=&#34;同步队列sync&#34;&gt;同步队列(sync)&lt;/h5&gt;
+&lt;p&gt;添加任务同步队列,任务会一个接着一个去执行,后一个任务等待前一个任务的完毕状态; 同步队列不会开启新的线程; 类似一个窗口买票的而行为, 长长的队伍只能慢慢的等待;&lt;/p&gt;
+&lt;h5 id=&#34;异步队列async&#34;&gt;异步队列(async)&lt;/h5&gt;
+&lt;p&gt;任务被添加到异步队列后, 如果线程开启的足够多, 那么每一个任务不会做任何等待. 每个任务都可已开启一新的线程去执行; 类似多个窗口买票的行为, 10个窗口,10个人买票,一个人一个窗口, 不用等待; 当然啦, 理论上是可行的,但是实际开启线程过多会很影响CPU的效率, CPU会一直对调度池进行轮询; CPU就累死了;所以, 合理开启线程个数还是很有必要的;&lt;/p&gt;
+&lt;h3 id=&#34;gcd的使用&#34;&gt;GCD的使用&lt;/h3&gt;
+&lt;p&gt;GCD的使用非常简单, 我们创建一个队列,然后将想要执行的任务添加到队列中;&lt;/p&gt;
+&lt;h4 id=&#34;创建队列&#34;&gt;创建队列&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// 串行队列的创建方法
+dispatch_queue_t queue = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_SERIAL);
+// 并发队列的创建方法
+dispatch_queue_t queue = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_CONCURRENT);
+//全局并发队列
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+//主队列
+dispatch_queue_t queue = dispatch_get_main_queue();
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;任务-1&#34;&gt;任务&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// 同步执行任务创建方法
+dispatch_sync(queue, ^{
+    // 这里放同步执行任务代码
+});
+// 异步执行任务创建方法
+dispatch_async(queue, ^{
+    // 这里放异步执行任务代码
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;实际使用当中,使用的比较多的就是&lt;code&gt;异步任务+并行队列&lt;/code&gt; ,&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-(void)asyncWithParallelQueue{
+   NSLog(@&amp;#34;currentThread---%@&amp;#34;,[NSThread currentThread]);  // 打印当前线程
+    NSLog(@&amp;#34;asyncConcurrent---begin&amp;#34;);
+    dispatch_queue_t queue = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        // 追加任务1
+        for (int i = 0; i &amp;lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&amp;#34;1---%@&amp;#34;,[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    dispatch_async(queue, ^{
+        // 追加任务2
+        for (int i = 0; i &amp;lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&amp;#34;2---%@&amp;#34;,[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    dispatch_async(queue, ^{
+        // 追加任务3
+        for (int i = 0; i &amp;lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&amp;#34;3---%@&amp;#34;,[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    NSLog(@&amp;#34;asyncConcurrent---end&amp;#34;);
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以看到除了主线程之外，系统开启了3个线程，并且任务可以看做是同时执行的。（异步执行具备开启新线程的能力。且并发队列可开启多个线程，同时执行多个任务）。所有任务是在打印的syncConcurrent&amp;mdash;begin和syncConcurrent&amp;mdash;end之后才执行的。说明当前线程没有等待，而是直接开启了新线程，在新线程中执行任务（异步执行不做等待，如果存在空闲的线程可以继续执行任务）。&lt;/p&gt;
+&lt;h3 id=&#34;线程之间的通信&#34;&gt;线程之间的通信&lt;/h3&gt;
+&lt;p&gt;如果我们在主线中使用了耗时任务例如下载,合成图片,I/O等操作时, 会对UI造成阻塞, 造成界面不能响应触摸,滚动,刷新等异常,所以我们一般会将这些耗时操作放到子线程中进行执行, 这样就会有一个不可避免的问题,就是我们在子线程中处理完操作后需要把处理结果放到主线程中进行更新数据或者UI,这就会有一个线程之间通信的问题, 万幸的是,GCD已经为我们提供了相应的方法;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/**
+ * 线程间通信
+ */
+- (void)sendMSG{
+    // 获取全局并发队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // 获取主队列
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    dispatch_async(queue, ^{
+        // 异步追加任务
+        for (int i = 0; i &amp;lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&amp;#34;1---%@&amp;#34;,[NSThread currentThread]);      // 打印当前线程
+        }
+        // 回到主线程
+        dispatch_async(mainQueue, ^{
+            // 追加在主线程中执行的任务
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&amp;#34;2---%@&amp;#34;,[NSThread currentThread]);      // 打印当前线程
+        });
+    });
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;线程安全&#34;&gt;线程安全&lt;/h3&gt;
+&lt;p&gt;假设我们有这样一个出售车票的场景: 余票500张,同时存在两个或者多个窗口进行售票,如果我们同时访问了这个余票并进行出售是不是会存在问题呢?&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (void)unSaveTicket{
+    NSLog(@&amp;#34;currentThread---%@&amp;#34;,[NSThread currentThread]);  // 打印当前线程
+    NSLog(@&amp;#34;semaphore---begin&amp;#34;);
+    self.ticketCount = 500;
+    // queue1 代表售卖窗口1
+    dispatch_queue_t queue1 = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_SERIAL);
+    // queue2 代表售卖窗口2
+    dispatch_queue_t queue2 = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_SERIAL);
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(queue1, ^{
+        [weakSelf saleTicketunSafe];
+    });
+    dispatch_async(queue2, ^{
+        [weakSelf saleTicketunSafe];
+    });
+}
+/**
+ * 售卖火车票(非线程安全)
+ */
+- (void)saleTicketunSafe {
+    while (1) {
+        if (self.ticketCount &amp;gt; 0) {  //如果还有票，继续售卖
+            self.ticketCount--;
+            NSLog(@&amp;#34;%@&amp;#34;, [NSString stringWithFormat:@&amp;#34;剩余票数：%d 窗口：%@&amp;#34;, self.ticketCount, [NSThread currentThread]]);
+            [NSThread sleepForTimeInterval:0.2];
+        } else { //如果已卖完，关闭售票窗口
+            NSLog(@&amp;#34;所有火车票均已售完&amp;#34;);
+            break;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://52smile.vip/wp-content/uploads/2019/05/15568928052630.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;-w1086&#34;
+	
+	
+&gt;￼ 可以看到,这里的票的个数是不安全的;造成这样的原因是因为多个线程访问同一个资源造成的,如果我们想要避免这种问题,我们需要对这个数据进行加锁;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/**
+ * 线程安全：使用 synchronized 加锁
+ * 初始化火车票数量、卖票窗口(线程安全)、并开始卖票
+ */
+- (void)initTicketStatusSave {
+    NSLog(@&amp;#34;currentThread---%@&amp;#34;,[NSThread currentThread]);  // 打印当前线程
+    NSLog(@&amp;#34;semaphore---begin&amp;#34;);
+    self.ticketCount = 50;
+    // queue1 代表票售卖窗口1
+    dispatch_queue_t queue1 = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_SERIAL);
+    // queue2 代表售卖窗口2
+    dispatch_queue_t queue2 = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_SERIAL);
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(queue1, ^{
+        [weakSelf saleTicketSafe];
+    });
+    dispatch_async(queue2, ^{
+        [weakSelf saleTicketSafe];
+    });
+}
+/**
+ * 售卖火车票(线程安全)
+ */
+- (void)saleTicketSafe {
+    while (1) {
+        @synchronized (self) {
+            if (self.ticketCount &amp;gt; 0) {  //如果还有票，继续售卖
+                self.ticketCount--;
+                NSLog(@&amp;#34;%@&amp;#34;, [NSString stringWithFormat:@&amp;#34;剩余票数：%zd 窗口：%@&amp;#34;, self.ticketCount, [NSThread currentThread]]);
+            } else { //如果已卖完，关闭售票窗口
+                NSLog(@&amp;#34;所有火车票均已售完&amp;#34;);
+                break;
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;栅栏任务&#34;&gt;栅栏任务&lt;/h3&gt;
+&lt;p&gt;有时候我们需要在某个函数后执行特定的任务. 这时候我们需要用到oc提供的栅栏函数&#39;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//栅格
+-(void)barrier{
+    /**
+     不能使用quan&amp;#39;jue&amp;#39;de全局的并发队列. 会出现紊乱
+     栅格函数使用后, 在栅格函数之前的, 先进行执行;
+     在栅格函数之后, 等待栅格函数执行完成后在执行;
+     */
+    dispatch_queue_t queue = dispatch_queue_create(&amp;#34;dispatch_barrier&amp;#34;, DISPATCH_CURRENT_QUEUE_LABEL);
+    dispatch_async(queue, ^{
+        NSLog(@&amp;#34;---1----%@&amp;#34;,[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@&amp;#34;---2----%@&amp;#34;,[NSThread currentThread]);
+    });
+    dispatch_barrier_async(queue, ^{
+        NSLog(@&amp;#34;---barrier----%@&amp;#34;,[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@&amp;#34;---3----%@&amp;#34;,[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@&amp;#34;---4----%@&amp;#34;,[NSThread currentThread]);
+    });
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这个执行是执行完1,2之后执行&lt;code&gt;barrier&lt;/code&gt;,然后等待&lt;code&gt;barrier&lt;/code&gt;执行完成后,执行3,4; 栅栏作为阻挡3,4的屏障,等待1,2 执行完成后才开始下一步的执行;&lt;/p&gt;
+&lt;h3 id=&#34;延迟执行&#34;&gt;延迟执行&lt;/h3&gt;
+&lt;p&gt;在指定某个时间间隔后执行某段任务.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//延时执行
+-(void)disafter{
+   //延时两秒钟执行 run
+//    [self performSelector:@selector(run:) withObject:@&amp;#34;两好三坏&amp;#34; afterDelay:2];
+    //可以传入其他队列
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+                       [self run:@&amp;#34;两好三坏&amp;#34;];
+    });
+    // 使用NSTimer, 作为定时器进行操作
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(run:) userInfo:nil repeats:NO];
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;一次性代码&#34;&gt;一次性代码&lt;/h3&gt;
+&lt;p&gt;我们在创建单例、或者有整个程序运行过程中只执行一次的代码时，我们就用到了 GCD 的 dispatch_once 函数。使用 dispatch_once 函数能保证某段代码在程序运行过程中只被执行1次，并且即使在多线程的环境下，dispatch_once也可以保证线程安全。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//一次性函数, 类似单例,资源加载等;注意与懒加载的区别;
+-(void)onceCode{
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;amp;onceToken, ^{
+        NSLog(@&amp;#34;hhhh&amp;#34;);
+    });
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;eg: 单例:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;static QKSingleton *_singleton;
+/**
+ 返回一个单例对象
+ @return 单例对象
+ */
++(instancetype)shareSingleton{
+        static dispatch_once_t onceToken;
+    dispatch_once(&amp;amp;onceToken, ^{
+        _singleton = [[self alloc] init];
+    });
+    return _singleton;
+}
++(instancetype)allocWithZone:(struct _NSZone *)zone{
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;amp;onceToken, ^{
+        _singleton = [super allocWithZone:zone];
+    });
+    return _singleton;
+}
+-(id)copyWithZone:(NSZone *)zone{
+    return _singleton;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;快速迭代&#34;&gt;快速迭代&lt;/h3&gt;
+&lt;p&gt;一般我们使用for循环进行数据遍历,然后再循环内对单个元素进行操作; 这样的问题在于如果我的数据量足够大或者单个元素操作耗时很高,那么在效率上会很低,因为这个实际上是在一个时间线的一个任务列中进行操作的,相当于在同步队列中执行一个串行队列; 而GCD为我们提供了一个快速迭代的方案: 场景如下: 我想把&lt;code&gt;From&lt;/code&gt;文件夹中的文件一个一个的移动或者复制到&lt;code&gt;TO&lt;/code&gt;文件夹中, 我们都知道I/O操作是很耗时间的. 下面有两个方法,一个是使用普通的for循环进行遍历, 一个是使用GCD提供的&lt;code&gt;dispatch_apply&lt;/code&gt;进行操作;大家可以看一下对比效果;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//快速遍历
+-(void)quickBlock{
+    /**
+     可以i替代部分for循环的功能;
+     eg: w想将一个文件夹中的文件剪切或者拷贝到另外一个文件夹中,如果我们通过for循环
+     去做这件事情,当文件数量达到一定的数量的时候效率肯定降低; 但是如果我们使用GCD进行
+     处理, 会好很多;
+     */
+    // 使用常规操作移动文件
+    // [self  normalMoveFile];
+    // 使用 GCD 移动文件
+//    [self applayGCDMoveFile];
+}
+//使用 GCD 移动文件, 快速遍历
+-(void)applayGCDMoveFile{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // 常规操作
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    NSString *fromPath = @&amp;#34;/User/su/Desktop/Form&amp;#34;;
+    NSString *toPath = @&amp;#34;/User/su/Desktop/To&amp;#34;;
+    NSArray *subPaths = [mgr subpathsAtPath:fromPath];
+    dispatch_apply(subPaths.count, queue, ^(size_t index) {
+        NSString *subPath = subPaths[index];
+        NSString *fromFullPath = [fromPath stringByAppendingPathComponent:subPath];
+        NSString *toFullPath = [toPath stringByAppendingPathComponent:subPath];
+        [mgr moveItemAtPath:fromFullPath toPath:toFullPath error:nil];
+    });
+}
+//常规移动文件操作
+-(void)normalMoveFile{
+    // 常规操作
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    NSString *fromPath = @&amp;#34;/User/su/Desktop/Form&amp;#34;;
+    NSString *toPath = @&amp;#34;/User/su/Desktop/To&amp;#34;;
+    NSArray *subPaths = [mgr subpathsAtPath:fromPath];
+    for (NSString *subPath  in subPaths) {
+        NSString *fromFullPath = [fromPath stringByAppendingPathComponent:subPath];
+        NSString *toFullPath = [toPath stringByAppendingPathComponent:subPath];
+        [mgr moveItemAtPath:fromFullPath toPath:toFullPath error:nil];
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;gcd队列组&#34;&gt;GCD队列组&lt;/h3&gt;
+&lt;p&gt;我们有的时候可能会遇到需要合并多个线程中的执行结果, 例如下载多个素材后进行合并; 或者是类似迅雷分块下载后的文件合并;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//GCD队列组
+-(void)GCDWithGroup{
+    /*
+     合并两张图片或者多个任务处理完成后合并结果
+     */
+    //定义一个c并行队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //创建一个队列组
+    dispatch_group_t group = dispatch_group_create();
+    //异步任务添加到队列组
+    dispatch_group_async(group, queue, ^{
+        //sub task
+    });
+    //异步任务添加到队列组
+    dispatch_group_async(group, queue, ^{
+        //sub task
+    });
+    //异步任务添加到队列组
+    dispatch_group_async(group, queue, ^{
+        //sub task ....
+    });
+    //监听队列组各个子任务完成后的合并
+    dispatch_group_notify(group, queue, ^{
+        // sub task finish
+        //TODO
+    });
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;nsoperation-nsoperationqueue&#34;&gt;NSOPeration NSOperationQueue&lt;/h2&gt;
+&lt;p&gt;与GCD的定义类似, 也存在任务和队列的概念,基本一致;在此就不在重复啦;&lt;/p&gt;
+&lt;h3 id=&#34;nsoperationqueue&#34;&gt;NSOperationQueue&lt;/h3&gt;
+&lt;p&gt;任务队列,可以开启串行&amp;amp;并行队列 我们可以通过 &lt;code&gt;maxConcurrentOperationCount&lt;/code&gt;进行设置,决定是以何种队列进行执行&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;maxConcurrentOperationCount 默认情况下为-1，表示不进行限制，可进行并发执行。&lt;/li&gt;
+&lt;li&gt;maxConcurrentOperationCount 为1时，队列为串行队列。只能串行执行。&lt;/li&gt;
+&lt;li&gt;maxConcurrentOperationCount 大于1时，队列为并发队列。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;nsoperation&#34;&gt;NSOperation&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;NSOPeration&lt;/code&gt;是一个抽象类, 不作具体事务;具体事务由他的子类进行操作; 他有三个子类&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用子类 NSInvocationOperation&lt;/li&gt;
+&lt;li&gt;使用子类 NSBlockOperation&lt;/li&gt;
+&lt;li&gt;自定义继承自 NSOperation 的子类，通过实现内部相应的方法来封装操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;nsinvocationoperation&#34;&gt;NSInvocationOperation&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    //通过suspened 可以执行挂起; 任务挂起后并咩有消失 , 通过设置suspended = NO. 继续任务
+    //注意如果实在自定义的op对象时,是否需要考虑到界面优化
+    //queue.suspended = YES;
+    //定义操作任务
+    NSInvocationOperation *opOne = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(run:) object:@&amp;#34;xiaoxiaosu&amp;#34;];
+    NSInvocationOperation *opTwo = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(run:) object:@&amp;#34;xiaoxiaosu&amp;#34;];
+    //添加任务
+    [queue addOperation:opOne];
+    [queue addOperation:opTwo];
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;nsblockoperation&#34;&gt;NSBlockOperation&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//测试并行OperationQueue
+-(void)operationQueue{
+/*
+    [NSOperationQueue mainQueue]; 如果使用mainqueueu, 那么获取到的是主队列
+    如果使用的是alloc 方法获取,那么是 并行
+ */
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    //设置最大并发数量, 值取1的时候可以看做是串行队列
+    queue.maxConcurrentOperationCount = 3;
+    //通过suspened 可以执行挂起; 任务挂起后并咩有消失 , 通过设置suspended = NO. 继续任务
+    //注意如果实在自定义的op对象时,是否需要考虑到界面优化
+    //queue.suspended = YES;
+    //定义操作任务
+    NSBlockOperation *opBlock = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&amp;#34;opBlock&amp;#34;);
+    }];
+    [opBlock addExecutionBlock:^{
+        NSLog(@&amp;#34;opblock add block task&amp;#34;);
+    }];
+    //添加任务
+    [queue addOperation:opBlock];
+    //还可以通过block直接添加task
+    [queue addOperationWithBlock:^{
+    }];
+    //取消所有队列, 注意与suspended的区别 ;
+//    [queue cancelAllOperations];
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;自定义nsoperation子类实现&#34;&gt;自定义NSOperation子类实现&lt;/h4&gt;
+&lt;p&gt;这种子类一般可以做比较复杂的操作,我们可以省去在上面两种任务中大段又长又臭的代码,封装在子类实现;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// QKOperation.h 文件
+#import &amp;lt;Foundation/Foundation.h&amp;gt;
+@interface QKOperation.h : NSOperation
+@end
+// QKOperation.h.m 文件
+#import &amp;#34;QKOperation.h&amp;#34;
+@implementation QKOperation.h
+- (void)main {
+    if (!self.isCancelled) {
+        for (int i = 0; i &amp;lt; 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@&amp;#34;1---%@&amp;#34;, [NSThread currentThread]);
+        }
+    }
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;依赖操作&#34;&gt;依赖操作&lt;/h3&gt;
+&lt;p&gt;我们有的时候可能会遇到这种情况: 任务1中的数据在任务2中是必须的,也就是说任务2是依赖于任务1的. 在GCD中我们可以使用栅栏进行操作, 在NSOperation中我们可以更方便的对任务进行设置依赖;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//NSOperation的依赖和监听
+-(void)opRelyOnOp{
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&amp;#34;task1&amp;#34;);
+    }];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&amp;#34;task2&amp;#34;);
+    }];
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&amp;#34;task3&amp;#34;);
+    }];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:op3];
+    /*
+     如果想要设置op3依赖op1,2执行完成后执行,可以使用如下的代码:
+     也s可以op3 -&amp;gt; op2  -&amp;gt; op1
+     但是要注意防止出现循环依赖: op3 -&amp;gt; op2  -&amp;gt; op1 -&amp;gt; op3
+     # 也可以设置不同队列进行依赖
+     queue queue1 两个不同队列之间的任务依赖
+     */
+    [op3 addDependency:op1];
+    [op3 addDependency:op2];
+    /*
+     监听操作完成
+     */
+    op3.completionBlock = ^{
+        NSLog(@&amp;#34;op3 task finish&amp;#34;);
+    };
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;nsoperation-线程通信&#34;&gt;NSOperation 线程通信&lt;/h3&gt;
+&lt;p&gt;可以以很简明的代码实现GCD中的线程通信&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//NSOperation 的线程通信
+-(void)opMsg{
+    //eg:合成图片
+    NSBlockOperation *down1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&amp;#34;img1 download&amp;#34;);
+    }];
+    NSBlockOperation *down2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&amp;#34;img2 download&amp;#34;);
+    }];
+    NSBlockOperation *complate = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&amp;#34;合并 img1 &amp;amp; img2&amp;#34;);
+    }];
+    [complate addDependency:down1];
+    [complate addDependency:down2];
+    //线程间的基本通信;
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    [queue addOperationWithBlock:^{
+        NSURL *url = [NSURL URLWithString:@&amp;#34;remoteImgURL&amp;#34;];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:data];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            UIImageView *imgview = [UIImageView new];
+            imgview.image = image;
+        }];
+    }];
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;nsoperation-线程安全&#34;&gt;NSOperation 线程安全&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-(void)safeSallTicket{
+    self.ticketCount = 50;
+    NSOperationQueue *queue1 = [[NSOperationQueue alloc] init];
+    NSOperationQueue *queue2 = [[NSOperationQueue alloc] init];
+    queue1.maxConcurrentOperationCount = queue2.maxConcurrentOperationCount = 1;
+    __weak typeof(self) weakSelf = self;
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        [weakSelf sallTicketWithOp];
+    }];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        [weakSelf sallTicketWithOp];
+    }];
+    [queue1 addOperation:op1];
+    [queue2 addOperation:op2];
+}
+-(void)sallTicketWithOp{
+    while (1) {
+        // 加锁
+        [self.lock lock];
+        if (self.ticketCount &amp;gt; 0) {
+            //如果还有票，继续售卖
+            self.ticketCount--;
+            NSLog(@&amp;#34;%@&amp;#34;, [NSString stringWithFormat:@&amp;#34;剩余票数:%zd 窗口:%@&amp;#34;, self.ticketCount, [NSThread currentThread]]);
+            [NSThread sleepForTimeInterval:0.2];
+        }
+        // 解锁
+        [self.lock unlock];
+        if (self.ticketCount &amp;lt;= 0) {
+            NSLog(@&amp;#34;所有火车票均已售完&amp;#34;);
+            break;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;nsoperation-常用属性和方法&#34;&gt;NSOperation 常用属性和方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;取消操作方法
+&lt;ul&gt;
+&lt;li&gt;(void)cancel; 可取消操作，实质是标记 isCancelled 状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;判断操作状态方法
+&lt;ul&gt;
+&lt;li&gt;(BOOL)isFinished; 判断操作是否已经结束。&lt;/li&gt;
+&lt;li&gt;(BOOL)isCancelled; 判断操作是否已经标记为取消。&lt;/li&gt;
+&lt;li&gt;(BOOL)isExecuting; 判断操作是否正在在运行。&lt;/li&gt;
+&lt;li&gt;(BOOL)isReady; 判断操作是否处于准备就绪状态，这个值和操作的依赖关系相关。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;操作同步
+&lt;ul&gt;
+&lt;li&gt;(void)waitUntilFinished; 阻塞当前线程，直到该操作结束。可用于线程执行顺序的同步。&lt;/li&gt;
+&lt;li&gt;(void)setCompletionBlock:(void (^)(void))block; completionBlock 会在当前操作执行完毕时执行 completionBlock。&lt;/li&gt;
+&lt;li&gt;(void)addDependency:(NSOperation *)op; 添加依赖，使当前操作依赖于操作 op 的完成。&lt;/li&gt;
+&lt;li&gt;(void)removeDependency:(NSOperation *)op; 移除依赖，取消当前操作对操作 op 的依赖。 @property (readonly, copy) NSArray *dependencies; 在当前操作开始执行之前完成执行的所有操作对象数组。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>拥抱一下沉默的 NSString 吧~</title>
+        <link>http://47.99.84.217/post/yong-bao-yi-xia-chen-mo-de-nsstring-ba/</link>
+        <pubDate>Mon, 29 Apr 2019 09:36:24 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/yong-bao-yi-xia-chen-mo-de-nsstring-ba/</guid>
+        <description>&lt;p&gt;NSString 作为作为OC的一种数据类型, 他帮我们做了很多事情, 而且也是我们在项目中运用频率很高的一个数据类型.我们经常会对它进行各式各样的操作,生成新的字符串,修改,查找,比较等等. 但是有人可能会问, 既然我已经有C的字符串了,为撒子还要在定义一个字符串对象呢? 嘿嘿,首先,我们使用NSString对象来处理字符串操作, 一方面是可以统一很多方面的东西,比如api, 例如NSArray,NSDictionary中都是存放的对象, 而且使用NSString还可以使用isKindofCLass的很多常用查询. 假如我们真的去使用了C的字符串去替代NSString的话, 那我们光是桥接代码就会让人写到吐,因为字符串在使用中的频率还是比较高的. 在和其他数据对象进行联合使用的时候,那种怪异的语法肯定也会让使用者大呼痛苦的. 向来注重用户体验的苹果肯定不会这样子干的,所以,定义一个NSString 对象还是很必要的. NSString 主要的方法都在 &lt;code&gt;Foundation/NSString.h&lt;/code&gt; 中定义, 提供了很多的方法接口&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;常量字符串&#34;&gt;常量字符串&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NSString *name = @&amp;#34;两好三坏&amp;#34;;
+NSString *addName = [@&amp;#34;name:&amp;#34; stringByAppendingString:name];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;常量字符串不仅可以作为消息的参数, 还可以作为消息的接收者;&lt;/p&gt;
+&lt;h3 id=&#34;nsstring-比较&#34;&gt;NSString 比较&lt;/h3&gt;
+&lt;p&gt;字符串比较出结果后会返回一个 &lt;code&gt;NSComparisonResult&lt;/code&gt; 类型的枚举值. 分别是 * NSOrderedAscending 左侧小于右侧 * NSOrderedSame 两者相同 * NSOrderedDescending 右侧小于左侧&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//比较消息的接受者he参数字符串aString,参数不可以是nil,此方法区分大小写 如果相比较两个字符串是否相同的话还可以使用 isEqualToString:
+-(NSComparisonResult)compare:(NSString *) aString;
+// 不区分大小写比较, 上一个compare 的方法也可以通过添加参数进行选择大小写是否作为判断标准
+-(NSComparisonResult) caseInsensitiveCompare:(NSString *)aString;
+- (BOOL)isEqualToString:(NSString *)aString;
+NSString *str0 = @&amp;#34;testString&amp;#34;;
+NSString *str1 = @&amp;#34;testString&amp;#34;;
+if([str0 isEqualToString:str1]){
+   NSLog(@&amp;#34;字符串完全相等&amp;#34;);
+}
+//判断是否以 参数 开头的string
+- (BOOL)hasPrefix:(NSString *)str;
+//判断是够以 参数 结尾的string
+- (BOOL)hasSuffix:(NSString *)str;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;截取字符串&#34;&gt;截取字符串&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// 返回一个anIndex 开始到结尾的新字符串, 不包含form索引
+- (NSString *)substringFromIndex:(NSUInteger)from;
+//返回一个新字符串, 从to开始到结束,包含to的索引
+- (NSString *)substringToIndex:(NSUInteger)to;
+//通过一个range返回一个新的字符串对象
+- (NSString *)substringWithRange:(NSRange)range;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;检索和置换&#34;&gt;检索和置换&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NSString *str0 = @“nice to meet you&amp;#34;;
+NSString *temp = @&amp;#34;meet&amp;#34;;
+NSRange rang = [str0 rangeOfString:temp];
+NSLog(@&amp;#34;搜索的字符串在str0中起始点的index 为 %d&amp;#34;, rang.location);
+NSLog(@&amp;#34;搜索的字符串在str0中结束点的index 为 %d&amp;#34;, rang.location + rang.length);
+NSString *str = [str0 stringByReplacingCharactersInRange:rang withString:@&amp;#34;met&amp;#34;];
+NSLog(@&amp;#34;替换后字符串为%@&amp;#34;, str);
+//将字符串中&amp;#34; &amp;#34; 全部替换成 *
+str = [str0 stringByReplacingOccurrencesOfString :@&amp;#34; &amp;#34; withString:@&amp;#34;@&amp;#34;];
+NSLog(@&amp;#34;替换后字符串为%@&amp;#34;, str);
+//还可以使用下面这个方法进行替换
+//stringByReplacingOccurrencesOfString:(NSString *)withString:(NSString *) options:(NSStringCompareOptions) range:(NSRange)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;类型转换&#34;&gt;类型转换&lt;/h3&gt;
+&lt;p&gt;可以使用一些方法将NSString 转成其它基础数据类型; NSString *temp = @&amp;ldquo;11.21&amp;rdquo;; * [str doubleValue]; * [str intValue] * [str integerValue] * [str boolValue] * &amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;路径处理&#34;&gt;路径处理&lt;/h3&gt;
+&lt;p&gt;文件的路径可以使用 NSString 来表示,而且NSString提供了常用的处理文件路径的方法; eg:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// @&amp;#34;/tmp/image/cat.tiff&amp;#34;
+//返回路径的最后一部分 -&amp;gt; cat.tiff
+-(NSString *)lastPathComponent;
+//将str 追加到现有字符串的末尾并返回.会根据需要自动追加分隔符
+- (NSString *)stringByAppendingPathComponent:(NSString *)str;
+//扩展名
+-(NSString *)pathExtension;
+//将 . 和指定的扩展名追加到到最后一个组成部分上
+- (nullable NSString *)stringByAppendingPathExtension:(NSString *)str;
+// 删除文件的扩展名.如果不存在,返回原来的字符串
+-(NSString *)stringByDeletingPathExtension;
+//判断是不是一个绝对路径
+-(BOOL)isAbsolutePath;
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;文件的输入和输出&#34;&gt;文件的输入和输出&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// 通过一个 文件内容  初始化一个 nsstring;
+[NSString stringWithContentsOfFile:@&amp;#34;&amp;#34; encoding:NSUTF8StringEncoding error:nil]
+//将字符串内容写入到 path 的路径当中; 成功就返回YES/
+[@&amp;#34;hduashfuiasifbsa&amp;#34; writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>iOS  block详解</title>
+        <link>http://47.99.84.217/post/ios-block-xiang-jie/</link>
+        <pubDate>Sun, 28 Apr 2019 11:35:44 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ios-block-xiang-jie/</guid>
+        <description>&lt;h3 id=&#34;什么是block&#34;&gt;什么是Block&lt;/h3&gt;
+&lt;p&gt;block又叫块对象， 是MacOS X 10.6 以及 iOS4.0 平台下都可以使用的功能，&lt;code&gt;block&lt;/code&gt;不是oc的实现， 而是c语言的实现； 与其他编程语言中的&lt;code&gt;闭包&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;如何定义一个块对象&#34;&gt;如何定义一个块对象&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;^(返回值类型)(参数列) {表达式主体}
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;无参数无返回值&#34;&gt;无参数无返回值&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;void(^testBlock)(void) = ^(void){
+    NSLog(@&amp;#34;无参数无返回值&amp;#34;);
+}
+testBlock();
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;无参数有返回值&#34;&gt;无参数有返回值&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;int(^testRetunValueBlock)(void) = ^(int){
+    return  100;
+}
+int value = testRetunValueBlock();
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;有参数无返回值&#34;&gt;有参数无返回值&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  void(^ testParamsBlcok) (NSString *) = ^(NSString *string){
+            NSLog(@&amp;#34;%@&amp;#34;,string);
+  };
+  testParamsBlcok(@&amp;#34;hhh&amp;#34;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;有参数有返回值&#34;&gt;有参数有返回值&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NSString * (^tempBlock)(NSString *) = ^(NSString *string){
+    return [NSString stringWithFormat:@&amp;#34;你最帅,%@&amp;#34;,string];
+};
+NSLog(@&amp;#34;%@&amp;#34;,tempBlock(@&amp;#34;两好三坏&amp;#34;));
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;使用typeof定义&#34;&gt;使用typeof定义&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;typedef int (^MyBlock)(int , int);
+@property (nonatomic,copy) MyBlock myBlockOne;
+self.testBlock = ^int (int ,int){
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;block中变量行为&#34;&gt;Block中变量行为&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+void myFunc(int m, void (^b)(void) {
+    printf(&amp;#34;%d: &amp;#34;,m);
+    b();
+}
+int glob = 1000;
+int main (void) {
+    void (^block)(void);
+    static int s = 20;
+    int a = 20;
+    block = ^{ print(&amp;#34;%d, %d, %d \n&amp;#34;,glob, s, a);};
+    myFunc(1,block);
+    s = 0;
+    a = 0;
+    glob = 5000;
+    myFunc(2,block);
+    testblock = ^{ print(&amp;#34;%d, %d, %d \n&amp;#34;,glob, s, a);};
+    myFunc(3,testblock);
+    return 0 ;
+}
+//输入结果:
+1: 1000, 20,20
+2: 5000, 0, 20
+3: 5000, 0, 0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;第一个&lt;code&gt;block&lt;/code&gt;定义后, &lt;code&gt;block&lt;/code&gt;中包含外部变量 &lt;code&gt;glob&lt;/code&gt; 和 &lt;code&gt;main&lt;/code&gt;函数中局部变量,a,s;然后将&lt;code&gt;block&lt;/code&gt; 作为参数传递给&lt;code&gt;myFunc&lt;/code&gt;. 然后改变glob,a,s的值后再次调用&lt;code&gt;myFunc&lt;/code&gt;. 在&lt;code&gt;testBlock&lt;/code&gt;定以后, 调用&lt;code&gt;myFunc&lt;/code&gt;; 对比上面三个输出, block 只在代码块中保存自动变量的值,block 复制了block内部会使用到的变量;即使变量的值发生了变化, block在使用的时候也不会知道这个值变化; 那如果我们想知道这个值得变化或者想要修改这个变量该怎么办呢, 我们可以使用 &lt;code&gt;__block&lt;/code&gt;对想要使用的变量进行修饰, 如果我们使用了&lt;code&gt;__block&lt;/code&gt;修饰,name就是引用了这个变量的地址; 而且block只能访问,不能修改全局变量; [TOC] block使用变量相当于拷贝了一份变量在堆内存中，要注意对变量的影响&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>从 NSObject 占用的内存说起</title>
+        <link>http://47.99.84.217/post/nsobject-size/</link>
+        <pubDate>Sat, 30 Mar 2019 13:38:49 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/nsobject-size/</guid>
+        <description>&lt;p&gt;之前iOS的一个 git 仓库看到一个面试问题, 一个 NSObject 对象占用多少内存, 看到这个面试题以后我想不是4个就是8个嘛, 因为之前我打印过 64位设备下 NSString 对象的内存大小就是8; 可是答案却有一点出乎意料, 是16, 于是我就找了些资料进行了一下深入的研究, 果然&amp;hellip;..&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;我们都知道, Objective-C 底层是使用 C和C++ , oc 的对象基本就是 C/C++的结构体;我们将 oc 的 m 文件使用 clang 编译后输出 cpp, 代码会告诉你对象的数据结构是类似如下所示的一个结构体:&lt;br&gt;
+使用命令行将 &lt;code&gt;.m&lt;/code&gt; 转成 &lt;code&gt;cpp&lt;/code&gt;文件:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;命令行
+xcrun  -sdk  iphoneos  clang  -arch  arm64  -rewrite-objc  OC源文件  -o  输出的CPP文件
+eg:
+xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc main.m -o main.cpp
+struct NSObject_IMPL {
+    Class isa;
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2019-04-11-033022.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;当然我们也可以跳转到 NSObject 的头文件看到类似的代码:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@interface NSObject &amp;lt;NSObject&amp;gt; {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored &amp;#34;-Wobjc-interface-ivars&amp;#34;
+    Class isa  OBJC_ISA_AVAILABILITY;
+#pragma clang diagnostic pop
+}
+...
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后我们可以点击跳转到 class 的定义去看一下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;typedef struct objc_class *Class;
+struct objc_object {
+    Class _Nonnull isa __attribute__((deprecated));
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们发现, Class 其实是一个指针, 我们使用&lt;code&gt;NSObject *obj = [[NSObject alloc]init];&lt;/code&gt; 去初始化了一个 obj对象, 那么 obj 的指针就指向了刚刚分配给 class 指针的内存地址;&lt;/p&gt;
+&lt;p&gt;我们可以使用一个方法来打印一下这个对象的大小:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; NSObject *obj = [[NSObject alloc]init];
+//  获得NSObject类的实例对象的大小
+NSLog(@&amp;#34;%zd&amp;#34;, class_getInstanceSize([NSObject class]));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打印结果就8, 但为什么会有人说对象的大小是16呢. 我们可以使用另外一个 api 来进行访问,再次打印一下这个对象的 size,&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//获取obj指针指向内存的大小
+ NSObject *obj = [[NSObject alloc]init];
+ NSLog(@&amp;#34;%zd&amp;#34;, malloc_size((__bridge const void *)obj));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面方法返回的都是关于对象的大小, 为什么一个是 8 一个是 16 呢&amp;hellip;&lt;/p&gt;
+&lt;p&gt;我们可以在 iOS 的 &lt;a class=&#34;link&#34; href=&#34;https://opensource.apple.com/tarballs/objc4/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;obj4源码&lt;/a&gt; 中找到答案&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;id
+_objc_rootAllocWithZone(Class cls, malloc_zone_t *zone)
+{
+    id obj;
+#if __OBJC2__
+    // allocWithZone under __OBJC2__ ignores the zone parameter
+    (void)zone;
+    obj = class_createInstance(cls, 0);
+#else
+    if (!zone) {
+    //不存在内存空间的话 去开辟一快新的内存
+        obj = class_createInstance(cls, 0);
+    }
+    else {
+        obj = class_createInstanceFromZone(cls, 0, zone);
+    }
+#endif
+    if (slowpath(!obj)) obj = callBadAllocHandler(cls);
+    return obj;
+}
+id
+class_createInstance(Class cls, size_t extraBytes){
+    return _class_createInstanceFromZone(cls, extraBytes, nil);
+}
+id
+_class_createInstanceFromZone(Class cls, size_t extraBytes, void *zone,
+                              bool cxxConstruct = true,
+                              size_t *outAllocatedSize = nil){
+    if (!cls) return nil;
+    assert(cls-&amp;gt;isRealized());
+    ...
+    size_t size = cls-&amp;gt;instanceSize(extraBytes);
+    if (outAllocatedSize) *outAllocatedSize = size;
+    ...
+    return obj;
+}
+size_t instanceSize(size_t extraBytes) {
+    size_t size = alignedInstanceSize() + extraBytes;
+    // CF requires all objects be at least 16 bytes.
+    if (size &amp;lt; 16) size = 16;
+    return size;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们可以通过 AllocWithZone 进行查找, 确定这个方法就是 alloc 时候调用的; 然后看到在这个方法中, 通过 &lt;code&gt;class_createInstance()&lt;/code&gt;进行创建; 我们可以用同样的方法进行查找关于&lt;code&gt;class_createInstance&lt;/code&gt;的信息, 可以看到在最后一个函数&lt;code&gt;size_t instanceSize&lt;/code&gt;中有一段关于限制 &lt;code&gt;size&lt;/code&gt;的代码, &lt;code&gt;if (size &amp;lt; 16) size = 16;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这样就解决了我们上面关于为什么 nsobject 对象是16 的的疑问;&lt;/p&gt;
+&lt;p&gt;那么假如我们自定义一个继承自NSObject的 &lt;code&gt;TestTempClass&lt;/code&gt;，然后给这个类添加几个int类型的成员变量呢？&lt;/p&gt;
+&lt;p&gt;这里就涉及到一个内存对齐的法则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;数据成员对齐规则：struct 或 union （以下统称结构体）的数据成员，第一个数据成员A放在偏移为 0 的地方，以后每个数据成员B的偏移为(#pragma pack(指定的数n) 与 该数据成员（也就是 B）的自身长度中较小那个数的整数倍，不够整数倍的补齐。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数据成员为结构体：如果结构体的数据成员还为结构体，则该数据成员的“自身长度”为其内部最大元素的大小。(struct a 里存有 struct b，b 里有char,int,double等元素，那 b “自身长度”为 8)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;结构体的整体对齐规则：在数据成员按照上述第一步完成各自对齐之后，结构体本身也要进行对齐。对齐会将结构体的大小调整为(#pragma pack(指定的数n) 与 结构体中的最大长度的数据成员中较小那个的整数倍，不够的补齐。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Xcode 中默认为#pragma pack(8）， 所以我们可以根据这个法则对对象占用的内存进行计算；&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>iOS中for 和 for-in 循环数组的小区别</title>
+        <link>http://47.99.84.217/post/iosarrayforin/</link>
+        <pubDate>Tue, 26 Mar 2019 17:06:28 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/iosarrayforin/</guid>
+        <description>&lt;p&gt;在 OC 开发中, 数组是我们经常会用到的数据结构;而对数据进行遍历是很常见的操作, OC也为我们提供一下几种常用的操作:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;for 循环,普通遍历&lt;/li&gt;
+&lt;li&gt;for-in,快速 遍历&lt;/li&gt;
+&lt;li&gt;Block&lt;/li&gt;
+&lt;li&gt;枚举器NSEnumerator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;之前大部分情况下都是用for循环进行普通遍历, 但前几天我使用 for-in 去遍历一个数据的时候却报了异常;&lt;/p&gt;
+&lt;p&gt;代码如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NSMutableArray *testArray = [NSMutableArray arrayWithObjects:@&amp;#34;耐克&amp;#34;,@&amp;#34;阿迪达斯&amp;#34;,@&amp;#34;李宁&amp;#34;,@&amp;#34;匡威&amp;#34;,nil];
+for(NSString *temp in testArray)
+{
+if{[temp isEqualToString:@&amp;#34;阿迪达斯&amp;#34;])
+{
+NSLog(@&amp;#34;我不喜欢&amp;#34;);
+[testArray removeObjective:temp];
+}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;报错信息如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Collection &amp;lt;__NSArrayM: 0x100601400&amp;gt; was mutated while being enumerated.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;但是如果我们去使用 for 进行普通遍历, 然后对数组进行修改或者删除就不会有这个错误;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;快速枚举的过程中不允许改变容器中的对象, 即: 不允许删除或者增加枚举容器中的对象, 因为对于一个既定的枚举器来说, 其内部的对象都已经对其进行了枚举排序, 如果你私自添加或者删除对象, 那么其既定的枚举序列就发生了改变, 而这种改变时系统不能识别的, 所以 OC中不允许这么做. 但有时候我们也必须在快速枚举的过程中删除一些枚举容器中的对象, 这时候, 我们就需要在删除完一个对象的时候, 对其进行break.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>iOS中KVO使用和底层原理</title>
+        <link>http://47.99.84.217/post/kvo/</link>
+        <pubDate>Mon, 17 Dec 2018 14:45:49 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/kvo/</guid>
+        <description>&lt;p&gt;iOS 中 &lt;strong&gt;KVO&lt;/strong&gt;, 是&lt;code&gt;key-value-observing&lt;/code&gt; 的缩写, 是Objective-C 对&lt;strong&gt;观察者设计模式&lt;/strong&gt;的一种实现,类似观察者设计模式的还有&lt;code&gt;NSNotificationCenter&lt;/code&gt;,不过一个是一对一(&lt;code&gt;KVO&lt;/code&gt;),一个是一对多(&lt;code&gt;NSNotificationCenter&lt;/code&gt;) ; 一般继承自&lt;code&gt;NSObject&lt;/code&gt; 的对象都支持KVO. 日常开发中我们常常会监听数据模型的变化, 从而达到根据数据模型的修改对视图进行更新的要求;&lt;/p&gt;
+&lt;h3 id=&#34;kvo-常用方法&#34;&gt;KVO 常用方法&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/*
+注册监听器
+监听器对象为observer，被监听对象为消息的发送者即方法的调用者在回调函数中会被回传
+监听的属性路径为keyPath支持点语法的嵌套
+监听类型为options支持按位或来监听多个事件类型
+监听上下文context主要用于在多个监听器对象监听相同keyPath时进行区分
+添加监听器只会保留监听器对象的地址，不会增加引用，也不会在对象释放后置空，因此需要自己持有监听对象的强引用，该参数也会在回调函数中回传
+*/
+- (void)addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context;
+eg:
+[obj addObserver:observer forKeyPath:@&amp;#34;value&amp;#34; options:NSKeyValueObservingOptionNew context:NULL];
+/*
+删除监听器
+监听器对象为observer，被监听对象为消息的发送者即方法的调用者，应与addObserver方法匹配
+监听的属性路径为keyPath，应与addObserver方法的keyPath匹配
+监听上下文context，应与addObserver方法的context匹配
+*/
+- (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath context:(nullable void *)context;
+/*
+监听器对象的监听回调方法
+keyPath即为监听的属性路径
+object为被监听的对象
+change保存被监听的值产生的变化
+context为监听上下文，由add方法回传
+*/
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&amp;lt;NSKeyValueChangeKey,id&amp;gt; *)change context:(void *)context;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;举个栗子-&#34;&gt;举个栗子 🌰&lt;/h3&gt;
+&lt;p&gt;假如我的一个数据模型(student)的属性(age)发生了变化, 我需要在对应的视图进行修改这个属性的显示;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@property (nonatomic, strong) StudentModel  *student;
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  _student = [[Student alloc] init];
+  _student.age = 10;
+  [_student addObserver:self forKeyPath:@&amp;#34;age&amp;#34; options:NSKeyValueObservingOptionNew context:nil];
+  [self requestData];
+}
+- (void)requestData{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager POST:urlString parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       NSInteger age = [(NSDictionary *)responseObject[@&amp;#34;age&amp;#34;] integerValue];
+       _student.age = age;
+   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+   }];
+}
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void *)context{
+  if ([keyPath isEqualToString:@&amp;#34;age&amp;#34;] &amp;amp;&amp;amp; object == _student){
+        NSLog(@&amp;#34;当前年龄是: %ld&amp;#34;,_student.age);
+    }
+}
+- (void)dealloc{
+  [_student removeObserver:self forKeyPath:@&amp;#34;age&amp;#34;];
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;实现原理-&#34;&gt;实现原理 🚀&lt;/h3&gt;
+&lt;p&gt;Apple 使用 isa 混写技术实现 KVO , 当观察对象 &lt;code&gt;testClass&lt;/code&gt;的时候, KVO 会动态创建一个继承自&lt;code&gt;testClass&lt;/code&gt;的类 &lt;code&gt;NSKVONotifying_testClass&lt;/code&gt; 并重写监听属性的 setter 方法,在调用 setter 的前后, 会观察对象属性的更改情况;子类拥有自己的 set 实现,&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    [self willChangeValueForKey:@&amp;#34;value&amp;#34;];
+    _value = value;
+    [self didChangeValueForKey:@&amp;#34;value&amp;#34;];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;所以, 通过 &lt;code&gt;set&lt;/code&gt;方法进行赋值, 通过 KVC &lt;code&gt;setValue:forKey:&lt;/code&gt;两种方式都可以对 KVO 生效; 但是如果想通过对成员变量直接赋值的话, 需要手动添加 KVO 才可以生效&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;   QKTestObject *obj = [[QKTestObject alloc] init];
+    QKTestObserver *observer = QKTestObserver.alloc.init;
+//    通过 KVO 监听 obj 的变化
+    [obj addObserver:observer forKeyPath:@&amp;#34;value&amp;#34; options:NSKeyValueObservingOptionNew context:NULL];
+//    通过 setter 修改 value, 监听生效
+//    obj.value = 2;
+//    通过 kvo 修改 value , 监听生效
+//    [obj setValue:@4 forKey:@&amp;#34;value&amp;#34;];
+//    通过成员变量赋值. 未执行监听方法中的输出
+    /*
+        成员变量需要手动 添加 KVO , 监听才会生效
+         [self willChangeValueForKey:@&amp;#34;value&amp;#34;];
+         _value += 1;
+         [self didChangeValueForKey:@&amp;#34;value&amp;#34;];
+     */
+    [obj changeValue];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://gitee.com/SuQiankun/iOSTestTool/blob/master/testTool/KVO/QKKVOTestCtrl.m&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;代码地址:&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>iOS 扩展&amp;代理&amp;通知</title>
+        <link>http://47.99.84.217/post/ios-kuo-zhandai-litong-zhi/</link>
+        <pubDate>Thu, 13 Dec 2018 17:39:05 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ios-kuo-zhandai-litong-zhi/</guid>
+        <description>&lt;h2 id=&#34;扩展&#34;&gt;扩展&lt;/h2&gt;
+&lt;h3 id=&#34;用途&#34;&gt;用途&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;声明私有属性&lt;/li&gt;
+&lt;li&gt;声明私有成员变量&lt;/li&gt;
+&lt;li&gt;声明私有方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;特点&#34;&gt;特点&lt;/h3&gt;
+&lt;p&gt;注意与 &lt;code&gt;category&lt;/code&gt; 的区别 * 编译时决议 * 只以声明的形式存在,多数情况下寄生在宿主类的&lt;code&gt;. m&lt;/code&gt;中 * 不能为系统类添加扩展&lt;/p&gt;
+&lt;h2 id=&#34;代理&#34;&gt;代理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;准确的来说是一种软件设计模式, 代理模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;iOS 中, 系统为我们提供了&lt;code&gt;@ protocol&lt;/code&gt; 形式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代理是一对一的 &lt;img src=&#34;https://img.52smile.vip/2018-12-13-094939.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;协议有必须要实现的(@require), 不惜要实现的(option)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一般用 weak 来规避循环引用&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;通知&#34;&gt;通知&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;strong&gt;观察者模式&lt;/strong&gt;来实现用于&lt;strong&gt;跨层传递消息&lt;/strong&gt;的机制&lt;/li&gt;
+&lt;li&gt;传递方式 &lt;strong&gt;一对多&lt;/strong&gt; &lt;img src=&#34;https://img.52smile.vip/2018-12-13-095923.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;通知&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>iOS 分类源码解读</title>
+        <link>http://47.99.84.217/post/ioscategory/</link>
+        <pubDate>Thu, 13 Dec 2018 11:27:31 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ioscategory/</guid>
+        <description>&lt;h3 id=&#34;分类的好处&#34;&gt;分类的好处&lt;/h3&gt;
+&lt;p&gt;用分类声明一些私有方法;&lt;br&gt;
+分类一些体积庞大的类文件,eg: AppDelegate, 组织代码更灵活&lt;br&gt;
+把 framework 的私有方法公开&lt;/p&gt;
+&lt;h3 id=&#34;分类的特点&#34;&gt;分类的特点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;运行时决议, 在 runtime 添加到类中, 在编辑的时候分类会将分类方法作为一个数组,动态的添加到宿主类中, 如果存在同名的扩展方法, 那么最后一个参与编译的方法生效并覆盖之前的同名方法(&lt;strong&gt;但是还是实际存在的,不过优先级没有分类中的高&lt;/strong&gt;), 但是可以通过一些代码决定调用最后一个参与编译的方法还是调用其他同名方法&lt;code&gt;memcopy(array-&amp;gt;lists, addedLists,addedCount *sizeof*array()-&amp;gt;lists[0])) 覆盖宿主 方法的原因,&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;为系统类添加分类&lt;/li&gt;
+&lt;li&gt;名字相同的分类会引起编译报错&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;分类中可以添加哪些内容&#34;&gt;分类中可以添加哪些内容&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;可以添加实例方法&lt;/li&gt;
+&lt;li&gt;类方法&lt;/li&gt;
+&lt;li&gt;协议&lt;/li&gt;
+&lt;li&gt;属性 只声明了 set get , 并没有在分类中添加实例变量&lt;/li&gt;
+&lt;li&gt;添加分类的实例变量, 需要通过关联对象进行设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;分类的结构体构成&#34;&gt;分类的结构体构成&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;//分类文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;struct category_t{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    //分类名称
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    const char *name;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    //分类所属的数组类
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    classref_t cls;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    //实例方法列表
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    struct method_list_t *instanceMethods;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    //类方法列表
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    struct method_list_t *classMethods;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    //所有协议的方法列表
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    struct protocol_list_t *protocols;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    //添加的所有属性
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    struct protocol_list_t *instanceProperties;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    method_list_t *methodsForMeta(bool isMeta) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        if(isMeta) return classMethods;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        else return instanceMethods;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    protocol_list_t *propertiesForMeta(bool isMeta) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        if(isMeta) return nil;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        else return instanceProperties;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;分类的加载调用栈&#34;&gt;分类的加载调用栈&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;_objec_init&lt;br&gt;
+入口调用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;map_2_images&lt;br&gt;
+数据镜像映射之类的吧, 我也不怎么懂&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;map_images_nolock&lt;br&gt;
+数据镜像映射之类的吧, 我也不怎么懂&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;read_images&lt;br&gt;
+objec 源代码中, map_images_noloc会调用此方法, 将读取到的数据镜像,将解析到的信息(方法和协议)传递给&lt;code&gt;remethodizeClass&lt;/code&gt;(猜的), 添加到类和类的元类上&lt;br&gt;
+&lt;img src=&#34;https://img.52smile.vip/2018-12-13-070041.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;remethodizeClass&lt;br&gt;
+整合class 中的所有分类, 进行操作;&lt;br&gt;
+此过程会将分类的属性,协议,方法都添加到类中;&lt;br&gt;
+下面会有详细的说明关于&lt;strong&gt;分类是如何加载的&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;static void remethodizeClass(Class cls)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    category_list *cats;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    bool isMeta;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    runtimeLock.assertWriting();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    isMeta = cls-&amp;gt;isMetaClass();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[       // Re-methodizing: check for more categories]
+if ((cats = unattachedCategoriesForClass(cls, false/&lt;em&gt;not realizing&lt;/em&gt;/))) {
+if (PrintConnecting) {
+[               _objc_inform(&amp;ldquo;CLASS: attaching categories to class &amp;lsquo;%s&amp;rsquo; %s&amp;rdquo;, ]
+cls-&amp;gt;nameForLogging(), isMeta ? &amp;ldquo;(meta)&amp;rdquo; : &amp;ldquo;&amp;rdquo;);
+}
+attachCategories(cls, cats, true /&lt;em&gt;flush caches&lt;/em&gt;/);     &lt;br&gt;
+free(cats);
+}
+}
+```&lt;/p&gt;
+&lt;h3 id=&#34;分类是如何加载的&#34;&gt;分类是如何加载的&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-12-13-072228.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;remethodizeClass&#34;
+	
+	
+&gt; &lt;img src=&#34;https://img.52smile.vip/2018-12-13-073451.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;方法覆盖&#34;&gt;方法覆盖&lt;/h3&gt;
+&lt;p&gt;我们上面说了一些&lt;code&gt;category&lt;/code&gt;原理, 如果存在同名方法的话, 宿主类中的方法会被覆盖掉, 那么我们如何调用宿主类中被覆盖的方法呢?&lt;br&gt;
+刚才说了, 并不是被覆盖掉了, 而是优先级的问题, 我们只要顺着方法列表找到最后一个对应名字的方法就可以啦~&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Class currentClass = [MyClass class];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MyClass *my = [[MyClass alloc] init];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;if (currentClass) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    unsigned int methodCount;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Method *methodList = class_copyMethodList(currentClass, &amp;amp;methodCount);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    IMP lastImp = NULL;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    SEL lastSel = NULL;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    for (NSInteger i = 0; i &amp;lt; methodCount; i++) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Method method = methodList[i];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        NSString *methodName = [NSString stringWithCString:sel_getName(method_getName(method))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                        encoding:NSUTF8StringEncoding];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        if ([@&amp;#34;printName&amp;#34; isEqualToString:methodName]) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            lastImp = method_getImplementation(method);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            lastSel = method_getName(method);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    typedef void (*fn)(id,SEL);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    if (lastImp != NULL) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        fn f = (fn)lastImp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        f(my,lastSel);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    free(methodList);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;通过关联对象给分类添加成员变量&#34;&gt;通过关联对象给分类添加成员变量&lt;/h3&gt;
+&lt;p&gt;关联对象由&lt;code&gt;AssociationsManager&lt;/code&gt;管理并在 &lt;code&gt;AssociationsHashMap&lt;/code&gt;中存储;&lt;br&gt;
+&lt;code&gt;AssociationsHashMap&lt;/code&gt; 是一个全局容器, 通过一个映射表来操作到具体不同的类&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#import &amp;#34;MyClass.h&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@interface MyClass (Category1)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@property(nonatomic,copy) NSString *name;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@end
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#import &amp;#34;MyClass+Category1.h&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#import &amp;lt;objc/runtime.h&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@implementation MyClass (Category1)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+ (void)load
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    NSLog(@&amp;#34;%@&amp;#34;,@&amp;#34;load in Category1&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- (void)setName:(NSString *)name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    objc_setAssociatedObject(self,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                             &amp;#34;name&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                             name,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                             OBJC_ASSOCIATION_COPY);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- (NSString*)name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    NSString *nameObject = objc_getAssociatedObject(self, &amp;#34;name&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    return nameObject;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@end
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;关联对象实现原理&lt;br&gt;
+&lt;img src=&#34;https://img.52smile.vip/2018-12-13-083719.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;关联对象实现原理&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>UI事件传递以及事件响应原理</title>
+        <link>http://47.99.84.217/post/iostouchevent/</link>
+        <pubDate>Tue, 11 Dec 2018 20:47:22 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/iostouchevent/</guid>
+        <description>&lt;p&gt;CALayer -&amp;gt; content显示内容, 实际是合成了一个个位图; 用来展示 我们平常所说的掉帧也是因为位图合成后未来得及显示绘制造成的 view 提供内容, 负责处理触摸事件,参与视图响应链 layer, 负责内容上的显示, contents; 之所以这样设计是因为单一元件负责单元任务, 即单一原则;&lt;/p&gt;
+&lt;h3 id=&#34;事件传递&#34;&gt;事件传递:&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//返回响应事件的视图
+-(UIView *)hitTest:(CGPoint)point WithEvent:(UIEvent *)event;
+//判断是否在响应区域内
+-(BOOL)pointInside(CGPoint)point WithEvent:(UIEvent *)event;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;事件传递流程&#34;&gt;事件传递流程:&lt;/h4&gt;
+&lt;p&gt;如何寻找合适的响应者来处理事件: 1. 判断主窗口是否可以接受触摸事件 2. 判断触摸点是否在自己的区域内( pointInside: withEvent:) 3. 子控件数组中从后往前遍历子控件，重复前面的两个步骤（所谓从后往前遍历子控件，就是首先查找子控件数组中最后一个元素，然后执行1、2步骤） 事件传递给一个控件就会调用&lt;code&gt;hitTest: withEvent:&lt;/code&gt;, 通过这个特性, 可以重写&lt;code&gt;hitTest: withEvent&lt;/code&gt;方法返回指定的 view 用来接收事件的处理; &lt;img src=&#34;https://img.52smile.vip/2018-12-12-070429.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; eg: &lt;img src=&#34;https://img.52smile.vip/2018-12-12-082050.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 在实际中响应事件是的&lt;code&gt;viewB1&lt;/code&gt;,虽然点击的位置在 &lt;code&gt;viewA2&lt;/code&gt; 和 &lt;code&gt;ViewB1&lt;/code&gt;的重复处, 但是由于 &lt;code&gt;view B1&lt;/code&gt; 的视图索引在 &lt;code&gt;viewA2&lt;/code&gt; 之上, 所以响应事件的是 ``viewB1`;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;hittestwithevent-系统实现&#34;&gt;hitTest:withEvent: 系统实现&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-12-12-083719.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;hitTest:withEvent: 系统实现&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (!self.isUserInteractionEnabled  self.isHidden  self.alpha &amp;lt;= 0.01) {
+        return nil;
+    }
+    if ([self pointInside:point withEvent:event]) {
+        for (UIView *subview in [self.subviews reverseObjectEnumerator]) {
+            CGPoint convertedPoint = [subview convertPoint:point fromView:self];
+            UIView *hitTestView = [subview hitTest:convertedPoint withEvent:event];
+            if (hitTestView) {
+                return hitTestView;
+            }
+        }
+        return self;
+    }
+    return nil;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;hitTest:withEvent:&lt;/code&gt; 首先检测是否允许视图接受触摸事件, 如果出现下面的情况, 不允许被触摸:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;视图被隐藏 &lt;code&gt;self.hidden == no&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;未启用用户交互 &lt;code&gt;self.userInteractionEnabled == NO&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;视图的透明度小于0.001 &lt;code&gt;self.alpha &amp;lt; 0.01&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;视图的 pointInside:withEvent 返回 NO &lt;code&gt;pointInside:withEvent: == NO&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过重写&lt;code&gt;hitTest:withEvent:&lt;/code&gt;方法, 我们可以给某些控件增大可点击范围, 或者让某个控件的指定区域响应点击事件;&lt;/p&gt;
+&lt;h4 id=&#34;eg--修改触摸范围-向上偏移10个点&#34;&gt;eg : 修改触摸范围, 向上偏移10个点&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (!self.isUserInteractionEnabled  self.isHidden  self.alpha &amp;lt;= 0.01) {
+        return nil;
+    }
+    CGRect touchRect = CGRectInset(self.bounds, -10, -10);
+    if (CGRectContainsPoint(touchRect, point)) {
+        for (UIView *subview in [self.subviews reverseObjectEnumerator]) {
+            CGPoint convertedPoint = [subview convertPoint:point fromView:self];
+            UIView *hitTestView = [subview hitTest:convertedPoint withEvent:event];
+            if (hitTestView) {
+                return hitTestView;
+            }
+        }
+        return self;
+    }
+    return nil;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;eg--定义一个方形的-button-只允许圆形区域内才可以接受响应&#34;&gt;eg : 定义一个方形的 button, 只允许圆形区域内才可以接受响应&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-12-12-090217.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    if (!self.userInteractionEnabled 
+        [self isHidden] 
+        self.alpha &amp;lt;= 0.01) {
+        return nil;
+    }
+    if ([self pointInside:point withEvent:event]) {
+        //遍历当前对象的子视图
+        __block UIView *hit = nil;
+        [self.subviews enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            // 坐标转换
+            CGPoint vonvertPoint = [self convertPoint:point toView:obj];
+            //调用子视图的hittest方法
+            hit = [obj hitTest:vonvertPoint withEvent:event];
+            // 如果找到了接受事件的对象，则停止遍历
+            if (hit) {
+                *stop = YES;
+            }
+        }];
+        if (hit) {
+            return hit;
+        }
+        else{
+            return self;
+        }
+    }
+    else{
+        return nil;
+    }
+}
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    CGFloat x1 = point.x;
+    CGFloat y1 = point.y;
+    CGFloat x2 = self.frame.size.width / 2;
+    CGFloat y2 = self.frame.size.height / 2;
+    double dis = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    // 67.923
+    if (dis &amp;lt;= self.frame.size.width / 2) {
+        return YES;
+    }
+    else{
+        return NO;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;eg--将触摸事件传递给下一层的视图&#34;&gt;eg : 将触摸事件传递给下一层的视图&lt;/h4&gt;
+&lt;p&gt;有时候我们需要忽略当前视图的触摸事件, 让他下一级的视图去响应触摸; 我们可以覆盖此方法, 返回其中一个包含触摸点的子视图;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *hitTestView = [super hitTest:point withEvent:event];
+    if (hitTestView == self) {
+        hitTestView = nil;
+    }
+    return hitTestView;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;eg--将触摸事件传递给子视图&#34;&gt;eg : 将触摸事件传递给子视图&lt;/h4&gt;
+&lt;p&gt;假设一个scrollview 构成的图像轮播, pagungEnable=YES, clipsToBounds 设置为 NO , scrollveiw 的响应不仅在自己的边界内, 而且在父视图的边界也要可以响应&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *hitTestView = [super hitTest:point withEvent:event];
+    if (hitTestView) {
+        hitTestView = self.scrollView;
+    }
+    return hitTestView;
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>模仿 tableViewCell 实现一个简易的重用视图</title>
+        <link>http://47.99.84.217/post/reusecell/</link>
+        <pubDate>Mon, 10 Dec 2018 15:29:15 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/reusecell/</guid>
+        <description>&lt;p&gt;之前面试的时候会有很多人问道 UITableviewCellde 重用机制, 大部分回答都是&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在缓存池初中通过 dequeueReusableCellWithIdentifier:CellIdentifier 方法取出可重用的 cell, 在一个 cell 离开屏幕显示的范围内, 会自动被加入到缓存池中,然后在缓存池中取出一个 cell, 放到当前屏幕上;用重用机制会节省性能，避免出现一些因为网络因素而造成的卡顿现象。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;复用机制避免了大量的初始化过程, 我们可以节约很大一部分资源; 下面我们来试着模仿 tableview 创建一个复用视图吧~&lt;/p&gt;
+&lt;h3 id=&#34;实例化一个重用池&#34;&gt;实例化一个重用池;&lt;/h3&gt;
+&lt;p&gt;新建一个继承自&lt;code&gt;NSObject&lt;/code&gt; 的类, reusePool; 在reusePool 中定义三个方法,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;获取重用 view &lt;code&gt;-(UIView *)getReuseTableView;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加 view 到重用池中 &lt;code&gt;-(void)addViewForReusePool:(UIView *)view;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重置重用池 &lt;code&gt;-(void)reset;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在类的&lt;code&gt;.m&lt;/code&gt;文件中, 实现刚才定义的几个方法, 并定义两个属性, &lt;code&gt;wattingQueue&lt;/code&gt; 和 &lt;code&gt;usingQueue&lt;/code&gt;, 作为存放视图的容器; 实现刚才定义的几个方法&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _waitingQueue  = [NSMutableSet set];
+        _useingQueue   = [NSMutableSet set];
+    }
+    return self;
+}
+// 如果存在, 从等待队列中移除一个, 在使用中的队列增加一个
+-(UIView *)getReuseTableView{
+    UIView *view = [_waitingQueue anyObject];
+    if (view == nil) {
+        return nil;
+    }else{
+        [_waitingQueue removeObject:view];
+        [_useingQueue addObject:view];
+        return view;
+    }
+}
+//添加可重用视图到重用池
+-(void)addViewForReusePool:(UIView *)view{
+    if (view == nil) {
+        return;
+    }
+    [_useingQueue addObject:view];
+}
+//重置重用池
+-(void)reset{
+    UIView *view = nil;
+    while ((view = [_useingQueue anyObject]) ) {
+        [_useingQueue removeObject:view];
+        [_waitingQueue addObject:view];
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;实现视图&#34;&gt;实现视图&lt;/h3&gt;
+&lt;p&gt;定义一个继承自&lt;code&gt;UITableView&lt;/code&gt; 的视图类, &lt;code&gt;reuseTableView&lt;/code&gt;; 给 &lt;code&gt;reuseTableView&lt;/code&gt; 设置一个代理方法, 来获取需要用到的数据;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;
+@protocol QKReuseTableViewDataSource &amp;lt;NSObject&amp;gt;
+/**
+ 获取字母索引条
+ @param tableview tableview
+ @return 结果数组
+ */
+-(NSArray &amp;lt;NSString*&amp;gt; *)indexTitleFromReuseTable:(UITableView *)tableview;
+@end
+@interface QKReuseTableView : UITableView
+@property (nonatomic,weak) id   &amp;lt;QKReuseTableViewDataSource&amp;gt; indexDataSource;
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在&lt;code&gt;. m&lt;/code&gt; 文件中定义两个属性&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@interface QKReuseTableView ()
+{
+    UIView *containerView;
+    QKReusePool *reusePool;
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重写 &lt;code&gt;tableview&lt;/code&gt; 的&lt;code&gt;reloadData&lt;/code&gt; 方法&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-(void)reloadData{
+    [super reloadData];
+    if (containerView == nil) {
+        containerView = [[UIView alloc] init];
+        containerView.backgroundColor = UIColor.whiteColor;
+        [self.superview insertSubview:containerView aboveSubview:self];
+    }
+    if (reusePool == nil) {
+        reusePool = [[QKReusePool alloc] init];
+    }
+    //初始化的时候重置重用池
+    [reusePool reset];
+//    reload 索引条
+    [self reloadIndexTitle];
+}
+-(void)reloadIndexTitle{
+//    设置一个title数组
+    NSArray &amp;lt;NSString *&amp;gt; * titleArray  = nil;
+    if ([self.indexDataSource respondsToSelector:@selector(indexTitleFromReuseTable:)]) {
+        titleArray = [self.indexDataSource indexTitleFromReuseTable:self];
+    }
+    if (!titleArray  titleArray.count&amp;lt;=0) {
+        [containerView setHidden:YES];
+        return;
+    }
+    NSUInteger count = titleArray.count;
+    CGFloat btnWidth = 60;
+    CGFloat btnHeight = self.frame.size.height/count;
+    for (int i = 0; i&amp;lt; count; i++) {
+        NSString *title = [titleArray objectAtIndex:i];
+        UIButton *btn = (UIButton *)[reusePool getReuseTableView];
+        if (btn == nil) {
+            btn = [[UIButton alloc] initWithFrame:CGRectZero];
+            btn.backgroundColor = UIColor.whiteColor;
+            [reusePool addViewForReusePool:btn];
+            NSLog(@&amp;#34;creat  a  btn&amp;#34;);
+        }else{
+            NSLog(@&amp;#34;reuse button&amp;#34;);
+        }
+        [containerView addSubview:btn];
+        [btn setTitle:title forState:UIControlStateNormal];
+        [btn  setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+        [btn setFrame:CGRectMake(0, i*btnHeight, btnWidth, btnHeight)];
+    }
+    [containerView setHidden:NO];
+    containerView.frame = CGRectMake(self.frame.origin.x + self.frame.size.width - btnWidth, self.frame.origin.y, btnWidth, self.frame.size.height);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;代码在reuseCell 文件夹 &lt;a class=&#34;link&#34; href=&#34;https://gitee.com/SuQiankun/iOSTestTool.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;git仓库链接地址&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>对 tableView 数据源中的时间进行分组排序</title>
+        <link>http://47.99.84.217/post/groupwithtime/</link>
+        <pubDate>Mon, 10 Dec 2018 15:15:33 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/groupwithtime/</guid>
+        <description>&lt;p&gt;遇到一个需求, 需要从后台返回的消息或者交易列表中根据日期进行分组排序, 界面类似 &lt;img src=&#34;https://img.52smile.vip/2018-12-10-071940.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 根据日期或者消息类型,等等进行排序; 数据格式类似下面这种:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[
+    {
+    &amp;#34;date&amp;#34;:&amp;#34;2018-12-12&amp;#34;,
+    &amp;#34;titleInfo&amp;#34;:&amp;#34;xxxxx&amp;#34;,
+    },
+    {
+    &amp;#34;date&amp;#34;:&amp;#34;2018-12-12&amp;#34;,
+    &amp;#34;titleInfo&amp;#34;:&amp;#34;xxxxx&amp;#34;,
+    },
+    {
+    &amp;#34;date&amp;#34;:&amp;#34;2018-12-12&amp;#34;,
+    &amp;#34;titleInfo&amp;#34;:&amp;#34;xxxxx&amp;#34;,
+    },
+    {
+    &amp;#34;date&amp;#34;:&amp;#34;2018-12-12&amp;#34;,
+    &amp;#34;titleInfo&amp;#34;:&amp;#34;xxxxx&amp;#34;,
+    },
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;可以再获取到数据后对数据先分好组 然后在每一个创建空数组 在遍历数据源中的数据 如果时间和组头一样就加入对应空数组中; 代码如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (void)handleArraysAction {
+    NSMutableArray *timeArr = [NSMutableArray array];
+    __weak typeof(self) weakSelf = self;
+    [self.requestDataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        QKTimeGroupModel* headModel = obj;
+        [timeArr addObject:headModel.date_str];
+    }];
+    NSSet *set = [NSSet setWithArray:timeArr];//使用asset把timeArr的日期去重
+    NSArray *userArray = [set allObjects];//去重后的时间数组
+    //遍历userArray   按照userArray里的时间分成几个组每个组都是空的数组
+    //    self.dataSource = [NSMutableArray array];
+    [userArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSMutableArray *arr = [NSMutableArray array];
+        [weakSelf.dataSource addObject:arr];
+    }];
+    //遍历self.requestDataArray取其中每个数据的日期看看与userArray里的那个日期匹配就把这个数据装到sectionArray对应的组中
+    [self.requestDataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        QKTimeGroupModel* headModel = obj;
+        for (NSString *timeStr in userArray) {
+            if ([timeStr isEqualToString:headModel.date_str]) {
+                NSMutableArray *emptyArr = [weakSelf.dataSource objectAtIndex:[userArray indexOfObject:timeStr]];//取到对应的空数组
+                [emptyArr addObject:headModel];
+            }
+        }
+    }];
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;也可以额外定义一个时间变量和一个 section 的变量, 循环对比每个 date 的值, 然后根据对比结果决定加入到数组不同的 section 中; 代码如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-(void)testDict{
+    NSMutableArray *modelArray = [QKTimeGroupModel getData];
+    NSString *pervDate = @&amp;#34;temp&amp;#34;;
+    NSUInteger sectionNumber = 0;
+    for (int i = 0; i &amp;lt; modelArray.count; i++) {
+        QKTimeGroupModel *model = modelArray[i];
+        if ([model.date_str isEqualToString:pervDate]) {
+            NSMutableArray *arr = (NSMutableArray *)modelArray[sectionNumber];
+            [arr addObject:model];
+            [modelArray replaceObjectAtIndex:sectionNumber withObject:arr];
+        }else{
+            pervDate = model.date_str;
+            NSMutableArray *arr = [NSMutableArray array];
+            [arr addObject:model];
+            [modelArray addObject:arr];
+            sectionNumber = modelArray.count - 1;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>Nas 安装人人影视</title>
+        <link>http://47.99.84.217/post/installrrshare/</link>
+        <pubDate>Sat, 10 Nov 2018 09:04:33 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/installrrshare/</guid>
+        <description>&lt;p&gt;喜欢看美剧和电影, 大二以后一直在人人看美剧和电影, 偶尔从射手下载字母来看生肉;好景不长,因为版权问题人人和射手被勒令关停, 我现在还依稀记得当年人人影视和射手字幕网被关停时候的心痛; 买了个 Nas , 发现 Docker 可以安装人人影视客户端, 我说着还得了, 咱赶紧弄一个呀; 网上研究了一下怎么安装, 花了十几分钟装好了; 美美哒,仿佛又回到了看美剧的时候啦; 哈哈哈&lt;/p&gt;
+&lt;h3 id=&#34;安装-docker&#34;&gt;安装 Docker&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装Docker, 在群辉的套件中心安装 Docker, 直接安装就好了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装人人影视&#34;&gt;安装人人影视&lt;/h3&gt;
+&lt;p&gt;打开 Docker&lt;br&gt;
+&lt;img src=&#34;https://img.52smile.vip/2018-11-10-014820.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 选择注册表, 输入&lt;code&gt;auska&lt;/code&gt;, 下载安装docker-rrshareweb 下载完成后对容器进行设置, 勾选&lt;code&gt;使用最高权限执行容器&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://img.52smile.vip/2018-11-10-014956.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 fileStation docker 文件夹中新建子文件夹, eg:&lt;code&gt;rrshare&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;给 人人影视容器 设置卷,点击添加文件夹, 选择刚刚创建的 rrshare; 然后选择一个文件夹用来存放下载后的资源, 我选择的是 video&lt;/li&gt;
+&lt;li&gt;设置端口, 可以默认, 也可以自定义一个&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://52smile.vip/wp-content/uploads/2018/11/15418148858533.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;￼ &lt;img src=&#34;https://img.52smile.vip/2018-11-10-015148.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; &lt;img src=&#34;https://52smile.vip/wp-content/uploads/2018/11/15418149291359.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;￼&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;设置环境改变量&lt;br&gt;
+通过 ssh 登录 Nas, 在终端执行 cat 命令获取UGID 和 PGID, 选择 admin的就可以1204,100&lt;br&gt;
+&lt;img src=&#34;https://img.52smile.vip/2018-11-10-015913.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; &lt;img src=&#34;https://52smile.vip/wp-content/uploads/2018/11/15418155867170.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;￼&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;到这就完成安装了,不要忘记点击&lt;strong&gt;应用&lt;/strong&gt; 然后在浏览器中输入你的群辉 IP, 端口号是刚才设置的端口号; 如果需要解锁, 默认解锁码是123456; tip: 如果不能下载,先停止容器类, 将 P/UGID 设置成 0;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>给你的Mac搭建开发环境</title>
+        <link>http://47.99.84.217/post/macworkspace/</link>
+        <pubDate>Sun, 21 Oct 2018 20:40:18 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/macworkspace/</guid>
+        <description>&lt;p&gt;本文主要讲述 Mac 一些常用配置,优秀的软件,常见实用技巧&lt;/p&gt;
+&lt;h1 id=&#34;系统设置&#34;&gt;系统设置&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;启用触摸板右键;系统设置 -&amp;gt; 触摸板 -&amp;gt;光标与点按 -&amp;gt; 辅助点按; 可以选择轻点右下角或者双指头触摸&lt;/li&gt;
+&lt;li&gt;启用触摸板三指拖移; 系统设置 -&amp;gt; 辅助功能 -&amp;gt; 鼠标与触控板 -&amp;gt; 触控板设定&lt;/li&gt;
+&lt;li&gt;苹果的 F1 ~ F12是常用的影音娱乐功能, 对于码农来讲,会更习惯将 F1~F12 设定为功能按键, 你可以打开你的终端 输入以下代码 &lt;code&gt;defaults write -globalDomain com.apple.keyboard.fnState -int 1&lt;/code&gt; 将 F1~F12设定为IDE功能按钮&lt;/li&gt;
+&lt;li&gt;我们在安装一些破解软件的时候, 有时候会提示&lt;strong&gt;无法打开已损坏的安装包&lt;/strong&gt;; 命令行执行&lt;code&gt;sudo spctl --master-disable&lt;/code&gt; ,关闭验证&lt;/li&gt;
+&lt;li&gt;Dock 栏优化, 移除不常用的 app, 打开自动隐藏 dock 快捷键 &lt;code&gt;command + option +D&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;设置触发角,出发常用的锁屏,开启屏保等功能; 系统设置-&amp;gt;桌面与屏幕保护程序-&amp;gt;桌面保护程序-&amp;gt;触发角; 设定后光标移动到屏幕四个角,会触发不同的操作;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;扩展优化&#34;&gt;扩展优化&lt;/h1&gt;
+&lt;p&gt;mac 系统有一个很强大的预览工具; 选中文件后按空格可以预览选中文件,支持很多格式,但是如果我们想获取&lt;strong&gt;更好的阅读体验&lt;/strong&gt;和&lt;strong&gt;更多的文件支持类型&lt;/strong&gt;,我们就需要安装一些扩展; 在安装扩展之前需要安装一个超级强大的 brew , brew 是 mac 系统上的一个包管理器,就像 linux 上的 yum 和 apt-get ;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!--在终端执行下面这个语句进行安装--&amp;gt;
+/usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装完成之后在终端输入 &lt;code&gt;brew -h&lt;/code&gt; , 可以查看 brew 的帮助文档; brew 安装完成以后就可以通过 brew 安装一些常用的插件和软件包; 安装上面说到的预览扩张工具,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;qlcolorcode ,这是一个代码高亮的插件，效果如图所示：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew cask install qlcolorcode
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-21-131556.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;qlcolorcode&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;qlmarkdown, 这个插件能让我们预览 markdown 文件的渲染效果:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew cask install qlmarkdown
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-21-131813.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;qlstephen&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;* qlstephen, 这个插件能让我们预览没有后缀的文本文件，效果如图所示：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew cask install qlstephen
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-21-131944.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;brew cask install qlstephen&#34;
+	
+	
+&gt; * quicklook-json, 这个插件也很容易理解，提供对 JSON 文件的格式化和高亮支持：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew cask install quicklook-json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-21-132017.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 以上是和程序员相关的常用插件，还有一些设计师可能用到的插件，可以点击去&lt;a class=&#34;link&#34; href=&#34;https://github.com/sindresorhus/quick-look-plugins&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;quick-look-plugins&lt;/a&gt;查看更多可用扩展;&lt;/p&gt;
+&lt;h1 id=&#34;终端替换&#34;&gt;终端替换&lt;/h1&gt;
+&lt;p&gt;上面提到了一个个工具叫做终端, apple 提供的终端工具并不是那么好用, &lt;a class=&#34;link&#34; href=&#34;https://www.iterm2.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;iTerm2&lt;/a&gt;是Apple终端的开源替代品。它具有高度可定制性，并具有许多有用的功能。 你可以使用 &lt;code&gt;brew cask install iterm2&lt;/code&gt;,来安装,也可以在官网下载; 它是开源免费的; iterm 有一个很好用的功能, 他可以悬停到最上层; &lt;img src=&#34;https://img.52smile.vip/2018-10-21-135026.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 打开iTerm设置 &lt;img src=&#34;https://img.52smile.vip/2018-10-21-134507.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 配置快捷键 &lt;img src=&#34;https://img.52smile.vip/2018-10-21-134623.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Frp 内网穿透,把你的 NAS 放到公网上</title>
+        <link>http://47.99.84.217/post/frpnas/</link>
+        <pubDate>Mon, 08 Oct 2018 10:15:53 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/frpnas/</guid>
+        <description>&lt;p&gt;前段时间觉得自己的硬盘不够用,而且有一些远程访问资源和远程下载任务的需求; 跟女朋友商量一下, 批了资金买了一个群辉 NAS; 因为家里的网络条件没有公网 ip, 光猫拨号上网, 群辉自带的 quickconnect 连接速度太慢了; 趁着国庆在家就研究了一下内网穿透的技术;想通过内网穿透来访问家里的群辉&lt;/p&gt;
+&lt;h3 id=&#34;关于内网穿透&#34;&gt;关于内网穿透&lt;/h3&gt;
+&lt;p&gt;本来打算用路由器做内网穿透,然后给 nas 做端口转发, 但是华硕 AC66U-B1刷了梅林之后打游戏老掉包, 于是就在 nas 上做了内网转发; 内网穿透的服务有好几种: eg: * 花生壳 &amp;mdash;&amp;ndash;&amp;gt; 死贵 * nat123 &amp;mdash;&amp;ndash;&amp;gt; 没用过 * ngork &amp;mdash;&amp;ndash;&amp;gt; 刚开始用的这个, 但是找了好几个帖子,提供的客户端的配置文件和应用程序都不能下载了(不想花钱); 放弃了; * frp &amp;mdash;&amp;ndash;&amp;gt; 当前使用的 * 还有一些淘宝上的盒子, 都比较贵 选择 frp 是因为之前购买的 vps 除了 ss 服务没有其他业务运行, 放着也是浪费, 而且测了一下连接速度很快,不得不提我这个 vps速度真的很快, &lt;a class=&#34;link&#34; href=&#34;https://www.vultr.com/?ref=7205024&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;vultr的vps&lt;/a&gt;加了 bbr 之后在线看4K无压力的 ;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;需要准备的材料&#34;&gt;需要准备的材料&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;一台有独立 IP 的服务器 (例如:&lt;a class=&#34;link&#34; href=&#34;https://www.vultr.com/?ref=7205024&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;vps&lt;/a&gt;, 阿里&lt;a class=&#34;link&#34; href=&#34;https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=whtofl6r&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ECS&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;一台 NAS 或者需要做内网穿透的客户端&lt;/li&gt;
+&lt;li&gt;frp 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;h4 id=&#34;服务器端配置&#34;&gt;服务器端配置&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;登录到服务器,选择适合自己服务器的文件下载, &lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;eg: 我的服务器是 arm64, 系统版本是 linux-centOS
+wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_arm64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载后完成解压&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tar -xzf  frp_0.21.0_linux_arm64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入到服务器 frp 目录,并删除无用文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd frp_0.21.0_linux_arm64
+//frpc 开头的是客户端的配置文件和资源, 服务端可删除
+//frps 开头的是服务端的配置文件和资源, 客户端可删除
+rm -f frpc.ini frpc_full.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑服务端配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[common]
+bind_port = 7000
+vhost_http_port = 8080
+dashboard_port = 7500
+dashboard_user = you&amp;#39;s name
+dashboard_pwd = you&amp;#39;s psw
+max_pool_count = 5
+authentication_timeout = 900
+subdomain_host = lekee.cc
+[ssh]
+listen_port = 6000
+auth_token = you&amp;#39;s token,(客户端的保持一致)
+/**
+[common] 必填的
+bind_port Frp 服务端口（可自定义）
+vhost_http_port http 访问端口（可自定义）
+dashboard_port dashboard 界面端口
+dashboard_user 登录 dashboard 用户名
+dashboard_pwd 登录 dashboard 密码
+max_pool_count 最大连接池数量
+authentication_timeout 超时验证时间
+subdomain_host 自定义二级域名
+[ssh]
+listen_port ssh 访问端口
+auth_token 用户身份认证
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果需要更详细的,可以参考&lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp/blob/master/README_zh.md#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;保存配置文件, 然后运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./frps -c ./frps.ini
+也可以通过 screen 或者 nohup 命令进行后台运行
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;客户端配置&#34;&gt;客户端配置&lt;/h4&gt;
+&lt;p&gt;客户端配置与服务端很相似, 区别在于配置文件的不同; frp 客户端支持 windows, Mac, 路由器,和linux 内核设备;群辉 nas 是基于 linux 的, 可以使用 linux 版本的 frp 客户端;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;开启 shh 登录,控制面板打开终端机和 SNMP, 勾选启动 ssh ; &lt;img src=&#34;https://img.52smile.vip/2018-10-08-030049.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登录到 nas ,下载 frp&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;eg:
+ssh xiaoxiaosu@192.168.xxx.xxx
+ssh user@ipAdd
+//下载
+wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_arm64.tar.gz
+//解压
+tar -xzf  frp_0.21.0_linux_arm64.tar.gz
+//删除无用配置文件
+rm -f frps.ini frps_full.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑客户端配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vi frpc.ini
+[common]
+server_addr = xxx.xxx.xxx.xxx(服务器的 ip)
+server_port = 7000
+auth_token = password
+pool_count = 1
+[ssh]
+type = tcp
+local_ip = xxx.xxx.xxx.xxx(NAS 的局域网ip)
+local_port = 22
+remote_port = 6000
+[nas]
+type = http
+local_port = 5000
+subdomain = nas
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;[common] 必填的 server_addr &amp;mdash;&amp;ndash;&amp;gt;服务器端公网 server_port &amp;mdash;&amp;ndash;&amp;gt;frp 服务端口，和服务器端 bind_port 一致 auth_token &amp;mdash;&amp;ndash;&amp;gt; 和前面服务器端 [ssh] auth_token 一致 pool_count &amp;mdash;&amp;ndash;&amp;gt;连接池数量 [ssh] type &amp;mdash;&amp;ndash;&amp;gt; 服务类型（tcp、http、https、udp） local_ip &amp;mdash;&amp;ndash;&amp;gt; NAS 本地局域网内网 ip local_port &amp;mdash;&amp;ndash;&amp;gt; NAS 开启 ssh 服务端口号，默认 22 remote_port &amp;mdash;&amp;ndash;&amp;gt; 服务器端 ssh 端口，和服务器端 [ssh] listen_port 配置一致 [nas] NAS 管理界面 subdomain &amp;mdash;&amp;ndash;&amp;gt; 二级域名 nas.52smile.vip 访问 NAS type = http &amp;mdash;&amp;ndash;&amp;gt; 服务类型为 http local_port &amp;mdash;&amp;ndash;&amp;gt; NAS 默认端口 5000 [web] NAS web Station 服务，没用可以不用设置 type = http &amp;mdash;&amp;ndash;&amp;gt; 类型为 http local_port = 80 &amp;mdash;&amp;ndash;&amp;gt; NAS web 服务端口 subdomain = web &amp;mdash;&amp;ndash;&amp;gt; 二级域名 web.52smile.vip tip: 使用自定义二级域名的时候，域名 52smile.vip 要解析到服务器 IP&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;保存配置文件, 然后运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./frpc -c ./frpc.ini
+也可以通过 screen 或者 nohup 命令进行后台运行
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-08-031701.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;到此就完成了&#34;&gt;到此就完成了;&lt;/h3&gt;
+&lt;p&gt;我测试了一下在线观看视频, 包括下载文件的速度.都是可以的.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>成吨节约您时间的效率神器--Alfred</title>
+        <link>http://47.99.84.217/post/usealfred/</link>
+        <pubDate>Tue, 18 Sep 2018 19:47:24 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/usealfred/</guid>
+        <description>&lt;p&gt;Alfred, 我叫它小红帽; 是 Mac 平台上一个能够大幅提升生产力的效率工具,通过强大的workflow 机制,能够帮助我们快速打开网页、快速进行自定义搜索、查看剪贴板历史、快速查询单词等一些基础功能,通过自己去编辑脚本,可以实现更多的功能,解决输入输出的痛点，极大的减少了重复的操作,减少不同程序之间的切换步骤,成吨的节约时间。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-114716.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alfred&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;先简单介绍一下常见的使用场景: 平常我们搜索关键词需要打开浏览器,然后输入关键词;执行搜索,但是用小红帽,配置好以后输入想要搜索关键词,然后按 enter 就好啦~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-2018-09-18%2020.06.41.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;search&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;有时候突然忘记一个单词的中文意思是什么，先移动下鼠标，打开词典工具，然后输入单词,但是用小红帽,我们通过一个 关键词唤起,然后输入想要查询的单词, enter 就出来了; 还可以通过 shift 键来预览其他释义;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-2018-09-18%2020.08.44.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;translate&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;当然这只是一丢丢的功能;据统计大约扩展出来的 workflow 至少有500+,有热心网友列了一个&lt;a class=&#34;link&#34; href=&#34;http://www.alfredworkflow.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;表格&lt;/a&gt;来管理; 你可以下载并免费使用其中任何一个 Workflow，甚至还可以基于一些不错的 Workflow 加入自己的想法，改造成属于自己的,符合自己工作习惯的 Workflow（前提是已解锁 Powerpack ）。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;如何安装&#34;&gt;如何安装&lt;/h3&gt;
+&lt;p&gt;首先可以从&lt;a class=&#34;link&#34; href=&#34;https://www.alfredapp.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Alfred 官网&lt;/a&gt;自行下载安装，免费用户可以使用除 Workflow 以外的其它功能，如需使用 Workflow，则需要购Powerpack。推荐大家使用正版 列出常用的一些功能:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;应用搜索 输入关键词,小红帽自动罗列包含关键词的 application; 搜索结果列出后按住 command 键,会出现不同的功能 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-123522.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件&amp;amp;目录搜索 输入空格或者 find开启命令,然后输入想要搜索的内容,快速定位到搜索文件;输入 enter 可直接打开文件或者文件夹; 搜索结果列出后按住 command 键,会出现不同的功能 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-123722.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文本搜索 输入 in 命令，以及待搜索的文本，列出磁盘中包含该文本的相关文件，可以快速定位文件，相当于简易的终端 find 命令。 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-124113.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;img src=&#34;http://52smile.vip/wp-content/uploads/2018/09/15372745411544.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;-w601&#34;
+	
+	
+&gt;￼&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算器 可以计算简单的,复杂的运算 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-124245.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-124423.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;词典搜索 强烈推荐使用有道词典的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/wensonsmith/YoudaoTranslate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;workflow&lt;/a&gt;; &lt;img src=&#34;https://img.52smile.vip/2018-09-18-124524.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 可以自己去申请有道官方的秘钥,替换使用;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;剪切板管理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在小红帽偏好设置(command+,)中打开 features,点开 Clipboard, 可以看到如下的图片; viewerKeyboard 是命令快捷键,在小红帽中输入可快速唤起建起版管理,也可以自定义唤起命令; clearLeyword 是清除剪切板记录,同上,也可以自定义命令关键词;&lt;/li&gt;
+&lt;li&gt;这样能极大地提升工作效率,避免在两个应用中来回切换的操作;&lt;/li&gt;
+&lt;li&gt;不过我个人很少使用小红帽附带的剪切板,一直都在使用 &lt;a class=&#34;link&#34; href=&#34;https://pasteapp.me/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;paste&lt;/a&gt;,颜值高,谁用谁知道; &lt;img src=&#34;https://img.52smile.vip/2018-09-18-124836.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-124828.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;快递单号查询 输入快递单号: biubiubiu~ &lt;img src=&#34;https://img.52smile.vip/2018-09-18-125700.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ip查询 输入 &lt;code&gt;ip&lt;/code&gt; ,直接显示; 再也不用 &lt;code&gt;ifconf&lt;/code&gt; 了 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-125758.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;shell 命令 输入 &lt;code&gt;&amp;gt;&lt;/code&gt;,然后可以直接输入 &lt;code&gt;shell&lt;/code&gt;命令; &lt;img src=&#34;https://img.52smile.vip/2018-09-18-125919.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-130016.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 有些人可能不喜欢自带的终端,如果是使用&lt;code&gt;item2&lt;/code&gt;; 可以通过自定的的脚本去切换默认的终端&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;on alfred_script(q)
+tell application &amp;#34;iTerm&amp;#34;
+    set _length to count window
+if _length = 0 then
+    create window with default profile
+end if
+set aa to (get miniaturized of current window)
+if aa then
+    set miniaturized of current window to false
+end if
+set bb to (get visible of current window)
+if bb is false then
+    set visible of current window to true
+end if
+set cc to frontmost
+if cc is false then
+    activate
+end if
+    (*if _length = 0 then*)
+        set theResult to current tab of current window
+    (*else
+        set theResult to (create tab with default profile) of current window
+    end if*)
+    write session of theResult text q
+end tell
+end alfred_script
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;系统命令 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-130201.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 常见命令如下: &lt;img src=&#34;https://img.52smile.vip/2018-09-18-130246.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;#END 这些常用的一些快捷操作会大大提升我们平时工作的效率; 前人栽树,后人乘凉;这次介绍的大多都是别人写好的 workflow, 但是对于大多数人来说，能做出自己的一个 WorkFlow 才是一件令人激动的事情。其实做出简单的 WorkFlow 是没啥问题,但如果你想实现一些复杂点的功能，那么你可能需要懂一门脚本语言。 今天简单的介绍一下简单又常用的操作, 下次我打算写一个从零开始打造一个 workflow, 自定义一个属于你自己的 workflow;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>VI编辑器</title>
+        <link>http://47.99.84.217/post/vi%E7%BC%96%E8%BE%91%E5%99%A8/</link>
+        <pubDate>Tue, 18 Sep 2018 18:08:26 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/vi%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
+        <description>&lt;p&gt;vi(vim)是上Linux非常常用的代码编辑器，很多Linux发行版都默认安装了vi(vim)。vi(vim)命令繁多但是如果使用灵活之后将会大大提高效率。vi是“visual interface”的缩写，vim是vi IMproved(增强版的vi)。在一般的系统管理维护中vi就够用，如果想使用代码加亮的话可以使用vim&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;基本上vi可以分为三种状态，分别是命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode），各模式的功能区分如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;命令模式（command mode） 控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入插入模式、底行模式下。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;插入模式（Insert mode） 只有在插入模式下，才可以做文字输入，按ESC键可回到命令模式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;底行模式（last line mode） 将文件保存或退出vi，也可以设置编辑环境，如寻找字符串、列出行号。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不过一般我们在使用时把vi简化成两个模式，就是将底行模式也算入命令模式。&lt;/p&gt;
+&lt;h3 id=&#34;打开保存关闭文件&#34;&gt;打开/保存/关闭文件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;vi filename //打开filename 文件&lt;/li&gt;
+&lt;li&gt;:w //保存文件&lt;/li&gt;
+&lt;li&gt;:w filename //保存文件到 filename 文件&lt;/li&gt;
+&lt;li&gt;:q //推出编辑器, 且不保存&lt;/li&gt;
+&lt;li&gt;:q! //推出编辑器, 且不保存&lt;/li&gt;
+&lt;li&gt;wq //推出编辑器. 且保存文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;插入文本或行命令模式下使用-执行后进入插入模式-esc-退出插入模式&#34;&gt;插入文本或行(命令模式下使用, 执行后进入插入模式, esc 退出插入模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;a //在当前光标位置的右边添加文本&lt;/li&gt;
+&lt;li&gt;i //在当前光标位置的左边添加文本&lt;/li&gt;
+&lt;li&gt;A //在当前行的末尾位置添加文本&lt;/li&gt;
+&lt;li&gt;I //在当前行的开始处添加文本(非空字符的行首)&lt;/li&gt;
+&lt;li&gt;O //在当前行的上面新建一行&lt;/li&gt;
+&lt;li&gt;o //在当前行的下面新建一行&lt;/li&gt;
+&lt;li&gt;R //替换(覆盖)当前光标位置及后面的若干文本&lt;/li&gt;
+&lt;li&gt;J //合并光标所在行及下一行为一行(依然在命令模式)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;移动光标命令模式下&#34;&gt;移动光标(命令模式下)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;vi可以直接用键盘上的光标来上下左右移动，但正规的vi是用小写英文字母 h 、 j 、 k 、 l ，分别控制光标左、下、上、右移一格。&lt;/li&gt;
+&lt;li&gt;按 Ctrl+b ：屏幕往后移动一页。&lt;/li&gt;
+&lt;li&gt;按 Ctrl+f ：屏幕往前移动一页。&lt;/li&gt;
+&lt;li&gt;按 Ctrl+u ：屏幕往后移动半页。&lt;/li&gt;
+&lt;li&gt;按 Ctrl+d ：屏幕往前移动半页。&lt;/li&gt;
+&lt;li&gt;按数字 0 ：移到当前行的开头。&lt;/li&gt;
+&lt;li&gt;按 G ：移动到文章的最后。&lt;/li&gt;
+&lt;li&gt;按 $ ：移动到光标所在行的行尾。&lt;/li&gt;
+&lt;li&gt;按 ^ ：移动到光标所在行的行首。&lt;/li&gt;
+&lt;li&gt;按 w ：光标跳到下个字的开头。&lt;/li&gt;
+&lt;li&gt;按 e ：光标跳到下个字的字尾。&lt;/li&gt;
+&lt;li&gt;按 b ：光标回到上个字的开头。&lt;/li&gt;
+&lt;li&gt;按 #l ：光标往后移的第#个位置，如：5l,56l .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;删除恢复字符或者行命令模式下&#34;&gt;删除,恢复字符或者行(命令模式下)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;x ：每按一次，删除光标所在位置的后面一个字符。&lt;/li&gt;
+&lt;li&gt;#x ：删除光标所在位置的后面#个字符，例如， 6x 表示删除光标所在位置的后面6个字符。&lt;/li&gt;
+&lt;li&gt;X ：每按一次，删除光标所在位置的前面一个字符。&lt;/li&gt;
+&lt;li&gt;#X ：删除光标所在位置的前面#个字符，例如， 20X 表示删除光标所在位置的前面20个字符。&lt;/li&gt;
+&lt;li&gt;dd ：删除光标所在行。&lt;/li&gt;
+&lt;li&gt;#dd ：从光标所在行开始删除#行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;搜索-命令模式&#34;&gt;搜索 (命令模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;/xiaosu //向光标下搜索xiaosu字符串&lt;/li&gt;
+&lt;li&gt;?xiaosu //向光标上搜索xiaosu字符串&lt;/li&gt;
+&lt;li&gt;n //向下搜索前一个搜素动作&lt;/li&gt;
+&lt;li&gt;N //向上搜索前一个搜索动作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;跳转-命令模式&#34;&gt;跳转 (命令模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;n+ //向下跳n行&lt;/li&gt;
+&lt;li&gt;n- //向上跳n行&lt;/li&gt;
+&lt;li&gt;nG //跳到行号为n的行&lt;/li&gt;
+&lt;li&gt;G //跳至文件的底部&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;设置行号-命令模式&#34;&gt;设置行号 (命令模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;:set nu //显示行号&lt;/li&gt;
+&lt;li&gt;:set nonu //取消显示行号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;复制粘贴-命令模式&#34;&gt;复制/粘贴 (命令模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;yy //将当前行复制到缓存区，也可以用 “ayy 复制，”a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务。&lt;/li&gt;
+&lt;li&gt;nyy //将当前行向下n行复制到缓冲区，也可以用 “anyy 复制，”a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务。&lt;/li&gt;
+&lt;li&gt;yw //复制从光标开始到词尾的字符。&lt;/li&gt;
+&lt;li&gt;nyw //复制从光标开始的n个单词。&lt;/li&gt;
+&lt;li&gt;y^ //复制从光标到行首的内容。&lt;/li&gt;
+&lt;li&gt;y$ //复制从光标到行尾的内容。&lt;/li&gt;
+&lt;li&gt;p //粘贴剪切板里的内容在光标后，如果使用了前面的自定义缓冲区，建议使用”ap 进行粘贴。&lt;/li&gt;
+&lt;li&gt;P //粘贴剪切板里的内容在光标前，如果使用了前面的自定义缓冲区，建议使用”aP 进行粘贴。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;替换vi命令模式下使用&#34;&gt;替换(vi命令模式下使用)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;:s/old/new //用new替换行中首次出现的old&lt;/li&gt;
+&lt;li&gt;:s/old/new/g //用new替换行中所有的old&lt;/li&gt;
+&lt;li&gt;:n,m s/old/new/g //用new替换从n到m行里所有的old&lt;/li&gt;
+&lt;li&gt;:%s/old/new/g //用new替换当前文件里所有的old&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>编程之美</title>
+        <link>http://47.99.84.217/post/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/</link>
+        <pubDate>Tue, 18 Sep 2018 18:05:08 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/</guid>
+        <description>&lt;p&gt;好久没有更博客,天天忙也不知道都忙了什么; 之前说要连续写30天博客,连续推送30天代码的目标在某一天给断了. 结果也不了了之 昨天晚上临睡前看了一会 &lt;code&gt;O&#39; Reilly Media, Inc&lt;/code&gt; 出的 &lt;code&gt;Python学习手册&lt;/code&gt;, 在书中有一段讲Python和其他语言进行对比的段落,觉得说得很棒; 真是说到我心坎里了,因为最近正好做了一个项目,是二次开发; 嗯 ,说得好听的话叫做项目重构,说的不好听了叫项目重写; 当时拿到项目代码之后整个人是崩溃的,文件结构大概是这样子&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AAAClass.h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AAAClass.m
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;BBBClass.h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;BBBClass.m
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CCCClass.h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CCCClass.m
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;....
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;....
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;嗯,还没有文档&amp;hellip;..&lt;br&gt;
+花了两天读了一下代码, 没有重构,没有继承,各种oop思想没有;&lt;/p&gt;
+&lt;p&gt;生生把&lt;code&gt;Objective-C&lt;/code&gt;给写成了C语言;&lt;/p&gt;
+&lt;p&gt;我想所有的程序员应该都知道, 代码是写给人看的, 不是写给机器和电脑看的..&lt;/p&gt;
+&lt;p&gt;我觉得代码在设计和编写的时候更应该注重可读性,提高代码的可重用性,可维护性, 遵循这个原则,你的代码才不是写一次就丢掉的程序;&lt;/p&gt;
+&lt;p&gt;当然,一个人做项目是挺爽,没有约束,天马行空,肆意汪洋,但是一周两周三周一个月两个月后呢,当你去维护项目的时候怎么办&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;对比Python和Perl这两种语言, 你可以用Python做到一切用Perl能到做到的事情, 但是做好之后, 你还可以阅读自己的程序代码;&lt;/p&gt;
+&lt;p&gt;Python的美在于容易编写,容易阅读;更注重工程项目的可维护性;Perl就不一样,Perl很容易便携,但是程序员很难去阅读,你看代码很难猜到某一段代码的意图; 当然,这是因为两个语言的设计者背景不一样; 但是,这能体现人们选择使用Python的一些主要原因, 代码具有高度的统一性, 语法和工具集相当一致, 有一个很核心的概念, 简洁优美统一; Perl呢, 完成的方法不只有一种,所以,有了这种鼓励,每个人的代码风格都充满了独特性,充满技巧性;而这种独特的技巧常常是Perl使用者之间的骄傲来源;&lt;/p&gt;
+&lt;p&gt;我想,任何做过实质性的代码维护工作的人,应该都可以正式, 自由的表达是一门很棒的艺术,但是对于一个工程来说就是很让人厌恶的一件事情了;&lt;/p&gt;
+&lt;p&gt;在工程世界中,我们需要最小化功能集和可预测性;在工程世界中, 表达式自由度会造成维护的噩梦; 结果往往都是, 不行就推倒重来吧&amp;hellip;&lt;/p&gt;
+&lt;p&gt;艺术和工程之间的关键差异在于个体的自由选择和一些独特的想法;但是一个优秀的程序员应该知道,代码应该是为下一个阅读它而进行维护或者重用的人写的.&lt;/p&gt;
+&lt;p&gt;如果下一个人无法理解代码,那在实际开发场景中就毫无用处了; 所以呀,好好写代码; 做好文档建设工作,认真写注释;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>UITableView性能优化</title>
+        <link>http://47.99.84.217/post/uitableview%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link>
+        <pubDate>Tue, 18 Sep 2018 18:03:26 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/uitableview%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid>
+        <description>&lt;p&gt;UItableview 是 iOS 开发中最常用的 ui 控件之一,也是最常出现的控件之一; 常常负责一些列表数据的渲染,因此对 UITablevie 进行性能优化是很有必要的;&lt;/p&gt;
+&lt;h3 id=&#34;1-cell-重用&#34;&gt;1 cell 重用&lt;/h3&gt;
+&lt;h4 id=&#34;11-数据源方法优化&#34;&gt;1.1 数据源方法优化&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;每次刷新都去创建新的 cell, 性能; 我们会传建一个静态的变量来作为标识符去创建 cell, 每个 cell 都会注册一个标识符,放入缓存中,如果需要调用,就从缓存池中找到对应的 id, 只有一处屏幕的 cell 才会被放入缓存中&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-objectice-c&#34; data-lang=&#34;objectice-c&#34;&gt;static NSString *resuseID = @&amp;#34;CellID&amp;#34;;
+UITableviewCell *cell= [tableview dequeueReusableCellWithIdentifier:resuseID];
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;12-缓存池的实现&#34;&gt;1.2 缓存池的实现&lt;/h4&gt;
+&lt;p&gt;当 cell 要初始化的时候, tableview 会在堆中开辟内存为 cell 缓存使用. cell 的重用通过 identifier 标识不同类型的 cell,&lt;/p&gt;
+&lt;h4 id=&#34;13-缓存池取出可重用-cell-两种方法的区别&#34;&gt;1.3 缓存池取出可重用 cell 两种方法的区别&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; //  这个方法会查询可重用Cell，如果注册了原型Cell，能够查询到，否则，返回nil；而且需要判断if（cell == nil），才会创建Cell，不推荐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-(nullable __kindof UITableViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;//   使用这个方法之前，必须通过xib（storyboard）或是Class（纯代码）注册可重用Cell，而且这个方法一定会返回一个Cell
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-(__kindof UITableViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(6_0);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;//注册 cell
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- (void)registerNib:(nullable UINib *)nib forCellReuseIdentifier:(NSString *)identifier NS_AVAILABLE_IOS(5_0);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- (void)registerClass:(nullable Class)cellClass forCellReuseIdentifier:(NSString *)identifier NS_AVAILABLE_IOS(6_0);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-定义尽量少类型的-cell-以及善用-hidden-隐藏或者显示-subviews&#34;&gt;2 定义尽量少类型的 cell 以及善用 hidden 隐藏或者显示 subviews&lt;/h3&gt;
+&lt;h4 id=&#34;21定义一种类型的-cell&#34;&gt;2.1定义一种类型的 cell&lt;/h4&gt;
+&lt;p&gt;​ 分析 cell 的结构,尽量将相同内容抽取到一种样式 cell 中,前面已经说到了 cell 的重用机制,同种类型保证重用&lt;/p&gt;
+&lt;h4 id=&#34;22-善用-hidden-去显示或者隐藏-subviews&#34;&gt;2.2 善用 hidden 去显示或者隐藏 subviews&lt;/h4&gt;
+&lt;p&gt;​ 与2.1对应&lt;/p&gt;
+&lt;h3 id=&#34;3-提前计算并缓存-cell-的高度&#34;&gt;3 提前计算并缓存 cell 的高度&lt;/h3&gt;
+&lt;p&gt;在iOS中，不设UITableViewCell的预估行高的情况下，会优先调用”tableView:heightForRowAtIndexPath:”方法，获取每个Cell的即将显示的高度，从而确定UITableView的布局，实际就是要获取contentSize（UITableView继承自UIScrollView,只有获取滚动区域，才能实现滚动）,然后才调用”tableView:cellForRowAtIndexPath”,获取每个Cell，进行赋值. 如果项目中 cell 比较多,是非常影响性能的; 可以使用&lt;strong&gt;UITableView-FDTemplateLayoutCell&lt;/strong&gt; 去计算 cell 的高度,以及缓存&lt;/p&gt;
+&lt;h3 id=&#34;4-异步绘制&#34;&gt;4 异步绘制&lt;/h3&gt;
+&lt;p&gt;减少cell 在主线程的时间消耗,异步渲染视图, 如果图片较多,可以使用预渲染技术&lt;/p&gt;
+&lt;h3 id=&#34;5-按需加载&#34;&gt;5 按需加载&lt;/h3&gt;
+&lt;p&gt;使用 scrollview 的代理方法进行判断, 当 tableview 静止或者滑动减速的时候进行异步加载,之家在目标范围内的 cell; 减少了无关的性能损耗;&lt;/p&gt;
+&lt;h3 id=&#34;6-减少动态添加-subviews&#34;&gt;6 减少动态添加 subviews&lt;/h3&gt;
+&lt;h3 id=&#34;7-减少-cell-子视图的绘制&#34;&gt;7 减少 cell 子视图的绘制&lt;/h3&gt;
+</description>
+        </item>
+        <item>
+        <title>CentOS 下安装 Redis</title>
+        <link>http://47.99.84.217/post/centos-xia-an-zhuang-redis/</link>
+        <pubDate>Sat, 15 Sep 2018 14:51:47 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/centos-xia-an-zhuang-redis/</guid>
+        <description>&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;安装Redis需要知道自己需要哪个版本，有针对性的安装，比如如果需要redis GEO这个地理集合的特性，那么redis版本就不能低于3.2版本，由于这个特性是3.2版本才有的。另外需要注意的是，Redis约定次版本号（即第一个小数点后的数字）为偶数的版本是稳定版（如2.8版、3.0版），奇数版本是非稳定版（如2.7版、2.9版），生产环境下一般需要使用稳定版本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;下载安装包&#34;&gt;下载安装包&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget http://download.redis.io/releases/redis-4.0.2.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;解压并安装&#34;&gt;解压并安装&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tar xzf redis-4.0.2.tar.gz
+cd redis-4.0.2
+make
+make install
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;Redis没有其他外部依赖，安装过程很简单。编译后在Redis源代码目录的src文件夹中可以找到若干个可执行程序，安装完后，在/usr/local/bin目录中可以找到刚刚安装的redis可执行文件。 如下:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-15-134934.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;redis 安装目录&#34;
+	
+	
+&gt; 那你也可以通过命令 &lt;code&gt;redis -server&lt;/code&gt; 命令来执行启动 redis; 启动后界面如下: &lt;img src=&#34;https://img.52smile.vip/2018-09-15-135404.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;redis 启动界面&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;配置&#34;&gt;配置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;配置初始化脚本&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;首先将初始化脚本复制到/etc/init.d 目录中，文件名为 redis_端口号，其中端口号表示要让Redis监听的端口号，客户端通过该端口连接Redis。然后修改脚本第6行的REDISPORT变量的值为同样的端口号。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立需要使用的文件夹&lt;/p&gt;
+&lt;p&gt;目录名&lt;/p&gt;
+&lt;p&gt;配置项&lt;/p&gt;
+&lt;p&gt;/etc/redis&lt;/p&gt;
+&lt;p&gt;存放redis 的配置文件&lt;/p&gt;
+&lt;p&gt;/etc/redis/端口号&lt;/p&gt;
+&lt;p&gt;存放 redis持久化文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;tip: vim 模式下使用 &lt;code&gt;?&lt;/code&gt; 命令进行搜索, &lt;code&gt;n&lt;/code&gt;跳转到下一个搜索结果;&lt;code&gt;N&lt;/code&gt;跳转上一个搜索结果 3.修改配置文件&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;首先将配置文件模板（redis-4.0.2/redis.conf）复制到/etc/redis 目录中，以端口号命名（eg: “6379.conf”），然后按照下表对其中的部分参数进行编辑。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;params&lt;/p&gt;
+&lt;p&gt;value&lt;/p&gt;
+&lt;p&gt;tip&lt;/p&gt;
+&lt;p&gt;daemonize&lt;/p&gt;
+&lt;p&gt;yes&lt;/p&gt;
+&lt;p&gt;redis 以守护进程模式运行&lt;/p&gt;
+&lt;p&gt;pidfile&lt;/p&gt;
+&lt;p&gt;/var/run/redis_端口号.pid&lt;/p&gt;
+&lt;p&gt;设置Redis的PID文件位置&lt;/p&gt;
+&lt;p&gt;port&lt;/p&gt;
+&lt;p&gt;端口号&lt;/p&gt;
+&lt;p&gt;被监听的端口号 dir /var/redis/端口号 redis持久化文件&lt;/p&gt;
+&lt;p&gt;配置完成以后你可以通过命令行启动 redis&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/etc/init.d/redis_6379 start
+/etc/init.d/redis_6379 stop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;别忘记配置自动启动~ 修改配置文件: &lt;code&gt;etc/init.d/redis_6379.conf;&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim etc/init.d/redis_6379.conf
+在头部的第五行添加
+# chkconfig: 2345 90 10
+# description: Redis is a persistent key-value database
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;正确的停止-redis&#34;&gt;正确的停止 redis&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;考虑到 Redis 有可能正在将内存中的数据同步到硬盘中，强行终止 Redis 进程可能会导致数据丢失。正确停止Redis的方式应该是向Redis发送SHUTDOWN命令，方法为：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;redis-cli SHUTDOWN&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当Redis收到SHUTDOWN命令后，会先断开所有客户端连接，然后根据配置执行持久化，最后完成退出。Redis可以妥善处理 SIGTERM信号，所以使用 kill Redis 进程的 PID也可以正常结束Redis，效果与发送SHUTDOWN命令一样。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.ioser.net/archives/27&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;参考基友Martin的文章&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>js数组去重</title>
+        <link>http://47.99.84.217/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</link>
+        <pubDate>Wed, 12 Sep 2018 15:25:33 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</guid>
+        <description>&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+&lt;p&gt;最近参与公司 ERP 项目, 负责了一下前端页面开发; 之前接触 js 比较浅, 在做项目中遇到了一些问题, 比如数组去重, 对象数组去重等问题;&lt;/p&gt;
+&lt;h3 id=&#34;使用-arrayform-set集合&#34;&gt;使用 Array.form() set集合&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;let arr = [1,1,2,3,4];
+let result= Array.from(new Set(arr));
+console.log(result);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;遍历利用-indexof-判断&#34;&gt;遍历,利用 indexOf 判断&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;let arr = [1,1,2,3,4];
+var temp= [];
+for (i in  arr){
+    if(temp..indexOf(arr[i]) == -1){
+        temp.push(arr[i]);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;遍历-利用对象的-key-判断数据值&#34;&gt;遍历 利用对象的 key, 判断数据值&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;var arr = [
+    {id: &amp;#39;121&amp;#39;, count: 20},
+    {id: &amp;#39;122&amp;#39;, count: 20},
+    {id: &amp;#39;123&amp;#39;, count: 20},
+    {id: &amp;#39;121&amp;#39;, count: 10},
+    {id: &amp;#39;122&amp;#39;, count: 11}
+];
+let tempDict = {};
+let newArr = [];
+   for(let i=0;i&amp;lt;arr.length;i++) {
+     if(!tempDict[arr[i].id]) {
+       tempDict[arr[i].id] = true;
+       newArr.push(arr[i]);
+     }
+   }
+console.log(newArr);
+Array(3)
+{id: &amp;#34;121&amp;#34;, count: 20}
+{id: &amp;#34;122&amp;#34;, count: 20}
+{id: &amp;#34;123&amp;#34;, count: 20}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;foreach&#34;&gt;forEach&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;let arr1 = [{skuid:1111,count:222},{skuid:2222,count:3},{skuid:1111,count:222},{skuid:2222,count:3}];
+let temp= [];
+arr1.forEach(item =&amp;gt; {
+                    item = Object.assign(item);
+                    let sku = this.alertInfoArr.find(sku=&amp;gt;sku.skuId===item.skuId);
+                    if(!sku){
+                        temp.push(item);
+                    }
+                });
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>mac终端命令</title>
+        <link>http://47.99.84.217/post/mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Tue, 17 Apr 2018 15:18:37 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;清除当前输入行 control + u&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除当前输入命令最后一个单词 control + w&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;跳转至行首/行尾 control + a/e&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;清除屏幕 control + l or clear&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建窗口终端标签 cmd + t&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;基本命令 :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;列出文件 ls 参数 目录名&lt;br&gt;
+eg:看看驱动目录下有什么:ls /System/Library/Extensions 参数: -w 显示中文， -l 详细信息， -a 包括隐藏文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;转换目录 cd&lt;br&gt;
+eg：想到驱动目录下溜达一圈 cd /System/Library/Extensions&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立新目录 mkdir 目录名 eg： 在驱动目录下建一个备份目录backup mkdir /System/Library/Extensions/backup 在桌面上建一个备份目录 backup mkdir /User/用户名/Desktop/backup&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拷贝文件 cp 参数 源文件 目标文件&lt;br&gt;
+eg： 将text.txt 拷贝到驱动目录中&lt;br&gt;
+cp -R /User/用户名/Desktop/text.txt /System/Library/Extensions 参数R表示对目录进行递归操作，kext在图形界面下看起来是个文件，实际上是个文件夹。 把驱动目录下的所有文件备份到桌面backup cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除文件 rm 参数 文件&lt;br&gt;
+eg： 删除驱动的缓存 rm -rf /System/Library/Extensions.kextcache&lt;br&gt;
+rm -rf /System/Library/Extensions.mkext 参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;移动文件 mv 文件&lt;br&gt;
+eg： 把AppleHDA.Kext 移到桌面&lt;br&gt;
+mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop 想把AppleHDA.Kext 移到备份目录中 mv /System/Library/Extensions/AppleHDA.kext /System/Library/Extensions/backup&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文本编辑 nano 文件名&lt;br&gt;
+eg ： 编辑 Info.plist&lt;br&gt;
+nano /System/Library/Extensions/Natit.kext/Info.plist vim 文件名 eg: 编辑 Info.plist&lt;br&gt;
+vim /System/Library/Extensions/Natit.kext/Info.plist&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目录操作: 命令名 功能描述 使用举例 mkdir 创建一个目录 mkdir dirname rmdir 删除一个目录 rmdir dirname mvdir 移动目录 mv dirname1 dirname2 cd 改变当前目录 cd desktop pwd 显示当前路径 psw ls 显示当前目录内容 ls 文件操作: 命令名 功能描述 使用举例 cat 显示或者链接文件 cat filename od 显示费文本的内容 od -c filename cp 复制 cp path path rm 删除文件 rm test.txt mv 移动文件 mv test.txt touch 创建文件 touch readme.md file 显示文件类型 file filename&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>iOS之UIAppearance</title>
+        <link>http://47.99.84.217/post/ios%E4%B9%8Buiappearance/</link>
+        <pubDate>Tue, 17 Apr 2018 15:18:13 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ios%E4%B9%8Buiappearance/</guid>
+        <description>&lt;p&gt;UIAppearance是苹果在iOS5之后为开发者提供的一个能够快速修改系统控件外观的一个协议;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UIAppearance的作用:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;UIAppearance 实际上是一个协议,可以用它快速的获取一个类的外观(UINavigation UItabBaritem), 我们可以利用需要修改的类获取外观代理,然后自定义一个实例对象的外观;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UIAppearance 的使用:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;我们可以给一个类所有的实例对象设置外观 eg:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-null&#34; data-lang=&#34;null&#34;&gt;+(instancetype)appearance;
+// 修改navigation实例对象的颜色和标题外观
+UINavigationBar.appearance().titleTextAttributes =
+[NSFontAttributeName: [UIFont systemFontofSIze(15.0f)],NSForegroundColorAttributeName: [UIColor whiteColor]];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们也可以给制定一类容器,在这个容器中自定义一个类所有的实例外观 eg:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-null&#34; data-lang=&#34;null&#34;&gt;+ (instancetype)appearanceWhenContainedIn:(nullable Class &amp;lt;UIAppearanceContainer&amp;gt;)ContainerClass, ... NS_REQUIRES_NIL_TERMINATION NS_DEPRECATED_IOS(5_0, 9_0, &amp;#34;Use +appearanceWhenContainedInInstancesOfClasses: instead&amp;#34;) __TVOS_PROHIBITED;
+//修改导航栏所有外观的外观, 可以放置多个容器类
+[[UIBarButtonItem appearanceWhenContainedIn:self.nil] set
+BackgroundImage: myNavBarButtonBackgroundImage forState:state barMetrics:metrics];
+[[UIBArBUttonItem appearanceWhenContainedIn:self,[UIPopoverControll class],nil] setBackgroundColor: myNavBarButtonBackgroundImage forState:state barMetrics:metrics];
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>iOS奇巧淫技</title>
+        <link>http://47.99.84.217/post/ios%E5%A5%87%E5%B7%A7%E6%B7%AB%E6%8A%80/</link>
+        <pubDate>Tue, 17 Apr 2018 15:17:50 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ios%E5%A5%87%E5%B7%A7%E6%B7%AB%E6%8A%80/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;修改UITextField文本输入框中的clearButton小图片 // 获取X按钮 UIButton *passwordBtn = [_passwordField valueForKey:@&amp;quot;_clearButton&amp;quot;]; // 修改按钮图片 [passwordBtn setImage:[UIImage imageNamed:@&amp;ldquo;login_checkbox_checked&amp;rdquo;] forState:UIControlStateNormal]; UIButton *accountBtn = [_accountField valueForKey:@&amp;quot;_clearButton&amp;quot;]; [accountBtn setImage:[UIImage imageNamed:@&amp;ldquo;login_checkbox_checked&amp;rdquo;] forState:UIControlStateNormal];&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;tableview不想显示没有内容的cell&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;self.tableview.tablefooterview = [UIView new];&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自定义了leftBarbuttonItem左滑返回手势失效了怎么办? self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)]; self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;ul&gt;
+&lt;li&gt;ScrollView在viewController终不能滑到顶&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;self.automaticallyAdjustsScrollViewInsets = NO;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;写键盘事件让你不爽了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;github搜索 IQKeyboardManger&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;怎么在不新建一个cell的情况下调整separaLine的位置?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;self.tableview.separatorinset = UIEdgeInsetMake(0,100,0,0)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点击self.view 就收起键盘
+&lt;ul&gt;
+&lt;li&gt;(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { [self.view endEditing:YES]; }&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;滑动的时候隐藏navigationbar?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;navigationController.hidesBarsonSwipe = YES&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ViewController 实现tableview那种悬停header&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CSStickyHeaderFlowLayout&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CoreData用来不爽?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;MagicalRecord&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;修改UITextField placeholder的文字颜色&amp;amp;位置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(void) drawPlaceholderInRect:(CGRect)rect {&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[[UIColor blueColor] setFill]; [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:UILineBreakModeTailTruncation alignment:self.textAlignment]; }&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;navigationbar弄成透明的而不是带模糊的效果? [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault]; self.navigationBar.shadowImage = [UIImage new]; self.navigationBar.translucent = YES;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修改tableview里面cell的小对勾颜色&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;tableview.tintcolor = [uicolor redcolor]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用一个pan手势来代替UISwipegesture各个方向&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(void)pan:(UIPanGestureRecognizer *)sender {&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;typedef NS_ENUM(NSUInteger, UIPanGestureRecognizerDirection) { UIPanGestureRecognizerDirectionUndefined, UIPanGestureRecognizerDirectionUp, UIPanGestureRecognizerDirectionDown, UIPanGestureRecognizerDirectionLeft, UIPanGestureRecognizerDirectionRight }; static UIPanGestureRecognizerDirection direction = UIPanGestureRecognizerDirectionUndefined; switch (sender.state) {&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-null&#34; data-lang=&#34;null&#34;&gt;case UIGestureRecognizerStateBegan: {
+    if (direction == UIPanGestureRecognizerDirectionUndefined) {
+        CGPoint velocity = [sender velocityInView:recognizer.view];
+        BOOL isVerticalGesture = fabs(velocity.y) &amp;gt; fabs(velocity.x);
+        if (isVerticalGesture) {
+            if (velocity.y &amp;gt; 0) {
+                direction = UIPanGestureRecognizerDirectionDown;
+            } else {
+                direction = UIPanGestureRecognizerDirectionUp;
+            }
+        }
+        else {
+            if (velocity.x &amp;gt; 0) {
+                direction = UIPanGestureRecognizerDirectionRight;
+            } else {
+                direction = UIPanGestureRecognizerDirectionLeft;
+            }
+        }
+    }
+    break;
+}
+case UIGestureRecognizerStateChanged: {
+    switch (direction) {
+        case UIPanGestureRecognizerDirectionUp: {
+            [self handleUpwardsGesture:sender];
+            break;
+        }
+        case UIPanGestureRecognizerDirectionDown: {
+            [self handleDownwardsGesture:sender];
+            break;
+        }
+        case UIPanGestureRecognizerDirectionLeft: {
+            [self handleLeftGesture:sender];
+            break;
+        }
+        case UIPanGestureRecognizerDirectionRight: {
+            [self handleRightGesture:sender];
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+    break;
+}
+case UIGestureRecognizerStateEnded: {
+    direction = UIPanGestureRecognizerDirectionUndefined;
+    break;
+}
+default:
+    break;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;} }&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;图片拉伸&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在Storyboard或xib中拖入的控件都有Stretching属性，包含四个参数：X、Y、Width、Height。这些参数确定了进行拉伸的区域。 当X = Y = Width = Height = 1时，图片为原始大小。 若让X = Y = 0.5、Width = Height = 0，则按水平垂直位置的那个像素点进行拉伸，如图所示。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;修改UISearchBar 的占位符文字颜色 /&lt;strong&gt;设置UISearchBar&lt;/strong&gt;/ // 创建 UISearchBar *searchBar = [[UISearchBar alloc] init]; // 设置导航条背景色 self.navigationController.navigationBar.barTintColor = [UIColor hollyGreenColor]; // 风格 searchBar.searchBarStyle = UISearchBarStyleMinimal; // 光标色 searchBar.tintColor = [UIColor whiteColor]; // 占位文字 searchBar.placeholder = @&amp;ldquo;搜索&amp;rdquo;; // 设置占位文字色彩 UITextField *searchField = [searchBar valueForKey:@&amp;ldquo;searchField&amp;rdquo;];&lt;/p&gt;
+&lt;p&gt;[searchField setValue:[UIColor whiteColor] forKeyPath:@&amp;quot;_placeholderLabel.textColor&amp;quot;];&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>爱情,究竟是个什么鬼</title>
+        <link>http://47.99.84.217/post/%E7%88%B1%E6%83%85%E7%A9%B6%E7%AB%9F%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E9%AC%BC/</link>
+        <pubDate>Tue, 17 Apr 2018 15:15:51 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E7%88%B1%E6%83%85%E7%A9%B6%E7%AB%9F%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E9%AC%BC/</guid>
+        <description>&lt;p&gt;哥们儿J这几天失恋了，做什么事儿都是心不在焉的。做实验也很不在状态，我对此表示很是蛋疼。我觉得，假如条件允许的话，他会很有兴趣的做几个很有意思的实验，比如分解重铬酸钾、铝粉跟液溴反应、铯和氟的反应，当然了，假如他做这几个实验我要远离他，省的溅我一身血。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;还有一个哥们儿，也是顶儿好玩儿的一个故事。&lt;/p&gt;
+&lt;p&gt;89年的人，时至今日仍未将自己的初恋奉献给某个姑娘。不过现在挺好的，他找到了他的真爱，我跟哥们J是他的狗头军师，在旁边为他出谋划策。但愿他能够如愿以尝。如果他不能如愿以偿，那么，祝天下情侣都是失散多年的兄妹，老子再也不相信爱情了！！！&lt;/p&gt;
+&lt;p&gt;对于我来说，我可是有故事的人。我谈过33场恋爱！！！&lt;/p&gt;
+&lt;p&gt;这样说吧，我曾经让33个姑娘幸福过。在这里，我有一些失败的教训想要告诉你们，省得你们走弯路。 我初一的时候喜欢过一个姑娘，算了，就不叫他姑娘了，说不定早已嫁做人妇。我喜欢她的这件事儿被我哥哥知道后，哥哥帮我写了一封情书，我看过后高兴地合不拢嘴，我自己觉得这事儿准成，可当我怀着一种隐秘的喜悦和幻想将这封名为折翼天使的情诗连带着我萌动的少年的心偷偷地交给她，晚自习的时候，她竟然当着全班同学的面儿将我的情书撕了个粉碎，而且点了它。我有点伤心，不是有点伤心，一种羞辱。我愤怒的将她的书一把推散落在地上，狠狠的离开了教室。当然回来后，我看到我桌子旁边散落的是我的课本，书上还有几个看上去有24 26 码的鞋印，还好没有痰。再后来？没有了，这个故事就到了这里。我再也不相信爱情了。之后的时间我就去后操场锻炼身体，练习弹跳，联系握力。所以，那时候我的身体素质很好，弹跳，柔韧，力量都是极其好的。两年后，当我站在街上，一个姑娘来问我是不是***，我回答是。她问我还记得他不，额，原来他就是那个撕碎我年少的心的那个女人。我能怎么说，我不记得，还好他及时的结束了这场对话，不然下一句话就是一个单音节的字，滚。&lt;/p&gt;
+&lt;p&gt;我初二的时候也喜欢过一个姑娘，那是我转学到一中的后第一个同桌。时至今日，我依然记得我们的第一句话“借我一个英语本”。这就是我们的开场白，以至于我们感情纠葛多年后我依然不能将她忘记。对于这个故事，我一直怀着痛苦和美好莫名的情绪。以致我不知道该如何让开口。她似乎是一个比水更温柔的姑娘，就像阳光灿烂的日子里面的米兰一样。我不知道该如何去具体的描述她。我追了她很长时间，想过很多方法。我们在一起的时间一共不到一个月，这个月里面我们没有拥抱，甚至没有牵手。这绝不是痛苦的回忆，就像阳光灿烂的日子里面那一段似乎存在又似乎不存在的回忆。但是这些真实的场景让我欣喜若狂，为此我甚至放弃了另外的一段感情。那是一段甜蜜满足经历，却有如此多的遗憾。但愿人长久。&lt;/p&gt;
+&lt;p&gt;我很难想象，当初我究竟是鼓足了多大的勇气才将衣服披到 那位像白雪公主一样沉睡的姑娘身上。当然了，笨手笨脚的我将他给吵醒了，姑娘醒了，皱着眉头，将脸别了过去。留下脸红的我站在旁边。啧啧，我真笨，我怎能如此唐突了佳人。我究竟是怎样跟他在一起的？反正我是忘记了，主要是我把当时我们在纸条上的内容了给忘记了。但我忘不了那一晚的明月，人来人往中我牵着你的手，原谅我吧，我是第一次跟姑娘牵手。顺便提一下，我高中时代打开水是收费的，一壶开水5毛钱，500ml的杯子1毛，500+的是2毛。后面的故事？后面就是我们各自回到各自的宿舍。我当时觉得我很喜欢跟她，她也很喜欢我。我甚至做好了跟她携手一生的准备。可儿没过多久，她的一句话就打碎我的梦，“我们不合适”。“我们分手吧。” 我一直清楚的记得这一句话，这五个字就像当年投放在福岛的小男孩，把我的幸福炸成了碎片儿。这些碎片破碎在我的脑海里，时不时的闪着光芒，泛着一点幸福的味道，这些碎片所散发的光芒偶尔及时的提醒我，&lt;/p&gt;
+&lt;p&gt;你曾经有过你渴望的幸福，那时候你得到了，就在你手里，不是流逝的沙子，也不是捉不到的月光。她就实实在在的躺在你身边，靠在你怀里。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>情书和梦</title>
+        <link>http://47.99.84.217/post/%E6%83%85%E4%B9%A6%E5%92%8C%E6%A2%A6/</link>
+        <pubDate>Tue, 17 Apr 2018 15:15:33 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E6%83%85%E4%B9%A6%E5%92%8C%E6%A2%A6/</guid>
+        <description>&lt;p&gt;大概就是去年的这个时候吧，当时新疆正下着大雪，窗外是一片银装素裹，我的朋友们当时正在宿舍忙着收拾东西回家过年。 当时他们很忙，我在一边悠哉悠哉的写着信，与其说是信倒不如说是情书。东哥一个劲的吼我：你不过来帮我收拾东西，只顾给别人写情书了，指不定别人看都不看就给你丢在火车窗户外面了，然后他自己嘿嘿一笑，指不定你的情书就丢在了兰州…..。我不想理他，一手继续写情书，一只手忙着抓着他买来的干果自顾自的吃。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;的确是的，也许她只是随便读一读就放在旁边沦落为收纳垃圾的废纸。为了防止这个悲剧的发生，我跑到两条街之外的精品店买了好看的贴纸和信封，原本我是打算效仿王小波将情书写在五线谱上，那得多浪漫。后来实在不知道哪里有卖五线谱的，就作罢了。东哥说要不就用英文本子代替？这智商和情商，怪不得现在还是单身。 我认真的在信封上写在乌鲁木齐，嘉峪关，兰州，西安，洛阳，郑州….；是的，我知道她家在哪里，我也知道从我家出门不远就是她的家，如果细细一算，我和她已经相识八年了吧？我匆忙的将想说的话写下来，我觉得我啊当时很用心了，我都开始想象她一脸笑容的样子。 我将封好的信封郑重其事的交给老段，一脸悲壮的告诉他，哥们的事就拜托你了。老段拍拍胸脯，么的问题，您瞧好吧。 我不去想老段是如何在春运的这趟列车上翻山越岭，劈波斩浪跨过两节车厢将情书交到姑娘手里。我只有点希望看到当时姑娘脸上可能会出现的惊讶或者喜悦的神情，那得是多美呀，我在大雪纷飞的路上如是想。 我知道这封信到姑娘手中后要跟着她一起穿越三千公里的路途，想想都有点小激动。为什么激动？屌丝不都是像我这种心态….. 所以，我时常梦见一个大雪纷飞的日子，我满怀期待的回到故乡，路边都是泛着青色的麦苗，有一点皑皑白雪在上面覆盖着，她一脸通红的在路口等着我，眉眼带笑。0.0咚的一生，这响声就像小时候我订的早上五点钟起床写作业的闹钟，一下子把我惊醒，哎呦，我做梦了，我醒了………… 美好不一定是真的，但是痛苦一定是真实的，一点都不虚妄。 生活不就需要点痛苦…….&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>天才与英雄</title>
+        <link>http://47.99.84.217/post/%E5%A4%A9%E6%89%8D%E4%B8%8E%E8%8B%B1%E9%9B%84/</link>
+        <pubDate>Tue, 17 Apr 2018 15:15:10 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E5%A4%A9%E6%89%8D%E4%B8%8E%E8%8B%B1%E9%9B%84/</guid>
+        <description>&lt;p&gt;有部武侠小说叫做 《英雄志》，里面于一个剑客叫做苏颖超，是一个很厉害的天才。年少成名，意气风发,拜了天下第一的宁不凡为师; 宁不凡封剑归隐，小苏年纪轻轻就要扛起华山掌门的职责，更要维护师父「长胜八百战，武艺天下尊」的名号；&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;终日苦练剑法，好在天资过人，年纪轻轻就掌握了智、仁、勇之一的智剑「智剑平八方」，多少年未曾一败;&lt;/p&gt;
+&lt;p&gt;不过武功嘛，一山更比一山高，小苏败在伍崇卿手上后苦苦专研第二剑 「仁剑震音扬」，终日苦闷，神神叨叨；华山上到处都是他画的圆;&lt;/p&gt;
+&lt;p&gt;终于有一天，他见到了个没有见过剑谱自通仁剑的人，而且未婚妻还跟人跑了。。。。&lt;/p&gt;
+&lt;p&gt;小苏发狂了，崩溃了，流泪了。&lt;/p&gt;
+&lt;p&gt;他的师叔当着他的面说出了那句话：「剑，是天才的武道啊。」。&lt;/p&gt;
+&lt;p&gt;小苏泪流满面，我想谁也不会承认自己穷极一生的努力，到如今才是个二流；&lt;/p&gt;
+&lt;p&gt;还有一句词，「七八个星天外,两三点雨山前」,据说是化用了唐代诗人卢延让的「两三条电欲为雨，七八个星犹在天」。小卢是一个很勤奋的诗人,他这样形容自己写诗「吟安一个字，捻断数茎须」.但烂句子就是烂句子;这个烂句子经过辛弃疾的打磨修改之后就变成了后世耳熟能详的句子了;&lt;/p&gt;
+&lt;p&gt;我们与天才终究还是差了那么一点点,我们得立志做一流的志向,做好成为三流的准备;&lt;/p&gt;
+&lt;p&gt;所以,尽力走下去吧,拼尽你的全力,哪怕死在路上,后人也会在经过你的墓碑前歇歇脚,取下腰间的酒壶敬你一杯酒;&lt;/p&gt;
+&lt;p&gt;因为你至少是个英雄&lt;/p&gt;
+&lt;p&gt;「这世上有许多人，他们打一出生便知道自己是什么人，也明白自己该做什么事。也因此，他们从不抱怨，更不会悔恨，不论结果是甘是苦，他们都会一件一件，把该做的事情一一做完。即使结果是死路一条，也要做下去。因为若不这么做，这一生等于白活了。这不是脾气，这是天命。天命如此，所以不必抱怨，也犯不着后悔，只能鼓起勇气，一路向前，直到上苍赐一个答案。天命者，使命也。宛如飞蛾扑火，焚毁残躯。命运之起伏跌宕，在勇者不过是场笑话。知天命与畏天命，这便是君子成道的最后一关。一个人找到天命后，这一生便不会后悔了。从此便能知其不可为而为之，成为大勇之人。」 －－－＜英雄志＞&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>喜悦</title>
+        <link>http://47.99.84.217/post/%E5%96%9C%E6%82%A6/</link>
+        <pubDate>Tue, 17 Apr 2018 15:14:38 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E5%96%9C%E6%82%A6/</guid>
+        <description>&lt;p&gt;我叫秋水，取自庄子第一章，秋水。秋水时至，百川灌河，径流之大，两涘渚崖之间不辩牛马。如果断章取义，可以这样理解：秋水来了，百川东到海，泥沙之间连牛马都不可辨认。再异意，我来了，众人都指鹿为马了。但我觉得秋水这个名字俊秀飘逸，充满浪漫主义。我便自觉地去掉了异意这层意思。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;抛开名字不谈，我这人不怎么喜欢秋天。&lt;/p&gt;
+&lt;p&gt;我曾经盼望过春天，夏天，冬天，唯独没有期盼过秋天。&lt;/p&gt;
+&lt;p&gt;大概是因为一些人有那一种伤秋情节。好像所有伤心的事儿都发生在了秋天。&lt;/p&gt;
+&lt;p&gt;看吧，悲哉秋之为气也！萧瑟兮草木摇落而变衰，憭栗兮若在远行，登山临水兮送将归。寒城一以眺，平楚正苍然 。树树秋声，山山寒色。&lt;/p&gt;
+&lt;p&gt;且不说江淹的别赋写得多么黯然销魂了，单看上面的那几句，句句都充斥着悲哉、寒、别、怆然之类的词语。&lt;/p&gt;
+&lt;p&gt;看吧，我就是这么不喜欢秋天。&lt;/p&gt;
+&lt;p&gt;我愿意叫做秋水，但我不喜欢秋天。&lt;/p&gt;
+&lt;p&gt;那就听听春雨吧，看那打天上洒下来的一丝丝钻进你的脖颈。&lt;/p&gt;
+&lt;p&gt;惊蛰一过，春寒加剧。雨季就开始连绵不绝淅淅沥沥淋淋不绝。携着纸伞躲过这一阵悄然而至的雨，却仍然躲不过这雨季。湿润的空气氤氲着雾气让人想入非非。&lt;/p&gt;
+&lt;p&gt;隔着藏青色的山透着天青色的云，一场又一场的春雨淋漓而过。 水向东流，时间怎么偷？ 花开就一次成熟我却错过。&lt;/p&gt;
+&lt;p&gt;我记得那个时候我们停留在周围朦胧的黑暗里，周围的声音 从脚下流淌，仿佛上好的檀香，没有一丝的飞扬，缓缓的流动，游折，渗透我们的躯体，每一个举手，每一个投足，每一个眼波流转，每一个笑涡，仿佛都受到一种极为柔软的阻隔，也越发的变得温柔。&lt;/p&gt;
+&lt;p&gt;全部的身心投放在这流动的液体，好像春雨浸润土地，一举一动透着一股子异样。去试着想象一下吧，你的手静静的滑过另一只手，这一只手与你的手又决然不同，你的手悄然拢过她柔软的身子，感受着她的温香暖玉和余下的喜悦，这种喜悦 就像夏夜空中的银河乍泄，噼里啪啦的投射下水银似的光。&lt;/p&gt;
+&lt;p&gt;峰回路转不见君，雪上空留马行处 。&lt;/p&gt;
+&lt;p&gt;如果我们的生活中没有一夜醒来发现窗外沉寂了整个冬天的柳枝舒展开来了几支嫩芽，如果没有淅淅沥沥夜雨中中的远处昏黄的几盏灯火，如果没有在你失意怆然而暗自销魂时从远方飘来的粉色信笺上姑娘娟秀的字体告诉你她一直在默默关注并喜欢着你。&lt;/p&gt;
+&lt;p&gt;如果我们没有这种种欢喜，我们该怎么在这漫长的岁月中渡过这样一个接一个漫长的明天。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>听雨</title>
+        <link>http://47.99.84.217/post/%E5%90%AC%E9%9B%A8/</link>
+        <pubDate>Tue, 17 Apr 2018 15:13:52 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E5%90%AC%E9%9B%A8/</guid>
+        <description>&lt;p&gt;从屋子里出来，原本墨色的天空已经开始沥沥淅淅的下着小雨，远山看起来像泼墨的山水画一样；风吹的人瑟瑟发抖，秋天蓄意存储起来的寒意似乎被这雨水给化开，弥漫在这个城市里；&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;街上一柄柄的伞连起来,任凭雨就敲打过去,伞柄轻轻一转,雨滴向四面飞去,那是一圈又一圈的飞檐;&lt;/p&gt;
+&lt;p&gt;一柄伞能挡得住秋雨秋风,哪能挡得住秋寒呢?&lt;/p&gt;
+&lt;p&gt;能挡住的恐怕也只有年轻恋人了吧,就像余光中笔下的最好是初恋，有点兴奋，更有点不好意思，若即若离之间，雨不妨下大一点。&lt;/p&gt;
+&lt;p&gt;真正初恋，恐怕是兴奋得不需要伞的，手牵手在雨中狂奔而去，把年轻的长发和肌肤交给漫天的淋淋漓漓，然后向对方的唇上颊上尝甜甜的雨水。心生喜悦,整个世界就像新的,有无限的可能;&lt;/p&gt;
+&lt;p&gt;躺在床上,听着雨水击打在窗户上,想着一滴滴雨水汇成水流缓缓而下,窗下聚集的雨水爬上飞檐,打个圈再落到地上,想着屋檐与树叶间显露的阴沉的天空,想着冷风动枯弦,想着烟雨暗千家;&lt;/p&gt;
+&lt;p&gt;夜色渐深，杂乱无章的雨滴顺着屋檐飞落下来，地上渐渐的积起了水，就像画画的时候被晕开的墨，一团一团的铺在路上;路上昏黄的街灯投射到积水中,泛起一圈又一圈的涟漪;&lt;/p&gt;
+&lt;p&gt;旁边的树摇曳生姿,偶尔掉落的输液像落花,像孤独的人独立窗下,像微雨中燕双飞;&lt;/p&gt;
+&lt;p&gt;雨水滴落在傍晚归家的车上,看着窗外在雨水折射变得模糊的霓虹灯和车灯,有家的人想着家里的妻子,想着温暖的灯光,想着冒着热气的粥;&lt;/p&gt;
+&lt;p&gt;没家的人呼吸着冰冷的空气,想着萧萧黄叶闭疏窗,想着无人问我粥可温,想着无人与我立黄昏;&lt;/p&gt;
+&lt;p&gt;在厚重的中华文化中,雨是粘结骨架的筋,历代文人都曾写过听雨的文字;&lt;/p&gt;
+&lt;p&gt;有李商隐笔下《夜雨寄北》何当共剪西窗烛,却话巴山夜雨时、秋阴不散霜飞晚,留得枯荷听雨声的冷艳凄迷,再有 苏轼的莫听穿林打叶声,何妨吟啸且徐行清旷舒阔,还有某某某的雨中黄昏树,灯下白头人,当然了,还有杰伦那一句最美的不是下雨天,是曾与你躲过雨的屋檐……. 这些诗词似乎就被藏在这雨里,随着风一吹,雨一滴,渐渐的浸到人的骨子里去,无论身处何地,一场雨就会把这些都给拨弄出来,带着各种情感涌上心头.&lt;/p&gt;
+&lt;p&gt;这么多诗词我还是喜欢南宋词人蒋捷的《虞美人》:
+少年听雨,年少轻狂,明灯红烛,昏纱罗帐,让人流连忘返,就像少年不识愁滋味,欢愉的时间似乎总是过的快.有人说青春是一本仓促的书,的确是的,少年不管，流光如箭，因循不觉韶光换。&lt;/p&gt;
+&lt;p&gt;再后来,你长大了,你已经是个成人了.你听雨客船中,青壮年应该是人生中最有激情的时候,你觉得世界一切皆有可能,你上路了,你离开家乡,为了生计而浪迹天涯，为了理想而漂泊南北,风雨袭来时只能在客舟中听着无奈的雨声，消磨忧愁的岁月。瞧那舟外江阔云低，前路茫茫；听那萧瑟秋风中传来几声南飞孤雁的哀鸣声……此情此境怎不让人柔肠寸断。每个人大概都会有如此经历,但不可如此丧气,人生到青壮年就应该打拼，无论是为了生计还是为了理想,都应该努力的去拼。&lt;/p&gt;
+&lt;p&gt;再后来,你年纪渐长,双鬓渐白,有了许许多多的人生经历,一无所谓世间之事;人生嘛,悲欢离合总无情;任他去吧…… 少年听雨歌楼上，红烛昏罗帐。 壮年听雨客舟中,江阔云低，断雁叫西风。 而今听雨僧庐下，鬓已星星也。 悲欢离合总无情；一任阶前，点滴到天明。&lt;/p&gt;
+&lt;p&gt;实在编不下去了,借余光中一句话结尾; 听听那冷雨。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>使用Hexo&#43;Coding搭建个人博客</title>
+        <link>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Tue, 17 Apr 2018 15:10:01 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;p&gt;前言 之前博客挂在 github pages 上,回到新疆之后发现访问不了了.一琢磨就买个个主机使用 wordpress搭建了个个人博客,当使用 wordpress 实在是不能提起我的写作欲望,又麻溜的切换到了 hexo.在网上看到了coding 也提供了类似 github pages 的服务 coding-pages,瞬间觉得太好了.于是我又开始了 hexo 之旅;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;正文&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;环境：　mac　os ＋　hexo3.0　＋ iTerm　＋ Mou　＋ next + homebrew １．　安装非常简单，只需要几分钟即可搞定；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;２．　查看你的电脑中有没有安装&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Node.js&lt;/li&gt;
+&lt;li&gt;Git.&lt;/li&gt;
+&lt;li&gt;如果您的电脑没有安装上诉的程序,可以点击访问安装;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;好了,如果这些步骤都完成,您就可以安装 hexo 了;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;建站 执行下面的命令,Hexo 会在文件夹中新建需要的文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hexo init folder hexo init&lt;/code&gt;
+~Document/Hexo e.g. cd folder npm install&lt;/p&gt;
+&lt;p&gt;完成这一步之后,您就可以在您的 hexo 文件夹下执行 &lt;code&gt;hexo g hexo s&lt;/code&gt; 在浏览器中访问 &lt;code&gt;http://localhost:4000&lt;/code&gt;,这是您就能看到 Hexo 的页面了,是不是很帅!&lt;/p&gt;
+&lt;p&gt;轻轻松松就看到了效果,有没有觉得很有成就感;&lt;/p&gt;
+&lt;p&gt;当然这个博客是存在于您的本地;&lt;/p&gt;
+&lt;p&gt;先别着急,咱们看一下本地怎么配置,怎么配置主题;&lt;/p&gt;
+&lt;p&gt;在 Hexo 文件夹下有一个&lt;code&gt;config.yml&lt;/code&gt;,就叫他 站点配置文件吧;&lt;/p&gt;
+&lt;p&gt;文件不大,加上注释空行也就八十多行;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; # Hexo Configuration ## Docs: http://hexo.io/docs/configuration.html ## Source: https://github.com/hexojs/hexo/ # Site 
+ 这下面的几项配置都很简单，你看我的博客就知道分别是什么意思 title: 两好三坏 #博客名 subtitle: 爱情,两好三坏 #副标题 description: 长恨人心不如水,等闲平地起波澜 #用于搜索，没有直观表现 author: 两好三坏 #作者 language: zh-CN #语言 timezone: #时区，此处不填写，hexo会以你目前电脑的时区为默认值 # URL 暂不配置，使用默认值 ## If your site is put in a subdirectory, set url as &amp;#39;http://yoursite.com/child&amp;#39; and root as &amp;#39;/child/&amp;#39; url: http://opiece.me #域名 root: / permalink: :year/:month/:day/:title/ permalink\_defaults: # Directory 暂不配置，使用默认值 source\_dir: source public\_dir: public tag\_dir: tags archive\_dir: archives category\_dir: categories code\_dir: downloads/code i18n\_dir: :lang skip\_render: # Writing 文章布局等，使用默认值 new\_post\_name: :title.md # File name of new posts default\_layout: post titlecase: false # Transform title into titlecase external\_link: true # Open external links in new tab filename\_case: 0 render\_drafts: false post\_asset\_folder: false relative\_link: false future: true highlight: enable: true line\_number: true tab\_replace: # Category Tag 暂不配置，使用默认值 default\_category: uncategorized category\_map: tag\_map: # Date / Time format 时间格式，使用默认值 ## Hexo uses Moment.js to parse and display date ## You can customize the date format as defined in ## http://momentjs.com/docs/#/displaying/format/ date\_format: YYYY-MM-DD time\_format: HH:mm:ss # Pagination ## Set per\_page to 0 to disable pagination per\_page: 10 #每页显示的文章数，0表示不分页 pagination\_dir: page # Extensions 插件配置，暂时不配置 ## Plugins: http://hexo.io/plugins/ ## Themes: http://hexo.io/themes/ theme: hexo-theme-next #使用的主题，即：themes文件夹下的主题文件夹名 feed: #之后配置rss会用，使用如下配置即可 type: path: limit: # Deployment 用于部署到github，之前已经配置过 ## Docs: http://hexo.io/docs/deployment.html deploy: type: git repo: https://git.coding.net/usename/usename.git #coding仓库地址 branch: coding-pages 再次运行 hexo,看看 hexo 比第一次打开之后顺眼多了,至少变成汉字了吧~哈哈哈哈哈哈 切换主题,主题配置文件 在iTerm进入到 Hexo 目录下,然后执行 git 下载 next 主题 git clone https://github.com/iissnan/hexo-theme-next.git 下载完成后会在 hexo 下的 theme 文件下,文件名夹名为 hexo-theme-next,在站点配置文件中将主题设置为 hexo-theme-next;再次运行 hexo s 查看效果,是不是跟开心啦~~~ 在hexo-theme-next中有\_config.yml,这是是主题的配置文件 你可以在Next 帮助文档查看如何个性化定制; 写作]
+
+*   你可以使用下列命令创建一个新的文章:
+*   hexo new \[layout\] &amp;lt;title&amp;gt; ,layout 是布局,title 是文章标题; 写作是使用 markdown语法,你可以在MarkDown 语法入门查看; 如果你需要标签功能和分类功能,在终端进入到您的hexo文件夹下 执行:
+*   hexo new page &amp;#34;tags&amp;#34; 创建标签页面,在hexo 文件夹下的 \\source\\tags\\index.md 中添加一个 type: “tags”
+* [[  hexo new page categories 创建分类页面,在hexo 文件夹下的 \\source\\categories\\index.md 中添加一个 type: “categories” 然后你也可以在hexo 文件夹下的 \\scaffolds\\post.md 中添加一个上 tags: categories: ,这个 post 是你每次书写的时候的一个模板;添加后每次创建行的文章就不用去在添加 tags 和 categories 了;]]
+
+部署 写作完成之后可以使用命令 hexo g生成静态页面.在后运行 hexo s查看效果; hexo d是部署到 coding 或者 github 上面,在站点配置文件中 deploy: type: git repo: https://git.coding.net/usename/usename.git #coding仓库地址 branch: coding-pages
+
+*   你可以先到 coding 上面去申请一个帐号,然后行创建一个与你 coding 用户名相同的项目;
+*   打开你刚才创建的项目,有一栏叫做 Page 服务,打开,然后选择部署;
+*   hexo d是提交到你这个 repo的仓库,如果你没有配置 ssh,那么可能就提示您输入您的从coding 上的用户名和密码来验证;
+*   如果宁蒗的输入,可以配置 ssh 公钥来进行配置点击查看配置 ssh 当您完成写作之后执行 hexo g &amp;amp; hexo s,过上一会就可以访问您的文章了;
+
+绑定域名 如果您有自己的域名,你可以在在 dns 解析添加解析到 pages.coding.me;这样别人就可以通过域名访问您的博客了;
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>伞</title>
+        <link>http://47.99.84.217/post/%E4%BC%9E/</link>
+        <pubDate>Tue, 17 Apr 2018 15:05:10 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E4%BC%9E/</guid>
+        <description>&lt;p&gt;也斯
+我从来没见过好像你这样的伞&lt;br&gt;
+你的骨骼这麽娇脆、衣服这麽轻柔&lt;br&gt;
+当你打开来你给我打开了一个全新的世界&lt;br&gt;
+我逐渐习惯了你的存在&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;我开始在有太阳的日子也带一把伞&lt;br&gt;
+坐在咖啡店喝一口咖啡&lt;br&gt;
+或者在艺术中心看电影的时候&lt;br&gt;
+老是想打开一把伞…&lt;br&gt;
+我知道人们在我背后窃窃私语&lt;br&gt;
+他们开始说我是个奇怪的男人&lt;br&gt;
+这也不要紧的&lt;br&gt;
+只是有时&lt;br&gt;
+你老是闭上了&lt;br&gt;
+怎样也没法打开&lt;br&gt;
+你冰冷得好像冬天的雨  &lt;br&gt;
+你锋利得好像早晨的霜雹刺在赤裸的颈背上&lt;br&gt;
+然后有时候你失踪了&lt;br&gt;
+下雨的时候我沿街去找一把伞&lt;br&gt;
+他们说我其实可以在七十一另外买一把&lt;br&gt;
+或者将就一下，用一迭旧报纸…&lt;br&gt;
+「你看，雨停了，还担心什麽？」&lt;br&gt;
+我想我真是变得有点奇怪…&lt;/p&gt;
+&lt;p&gt;特别喜欢的一首诗;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>万物生长</title>
+        <link>http://47.99.84.217/post/%E4%B8%87%E7%89%A9%E7%94%9F%E9%95%BF/</link>
+        <pubDate>Tue, 17 Apr 2018 15:04:25 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E4%B8%87%E7%89%A9%E7%94%9F%E9%95%BF/</guid>
+        <description>&lt;p&gt;似乎可以听得到骨头生长的声音。所以，我们可能会这样，当我们早上醒来，我们的裤子已经不能把我们瘦长的脚脖儿盖得严严实实了。母亲们大多不会在这个时候给孩子们置办新衣服，我们穿着破旧的衣服，这些衣服大多是哥哥或者亲戚家的，穿上去好不协调捉襟而肘见。那时候大多男孩粗糙的没法看，鼻涕邋遢的，难看的人跟难看的人在一起，这是对美感的一种破坏。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;然而女孩们就不一样了，她们似乎就是在我们发现的一瞬间就出落成了一朵娇艳的玫瑰或者荷花芙蓉，一天一天的莹润起来。&lt;/p&gt;
+&lt;p&gt;春花上颊，春桃胀胸，丰臀圆翘。&lt;/p&gt;
+&lt;p&gt;身子一天天地丰满起来，皮肤像晶润的玉，清风徐来，水波不兴。&lt;/p&gt;
+&lt;p&gt;透着朝霞看上去，就可以看到脖颈上静脉的血液缓缓流经全身的每个部位，将身子日夜滋养，慢慢的就成了一颗晶莹丰润的玉石。在手中慢慢盘着。&lt;/p&gt;
+&lt;p&gt;万物生长似乎有所规律，又好像无迹可寻。&lt;/p&gt;
+&lt;p&gt;有的女人素面朝天就可以在千百人中脱颖而出，让男人为之疯狂，而有的女人就算脸上有两斤胭脂水粉一丝不挂，也没有哪个男人的下体为之燃烧。&lt;/p&gt;
+&lt;p&gt;当然这是外话。&lt;/p&gt;
+&lt;p&gt;但我们的生长似乎有一个阴谋，当我们还在穿开裆裤又没有记性的时候，姑娘们可以跟我们一样穿着开裆裤在婴儿车或者父母的怀里，只要能出门，我们就能看到姑娘穿着开裆裤，不必像牛郎织女一样很久才见一次面，只要我们会哭，只要我们有指头，我们就可以一边哭，一边指着门外邻居家的门，这时候父母或者爷爷奶奶就会把我们带到小姑娘的床边，当然了，我们那么小的时候是不会有这样的想法的。&lt;/p&gt;
+&lt;p&gt;这种想法只有在以后，随着日子的增长，姑娘们身上的衣服越来越多，越来越严实，身子骨儿渐渐出落，像一只含苞待放的花，挠动着少年火热的心。&lt;/p&gt;
+&lt;p&gt;这些衣服阻断了我们观察姑娘身体的目光，好奇心迫使我们对于隐藏在衣服下的躯体充满探寻真相渴望，这些人前仆后继，为了这事儿劳神费心。&lt;/p&gt;
+&lt;p&gt;后来，神通广大的小伙伴弄来了电影儿，屏幕里的人经过一番激战，女人媚眼如丝，男人气喘吁吁。&lt;/p&gt;
+&lt;p&gt;原来就是这回事儿，再后来看了未删节版的独裁者，里面的女上尉把胸拿出来托在手中，像椰子一样把Aladeen打得不省人事。&lt;/p&gt;
+&lt;p&gt;从此，我对这些便失去了兴趣，并且觉得害怕，也不再去探寻美丽衣服下到底隐藏的是什么了，因为你不知道会不会从里面跳出来一个椰子，将你打得不省人事。&lt;/p&gt;
+&lt;p&gt;再后来，我发现了真相，在这条路上前人已经留下了珍贵的经验。&lt;/p&gt;
+&lt;p&gt;聊斋志异里说的够明白了二八佳人体似酥,腰间仗剑斩愚夫。虽然不见人头落,暗里教君骨髓枯。&lt;/p&gt;
+&lt;p&gt;爱情就像某些个滴定操作，总会从色彩缤纷归于平淡，只是需要时间罢了。&lt;/p&gt;
+&lt;p&gt;我也曾遇到过雪莲，那是我经过最美的雪山时。她就盛开在孤崖上，娇美，安静。可惜，经过那雪山后我再没遇见过。
+我当然没有回头了，泰戈尔说过：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;只管走过去，  
+不必逗留着采了花朵来保存，  
+因为一路上花朵自会继续开放的。  
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        <item>
+        <title>css盒子模型 - - 前端开发</title>
+        <link>http://47.99.84.217/post/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</link>
+        <pubDate>Tue, 17 Apr 2018 15:02:57 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</guid>
+        <description>&lt;p&gt;css 框模型(BoxModel) 定义了元素框处理元素内容, 内/外边距,边框, 外边框的方式; CSS 框模型概述: 元素框的最内部分是实际的内容, 直接包围内容的是内边距(*padding); 内边距呈现的是元素的背景, 内边距的边缘是边框(border, 可设置bordercolor borderwidth); 边框以为是外边框 , 外边框的默认背景色是透明的, 因此不会遮挡其后的任何元素;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;内边距, 边框,外边距都是可选的, 默认值是0. 但是,许多元素将由用户代理样式表设置外边距和内边距. 可以通过将元素的margin 和padding 设置为0 来覆盖这些浏览器样式. 这样可以分别进行, 也可以使用通用选择器对所有元素进行设置:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; * {
+    margin : 0;
+    padding: 0;
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 css 中, width 和height指的是内容区域的宽度和高度;增减内外边距和边框并不会影响内容区域的尺寸,但是影响元素框的总尺寸 假设框的每一个边上都有10 个像素的外边距和5个像素的内边距. 如果希望这个元素框达到100个像素, 那就需要将内容的宽度设置为 70 像素,:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#box {
+width: 70px;
+margin: 10px;
+padding: 5px;
+}
+/*
+tip:
+ 内外边距,边框都可以应用于一个元素的所有便, 也可以用于单独的边
+ eg : border-left-width: 10px ;  ---&amp;gt; 单独给左侧边框线设置线宽为10px
+ 外边距可以使负值, 而且在很多情况下都要使用复制的外边距;
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;CSS内边距: 元素的内边距在的边框和内容之间, 控制该区域最简单的属性是padding属性, css 的padding属性定义元素边框与元素内容之间的空白区域; css padding 属性 CSS padding 属性定义元素的内边距。padding 属性接受长度值或百分比值，但不允许使用负值。 例如，如果您希望所有 h1 元素的各边都有 10 像素的内边距，只需要这样： l&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;h1 {padding: 10px;}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;您还可以按照上、右、下、左的顺序分别设置各边的内边距，各边均可以使用不同的单位或百分比值：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;h1 {padding: 10px 0.25em 2ex 20%;}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;单边内边距的属性值:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;padding-top 上内边距&lt;/li&gt;
+&lt;li&gt;padding-bottom 下内边距&lt;/li&gt;
+&lt;li&gt;padding-left 左内边距&lt;/li&gt;
+&lt;li&gt;padding-right 右内边距 h1 { padding-top: 10px; padding-right: 0.25em; padding-bottom: 2ex; padding-left: 20%; }&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CSS 边框 在 HTML 中，我们使用表格来创建文本周围的边框，但是通过使用 CSS 边框属性，我们可以创建出效果出色的边框，并且可以应用于任何元素。 元素外边距内就是元素的的边框 (border)。元素的边框就是围绕元素内容和内边据的一条或多条线。 每个边框有 3 个方面：宽度、样式，以及颜色。 边框与背景 CSS 规范指出，边框绘制在“元素的背景之上”。这很重要，因为有些边框是“间断的”（例如，点线边框或虚线框），元素的背景应当出现在边框的可见部分之间。 CSS2 指出背景只延伸到内边距，而不是边框。后来 CSS2.1 进行了更正：元素的背景是内容、内边距和边框区的背景。大多数浏览器都遵循 CSS2.1 定义，不过一些较老的浏览器可能会有不同的表现。 边框的样式 样式是边框最重要的一个方面，这不是因为样式控制着边框的显示（当然，样式确实控制着边框的显示），而是因为如果没有样式，将根本没有边框。 CSS 的 border-style 属性定义了 10 个不同的非 inherit 样式，包括 none。 例如，您可以为把一幅图片的边框定义为 outset，使之看上去像是“凸起按钮”：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;a:link img {border-style: outset;}
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;定义多种样式: p.aside {border-style: solid dotted dashed double;}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义单边样式: border-top-style border-right-style border-bottom-style border-left-style&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;边框的宽度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过border-width 置顶边框宽度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为边框指定宽度有两种方法：可以指定长度值，比如 2px 或 0.1em；或者使用 3 个关键字之一，它们分别是 thin 、medium（默认值） 和 thick。 注释：CSS 没有定义 3 个关键字的具体宽度，所以一个用户代理可能把 thin 、medium 和 thick 分别设置为等于 5px、3px 和 2px，而另一个用户代理则分别设置为 3px、2px 和 1px。 所以，我们可以这样设置边框的宽度：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;p {border-style: solid; border-width: 5px;}
+or
+p {border-style: solid; border-width: thick;}
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;定义单边的线宽 p {border-style: solid; border-width: 15px 5px 15px 5px;} border-right-width border-bottom-width border-left-width border-top-width&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有边框&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果希望显示某种边框, 就需要设置边框样式 , 默认情况下 border-style 默认 是none ; 如果我们设置style 为none , 然后设置边框的宽度, 边框的样式是不存在的, 而且 边框的宽度自动设置成0 , 所以,我们需要设置边框的时候, 一定要使用 border-style 进行设置一下边框线的style; 边框的颜色 border-corlor 设置边框颜色非常简单。CSS 使用一个简单的 border-color 属性，它一次可以接受最多 4 个颜色值。 可以使用任何类型的颜色值，例如可以是命名颜色，也可以是十六进制和 RGB 值：\&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;p {
+  border-style: solid;
+  border-color: blue rgb(25%,35%,45%) #909090 red;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果颜色值小于 4 个，值复制就会起作用。例如下面的规则声明了段落的上下边框是蓝色，左右边框是红色：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;p {
+  border-style: solid;
+  border-color: blue red;
+  }
+/*
+注释：默认的边框颜色是元素本身的前景色。如果没有为边框声明颜色，它将与元素的文本颜色
+相同。另一方面，如果元素没有任何文本，假设它是一个表格，其中只包含图像，那么该表的边
+框颜色就是其父元素的文本颜色（因为 color 可以继承）。这个父元素很可能是 body、div
+或另一个 table。
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;定义单边颜色&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;border-top-color
+border-right-color
+border-bottom-color
+border-left-color
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;css margin 属性 外边距 绕在元素边框的空白区域是外边距。设置外边距会在元素外创建额外的“空白”。 设置外边距的最简单的方法就是使用 margin 属性，这个属性接受任何长度单位、百分数值甚至负值。 设置外边距最简单的方法就是使用margin属性 , margin 接受任意长度的单位, 像素, 毫米, 英寸,em 也可以设置成auto, 值赋值 我们有时候会输入一些重复的数字,来设置margin 或者 border 或者padding eg :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;p {margin: 0.5em 1em 0.5em 1em };
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过值复制, 你可以不用重复输入数字&amp;quot;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;p{margin: 0.5em 1em};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这两个数值可以取代前面的四个数值, CSS定义了一些规则, 允许外部安居指定少于4个值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;缺少左外边距, 默认使用右外边距&lt;/li&gt;
+&lt;li&gt;缺少下外边距,默认使用上外边距&lt;/li&gt;
+&lt;li&gt;缺少右外边距,使用上外边距;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;eg&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;h1 {margin: 0.25em 1em 0.5em;}  /* 等价于 0.25em 1em 0.5em 1em */
+h2 {margin: 0.5em 1em;}     /* 等价于 0.5em 1em 0.5em 1em */
+p {margin: 1px;}            /* 等价于 1px 1px 1px 1px */
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>Aria2的配置与使用;</title>
+        <link>http://47.99.84.217/post/aria2%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Tue, 17 Apr 2018 15:02:30 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/aria2%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+        <description>&lt;p&gt;Aria2的配置与使用; 百度网盘现在很多人在用,但是对Mac用户并不太友好.客户端下载文件出现中断,浏览器下载速度太慢.得了,咱们花点时间来配置Aria2,再配上chrome或者Aria2的GUI工具,让您用着放心,下着舒心.早日与大姐姐相见~~&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Aria2是这么一款支持多种协议的命令行下载工具 可能有人看到命令行这三个字就不想再继续往下走了，不过这个配置起来真的很方便，很简单．而且支持多平台，OS X,Windows,Linux都可以使用; 开始配置吧~ 下载Aria2; 可以在Aria2下载安装程序,如果你的电脑安装的有brew,你只需要执行 brew install aria2 配置 这是别人做好的配置文件,在终端进入到您的当前用户目录下,然后执行 mkdir .aria2 创建一个文件夹 需要使用终端创建,因为以.开头的文件夹被系统预留,然后进入到创建好的文件夹中,执行 touch aria2.conf,来新建一个文件, 执行open aria2.conf,打开这个文件,将下面的代码复制进去,注意请将代码段dir=/Users/xxxx/Downloads中的xxxx换成你自己的用户名; 在返回到 .aria2 目录中执行touch aria2.session创建一个aria2.session文件; 　在终端输入 aria2c,查看是否可以运行;&lt;/p&gt;
+&lt;p&gt;#用户名&lt;/p&gt;
+&lt;p&gt;#rpc-user=user&lt;/p&gt;
+&lt;p&gt;#密码&lt;/p&gt;
+&lt;p&gt;#rpc-passwd=passwd&lt;/p&gt;
+&lt;p&gt;#上面的认证方式不建议使用,建议使用下面的token方式&lt;/p&gt;
+&lt;p&gt;#设置加密的密钥&lt;/p&gt;
+&lt;p&gt;#rpc-secret=token&lt;/p&gt;
+&lt;p&gt;#允许rpc&lt;/p&gt;
+&lt;p&gt;enable-rpc=true&lt;/p&gt;
+&lt;p&gt;#允许所有来源, web界面跨域权限需要&lt;/p&gt;
+&lt;p&gt;rpc-allow-origin-all=true&lt;/p&gt;
+&lt;p&gt;#允许外部访问，false的话只监听本地端口&lt;/p&gt;
+&lt;p&gt;rpc-listen-all=true&lt;/p&gt;
+&lt;p&gt;#RPC端口, 仅当默认端口被占用时修改&lt;/p&gt;
+&lt;p&gt;#rpc-listen-port=6800&lt;/p&gt;
+&lt;p&gt;#最大同时下载数(任务数), 路由建议值: 3&lt;/p&gt;
+&lt;p&gt;max-concurrent-downloads=5&lt;/p&gt;
+&lt;p&gt;#断点续传&lt;/p&gt;
+&lt;p&gt;continue=true&lt;/p&gt;
+&lt;p&gt;#同服务器连接数&lt;/p&gt;
+&lt;p&gt;max-connection-per-server=5&lt;/p&gt;
+&lt;p&gt;#最小文件分片大小, 下载线程数上限取决于能分出多少片, 对于小文件重要&lt;/p&gt;
+&lt;p&gt;min-split-size=10M&lt;/p&gt;
+&lt;p&gt;#单文件最大线程数, 路由建议值: 5&lt;/p&gt;
+&lt;p&gt;split=10&lt;/p&gt;
+&lt;p&gt;#下载速度限制&lt;/p&gt;
+&lt;p&gt;max-overall-download-limit=0&lt;/p&gt;
+&lt;p&gt;#单文件速度限制&lt;/p&gt;
+&lt;p&gt;max-download-limit=0&lt;/p&gt;
+&lt;p&gt;#上传速度限制&lt;/p&gt;
+&lt;p&gt;max-overall-upload-limit=0&lt;/p&gt;
+&lt;p&gt;#单文件速度限制&lt;/p&gt;
+&lt;p&gt;max-upload-limit=0&lt;/p&gt;
+&lt;p&gt;#断开速度过慢的连接&lt;/p&gt;
+&lt;p&gt;#lowest-speed-limit=0&lt;/p&gt;
+&lt;p&gt;#验证用，需要1.16.1之后的release版本&lt;/p&gt;
+&lt;p&gt;#referer=*&lt;/p&gt;
+&lt;p&gt;#文件保存路径, 默认为当前启动位置&lt;/p&gt;
+&lt;p&gt;dir=/Users/xxxx/Downloads&lt;/p&gt;
+&lt;p&gt;#文件缓存, 使用内置的文件缓存, 如果你不相信Linux内核文件缓存和磁盘内置缓存时使用, 需要1.16及以上版本&lt;/p&gt;
+&lt;p&gt;#disk-cache=0&lt;/p&gt;
+&lt;p&gt;#另一种Linux文件缓存方式, 使用前确保您使用的内核支持此选项, 需要1.15及以上版本(?)&lt;/p&gt;
+&lt;p&gt;#enable-mmap=true&lt;/p&gt;
+&lt;p&gt;#文件预分配, 能有效降低文件碎片, 提高磁盘性能. 缺点是预分配时间较长&lt;/p&gt;
+&lt;p&gt;#所需时间 none lt; falloc ? trunc « prealloc, falloc和trunc需要文件系统和内核支持&lt;/p&gt;
+&lt;p&gt;file-allocation=prealloc&lt;/p&gt;
+&lt;p&gt;启动rpc模式 在终端输入aria2c –conf-path=”/Users/xxxxxx/.aria2/aria2.conf” -D，然后Aria2就启动了,但是如果想使用Aria2下载百度网盘的资料,我们还需要下载插件。如果链接不了,请自行寻找梯子或者百度搜索BaiduExporter(百度云下载地址导出工具);迅雷也可以这样使用 安装完成之后再打开百度网盘的话,会发现网页上多出一个「导出下载」按钮，点击它弹出的「ARIA2 RPC」就自动添加到你的下载队列里了，然后利用 WebUI 提供的网页界面管理你的下载任务. BaiduExporter配置: 打开BaiduExporter设置,将User-agent设置为 : netdisk;5.2.7;PC;PC-Windows;6.2.9200;WindowsBaiduYunGuanJia referer 设置为：http://pan.baidu.com/disk/home 使用 打开百度云盘,找到你想要下载的文件,勾选,然后选择上面的导出到 aria 2选项即可. Aria2 JSON-RPC Path 配置如下 http://localhost:6800/jsonrpc&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Ajax 初识</title>
+        <link>http://47.99.84.217/post/ajax-%E5%88%9D%E8%AF%86/</link>
+        <pubDate>Tue, 17 Apr 2018 15:01:46 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ajax-%E5%88%9D%E8%AF%86/</guid>
+        <description>&lt;p&gt;Ajax AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。并不是一种开发语言,是聪明的程序员对 javascript 的创造性用法; Ajax 提供与服务器异步通信的能力,最简单的应用就是无需刷新整个页面而更新网页某一个部分的数据,更快,更高,更强~~~ 使用这个技术还是很简单的.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;1.创建 XMLHttpRequest 对象&lt;/p&gt;
+&lt;p&gt;//创建对象的语法:&lt;/p&gt;
+&lt;p&gt;variable = new XMLHttpRequest()lt;br/gt;&lt;/p&gt;
+&lt;p&gt;//如果需要向下兼容 ie5,5,我们需要 ActiveX 对象lt;br/gt;&lt;/p&gt;
+&lt;p&gt;variable = new ActiveXobject(quot;Microsoft.XMLHTTPquot;)lt;br/gt;&lt;/p&gt;
+&lt;p&gt;var xmlhttp;&lt;/p&gt;
+&lt;p&gt;if (window.XMLHttpRequest){&lt;/p&gt;
+&lt;p&gt;xmlhttp=new XMLHttpRequest();&lt;/p&gt;
+&lt;p&gt;}else{&lt;/p&gt;
+&lt;p&gt;xmlhttp=new ActiveXObject(quot;Microsoft.XMLHTTPquot;);&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;这样我们就创建一个 XMLHttpRequest 的对象,我们就可以使用这个对象进行请求数据; ２.向服务器发送请求 如果我们向服务器发送请求，就需要用到xmlhttp 的 open()和send() 方法&lt;/p&gt;
+&lt;p&gt;open()有三个参数,第一个参数是请求类型 put,get,post;&lt;/p&gt;
+&lt;p&gt;第二个参数是 url,即文件在服务器上的地址&lt;/p&gt;
+&lt;p&gt;第三个参数是同步 or 异步&lt;/p&gt;
+&lt;p&gt;--&lt;/p&gt;
+&lt;p&gt;open(method,url,asyns)&lt;/p&gt;
+&lt;p&gt;!&amp;ndash;&lt;/p&gt;
+&lt;p&gt;发送请求,string 用于 post 请求&lt;/p&gt;
+&lt;p&gt;但我们需要提交一些表单之类的数据的时候,需要用到 post 提交&lt;/p&gt;
+&lt;p&gt;需要在 setRequestHeader()中添加请求有信息,在后再 send()中添加数据&lt;/p&gt;
+&lt;p&gt;--&lt;/p&gt;
+&lt;p&gt;send(string)&lt;/p&gt;
+&lt;p&gt;xmlhttp.onreadystatechange=function()&lt;/p&gt;
+&lt;p&gt;{&lt;/p&gt;
+&lt;p&gt;if (xmlhttp.readyStatelt;markgt;4 amp;amp; xmlhttp.statuslt;/markgt;200)&lt;/p&gt;
+&lt;p&gt;{&lt;/p&gt;
+&lt;p&gt;// responseText amp; responseXML;一个是字符串形式的响应数据,一个是 xml 形式的响应数据XML 可以使用 name.getElementsByName(quot;节点名称quot;)进行读取&lt;/p&gt;
+&lt;p&gt;document.getElementById(quot;myDivquot;).innerHTML=xmlhttp.responseText;&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;xmlhttp.open(quot;GETquot;,url,true);&lt;/p&gt;
+&lt;p&gt;xmlhttp.send();&lt;/p&gt;
+&lt;p&gt;3&lt;/p&gt;
+&lt;p&gt;上面的 readyState表示存有 XMLHttpRequest 的状态&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0:请求未初始化&lt;/li&gt;
+&lt;li&gt;1:服务器连接已建立&lt;/li&gt;
+&lt;li&gt;2:请求已经接受&lt;/li&gt;
+&lt;li&gt;3:请求处理中&lt;/li&gt;
+&lt;li&gt;4:请求已完成,响应就绪; 上面的 status&lt;/li&gt;
+&lt;li&gt;200:”OK&lt;/li&gt;
+&lt;li&gt;404:未找到页面&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>运用runtime扩大UIButton的响应区域</title>
+        <link>http://47.99.84.217/post/%E8%BF%90%E7%94%A8runtime%E6%89%A9%E5%A4%A7uibutton%E7%9A%84%E5%93%8D%E5%BA%94%E5%8C%BA%E5%9F%9F/</link>
+        <pubDate>Tue, 17 Apr 2018 15:00:47 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E8%BF%90%E7%94%A8runtime%E6%89%A9%E5%A4%A7uibutton%E7%9A%84%E5%93%8D%E5%BA%94%E5%8C%BA%E5%9F%9F/</guid>
+        <description>&lt;p&gt;在日常开发中, 设计师有时候会设计一个看起来小小的按钮, 用户很难点击到这个按钮; 为了解决这个问题,简单粗暴的就是将 button 的 frame 放大, 分别调整button的 frame 和显示内容的 frame ,即麻烦,又显得怪异;如果我们使用 runtime 关联对象的方法对 button 进行扩展,去扩大 UIButton 的可交互区域,这样会更好一点&lt;/p&gt;
+&lt;p&gt;其执行原理为：OC中创建类别(Categroy)的方式，并不允许给已有的类扩展属性，只可以给其扩展方法。所以，需要使用Runtime“黑魔法”中的关联对象(Associative Object)的一些方法，动态地为某个button对象添加扩展距离的属性，然后检测UITouch事件的触摸点是否在我们扩展距离后Rect内，从而达到想要的效果。&lt;/p&gt;
+&lt;p&gt;首先，创建一个UIButton的Category，起名为EnlargeTouchArea，设置一个外界可访问的方法setEnlaEdgeWithTop:right:bottom:left，在使用时也只需使用这个方法即可，传入的四个参数分别是上、右、下、左的扩展距离。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//  UIButton+EnlargeTouchArea.h
+#import &amp;lt;Foundation/Foundation.h&amp;gt;
+#import &amp;lt;UIKit/UIKit.h&amp;gt;
+@interface UIButton (EnlargeTouchArea)
+- (void)setEnlargeEdgeWithTop:(CGFloat) top right:(CGFloat) right bottom:(CGFloat) bottom left:(CGFloat) left;
+@end
+    然后导入&amp;lt;objc/runtime.h&amp;gt;，所有Runtime的黑魔法都在这里
+//  UIButton+EnlargeTouchArea.m
+#import &amp;#34;UIButton+EnlargeTouchArea.h&amp;#34;
+#import &amp;lt;objc/runtime.h&amp;gt;
+@implementation UIButton (EnlargeTouchArea)
+static char topNameKey;
+static char rightNameKey;
+static char bottomNameKey;
+static char leftNameKey;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;objc_setAssociatedObject是一个C语言函数，这个函数被称之为“关联API”，它的作用是把top、right、bottom、left这四个从外界获取到的值与本类(self)关联起来，然后设置一个static char作为能够找到他们的Key&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (void) setEnlargeEdgeWithTop:(CGFloat) top right:(CGFloat) right bottom:(CGFloat) bottom left:(CGFloat) left
+{
+    objc_setAssociatedObject(self, &amp;amp;topNameKey, [NSNumber numberWithFloat:top], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &amp;amp;rightNameKey, [NSNumber numberWithFloat:right], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &amp;amp;bottomNameKey, [NSNumber numberWithFloat:bottom], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &amp;amp;leftNameKey, [NSNumber numberWithFloat:left], OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;bjc_getAssociatedObject同样也是一个关联API(c语言函数)，它可以通过刚刚设置的Key找到上个方法中从外界传入的top、right、bottom、left，这个api和obj_setAssociatedObject一起使用就可以达到给已有类扩展属性的效果。最后我们通过self.bounds设置一个新的CGRect，作为扩大后的点按区域，并且返回&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- (CGRect) enlargedRect
+{
+    NSNumber* topEdge = objc_getAssociatedObject(self, &amp;amp;topNameKey);
+    NSNumber* rightEdge = objc_getAssociatedObject(self, &amp;amp;rightNameKey);
+    NSNumber* bottomEdge = objc_getAssociatedObject(self, &amp;amp;bottomNameKey);
+    NSNumber* leftEdge = objc_getAssociatedObject(self, &amp;amp;leftNameKey);
+    if (topEdge &amp;amp;&amp;amp; rightEdge &amp;amp;&amp;amp; bottomEdge &amp;amp;&amp;amp; leftEdge)
+    {
+        return CGRectMake(self.bounds.origin.x - leftEdge.floatValue,
+                          self.bounds.origin.y - topEdge.floatValue,
+                          self.bounds.size.width + leftEdge.floatValue + rightEdge.floatValue,
+                          self.bounds.size.height + topEdge.floatValue + bottomEdge.floatValue);
+    }
+    else
+    {
+        return self.bounds;
+    }
+}
+   这个方法UIView的一个实例方法，作用是，捕获当前的UITouch事件中的触摸点，检测它是否在最上层的子视图内，如果不是的话就递归检测其父视图。这样的话，我们就只是将当前某一个触摸的point与某一个rect进行比较，并没有改变Button真实的frame，从而真正的从逻辑上达到了只是扩大点按区域的效果。
+1. - (UIView) hitTest:(CGPoint) point withEvent:(UIEvent) event
+2. {
+3.     CGRect rect = [self enlargedRect];
+4.     if (CGRectEqualToRect(rect, self.bounds))
+5.     {
+6.         return [super hitTest:point withEvent:event];
+7.     }
+8.     return CGRectContainsPoint(rect, point) ? self : nil;
+9. }
+    总结一下，为什么要用runtime去为已有类达到一个扩展属性的效果呢，正是因为上面这个方法，这个系统提供的方法并没有提供接受其他参数的地方，而我们却必须要指定一个扩大的区域作为参数，所以就必须为这个类扩展一个新的属性。
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>使用thinkphp分页&amp;上传图片</title>
+        <link>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8thinkphp%E5%88%86%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/</link>
+        <pubDate>Tue, 17 Apr 2018 14:49:42 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8thinkphp%E5%88%86%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/</guid>
+        <description>&lt;p&gt;使用 thinkPHP 实现分页: 新建控制器LoginController.class.php 在 LoginController 中创建 index 方法:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Page 类 和 limit方法实现&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$data  = M(&amp;#39;userinfo&amp;#39;);
+$map[&amp;#39;user_id&amp;#39;] = array(&amp;#39;gt&amp;#39;,0);
+$count = $data-&amp;gt;where()-&amp;gt;count(); // 满足条件的记录数
+//Page 的构造方法,第一个参数为总记录数,第二个是每页显示的数量
+$page = new Page($count,5);
+$show = $page-&amp;gt;show();
+$list = $User-&amp;gt;where($map)-&amp;gt;order(&amp;#39;create_time&amp;#39;)-&amp;gt;limit($Page-&amp;gt;firstRow.&amp;#39;,&amp;#39;.$Page-&amp;gt;listRows)-&amp;gt;select();
+$this-&amp;gt;assign(&amp;#39;list&amp;#39;,$list);// 赋值数据集
+$this-&amp;gt;assign(&amp;#39;page&amp;#39;,$show);// 赋值分页输出
+$this-&amp;gt;display();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在对应的试图模板中编写如下代码:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;table cellpadding=3 cellspacing=5&amp;gt;
+    &amp;lt;volist name=&amp;#34;list&amp;#34; id=&amp;#34;vo&amp;#34;&amp;gt;
+        &amp;lt;tr&amp;gt;
+            &amp;lt;td &amp;gt;[ {$vo.user_id} ] {$vo.user_id} &amp;lt;/td&amp;gt;
+        &amp;lt;/tr&amp;gt;
+    &amp;lt;/volist&amp;gt;
+    &amp;lt;tr&amp;gt;
+    &amp;lt;/tr&amp;gt;
+&amp;lt;/table&amp;gt;
+&amp;lt;div class=&amp;#34;resultpage&amp;#34; style=&amp;#34;width: 500px&amp;#34;&amp;gt;{$page}&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样在对应的视图就会显示相应的页码和数据信息;不过有点难看,不过别担心,稍后咱们在重新设置; 接下来咱们看第二种实现方式: 分页类和 page 方法的实现 将 index 方法中的代码替换成如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$data  = M(&amp;#39;userinfo&amp;#39;);
+$map[&amp;#39;user_id&amp;#39;] = array(&amp;#39;gt&amp;#39;,0);
+$list = $data-&amp;gt;where($map)-&amp;gt;order(&amp;#39;user_id)-&amp;gt;page($_GET[&amp;#39;p&amp;#39;].&amp;#39;,5&amp;#39;)-&amp;gt;select();
+$this-&amp;gt;assgin(&amp;#39;list&amp;#39;,$list);
+//引入分页模块
+$count = $data-&amp;gt;where($map)-&amp;gt;count();
+$page = new Page($count, &amp;#39;5&amp;#39;);
+$show = $page-&amp;gt;show();
+$this -&amp;gt; assgin(&amp;#39;page&amp;#39;,$show);
+$this-&amp;gt;display();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改分页显示效果 thinkphp 中的分页类 Page 提供了一个方法 setConfig 来修改分页栏的显示效果:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;header：头部描述信息，默认值 “条记录”&lt;/li&gt;
+&lt;li&gt;prev：上一页描述信息，默认值是“上一页”&lt;/li&gt;
+&lt;li&gt;next：下一页描述信息，默认值是“下一页”&lt;/li&gt;
+&lt;li&gt;first：第一页描述信息，默认值是“第一页”&lt;/li&gt;
+&lt;li&gt;last：最后一页描述信息，默认值是“最后一页”&lt;/li&gt;
+&lt;li&gt;theme ：分页主题描述信息， `` $page-&amp;gt;lastSuffix = false; $page-&amp;gt;setConfig(&amp;lsquo;header&amp;rsquo;,&amp;lsquo;共**%TOTAL_ROW%**条记录&amp;rsquo;); $page-&amp;gt;setConfig(&amp;lsquo;prev&amp;rsquo;,&amp;rsquo;&amp;lt;&amp;rsquo;); $page-&amp;gt;setConfig(&amp;rsquo;next&amp;rsquo;,&amp;rsquo;&amp;gt;&amp;rsquo;); $page-&amp;gt;setConfig(&amp;lsquo;first&amp;rsquo;,&amp;lsquo;首页&amp;rsquo;); $page-&amp;gt;setConfig(&amp;rsquo;last&amp;rsquo;,&amp;lsquo;尾页&amp;rsquo;); $page-&amp;gt;setConfig(&amp;rsquo;theme&amp;rsquo;, &amp;lsquo;%FIRST%%UP_PAGE%%LINK_PAGE%%DOWN_PAGE%%END%%HEADER%&amp;rsquo;); 我们还可以使用 &lt;code&gt;css&lt;/code&gt; 属性对分页栏的显示效果进行修改: 上面列表中的 &lt;code&gt;header&lt;/code&gt; &lt;code&gt;prev&lt;/code&gt; &lt;code&gt;next&lt;/code&gt; 等等再视图模板中都是以元素的 &lt;code&gt;class&lt;/code&gt; 值体现的,所以我们可以通过修改 class 的样式表定制显示效果,达到我们想要的效果:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;.resultpage{&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;background: black;
+color: honeydew;
+margin-right: 5px;
+margin-left: 5px;
+padding-left: 5px;
+padding-right: 5px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;.num {&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;color: honeydew;
+padding-left: 5px;
+padding-right: 5px;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;} .current{color: red;} .prev{color: honeydew;} .next{color: honeydew;} .last{color: honeydew;} .first{color: honeydew;} a{text-decoration: none}&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>使用cookie实现自动登录</title>
+        <link>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</link>
+        <pubDate>Tue, 17 Apr 2018 14:48:57 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</guid>
+        <description>&lt;p&gt;关于 cookie 在日常开发中我们会遇到这样的需求场景: 用户在首次登录使用后,离开了这个网站(没有点击注销登录), 再次回到这个站点的时候,不需要重新登录,仍是自己上次登陆的账号信息; 我们可以使用 cookie 中存储用户的信息,并且判断是否需要加载用户信息并重新登录; php 使用 setCookie 函数来设置 Cookie 信息,但是有一点值得注意,Cookie是HTTP协议头的一部分，用于浏览器和服务器之间传递信息，&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;所以必须在任何属于HTML文件本身的内容输出之前调用Cookie函数。 也就是说,在 setcookie 之前不能进行输出:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#39;我要设置 cookie了&amp;#39;;
+setCookie(&amp;#39;value&amp;#39;,&amp;#39;key&amp;#39;,time());
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这种会造成设置 cookie 无效; 使用 cookie 实现自动登录 登陆成功后存储用户的信息: 在登录成功后通过 setCookie 设置用户信息,&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; public function login()
+ {
+    if (!empty($_POST)){
+        $userpsw = array(
+            &amp;#39;username&amp;#39;=&amp;gt;$_POST[&amp;#39;username&amp;#39;],
+            &amp;#39;password&amp;#39;=&amp;gt;$_POST[&amp;#39;password&amp;#39;],
+         );
+        $info = D(&amp;#39;userinfo&amp;#39;)-&amp;gt;where($userpsw)-&amp;gt;find();
+        if ($info){
+            $re = setcookie(&amp;#39;userinfo&amp;#39;,md5($_POST[&amp;#39;username&amp;#39;]),time()+3600,&amp;#39;/&amp;#39;);
+            $re = setcookie(&amp;#39;password&amp;#39;,MD5($_POST[&amp;#39;password&amp;#39;]),time()+3600,&amp;#39;/&amp;#39;);
+            dump($re);
+            echo &amp;#39;登陆成功&amp;#39;;
+            $this-&amp;gt;display();
+            }else{
+                echo &amp;#39;登录失败&amp;#39;;
+            }
+        }
+    }else{
+        $this-&amp;gt;display();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过 cookie 我们还可以保存用户的偏好设置信息,在用户下次访问的时候推送用户可能会感兴趣的信息; 判断是否需要自动登录 可以再模板文件中通过 js 获取 cookie 进行判断是否需要自动加载用户信息,也可以在 php 的控制其中进行判断,&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt;
+$(document).ready(function () {
+var name = getCookie(&amp;#39;nickname&amp;#39;);
+var password = getCookie(&amp;#39;psw&amp;#39;);
+if(name &amp;amp;&amp;amp; password){
+    //自动登录
+}else{
+    //手动登录
+}
+   console.log(getCookie(&amp;#39;nickname&amp;#39;));
+});
+function getCookie(c_name)
+{
+    if (document.cookie.length&amp;gt;0)
+    {
+        c_start=document.cookie.indexOf(c_name + &amp;#34;=&amp;#34;)
+        if (c_start!=-1)
+        {
+            c_start=c_start + c_name.length+1
+            c_end=document.cookie.indexOf(&amp;#34;;&amp;#34;,c_start)
+            if (c_end==-1) c_end=document.cookie.length
+            return unescape(document.cookie.substring(c_start,c_end))
+        }
+    }
+    return &amp;#34;&amp;#34;
+}
+&amp;lt;/script&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>十月围城</title>
+        <link>http://47.99.84.217/post/%E5%8D%81%E6%9C%88%E5%9B%B4%E5%9F%8E/</link>
+        <pubDate>Tue, 17 Apr 2018 14:48:07 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E5%8D%81%E6%9C%88%E5%9B%B4%E5%9F%8E/</guid>
+        <description>&lt;p&gt;今天看了一下建军大业的预告片,看到曹植《白马篇》里面这一句 捐躯赴国难，视死忽如归！&lt;/p&gt;
+&lt;p&gt;不知怎地忽然想到了陈可辛导演的电影《十月围城》了，看过这部同名电视剧的人大概都知道这部电视剧讲的是孙先生和大清王朝之间不得不说的故事。&lt;/p&gt;
+&lt;p&gt;这部电影也是一样的,讲的是孙先生到访香港参加同盟会会盟,清政府派出将军阎孝国刺杀孙先生,几个小人物作为保镖保护孙先生顺利完成会盟而牺牲的的故事;&lt;/p&gt;
+&lt;p&gt;影片开头就开始讲清政府暗杀革命义士,一位姓杨的教授慷慨激昂的向学生们宣扬民主精神, 下课后,杨教授被学生围在中间讨论关于民主,为民所有, 为民所致,为民所享 ,女学生问,能看到那一天吗 教授回到: 我知道,这一天快到了, 就算我看不到,你一定能看到; 话刚说完,杨教授冷不丁的被清廷杀手一枪爆头, 镜头一转,阎孝国手里冷峻的枪管冒着些许热气;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;既然有人要杀人,那么当然就有人要保护孙先生了;&lt;/p&gt;
+&lt;p&gt;关键人物陈少白作为联络人, 联系了富商李玉堂,李玉堂表示不掺和,他只愿意出钱; 陈少白获得商人老李的许诺之后,孤身一人来到了戏班子,这个戏班子当年对抗八国联军被清廷逐叛军,三百多人最后只剩下三十多人;领头的方将军立志推倒清廷,扯掉叛军的帽子.方将军与陈少白一拍即合,决定保护孙先生顺利参加会盟; 结果第二天,这帮人就被清廷给抄了底,陈少白也被清廷抓走,只剩下一个被方将军抛出房间的女儿,方红; 陈少白与阎孝国在房间相见,开始了一场争论: 陈少白:阎孝国，你还记得你毕业的时候我给你的评语吗？“功课优秀，头脑愚蠢，一介莽夫，难为大才” 阎孝国:先生错怪学生了。你以为我是鹰犬，只懂得对朝廷毕恭毕敬惟命是从，学生不是。学生斗胆问一句，国家受尽欺辱，可是最终洋鬼子给了你们什么？除了连年的战乱，除了百姓民不聊生之外，还有什么？ 陈少白:天赋人权，人人生而平等，可为什么有人天生就是主子，而且还冠以天子之名，而其他人生下来就得成奴才？！ 阎孝国:皇权乃天赐，从来如此！ 陈少白:所以才要改变，所以才要建立民主的中国！孝国，亏你接受的还是西式的教育，你根本不愿意睁开眼睛看看我们的世界。这个世界很大，比你想象中的大多了。 阎孝国:学生正因为受过西式教育，才睁大眼睛看清楚，洋人全都是狼子野心！就凭你们几个开个会游个行就能救中国？先生，您是个教书匠，干不了大事的。见血就晕，这是您的老毛病了吧？这就是你们的胆量！如果让你们成功了，国家必亡！我不杀你，也不想再看到你。 对,陈少白是阎孝国的授业恩师 陈少白被抓之后,李玉堂收到了陈少白寄出的信,言辞诚恳,字字真情,李玉堂同志决定接下陈少白还没有完成的事情,保护孙先生; 接下来就是四位仁人志士登上:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;刘公子,刘郁白 李玉堂从当铺赎回了刘公子的传家宝,一柄天外陨铁打造的精钢折扇, 李老板归还折扇,代价是要求他保护一个人; 发生了如下对话: 刘郁白: 李老板,你说爱一个人有错吗? 李玉堂: 是啊,可谁让你偏偏爱上自己父亲的女人呢?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;方红,方将军的女儿 在李老板家吃了一顿饭,说: 我父亲做什么我就做什么;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;王复明 有感于李老板乐善好施,仗义执言,为人正直; 决定加入&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;沈重阳 李老板妻子念慈看到李老板收到了一只警督送的枪, 觉得可能会有大事发生, 带着女儿找到了沈重阳,告诉他, 李老板的女儿是他沈重阳的孩子, 巴拉巴拉的, 并要求他去保护李老板,并答应以后告诉他女儿,沈重阳是她父亲; 沈大侠加入&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来就是全程无尿点的武打戏了; 保护孙先生的队伍路上 ,忽然从道路两旁的房间里出现,开始狂射弩箭,王复明拿起路边菜摊子上的水果蔬菜当做武器,大杀四方,队伍冲出了清廷的第一道围堵,但是王复明被伪装成路人的杀手用铁锥捅的浑身是血,壮怀激烈,英勇牺牲; 在街道的一个拐角处,方红遇到了杀死父亲的清廷杀手, 在一个满是炸药的房间里与杀手殊死搏斗,在火药桶点燃的刹那逃出房间,死死地拽住了房门,与杀手同归于尽,视死忽如归; 电影中的每个人都有自己的故事,那是他们在尘世中期盼的幸福; 据说人在死的时候,会看到走马灯,方红看到了他和父亲一起回到天津,王富明看到了自己又重新回到了少林寺,刘公子看到了自己的母亲的朱衣凤冠,沈重阳看到了自己带着念慈和孩子在街上,阿四看到了自己和阿纯结婚,无论是谁,他们都有自己盼望,陈少白一腔爱国热情,李老板书生意气,这帮人从来没有什么终极目的,有的只是对社会进步的渴望和对自身幸福的渴望; 在漫长的革命之路上,孙中山说:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;十年以前，一个学生在这里提问：何为革命？我告诉他，革命，就是要让四万万同胞人人
+有恒业，不啼饥，不号寒。十年过去了，与我志同者相继牺牲，我从他乡漂泊重临，革命
+两次于我而言不可同日而语。今天，如果再道何为革命，我会说：欲求文明之幸福，不得
+不经文明之痛苦。这痛苦，就叫做革命;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们已经无法体会那个年代的热情,革命、民主、自由、主义、共和、共产、大同都是曾经被用以呼唤理性、现代性、个性、人性与新的时代，同时也这些词也被用以唤起多数人的暴力，用以巩固权力，用以践踏权利与扭曲人性、创造同质化。就在过去不远的年代里，人们感知国家的衰败与无望，人们有着各自臆想的正义与理想，人们为了捍卫思想而厮杀，当思想成为组织，人们卷入其中，最终组织的荣衰代替了思想的成败，最终组织的目的代替了过程的正义，组织代替了理想，成为正义本身。 值得信赖的不是标榜自己进步的组织,而是进步; 编不下去了,就用鲁迅的一句话作为结尾吧:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;我们从古以来
+就有埋头苦干的人
+有拚命硬干的人
+有为民请命的人
+有舍身求法的人
+虽是等于为帝王将相作家谱的所谓“正史”
+也往往掩不住他们的光耀，这就是中国的脊梁。
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>热风</title>
+        <link>http://47.99.84.217/post/%E7%83%AD%E9%A3%8E/</link>
+        <pubDate>Tue, 17 Apr 2018 14:47:34 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E7%83%AD%E9%A3%8E/</guid>
+        <description>&lt;p&gt;　从一封匿名信里看见一句话，是“数麻石片”(原注江苏方言)，大约是没有本领便不必提倡改革，不如去数石片的好的意思。因此又记起了本志通信栏内所载四川方言的“洗煤炭”。想来别省方言中，相类的话还多；守着这专劝人自暴自弃的格言的人，也怕并不少。&lt;/p&gt;
+&lt;p&gt;　凡中国人说一句话，做一件事，倘与传来的积习有若干抵触，须一个斤斗便告成功，才有立足的处所；而且被恭维得烙铁一般热。否则免不了标新立异的罪名，不许说话；或者竟成了大逆不道，为天地所不容。这一种人，从前本可以夷到九族，连累邻居；现在却不过是几封匿名信罢了。但意志略略薄弱的人便不免因此萎缩，不知不觉的也入了“数麻石片”党。 　&lt;/p&gt;
+&lt;p&gt;　所以现在的中国，社会上毫无改革，学术上没有发明，美术上也没有创作；至于多人继续的研究，前仆后继的探险，那更不必提了。国人的事业，大抵是专谋时式的成功的经营，以及对于一切的冷笑。 　&lt;/p&gt;
+&lt;p&gt;　但冷笑的人，虽然反对改革，却又未必有保守的能力：即如文字一面，白话固然看不上眼，古文也不甚提得起笔。照他的学说，本该去“数麻石片”了；他却又不然，只是莫名其妙的冷笑。&lt;/p&gt;
+&lt;p&gt;　 中国的人，大抵在如此空气里成功，在如此空气里萎缩腐败，以至老死。&lt;br&gt;
+　 我想，人猿同源的学说，大约可以毫无疑义了。但我不懂，何以从前的古猴子，不都努力变人，却到现在还留着子孙，变把戏给人看。还是那时竟没有一匹想站起来学说人话呢?还是虽然有了几匹，却终被猴子社会攻击他标新立异，都咬死了；所以终于不能进化呢?&lt;br&gt;
+　 尼采式的超人，虽然太觉渺茫，但就世界观有人种的事实看来，却可以确信将来总有尤为高尚尤近圆满的人类出现。到那时候，类人猿上面，怕要添出“类猿人”这一个名词。&lt;/p&gt;
+&lt;p&gt;　 所以我时常害怕，愿中国青年都摆脱冷气，只是向上走，不必听自暴自弃者流的话。能做事的做事，能发声的发声。有一分热，发一分光，就令萤火一般，也可以在黑暗里发一点光，不必等候炬火.此后如竟没有炬火：我便是唯一的光。倘若有了炬火，出了太阳，我们自然心悦诚服的消失。不但毫无不平，而且还要随喜赞美这炬火或太阳；因为他照了人类，连我都在内.&lt;/p&gt;
+&lt;p&gt;　 我又愿中国青年都只是向上走，不必理会这冷笑和暗箭。&lt;/p&gt;
+&lt;p&gt;　 尼采说：“真的，人是一个浊流。应该是海了，能容这浊流使他干净。
+　 “咄，我教你们超人：这便是海，在他这里，能容下你们的大侮蔑。”(《札拉图如是说》的《序言》第三节)
+　 纵令不过一洼浅水，也可以学学大海；横坚都是水，可以相通。几粒石子，任他们暗地里掷来；几滴秽水，任他们从背后泼来就是了。 　&lt;/p&gt;
+&lt;p&gt;　 这还算不到“大侮蔑”——因为大侮蔑也须有胆力。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>iOS设计模式之单例</title>
+        <link>http://47.99.84.217/post/ios%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B/</link>
+        <pubDate>Tue, 17 Apr 2018 14:45:14 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ios%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B/</guid>
+        <description>&lt;p&gt;单例模式的意思就是这个类只有一个实例，这个类就是单例类。在iOS中有不少都是单例NSNull，NSFileManager ，UIApplication，NSUserDefaults ，UIDevice，还有一些第三方也有能用到了这种设计模式例如Afhttpmanger。。。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;（1）单例模式的作用 :可以保证在程序运行过程，一个类只有一个实例，而且该实例易于供外界访问，从而方便地控制了实例个数，并节约系统资源。 （2）单例模式的使用场合：在整个应用程序中，共享一份资源（这份资源只需要创建初始化1次），应该让这个类创建出来的对象永远只有一个。 实现思路： 创建一个一个全局的static的实例 static id _instance; 提供1个类方法让外界访问唯一的实例 重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+// 实现copyWithZone:方法 
+// AudioPlayer.m 
+// 单例 
+// 
+// Created by 两好三坏 on 16/2/21. 
+// Copyright © 2016年 ;. All rights reserved. 
+// 
+#import &amp;amp;amp;quot;AudioPlayer.h&amp;amp;amp;quot; 
+&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;@interface&amp;lt;/spanAudioPlayer&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; () 
+@end 
+@implementation&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s4&amp;#34;&amp;gt;AudioPlayer 
+//创建一个一个全局的static的实例 static id _instance; 
+&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; 
+//提供1个类方法让外界访问唯一的实例 
++(instancetype)shareAudioPlayer{ 
+&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/spandispatch_once_t&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; onceToken; 
+&amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;dispatch_once&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(&amp;amp;amp;amp;onceToken, ^{ 
+_instance = [[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;self&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; alloc] init]; 
+}); 
+&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; 
+} 
+//重写allocWithzone:方法，控制内存分配。因为alloc内部会调用该方法，每次调用allocWithzone:方法，系统都会创建一块新的内存空间。 
++(instancetype)allocWithZone:(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;struct&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSZone&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; *)zone{ 
+&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;static&amp;lt;/spandispatch_once_t&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; onceToken; 
+&amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;dispatch_once&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(&amp;amp;amp;amp;onceToken, ^{ 
+_instance = [&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;super&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; allocWithZone:zone]; 
+}); 
+&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;//实现copyWithZone:方法 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;-(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)copyWithZone:(&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSZone&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; *)zone{ 
+&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;@end 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;在控制其中创建单例类的对象，打印地址： 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;- (&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;void&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)viewDidLoad { 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;super&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; viewDidLoad]; 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player1 = [AudioPlayer shareAudioPlayer]; 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player2 = [[AudioPlayer alloc] init]; 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player3 = [AudioPlayer new]; 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;AudioPlayer *player4 = [player1 &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;copy&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;]; 
+&amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSLog&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;(@&amp;amp;amp;quot;%p,%p,%p,%p&amp;amp;amp;quot;,player1,player2,player3,player4); 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;} 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;//打印结果 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;2016&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;-&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;02&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;-&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;21&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;23&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;27&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;13.990&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt; 单例[&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;2847&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;329685&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;] &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;0x7fb6e3e080a0&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;0x7fb6e3e080a0&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;0x7fb6e3e080a0&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s3&amp;#34;&amp;gt;,&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;0x7fb6e3e080a0 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;四个实例的内存地址是一样的，证明只创建了一个实例； 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;MRC环境下通常需要在实现下面几个方法： 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;- (&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;oneway&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;void&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)release {} 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;- (&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)retain { &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; } 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;- (&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;id&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)autorelease { &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt; _instance; } 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;- (&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;NSUInteger&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;)retainCount { &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s2&amp;#34;&amp;gt;return&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;s5&amp;#34;&amp;gt;UINT_MAX&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;; } 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;[/objc] 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;可以使用宏判断是否为mrc， 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;#if __has_feature(objc_arc) 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;// ARC 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;#else 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;// MRC 
+&amp;gt; &amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;#endif 
+&amp;gt; &amp;amp;nbsp;
+&amp;lt;span class=&amp;#34;s1&amp;#34;&amp;gt;当然还可以把单例也抽取成为宏，用起来还挺方便的；你们也可以试试试～～～&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>iOS 界面传值</title>
+        <link>http://47.99.84.217/post/ios-%E7%95%8C%E9%9D%A2%E4%BC%A0%E5%80%BC/</link>
+        <pubDate>Tue, 17 Apr 2018 14:43:55 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/ios-%E7%95%8C%E9%9D%A2%E4%BC%A0%E5%80%BC/</guid>
+        <description>&lt;p&gt;在iOS开发新中经常会遇到在两个界面之间进行传值的情况,在页面之间进行数据传递有正向传递(控制器A跳转到控制器B),也有反向传值(控制器B跳转到A).可以通过属性,代理,block,通知等等. 就解释一下怎么使用block和代理进行页面之间反向传值;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;使用block进行反向传值 在Xcode中创建新的项目 创建两个控制器A,B. 在A控制器中添加一个按钮,对按钮添加点击跳转到B控制器,然后再A中再次添加一个label,作为接受B控制器中传回来的值. 在B控制器中创建一个UITextField,用于输入信息. 在A控制器中.m文件中代码如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//
+// ViewController.m
+// 反向传值
+//
+// Created by 两好三坏 on 16/3/3.
+// Copyright © 2016年 qinakun. All rights reserved.
+//
+import &amp;#34;ViewController.h&amp;#34;
+使用block传值的控制器
+import &amp;#34;BlockVC.h&amp;#34;
+使用delegate传值的控制器
+import &amp;#34;DelegateVC.h&amp;#34;
+@interface ViewController ()
+//用于接受数据的label
+@property (weak, nonatomic) IBOutlet UILabel *inputLabel;
+@end
+@implementation ViewController
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  }
+//跳转控制器的
+- (IBAction)jumpVC:(id)sender {
+  //调用block进行传值
+  // [self block];
+  //调用bdelegate进行传值
+  [self delegate];
+  }
+//使用block进行反向传值
+-(void)block{
+UIStoryboard *sb = [UIStoryboard storyboardWithName:@&amp;#34;BlockSB&amp;#34; bundle:nil];
+BlockVC *blockVc = [sb instantiateViewControllerWithIdentifier:@&amp;#34;blockVC&amp;#34;];
+//inputBlock是定义好的block
+[blockVc setInputBlock:^(NSString *string) {
+//在这里对A控制器的label进行设置,这个string参数是从B控制器中传过来的;
+self.inputLabel.text = string;
+}];
+[self.navigationController pushViewController:blockVc animated:YES];
+}
+//使用delegate进行反向传值
+-(void)delegate{
+DelegateVC *vc = [DelegateVC new];
+//需要让控制器A成为控制器B的代理.
+vc.delegate = self;
+[self.navigationController pushViewController:vc animated:YES];
+}
+//代理方法中给input进行传值
+-(void)changeValue:(NSString *)string{
+self.inputLabel.text = string;
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接下来是在控制器B中定义一个ｂｌｏｃｋ的代码块，这个block的参数是字符串,在控制器B的.h文件中声明如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@property (nonatomic, copy) void (^inputBlock)(NSString *string);
+控制器B的.m文件代码如下:
+import &amp;#34;BlockVC.h&amp;#34;
+@interface BlockVC ()
+@property (weak, nonatomic) IBOutlet UITextView *input;
+@end
+@implementation BlockVC
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  }
+  //点击屏幕是输入框失去第一响应者的资格
+  -(void)touchesBegan:(NSSet _)touches withEvent:(UIEvent _)event{
+[self.input resignFirstResponder];
+}
+//在控制器即将消失的时候调用,
+-(void)viewWillDisappear:(BOOL)animated{
+[super viewWillDisappear:animated];
+//取到输入框的内容保存在代码块中,在需要的时候将参数传给控制器A
+if (self.inputBlock) {
+self.inputBlock (self.input.text);
+}
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样就算完成了一个简单的在两个页面之间进行反向传值的功能. 使用delegate进行反向传值 代理应用场景及使用步骤 对象A内部发生了一些事情,想通知对象B 对象B想监听对象A内部发生了什么事情 对象A想在自己的方法内部调用对象B的某个方法,并且对象A不能对对象B有耦合依赖 对象A想传递数据给对象B 以上情况,结果都一样:对象B是对象A的代理(delegate) 1.先搞清楚谁是谁的代理(delegate) 2.定义代理协议,协议名称的命名规范:控件类名 + Delegate 3.定义代理方法 代理方法一般都定义为@optional 代理方法名都以控件名开头 代理方法至少有1个参数,将控件本身传递出去 设置代理(delegate)对象 (比如myView.delegate = xxxx;) 代理对象遵守协议 代理对象实现协议里面该实现的方法 在恰当的时刻调用代理对象(delegate)的代理方法,通知代理发生了什么事情 (在调用之前判断代理是否实现了该代理方法) 这是代理的使用场景以及使用步骤,下面是使用delegate实现前面block实现的功能 假如控制器C想利用代理给控制器A传值,那么 控制器C要有一个协议 控制器要有一个代理属性 控制器A遵守C的代理协议,并且成为C的代理对象. 控制器C的.h文件中作出如下声明:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//
+// DelegateVC.h
+// 反向传值
+//
+// Created by 两好三坏 on 16/3/5.
+// Copyright © 2016年 qinakun. All rights reserved.
+//
+import UIKit/UIKit.h
+@class DelegateVC;
+//协议
+@protocol DelegateVCDelegate
+//A需要实现的代理方法
+-(void)changeValue:(NSString *)string;
+@end
+@interface DelegateVC : UIViewController
+//代理属性
+@property(nonatomic,weak) iddelegate;
+@end
+[/objc]
+然后在.m文件中代码:
+[objc]
+//
+// DelegateVC.m
+// 反向传值
+//
+// Created by 两好三坏 on 16/3/5.
+// Copyright © 2016年 qinakun. All rights reserved.
+//
+import &amp;#34;DelegateVC.h&amp;#34;
+define kWidth [UIScreen mainScreen].bounds.size.width
+define kHeight [UIScreen mainScreen].bounds.size.height
+@interface DelegateVC ()
+@property(nonatomic,strong) UITextField *textValue;
+@end
+@implementation DelegateVC
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  self.view.backgroundColor = [UIColor whiteColor];
+  创建一个输入框,添加到控制器C的view上;
+  UITextField _tf = [[UITextField alloc] init];
+  tf.backgroundColor = [UIColor grayColor];
+  tf.frame = CGRectMake(kWidth _0.5 - 50, kHeight * 0.5, 100, 40);
+self.textValue = tf;
+[self.view addSubview:_textValue];
+}
+//当控制器C消失的时候调用的方法
+-(void)viewWillDisappear:(BOOL)animated{
+[super viewWillDisappear:animated];
+//如果有对象响应了代理,就执行if判断中的方法,
+if ([self.delegate respondsToSelector:@selector(changeValue:)]) {
+//把输入框中的text取出来作为代理方法的参数传送给控制器A
+[self.delegate changeValue:self.textValue.text];
+}
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在页面中传值得方法有很多,使用通知,KVO,单例,还有偏好设置,归档解档都可以实现,看情况哪个方便就是用哪个咯….&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>读书这件事</title>
+        <link>http://47.99.84.217/post/%E8%AF%BB%E4%B9%A6%E8%BF%99%E4%BB%B6%E4%BA%8B/</link>
+        <pubDate>Tue, 17 Apr 2018 14:38:10 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E8%AF%BB%E4%B9%A6%E8%BF%99%E4%BB%B6%E4%BA%8B/</guid>
+        <description>&lt;p&gt;高中时代看过王二的时代三部曲《黄金时代》、《白银时代》、《青铜时代》，大二那一年挺喜欢王小波的杂文, 后来逛知乎， 看到有人在吐槽说冯唐的小说不如王二的小说; 我一看，不行啊，我是王二的粉丝，我要手撕这帮喜欢冯唐的家伙； 于是当时从图书馆借了《十八岁给我一个姑娘》《万物生长》《北京，北京》这三本书，回到家里就着开水一口气读完, 读完之后,掩卷叹息,心里久久不能平静, 年轻人嘛,火力旺;梦里仿佛看到了 朱裳 温婉如水的背影, 感觉自己硬的不行，大冷天出去冻了十几分钟才算缓过来;读冯唐三部曲的时候一下子就想到了当年王二说自己下乡做知青那段故事,满满都是荷尔蒙的气息;&lt;/p&gt;
+&lt;p&gt;后来就顺带着读了一下冯唐的诗集,感觉特浪漫,浪漫中带着一点闷骚,淡淡的色情;
+比如这一句:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;没有双脚  
+我还可以走近你  
+没有双手  
+我还可以抚摸你  
+没有心脏  
+我还可以思念你  
+没有下体  
+我还可以燃烧你
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;不读书就不会知道冯唐的 春水初生 这一句是出自 黄庭坚的 《伯时彭蠡春牧图》: 春水初生及马腹，浮滩欲上西山麓。 ; 也不会知道那一句 春风十里不如你 是出自杜牧的 春风十里扬州路,卷上珠帘总不如 也不知道金老这一句谦谦君子,温润如玉这句话是化用了多少典故才写出了这么几个让人看一眼就能冷静下来的字; 学习吧,少年; 逆流而上,道阻且长&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>迷茫</title>
+        <link>http://47.99.84.217/post/%E8%BF%B7%E8%8C%AB/</link>
+        <pubDate>Mon, 17 Apr 2017 15:16:49 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E8%BF%B7%E8%8C%AB/</guid>
+        <description>&lt;p&gt;不知道你有没有想过现在的你跟以前的你有什么不同。我这一段时间就在思考这个问题，我对我自己很不满意，我即没有成为父母想让我成为的那种人，也没有成为我自己想成为的那种人。我觉的我很失败，我缺乏对自己发狠的心，我是个懦弱的人。我想成为一个不平凡的人，但我生来看上去是个平凡的人。我看平凡的世界里面的少平，我觉得我心中感受到了什么可这种感觉就说不出来，随着时间的流逝我对生活的感悟和敬仰就又被时间麻木。我恨这样的自己，活着愧疚，像得了心理疾病，挣扎着，徘徊着，不知自己魂归何处。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;我觉得我是个好人，但这只是我觉得。有些人并不这样看我，因为我有时候觉得我也不是个好人。&lt;/p&gt;
+&lt;p&gt;我尽量的多去看让人感动的东西，在别人的故事中寻找感动，也是想要学习他们的人格力量和精神品质。每次我都看的热泪盈眶，怀着感动记下来，让自己感动一把。看的多了，我真害怕有一天我不会被这些再感动，我害怕这一天的到来。&lt;/p&gt;
+&lt;p&gt;这世界上有很多我们不知道的东西或者人，他们用不同的方法、方式、行动来努力着，奋斗着，来挑战上天给他们安排的难题。假如我们听到的这些故事和经历让我们热泪盈眶、感动的稀里哗啦了，那我们应该想想假如我们遇到了同样的事儿，我们会不会很不错、很优秀的做完。并且感动别人。&lt;/p&gt;
+&lt;p&gt;把你的每一天都当做是唯一的机会，是你生命中的最后一天。你准备好面对即将到来的机会吗？或者是当你假如面对死亡的话，你会不会对着死神或者牛头马面说：我已经做完我应该做的事情了。我活着不是创造出了无数二氧化碳，浪费了无数有机食品，而是为人类创造了好的生活环境和精神财富。从而潇洒的离开这世界。&lt;/p&gt;
+&lt;p&gt;Are you ready？&lt;/p&gt;
+&lt;p&gt;你一定要学习，假如人有生来知之这回事儿的话，那么这事儿一定是撒尿拉屎之类的事情，我们来到这世界也不是为了简单的撒尿拉屎吃饭喝水泡妹子。&lt;/p&gt;
+&lt;p&gt;如果有机会和能力，就往高处走走看看，你看的越多，你的眼睛就越大，眼睛大了就美丽了。 学会思考，虽然不是很喜欢孔子。人家说的话很棒！学而不思则罔，思而不学则怠。说的很明白了吧？我觉得不用解释了，除非有错别字。&lt;/p&gt;
+&lt;p&gt;思考的确是一件神奇的事情。她如此美妙。神游物外，黄粱美梦可不算在此列！ 孔子还说过，吾日三省吾身。这是个好习惯，应该学习并拥有。反省自身可以快速发现自己的问题，早日得到解决，假如你愿意解决的话.&lt;/p&gt;
+&lt;p&gt;我迫切的希望我的前方有一盏指路明灯，像黑夜里的烟花，洁白如一道喜乐的光芒将我心照亮！来吧，我虚心接受教育，如此迫切的渴望，渴求。如此迫切，因为时日不多。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>http://47.99.84.217/post/%E6%9C%AA%E5%91%BD%E5%90%8D/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E6%9C%AA%E5%91%BD%E5%90%8D/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>

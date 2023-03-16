@@ -3,7 +3,7 @@ title: 使用Hexo+Coding搭建个人博客
 date: 2018-04-17T15:10:01+08:00 
 draft: false
 tags: ['巧篆']
-categories: ['南腔北调']
+categories: ['软件开发']
 ---
 
 前言 之前博客挂在 github pages 上,回到新疆之后发现访问不了了.一琢磨就买个个主机使用 wordpress搭建了个个人博客,当使用 wordpress 实在是不能提起我的写作欲望,又麻溜的切换到了 hexo.在网上看到了coding 也提供了类似 github pages 的服务 coding-pages,瞬间觉得太好了.于是我又开始了 hexo 之旅;

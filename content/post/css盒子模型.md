@@ -4,7 +4,7 @@ title: css盒子模型
 date: 2018-04-17T15:02:57+08:00 
 draft: false
 tags: ['前端']
-categories: ['南腔北调']
+categories: ['软件开发']
 ---
 
 css 框模型(BoxModel) 定义了元素框处理元素内容, 内/外边距,边框, 外边框的方式; CSS 框模型概述: 元素框的最内部分是实际的内容, 直接包围内容的是内边距(\*padding); 内边距呈现的是元素的背景, 内边距的边缘是边框(border, 可设置bordercolor borderwidth); 边框以为是外边框 , 外边框的默认背景色是透明的, 因此不会遮挡其后的任何元素;

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='使用 thinkPHP 实现分页: 新建控制器LoginController.class.php 在 LoginController 中创建 index 方法:
+Page 类 和 limit方法实现
+$data = M(&amp;#39;userinfo&amp;#39;); $map[&amp;#39;user_id&amp;#39;] = array(&amp;#39;gt&amp;#39;,0); $count = $data-&amp;gt;where()-&amp;gt;count(); // 满足条件的记录数 //Page 的构造方法,第一个参数为总记录数,第二个是每页显示的数量 $page = new Page($count,5); $show = $page-&amp;gt;show(); $list = $User-&amp;gt;where($map)-&amp;gt;order(&amp;#39;create_time&amp;#39;)-&amp;gt;limit($Page-&amp;gt;firstRow.&amp;#39;,&amp;#39;.$Page-&amp;gt;listRows)-&amp;gt;select(); $this-&amp;gt;assign(&amp;#39;list&amp;#39;,$list);// 赋值数据集 $this-&amp;gt;assign(&amp;#39;page&amp;#39;,$show);// 赋值分页输出 $this-&amp;gt;display(); 在对应的试图模板中编写如下代码:
+&amp;lt;table cellpadding=3 cellspacing=5&amp;gt; &amp;lt;volist name=&amp;#34;list&amp;#34; id=&amp;#34;vo&amp;#34;&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td &amp;gt;[ {$vo.user_id} ] {$vo.user_id} &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/volist&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/table&amp;gt; &amp;lt;div class=&amp;#34;resultpage&amp;#34; style=&amp;#34;width: 500px&amp;#34;&amp;gt;{$page}&amp;lt;/div&amp;gt; 这样在对应的视图就会显示相应的页码和数据信息;不过有点难看,不过别担心,稍后咱们在重新设置; 接下来咱们看第二种实现方式: 分页类和 page 方法的实现 将 index 方法中的代码替换成如下:'>
+<title>使用thinkphp分页&amp;上传图片</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/%E4%BD%BF%E7%94%A8thinkphp%E5%88%86%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='使用thinkphp分页&amp;上传图片'>
+<meta property='og:description' content='使用 thinkPHP 实现分页: 新建控制器LoginController.class.php 在 LoginController 中创建 index 方法:
+Page 类 和 limit方法实现
+$data = M(&amp;#39;userinfo&amp;#39;); $map[&amp;#39;user_id&amp;#39;] = array(&amp;#39;gt&amp;#39;,0); $count = $data-&amp;gt;where()-&amp;gt;count(); // 满足条件的记录数 //Page 的构造方法,第一个参数为总记录数,第二个是每页显示的数量 $page = new Page($count,5); $show = $page-&amp;gt;show(); $list = $User-&amp;gt;where($map)-&amp;gt;order(&amp;#39;create_time&amp;#39;)-&amp;gt;limit($Page-&amp;gt;firstRow.&amp;#39;,&amp;#39;.$Page-&amp;gt;listRows)-&amp;gt;select(); $this-&amp;gt;assign(&amp;#39;list&amp;#39;,$list);// 赋值数据集 $this-&amp;gt;assign(&amp;#39;page&amp;#39;,$show);// 赋值分页输出 $this-&amp;gt;display(); 在对应的试图模板中编写如下代码:
+&amp;lt;table cellpadding=3 cellspacing=5&amp;gt; &amp;lt;volist name=&amp;#34;list&amp;#34; id=&amp;#34;vo&amp;#34;&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td &amp;gt;[ {$vo.user_id} ] {$vo.user_id} &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/volist&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/table&amp;gt; &amp;lt;div class=&amp;#34;resultpage&amp;#34; style=&amp;#34;width: 500px&amp;#34;&amp;gt;{$page}&amp;lt;/div&amp;gt; 这样在对应的视图就会显示相应的页码和数据信息;不过有点难看,不过别担心,稍后咱们在重新设置; 接下来咱们看第二种实现方式: 分页类和 page 方法的实现 将 index 方法中的代码替换成如下:'>
+<meta property='og:url' content='http://47.99.84.217/post/%E4%BD%BF%E7%94%A8thinkphp%E5%88%86%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='后端' /><meta property='article:published_time' content='2018-04-17T14:49:42&#43;08:00'/><meta property='article:modified_time' content='2018-04-17T14:49:42&#43;08:00'/>
+<meta name="twitter:title" content="使用thinkphp分页&amp;上传图片">
+<meta name="twitter:description" content="使用 thinkPHP 实现分页: 新建控制器LoginController.class.php 在 LoginController 中创建 index 方法:
+Page 类 和 limit方法实现
+$data = M(&amp;#39;userinfo&amp;#39;); $map[&amp;#39;user_id&amp;#39;] = array(&amp;#39;gt&amp;#39;,0); $count = $data-&amp;gt;where()-&amp;gt;count(); // 满足条件的记录数 //Page 的构造方法,第一个参数为总记录数,第二个是每页显示的数量 $page = new Page($count,5); $show = $page-&amp;gt;show(); $list = $User-&amp;gt;where($map)-&amp;gt;order(&amp;#39;create_time&amp;#39;)-&amp;gt;limit($Page-&amp;gt;firstRow.&amp;#39;,&amp;#39;.$Page-&amp;gt;listRows)-&amp;gt;select(); $this-&amp;gt;assign(&amp;#39;list&amp;#39;,$list);// 赋值数据集 $this-&amp;gt;assign(&amp;#39;page&amp;#39;,$show);// 赋值分页输出 $this-&amp;gt;display(); 在对应的试图模板中编写如下代码:
+&amp;lt;table cellpadding=3 cellspacing=5&amp;gt; &amp;lt;volist name=&amp;#34;list&amp;#34; id=&amp;#34;vo&amp;#34;&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td &amp;gt;[ {$vo.user_id} ] {$vo.user_id} &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/volist&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/table&amp;gt; &amp;lt;div class=&amp;#34;resultpage&amp;#34; style=&amp;#34;width: 500px&amp;#34;&amp;gt;{$page}&amp;lt;/div&amp;gt; 这样在对应的视图就会显示相应的页码和数据信息;不过有点难看,不过别担心,稍后咱们在重新设置; 接下来咱们看第二种实现方式: 分页类和 page 方法的实现 将 index 方法中的代码替换成如下:">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" >
+                软件开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E4%BD%BF%E7%94%A8thinkphp%E5%88%86%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">使用thinkphp分页&amp;上传图片</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 17, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>使用 thinkPHP 实现分页: 新建控制器LoginController.class.php 在 LoginController 中创建 index 方法:</p>
+<!-- raw HTML omitted -->
+<p>Page 类 和 limit方法实现</p>
+<pre tabindex="0"><code>$data  = M(&#39;userinfo&#39;);
+$map[&#39;user_id&#39;] = array(&#39;gt&#39;,0);
+$count = $data-&gt;where()-&gt;count(); // 满足条件的记录数
+//Page 的构造方法,第一个参数为总记录数,第二个是每页显示的数量
+$page = new Page($count,5);
+$show = $page-&gt;show();
+$list = $User-&gt;where($map)-&gt;order(&#39;create_time&#39;)-&gt;limit($Page-&gt;firstRow.&#39;,&#39;.$Page-&gt;listRows)-&gt;select();
+$this-&gt;assign(&#39;list&#39;,$list);// 赋值数据集
+$this-&gt;assign(&#39;page&#39;,$show);// 赋值分页输出
+$this-&gt;display();
+</code></pre><p>在对应的试图模板中编写如下代码:</p>
+<pre tabindex="0"><code>&lt;table cellpadding=3 cellspacing=5&gt;
+    &lt;volist name=&#34;list&#34; id=&#34;vo&#34;&gt;
+        &lt;tr&gt;
+            &lt;td &gt;[ {$vo.user_id} ] {$vo.user_id} &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/volist&gt;
+    &lt;tr&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;div class=&#34;resultpage&#34; style=&#34;width: 500px&#34;&gt;{$page}&lt;/div&gt;
+</code></pre><p>这样在对应的视图就会显示相应的页码和数据信息;不过有点难看,不过别担心,稍后咱们在重新设置; 接下来咱们看第二种实现方式: 分页类和 page 方法的实现 将 index 方法中的代码替换成如下:</p>
+<pre tabindex="0"><code>$data  = M(&#39;userinfo&#39;);
+$map[&#39;user_id&#39;] = array(&#39;gt&#39;,0);
+$list = $data-&gt;where($map)-&gt;order(&#39;user_id)-&gt;page($_GET[&#39;p&#39;].&#39;,5&#39;)-&gt;select();
+$this-&gt;assgin(&#39;list&#39;,$list);
+//引入分页模块
+$count = $data-&gt;where($map)-&gt;count();
+$page = new Page($count, &#39;5&#39;);
+$show = $page-&gt;show();
+$this -&gt; assgin(&#39;page&#39;,$show);
+$this-&gt;display();
+</code></pre><p>修改分页显示效果 thinkphp 中的分页类 Page 提供了一个方法 setConfig 来修改分页栏的显示效果:</p>
+<ul>
+<li>header：头部描述信息，默认值 “条记录”</li>
+<li>prev：上一页描述信息，默认值是“上一页”</li>
+<li>next：下一页描述信息，默认值是“下一页”</li>
+<li>first：第一页描述信息，默认值是“第一页”</li>
+<li>last：最后一页描述信息，默认值是“最后一页”</li>
+<li>theme ：分页主题描述信息， `` $page-&gt;lastSuffix = false; $page-&gt;setConfig(&lsquo;header&rsquo;,&lsquo;共**%TOTAL_ROW%**条记录&rsquo;); $page-&gt;setConfig(&lsquo;prev&rsquo;,&rsquo;&lt;&rsquo;); $page-&gt;setConfig(&rsquo;next&rsquo;,&rsquo;&gt;&rsquo;); $page-&gt;setConfig(&lsquo;first&rsquo;,&lsquo;首页&rsquo;); $page-&gt;setConfig(&rsquo;last&rsquo;,&lsquo;尾页&rsquo;); $page-&gt;setConfig(&rsquo;theme&rsquo;, &lsquo;%FIRST%%UP_PAGE%%LINK_PAGE%%DOWN_PAGE%%END%%HEADER%&rsquo;); 我们还可以使用 <code>css</code> 属性对分页栏的显示效果进行修改: 上面列表中的 <code>header</code> <code>prev</code> <code>next</code> 等等再视图模板中都是以元素的 <code>class</code> 值体现的,所以我们可以通过修改 class 的样式表定制显示效果,达到我们想要的效果:</li>
+</ul>
+<p>.resultpage{</p>
+<pre tabindex="0"><code>background: black;
+color: honeydew;
+margin-right: 5px;
+margin-left: 5px;
+padding-left: 5px;
+padding-right: 5px;
+}
+</code></pre><p>.num {</p>
+<pre tabindex="0"><code>color: honeydew;
+padding-left: 5px;
+padding-right: 5px;
+</code></pre><p>} .current{color: red;} .prev{color: honeydew;} .next{color: honeydew;} .last{color: honeydew;} .first{color: honeydew;} a{text-decoration: none}</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%90%8E%E7%AB%AF/">后端</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用cookie实现自动登录</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

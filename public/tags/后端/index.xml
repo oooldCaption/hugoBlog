@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>后端 on 煎人寿</title>
+        <link>http://47.99.84.217/tags/%E5%90%8E%E7%AB%AF/</link>
+        <description>Recent content in 后端 on 煎人寿</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sat, 15 Sep 2018 14:51:47 +0800</lastBuildDate><atom:link href="http://47.99.84.217/tags/%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CentOS 下安装 Redis</title>
+        <link>http://47.99.84.217/post/centos-xia-an-zhuang-redis/</link>
+        <pubDate>Sat, 15 Sep 2018 14:51:47 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/centos-xia-an-zhuang-redis/</guid>
+        <description>&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;安装Redis需要知道自己需要哪个版本，有针对性的安装，比如如果需要redis GEO这个地理集合的特性，那么redis版本就不能低于3.2版本，由于这个特性是3.2版本才有的。另外需要注意的是，Redis约定次版本号（即第一个小数点后的数字）为偶数的版本是稳定版（如2.8版、3.0版），奇数版本是非稳定版（如2.7版、2.9版），生产环境下一般需要使用稳定版本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;下载安装包&#34;&gt;下载安装包&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget http://download.redis.io/releases/redis-4.0.2.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;解压并安装&#34;&gt;解压并安装&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tar xzf redis-4.0.2.tar.gz
+cd redis-4.0.2
+make
+make install
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;Redis没有其他外部依赖，安装过程很简单。编译后在Redis源代码目录的src文件夹中可以找到若干个可执行程序，安装完后，在/usr/local/bin目录中可以找到刚刚安装的redis可执行文件。 如下:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-15-134934.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;redis 安装目录&#34;
+	
+	
+&gt; 那你也可以通过命令 &lt;code&gt;redis -server&lt;/code&gt; 命令来执行启动 redis; 启动后界面如下: &lt;img src=&#34;https://img.52smile.vip/2018-09-15-135404.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;redis 启动界面&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;配置&#34;&gt;配置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;配置初始化脚本&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;首先将初始化脚本复制到/etc/init.d 目录中，文件名为 redis_端口号，其中端口号表示要让Redis监听的端口号，客户端通过该端口连接Redis。然后修改脚本第6行的REDISPORT变量的值为同样的端口号。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立需要使用的文件夹&lt;/p&gt;
+&lt;p&gt;目录名&lt;/p&gt;
+&lt;p&gt;配置项&lt;/p&gt;
+&lt;p&gt;/etc/redis&lt;/p&gt;
+&lt;p&gt;存放redis 的配置文件&lt;/p&gt;
+&lt;p&gt;/etc/redis/端口号&lt;/p&gt;
+&lt;p&gt;存放 redis持久化文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;tip: vim 模式下使用 &lt;code&gt;?&lt;/code&gt; 命令进行搜索, &lt;code&gt;n&lt;/code&gt;跳转到下一个搜索结果;&lt;code&gt;N&lt;/code&gt;跳转上一个搜索结果 3.修改配置文件&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;首先将配置文件模板（redis-4.0.2/redis.conf）复制到/etc/redis 目录中，以端口号命名（eg: “6379.conf”），然后按照下表对其中的部分参数进行编辑。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;params&lt;/p&gt;
+&lt;p&gt;value&lt;/p&gt;
+&lt;p&gt;tip&lt;/p&gt;
+&lt;p&gt;daemonize&lt;/p&gt;
+&lt;p&gt;yes&lt;/p&gt;
+&lt;p&gt;redis 以守护进程模式运行&lt;/p&gt;
+&lt;p&gt;pidfile&lt;/p&gt;
+&lt;p&gt;/var/run/redis_端口号.pid&lt;/p&gt;
+&lt;p&gt;设置Redis的PID文件位置&lt;/p&gt;
+&lt;p&gt;port&lt;/p&gt;
+&lt;p&gt;端口号&lt;/p&gt;
+&lt;p&gt;被监听的端口号 dir /var/redis/端口号 redis持久化文件&lt;/p&gt;
+&lt;p&gt;配置完成以后你可以通过命令行启动 redis&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/etc/init.d/redis_6379 start
+/etc/init.d/redis_6379 stop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;别忘记配置自动启动~ 修改配置文件: &lt;code&gt;etc/init.d/redis_6379.conf;&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim etc/init.d/redis_6379.conf
+在头部的第五行添加
+# chkconfig: 2345 90 10
+# description: Redis is a persistent key-value database
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;正确的停止-redis&#34;&gt;正确的停止 redis&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;考虑到 Redis 有可能正在将内存中的数据同步到硬盘中，强行终止 Redis 进程可能会导致数据丢失。正确停止Redis的方式应该是向Redis发送SHUTDOWN命令，方法为：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;redis-cli SHUTDOWN&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当Redis收到SHUTDOWN命令后，会先断开所有客户端连接，然后根据配置执行持久化，最后完成退出。Redis可以妥善处理 SIGTERM信号，所以使用 kill Redis 进程的 PID也可以正常结束Redis，效果与发送SHUTDOWN命令一样。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.ioser.net/archives/27&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;参考基友Martin的文章&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>使用thinkphp分页&amp;上传图片</title>
+        <link>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8thinkphp%E5%88%86%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/</link>
+        <pubDate>Tue, 17 Apr 2018 14:49:42 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8thinkphp%E5%88%86%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/</guid>
+        <description>&lt;p&gt;使用 thinkPHP 实现分页: 新建控制器LoginController.class.php 在 LoginController 中创建 index 方法:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Page 类 和 limit方法实现&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$data  = M(&amp;#39;userinfo&amp;#39;);
+$map[&amp;#39;user_id&amp;#39;] = array(&amp;#39;gt&amp;#39;,0);
+$count = $data-&amp;gt;where()-&amp;gt;count(); // 满足条件的记录数
+//Page 的构造方法,第一个参数为总记录数,第二个是每页显示的数量
+$page = new Page($count,5);
+$show = $page-&amp;gt;show();
+$list = $User-&amp;gt;where($map)-&amp;gt;order(&amp;#39;create_time&amp;#39;)-&amp;gt;limit($Page-&amp;gt;firstRow.&amp;#39;,&amp;#39;.$Page-&amp;gt;listRows)-&amp;gt;select();
+$this-&amp;gt;assign(&amp;#39;list&amp;#39;,$list);// 赋值数据集
+$this-&amp;gt;assign(&amp;#39;page&amp;#39;,$show);// 赋值分页输出
+$this-&amp;gt;display();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在对应的试图模板中编写如下代码:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;table cellpadding=3 cellspacing=5&amp;gt;
+    &amp;lt;volist name=&amp;#34;list&amp;#34; id=&amp;#34;vo&amp;#34;&amp;gt;
+        &amp;lt;tr&amp;gt;
+            &amp;lt;td &amp;gt;[ {$vo.user_id} ] {$vo.user_id} &amp;lt;/td&amp;gt;
+        &amp;lt;/tr&amp;gt;
+    &amp;lt;/volist&amp;gt;
+    &amp;lt;tr&amp;gt;
+    &amp;lt;/tr&amp;gt;
+&amp;lt;/table&amp;gt;
+&amp;lt;div class=&amp;#34;resultpage&amp;#34; style=&amp;#34;width: 500px&amp;#34;&amp;gt;{$page}&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样在对应的视图就会显示相应的页码和数据信息;不过有点难看,不过别担心,稍后咱们在重新设置; 接下来咱们看第二种实现方式: 分页类和 page 方法的实现 将 index 方法中的代码替换成如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$data  = M(&amp;#39;userinfo&amp;#39;);
+$map[&amp;#39;user_id&amp;#39;] = array(&amp;#39;gt&amp;#39;,0);
+$list = $data-&amp;gt;where($map)-&amp;gt;order(&amp;#39;user_id)-&amp;gt;page($_GET[&amp;#39;p&amp;#39;].&amp;#39;,5&amp;#39;)-&amp;gt;select();
+$this-&amp;gt;assgin(&amp;#39;list&amp;#39;,$list);
+//引入分页模块
+$count = $data-&amp;gt;where($map)-&amp;gt;count();
+$page = new Page($count, &amp;#39;5&amp;#39;);
+$show = $page-&amp;gt;show();
+$this -&amp;gt; assgin(&amp;#39;page&amp;#39;,$show);
+$this-&amp;gt;display();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改分页显示效果 thinkphp 中的分页类 Page 提供了一个方法 setConfig 来修改分页栏的显示效果:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;header：头部描述信息，默认值 “条记录”&lt;/li&gt;
+&lt;li&gt;prev：上一页描述信息，默认值是“上一页”&lt;/li&gt;
+&lt;li&gt;next：下一页描述信息，默认值是“下一页”&lt;/li&gt;
+&lt;li&gt;first：第一页描述信息，默认值是“第一页”&lt;/li&gt;
+&lt;li&gt;last：最后一页描述信息，默认值是“最后一页”&lt;/li&gt;
+&lt;li&gt;theme ：分页主题描述信息， `` $page-&amp;gt;lastSuffix = false; $page-&amp;gt;setConfig(&amp;lsquo;header&amp;rsquo;,&amp;lsquo;共**%TOTAL_ROW%**条记录&amp;rsquo;); $page-&amp;gt;setConfig(&amp;lsquo;prev&amp;rsquo;,&amp;rsquo;&amp;lt;&amp;rsquo;); $page-&amp;gt;setConfig(&amp;rsquo;next&amp;rsquo;,&amp;rsquo;&amp;gt;&amp;rsquo;); $page-&amp;gt;setConfig(&amp;lsquo;first&amp;rsquo;,&amp;lsquo;首页&amp;rsquo;); $page-&amp;gt;setConfig(&amp;rsquo;last&amp;rsquo;,&amp;lsquo;尾页&amp;rsquo;); $page-&amp;gt;setConfig(&amp;rsquo;theme&amp;rsquo;, &amp;lsquo;%FIRST%%UP_PAGE%%LINK_PAGE%%DOWN_PAGE%%END%%HEADER%&amp;rsquo;); 我们还可以使用 &lt;code&gt;css&lt;/code&gt; 属性对分页栏的显示效果进行修改: 上面列表中的 &lt;code&gt;header&lt;/code&gt; &lt;code&gt;prev&lt;/code&gt; &lt;code&gt;next&lt;/code&gt; 等等再视图模板中都是以元素的 &lt;code&gt;class&lt;/code&gt; 值体现的,所以我们可以通过修改 class 的样式表定制显示效果,达到我们想要的效果:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;.resultpage{&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;background: black;
+color: honeydew;
+margin-right: 5px;
+margin-left: 5px;
+padding-left: 5px;
+padding-right: 5px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;.num {&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;color: honeydew;
+padding-left: 5px;
+padding-right: 5px;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;} .current{color: red;} .prev{color: honeydew;} .next{color: honeydew;} .last{color: honeydew;} .first{color: honeydew;} a{text-decoration: none}&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>使用cookie实现自动登录</title>
+        <link>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</link>
+        <pubDate>Tue, 17 Apr 2018 14:48:57 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</guid>
+        <description>&lt;p&gt;关于 cookie 在日常开发中我们会遇到这样的需求场景: 用户在首次登录使用后,离开了这个网站(没有点击注销登录), 再次回到这个站点的时候,不需要重新登录,仍是自己上次登陆的账号信息; 我们可以使用 cookie 中存储用户的信息,并且判断是否需要加载用户信息并重新登录; php 使用 setCookie 函数来设置 Cookie 信息,但是有一点值得注意,Cookie是HTTP协议头的一部分，用于浏览器和服务器之间传递信息，&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;所以必须在任何属于HTML文件本身的内容输出之前调用Cookie函数。 也就是说,在 setcookie 之前不能进行输出:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#39;我要设置 cookie了&amp;#39;;
+setCookie(&amp;#39;value&amp;#39;,&amp;#39;key&amp;#39;,time());
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这种会造成设置 cookie 无效; 使用 cookie 实现自动登录 登陆成功后存储用户的信息: 在登录成功后通过 setCookie 设置用户信息,&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; public function login()
+ {
+    if (!empty($_POST)){
+        $userpsw = array(
+            &amp;#39;username&amp;#39;=&amp;gt;$_POST[&amp;#39;username&amp;#39;],
+            &amp;#39;password&amp;#39;=&amp;gt;$_POST[&amp;#39;password&amp;#39;],
+         );
+        $info = D(&amp;#39;userinfo&amp;#39;)-&amp;gt;where($userpsw)-&amp;gt;find();
+        if ($info){
+            $re = setcookie(&amp;#39;userinfo&amp;#39;,md5($_POST[&amp;#39;username&amp;#39;]),time()+3600,&amp;#39;/&amp;#39;);
+            $re = setcookie(&amp;#39;password&amp;#39;,MD5($_POST[&amp;#39;password&amp;#39;]),time()+3600,&amp;#39;/&amp;#39;);
+            dump($re);
+            echo &amp;#39;登陆成功&amp;#39;;
+            $this-&amp;gt;display();
+            }else{
+                echo &amp;#39;登录失败&amp;#39;;
+            }
+        }
+    }else{
+        $this-&amp;gt;display();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过 cookie 我们还可以保存用户的偏好设置信息,在用户下次访问的时候推送用户可能会感兴趣的信息; 判断是否需要自动登录 可以再模板文件中通过 js 获取 cookie 进行判断是否需要自动加载用户信息,也可以在 php 的控制其中进行判断,&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt;
+$(document).ready(function () {
+var name = getCookie(&amp;#39;nickname&amp;#39;);
+var password = getCookie(&amp;#39;psw&amp;#39;);
+if(name &amp;amp;&amp;amp; password){
+    //自动登录
+}else{
+    //手动登录
+}
+   console.log(getCookie(&amp;#39;nickname&amp;#39;));
+});
+function getCookie(c_name)
+{
+    if (document.cookie.length&amp;gt;0)
+    {
+        c_start=document.cookie.indexOf(c_name + &amp;#34;=&amp;#34;)
+        if (c_start!=-1)
+        {
+            c_start=c_start + c_name.length+1
+            c_end=document.cookie.indexOf(&amp;#34;;&amp;#34;,c_start)
+            if (c_end==-1) c_end=document.cookie.length
+            return unescape(document.cookie.substring(c_start,c_end))
+        }
+    }
+    return &amp;#34;&amp;#34;
+}
+&amp;lt;/script&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='NSString 作为作为OC的一种数据类型, 他帮我们做了很多事情, 而且也是我们在项目中运用频率很高的一个数据类型.我们经常会对它进行各式各样的操作,生成新的字符串,修改,查找,比较等等. 但是有人可能会问, 既然我已经有C的字符串了,为撒子还要在定义一个字符串对象呢? 嘿嘿,首先,我们使用NSString对象来处理字符串操作, 一方面是可以统一很多方面的东西,比如api, 例如NSArray,NSDictionary中都是存放的对象, 而且使用NSString还可以使用isKindofCLass的很多常用查询. 假如我们真的去使用了C的字符串去替代NSString的话, 那我们光是桥接代码就会让人写到吐,因为字符串在使用中的频率还是比较高的. 在和其他数据对象进行联合使用的时候,那种怪异的语法肯定也会让使用者大呼痛苦的. 向来注重用户体验的苹果肯定不会这样子干的,所以,定义一个NSString 对象还是很必要的. NSString 主要的方法都在 Foundation/NSString.h 中定义, 提供了很多的方法接口
+常量字符串 NSString *name = @&amp;#34;两好三坏&amp;#34;; NSString *addName = [@&amp;#34;name:&amp;#34; stringByAppendingString:name]; 常量字符串不仅可以作为消息的参数, 还可以作为消息的接收者;
+NSString 比较 字符串比较出结果后会返回一个 NSComparisonResult 类型的枚举值. 分别是 * NSOrderedAscending 左侧小于右侧 * NSOrderedSame 两者相同 * NSOrderedDescending 右侧小于左侧
+//比较消息的接受者he参数字符串aString,参数不可以是nil,此方法区分大小写 如果相比较两个字符串是否相同的话还可以使用 isEqualToString: -(NSComparisonResult)compare:(NSString *) aString; // 不区分大小写比较, 上一个compare 的方法也可以通过添加参数进行选择大小写是否作为判断标准 -(NSComparisonResult) caseInsensitiveCompare:(NSString *)aString; - (BOOL)isEqualToString:(NSString *)aString; NSString *str0 = @&amp;#34;testString&amp;#34;; NSString *str1 = @&amp;#34;testString&amp;#34;; if([str0 isEqualToString:str1]){ NSLog(@&amp;#34;字符串完全相等&amp;#34;); } //判断是否以 参数 开头的string - (BOOL)hasPrefix:(NSString *)str; //判断是够以 参数 结尾的string - (BOOL)hasSuffix:(NSString *)str; 截取字符串 // 返回一个anIndex 开始到结尾的新字符串, 不包含form索引 - (NSString *)substringFromIndex:(NSUInteger)from; //返回一个新字符串, 从to开始到结束,包含to的索引 - (NSString *)substringToIndex:(NSUInteger)to; //通过一个range返回一个新的字符串对象 - (NSString *)substringWithRange:(NSRange)range; 检索和置换 NSString *str0 = @“nice to meet you&amp;#34;; NSString *temp = @&amp;#34;meet&amp;#34;; NSRange rang = [str0 rangeOfString:temp]; NSLog(@&amp;#34;搜索的字符串在str0中起始点的index 为 %d&amp;#34;, rang.'>
+<title>拥抱一下沉默的 NSString 吧~</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/yong-bao-yi-xia-chen-mo-de-nsstring-ba/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='拥抱一下沉默的 NSString 吧~'>
+<meta property='og:description' content='NSString 作为作为OC的一种数据类型, 他帮我们做了很多事情, 而且也是我们在项目中运用频率很高的一个数据类型.我们经常会对它进行各式各样的操作,生成新的字符串,修改,查找,比较等等. 但是有人可能会问, 既然我已经有C的字符串了,为撒子还要在定义一个字符串对象呢? 嘿嘿,首先,我们使用NSString对象来处理字符串操作, 一方面是可以统一很多方面的东西,比如api, 例如NSArray,NSDictionary中都是存放的对象, 而且使用NSString还可以使用isKindofCLass的很多常用查询. 假如我们真的去使用了C的字符串去替代NSString的话, 那我们光是桥接代码就会让人写到吐,因为字符串在使用中的频率还是比较高的. 在和其他数据对象进行联合使用的时候,那种怪异的语法肯定也会让使用者大呼痛苦的. 向来注重用户体验的苹果肯定不会这样子干的,所以,定义一个NSString 对象还是很必要的. NSString 主要的方法都在 Foundation/NSString.h 中定义, 提供了很多的方法接口
+常量字符串 NSString *name = @&amp;#34;两好三坏&amp;#34;; NSString *addName = [@&amp;#34;name:&amp;#34; stringByAppendingString:name]; 常量字符串不仅可以作为消息的参数, 还可以作为消息的接收者;
+NSString 比较 字符串比较出结果后会返回一个 NSComparisonResult 类型的枚举值. 分别是 * NSOrderedAscending 左侧小于右侧 * NSOrderedSame 两者相同 * NSOrderedDescending 右侧小于左侧
+//比较消息的接受者he参数字符串aString,参数不可以是nil,此方法区分大小写 如果相比较两个字符串是否相同的话还可以使用 isEqualToString: -(NSComparisonResult)compare:(NSString *) aString; // 不区分大小写比较, 上一个compare 的方法也可以通过添加参数进行选择大小写是否作为判断标准 -(NSComparisonResult) caseInsensitiveCompare:(NSString *)aString; - (BOOL)isEqualToString:(NSString *)aString; NSString *str0 = @&amp;#34;testString&amp;#34;; NSString *str1 = @&amp;#34;testString&amp;#34;; if([str0 isEqualToString:str1]){ NSLog(@&amp;#34;字符串完全相等&amp;#34;); } //判断是否以 参数 开头的string - (BOOL)hasPrefix:(NSString *)str; //判断是够以 参数 结尾的string - (BOOL)hasSuffix:(NSString *)str; 截取字符串 // 返回一个anIndex 开始到结尾的新字符串, 不包含form索引 - (NSString *)substringFromIndex:(NSUInteger)from; //返回一个新字符串, 从to开始到结束,包含to的索引 - (NSString *)substringToIndex:(NSUInteger)to; //通过一个range返回一个新的字符串对象 - (NSString *)substringWithRange:(NSRange)range; 检索和置换 NSString *str0 = @“nice to meet you&amp;#34;; NSString *temp = @&amp;#34;meet&amp;#34;; NSRange rang = [str0 rangeOfString:temp]; NSLog(@&amp;#34;搜索的字符串在str0中起始点的index 为 %d&amp;#34;, rang.'>
+<meta property='og:url' content='http://47.99.84.217/post/yong-bao-yi-xia-chen-mo-de-nsstring-ba/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='iOS' /><meta property='article:published_time' content='2019-04-29T09:36:24&#43;08:00'/><meta property='article:modified_time' content='2019-04-29T09:36:24&#43;08:00'/>
+<meta name="twitter:title" content="拥抱一下沉默的 NSString 吧~">
+<meta name="twitter:description" content="NSString 作为作为OC的一种数据类型, 他帮我们做了很多事情, 而且也是我们在项目中运用频率很高的一个数据类型.我们经常会对它进行各式各样的操作,生成新的字符串,修改,查找,比较等等. 但是有人可能会问, 既然我已经有C的字符串了,为撒子还要在定义一个字符串对象呢? 嘿嘿,首先,我们使用NSString对象来处理字符串操作, 一方面是可以统一很多方面的东西,比如api, 例如NSArray,NSDictionary中都是存放的对象, 而且使用NSString还可以使用isKindofCLass的很多常用查询. 假如我们真的去使用了C的字符串去替代NSString的话, 那我们光是桥接代码就会让人写到吐,因为字符串在使用中的频率还是比较高的. 在和其他数据对象进行联合使用的时候,那种怪异的语法肯定也会让使用者大呼痛苦的. 向来注重用户体验的苹果肯定不会这样子干的,所以,定义一个NSString 对象还是很必要的. NSString 主要的方法都在 Foundation/NSString.h 中定义, 提供了很多的方法接口
+常量字符串 NSString *name = @&amp;#34;两好三坏&amp;#34;; NSString *addName = [@&amp;#34;name:&amp;#34; stringByAppendingString:name]; 常量字符串不仅可以作为消息的参数, 还可以作为消息的接收者;
+NSString 比较 字符串比较出结果后会返回一个 NSComparisonResult 类型的枚举值. 分别是 * NSOrderedAscending 左侧小于右侧 * NSOrderedSame 两者相同 * NSOrderedDescending 右侧小于左侧
+//比较消息的接受者he参数字符串aString,参数不可以是nil,此方法区分大小写 如果相比较两个字符串是否相同的话还可以使用 isEqualToString: -(NSComparisonResult)compare:(NSString *) aString; // 不区分大小写比较, 上一个compare 的方法也可以通过添加参数进行选择大小写是否作为判断标准 -(NSComparisonResult) caseInsensitiveCompare:(NSString *)aString; - (BOOL)isEqualToString:(NSString *)aString; NSString *str0 = @&amp;#34;testString&amp;#34;; NSString *str1 = @&amp;#34;testString&amp;#34;; if([str0 isEqualToString:str1]){ NSLog(@&amp;#34;字符串完全相等&amp;#34;); } //判断是否以 参数 开头的string - (BOOL)hasPrefix:(NSString *)str; //判断是够以 参数 结尾的string - (BOOL)hasSuffix:(NSString *)str; 截取字符串 // 返回一个anIndex 开始到结尾的新字符串, 不包含form索引 - (NSString *)substringFromIndex:(NSUInteger)from; //返回一个新字符串, 从to开始到结束,包含to的索引 - (NSString *)substringToIndex:(NSUInteger)to; //通过一个range返回一个新的字符串对象 - (NSString *)substringWithRange:(NSRange)range; 检索和置换 NSString *str0 = @“nice to meet you&amp;#34;; NSString *temp = @&amp;#34;meet&amp;#34;; NSRange rang = [str0 rangeOfString:temp]; NSLog(@&amp;#34;搜索的字符串在str0中起始点的index 为 %d&amp;#34;, rang.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#常量字符串">常量字符串</a></li>
+        <li><a href="#nsstring-比较">NSString 比较</a></li>
+        <li><a href="#截取字符串">截取字符串</a></li>
+        <li><a href="#检索和置换">检索和置换</a></li>
+        <li><a href="#类型转换">类型转换</a></li>
+        <li><a href="#路径处理">路径处理</a></li>
+        <li><a href="#文件的输入和输出">文件的输入和输出</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ios/" >
+                iOS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/yong-bao-yi-xia-chen-mo-de-nsstring-ba/">拥抱一下沉默的 NSString 吧~</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 29, 2019</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>NSString 作为作为OC的一种数据类型, 他帮我们做了很多事情, 而且也是我们在项目中运用频率很高的一个数据类型.我们经常会对它进行各式各样的操作,生成新的字符串,修改,查找,比较等等. 但是有人可能会问, 既然我已经有C的字符串了,为撒子还要在定义一个字符串对象呢? 嘿嘿,首先,我们使用NSString对象来处理字符串操作, 一方面是可以统一很多方面的东西,比如api, 例如NSArray,NSDictionary中都是存放的对象, 而且使用NSString还可以使用isKindofCLass的很多常用查询. 假如我们真的去使用了C的字符串去替代NSString的话, 那我们光是桥接代码就会让人写到吐,因为字符串在使用中的频率还是比较高的. 在和其他数据对象进行联合使用的时候,那种怪异的语法肯定也会让使用者大呼痛苦的. 向来注重用户体验的苹果肯定不会这样子干的,所以,定义一个NSString 对象还是很必要的. NSString 主要的方法都在 <code>Foundation/NSString.h</code> 中定义, 提供了很多的方法接口</p>
+<!-- raw HTML omitted -->
+<h3 id="常量字符串">常量字符串</h3>
+<pre tabindex="0"><code>NSString *name = @&#34;两好三坏&#34;;
+NSString *addName = [@&#34;name:&#34; stringByAppendingString:name];
+</code></pre><p>常量字符串不仅可以作为消息的参数, 还可以作为消息的接收者;</p>
+<h3 id="nsstring-比较">NSString 比较</h3>
+<p>字符串比较出结果后会返回一个 <code>NSComparisonResult</code> 类型的枚举值. 分别是 * NSOrderedAscending 左侧小于右侧 * NSOrderedSame 两者相同 * NSOrderedDescending 右侧小于左侧</p>
+<pre tabindex="0"><code>//比较消息的接受者he参数字符串aString,参数不可以是nil,此方法区分大小写 如果相比较两个字符串是否相同的话还可以使用 isEqualToString:
+-(NSComparisonResult)compare:(NSString *) aString;
+// 不区分大小写比较, 上一个compare 的方法也可以通过添加参数进行选择大小写是否作为判断标准
+-(NSComparisonResult) caseInsensitiveCompare:(NSString *)aString;
+- (BOOL)isEqualToString:(NSString *)aString;
+NSString *str0 = @&#34;testString&#34;;
+NSString *str1 = @&#34;testString&#34;;
+if([str0 isEqualToString:str1]){
+   NSLog(@&#34;字符串完全相等&#34;);
+}
+//判断是否以 参数 开头的string
+- (BOOL)hasPrefix:(NSString *)str;
+//判断是够以 参数 结尾的string
+- (BOOL)hasSuffix:(NSString *)str;
+</code></pre><h3 id="截取字符串">截取字符串</h3>
+<pre tabindex="0"><code>// 返回一个anIndex 开始到结尾的新字符串, 不包含form索引
+- (NSString *)substringFromIndex:(NSUInteger)from;
+//返回一个新字符串, 从to开始到结束,包含to的索引
+- (NSString *)substringToIndex:(NSUInteger)to;
+//通过一个range返回一个新的字符串对象
+- (NSString *)substringWithRange:(NSRange)range;
+</code></pre><h3 id="检索和置换">检索和置换</h3>
+<pre tabindex="0"><code>NSString *str0 = @“nice to meet you&#34;;
+NSString *temp = @&#34;meet&#34;;
+NSRange rang = [str0 rangeOfString:temp];
+NSLog(@&#34;搜索的字符串在str0中起始点的index 为 %d&#34;, rang.location);
+NSLog(@&#34;搜索的字符串在str0中结束点的index 为 %d&#34;, rang.location + rang.length);
+NSString *str = [str0 stringByReplacingCharactersInRange:rang withString:@&#34;met&#34;];
+NSLog(@&#34;替换后字符串为%@&#34;, str);
+//将字符串中&#34; &#34; 全部替换成 *
+str = [str0 stringByReplacingOccurrencesOfString :@&#34; &#34; withString:@&#34;@&#34;];
+NSLog(@&#34;替换后字符串为%@&#34;, str);
+//还可以使用下面这个方法进行替换
+//stringByReplacingOccurrencesOfString:(NSString *)withString:(NSString *) options:(NSStringCompareOptions) range:(NSRange)
+</code></pre><h3 id="类型转换">类型转换</h3>
+<p>可以使用一些方法将NSString 转成其它基础数据类型; NSString *temp = @&ldquo;11.21&rdquo;; * [str doubleValue]; * [str intValue] * [str integerValue] * [str boolValue] * &hellip;</p>
+<h3 id="路径处理">路径处理</h3>
+<p>文件的路径可以使用 NSString 来表示,而且NSString提供了常用的处理文件路径的方法; eg:</p>
+<pre tabindex="0"><code>// @&#34;/tmp/image/cat.tiff&#34;
+//返回路径的最后一部分 -&gt; cat.tiff
+-(NSString *)lastPathComponent;
+//将str 追加到现有字符串的末尾并返回.会根据需要自动追加分隔符
+- (NSString *)stringByAppendingPathComponent:(NSString *)str;
+//扩展名
+-(NSString *)pathExtension;
+//将 . 和指定的扩展名追加到到最后一个组成部分上
+- (nullable NSString *)stringByAppendingPathExtension:(NSString *)str;
+// 删除文件的扩展名.如果不存在,返回原来的字符串
+-(NSString *)stringByDeletingPathExtension;
+//判断是不是一个绝对路径
+-(BOOL)isAbsolutePath;
+...
+</code></pre><h3 id="文件的输入和输出">文件的输入和输出</h3>
+<pre tabindex="0"><code>// 通过一个 文件内容  初始化一个 nsstring;
+[NSString stringWithContentsOfFile:@&#34;&#34; encoding:NSUTF8StringEncoding error:nil]
+//将字符串内容写入到 path 的路径当中; 成功就返回YES/
+[@&#34;hduashfuiasifbsa&#34; writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ios/">iOS</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/ios-block-xiang-jie/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS  block详解</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/nsobject-size/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从 NSObject 占用的内存说起</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/iosarrayforin/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS中for 和 for-in 循环数组的小区别</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/kvo/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS中KVO使用和底层原理</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/ios-kuo-zhandai-litong-zhi/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS 扩展&amp;代理&amp;通知</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

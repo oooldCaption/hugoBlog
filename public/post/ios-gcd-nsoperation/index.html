@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='我们在现实生活中,往往会在统一调时间线上同时做好几件事情, 比如刷牙的时候看手机,为了不浪费时间,我们总是同时进行两件三件甚至更多的事情;而在编程的世界中, 我们可以通过软件或者硬件上实现多个线程并发执行的技术来做到类似现实世界中的行为, 这就叫做多线程;能够大大提升整体处理性能;
+很多编程语言都实现了这种功能,java, .net,C&#43;&#43;, php的pthreads和swoole,oc当然也不例外, 下面我们就来了解一下我们在oc中会经常用到的多线程技术GCD和NSOperation,NSOperationQueue;
+GCD GCD的好处 能够充分利用iOS或者macOS多核心的特性,大大提高整体的处理性能和计算能力;
+GCD的队列和任务 任务 即一个操作行为,或者是要执行的代码块; 类似买票的行为,即一个任务;
+队列 执行任务的调度池, 用来存放任务,一个一个的任务被创建好之后放入队列中等待执行; 采用先进先出的原则,类似排队买票的行为;
+同步队列(sync) 添加任务同步队列,任务会一个接着一个去执行,后一个任务等待前一个任务的完毕状态; 同步队列不会开启新的线程; 类似一个窗口买票的而行为, 长长的队伍只能慢慢的等待;
+异步队列(async) 任务被添加到异步队列后, 如果线程开启的足够多, 那么每一个任务不会做任何等待. 每个任务都可已开启一新的线程去执行; 类似多个窗口买票的行为, 10个窗口,10个人买票,一个人一个窗口, 不用等待; 当然啦, 理论上是可行的,但是实际开启线程过多会很影响CPU的效率, CPU会一直对调度池进行轮询; CPU就累死了;所以, 合理开启线程个数还是很有必要的;
+GCD的使用 GCD的使用非常简单, 我们创建一个队列,然后将想要执行的任务添加到队列中;
+创建队列 // 串行队列的创建方法 dispatch_queue_t queue = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_SERIAL); // 并发队列的创建方法 dispatch_queue_t queue = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_CONCURRENT); //全局并发队列 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //主队列 dispatch_queue_t queue = dispatch_get_main_queue(); 任务 // 同步执行任务创建方法 dispatch_sync(queue, ^{ // 这里放同步执行任务代码 }); // 异步执行任务创建方法 dispatch_async(queue, ^{ // 这里放异步执行任务代码 }); 实际使用当中,使用的比较多的就是异步任务&#43;并行队列 ,'>
+<title>分身不乏术,Objective-C的多线程</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/ios-gcd-nsoperation/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='分身不乏术,Objective-C的多线程'>
+<meta property='og:description' content='我们在现实生活中,往往会在统一调时间线上同时做好几件事情, 比如刷牙的时候看手机,为了不浪费时间,我们总是同时进行两件三件甚至更多的事情;而在编程的世界中, 我们可以通过软件或者硬件上实现多个线程并发执行的技术来做到类似现实世界中的行为, 这就叫做多线程;能够大大提升整体处理性能;
+很多编程语言都实现了这种功能,java, .net,C&#43;&#43;, php的pthreads和swoole,oc当然也不例外, 下面我们就来了解一下我们在oc中会经常用到的多线程技术GCD和NSOperation,NSOperationQueue;
+GCD GCD的好处 能够充分利用iOS或者macOS多核心的特性,大大提高整体的处理性能和计算能力;
+GCD的队列和任务 任务 即一个操作行为,或者是要执行的代码块; 类似买票的行为,即一个任务;
+队列 执行任务的调度池, 用来存放任务,一个一个的任务被创建好之后放入队列中等待执行; 采用先进先出的原则,类似排队买票的行为;
+同步队列(sync) 添加任务同步队列,任务会一个接着一个去执行,后一个任务等待前一个任务的完毕状态; 同步队列不会开启新的线程; 类似一个窗口买票的而行为, 长长的队伍只能慢慢的等待;
+异步队列(async) 任务被添加到异步队列后, 如果线程开启的足够多, 那么每一个任务不会做任何等待. 每个任务都可已开启一新的线程去执行; 类似多个窗口买票的行为, 10个窗口,10个人买票,一个人一个窗口, 不用等待; 当然啦, 理论上是可行的,但是实际开启线程过多会很影响CPU的效率, CPU会一直对调度池进行轮询; CPU就累死了;所以, 合理开启线程个数还是很有必要的;
+GCD的使用 GCD的使用非常简单, 我们创建一个队列,然后将想要执行的任务添加到队列中;
+创建队列 // 串行队列的创建方法 dispatch_queue_t queue = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_SERIAL); // 并发队列的创建方法 dispatch_queue_t queue = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_CONCURRENT); //全局并发队列 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //主队列 dispatch_queue_t queue = dispatch_get_main_queue(); 任务 // 同步执行任务创建方法 dispatch_sync(queue, ^{ // 这里放同步执行任务代码 }); // 异步执行任务创建方法 dispatch_async(queue, ^{ // 这里放异步执行任务代码 }); 实际使用当中,使用的比较多的就是异步任务&#43;并行队列 ,'>
+<meta property='og:url' content='http://47.99.84.217/post/ios-gcd-nsoperation/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='iOS' /><meta property='article:published_time' content='2019-05-03T20:48:49&#43;08:00'/><meta property='article:modified_time' content='2019-05-03T20:48:49&#43;08:00'/>
+<meta name="twitter:title" content="分身不乏术,Objective-C的多线程">
+<meta name="twitter:description" content="我们在现实生活中,往往会在统一调时间线上同时做好几件事情, 比如刷牙的时候看手机,为了不浪费时间,我们总是同时进行两件三件甚至更多的事情;而在编程的世界中, 我们可以通过软件或者硬件上实现多个线程并发执行的技术来做到类似现实世界中的行为, 这就叫做多线程;能够大大提升整体处理性能;
+很多编程语言都实现了这种功能,java, .net,C&#43;&#43;, php的pthreads和swoole,oc当然也不例外, 下面我们就来了解一下我们在oc中会经常用到的多线程技术GCD和NSOperation,NSOperationQueue;
+GCD GCD的好处 能够充分利用iOS或者macOS多核心的特性,大大提高整体的处理性能和计算能力;
+GCD的队列和任务 任务 即一个操作行为,或者是要执行的代码块; 类似买票的行为,即一个任务;
+队列 执行任务的调度池, 用来存放任务,一个一个的任务被创建好之后放入队列中等待执行; 采用先进先出的原则,类似排队买票的行为;
+同步队列(sync) 添加任务同步队列,任务会一个接着一个去执行,后一个任务等待前一个任务的完毕状态; 同步队列不会开启新的线程; 类似一个窗口买票的而行为, 长长的队伍只能慢慢的等待;
+异步队列(async) 任务被添加到异步队列后, 如果线程开启的足够多, 那么每一个任务不会做任何等待. 每个任务都可已开启一新的线程去执行; 类似多个窗口买票的行为, 10个窗口,10个人买票,一个人一个窗口, 不用等待; 当然啦, 理论上是可行的,但是实际开启线程过多会很影响CPU的效率, CPU会一直对调度池进行轮询; CPU就累死了;所以, 合理开启线程个数还是很有必要的;
+GCD的使用 GCD的使用非常简单, 我们创建一个队列,然后将想要执行的任务添加到队列中;
+创建队列 // 串行队列的创建方法 dispatch_queue_t queue = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_SERIAL); // 并发队列的创建方法 dispatch_queue_t queue = dispatch_queue_create(&amp;#34;com.test.gcd&amp;#34;, DISPATCH_QUEUE_CONCURRENT); //全局并发队列 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //主队列 dispatch_queue_t queue = dispatch_get_main_queue(); 任务 // 同步执行任务创建方法 dispatch_sync(queue, ^{ // 这里放同步执行任务代码 }); // 异步执行任务创建方法 dispatch_async(queue, ^{ // 这里放异步执行任务代码 }); 实际使用当中,使用的比较多的就是异步任务&#43;并行队列 ,">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#gcd">GCD</a>
+      <ul>
+        <li><a href="#gcd的好处">GCD的好处</a></li>
+        <li><a href="#gcd的队列和任务">GCD的队列和任务</a></li>
+        <li><a href="#gcd的使用">GCD的使用</a></li>
+        <li><a href="#线程之间的通信">线程之间的通信</a></li>
+        <li><a href="#线程安全">线程安全</a></li>
+        <li><a href="#栅栏任务">栅栏任务</a></li>
+        <li><a href="#延迟执行">延迟执行</a></li>
+        <li><a href="#一次性代码">一次性代码</a></li>
+        <li><a href="#快速迭代">快速迭代</a></li>
+        <li><a href="#gcd队列组">GCD队列组</a></li>
+      </ul>
+    </li>
+    <li><a href="#nsoperation-nsoperationqueue">NSOPeration NSOperationQueue</a>
+      <ul>
+        <li><a href="#nsoperationqueue">NSOperationQueue</a></li>
+        <li><a href="#nsoperation">NSOperation</a></li>
+        <li><a href="#依赖操作">依赖操作</a></li>
+        <li><a href="#nsoperation-线程通信">NSOperation 线程通信</a></li>
+        <li><a href="#nsoperation-线程安全">NSOperation 线程安全</a></li>
+        <li><a href="#nsoperation-常用属性和方法">NSOperation 常用属性和方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ios/" >
+                iOS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/ios-gcd-nsoperation/">分身不乏术,Objective-C的多线程</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 03, 2019</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>我们在现实生活中,往往会在统一调时间线上同时做好几件事情, 比如刷牙的时候看手机,为了不浪费时间,我们总是同时进行两件三件甚至更多的事情;而在编程的世界中, 我们可以通过软件或者硬件上实现多个线程并发执行的技术来做到类似现实世界中的行为, 这就叫做多线程;能够大大提升整体处理性能;</p>
+<p>很多编程语言都实现了这种功能,java, .net,C++, php的pthreads和swoole,oc当然也不例外, 下面我们就来了解一下我们在oc中会经常用到的多线程技术GCD和NSOperation,NSOperationQueue;</p>
+<!-- raw HTML omitted -->
+<h2 id="gcd">GCD</h2>
+<h3 id="gcd的好处">GCD的好处</h3>
+<p>能够充分利用iOS或者macOS多核心的特性,大大提高整体的处理性能和计算能力;</p>
+<h3 id="gcd的队列和任务">GCD的队列和任务</h3>
+<h4 id="任务">任务</h4>
+<p>即一个操作行为,或者是要执行的代码块; 类似买票的行为,即一个任务;</p>
+<h4 id="队列">队列</h4>
+<p>执行任务的调度池, 用来存放任务,一个一个的任务被创建好之后放入队列中等待执行; 采用先进先出的原则,类似排队买票的行为;</p>
+<h5 id="同步队列sync">同步队列(sync)</h5>
+<p>添加任务同步队列,任务会一个接着一个去执行,后一个任务等待前一个任务的完毕状态; 同步队列不会开启新的线程; 类似一个窗口买票的而行为, 长长的队伍只能慢慢的等待;</p>
+<h5 id="异步队列async">异步队列(async)</h5>
+<p>任务被添加到异步队列后, 如果线程开启的足够多, 那么每一个任务不会做任何等待. 每个任务都可已开启一新的线程去执行; 类似多个窗口买票的行为, 10个窗口,10个人买票,一个人一个窗口, 不用等待; 当然啦, 理论上是可行的,但是实际开启线程过多会很影响CPU的效率, CPU会一直对调度池进行轮询; CPU就累死了;所以, 合理开启线程个数还是很有必要的;</p>
+<h3 id="gcd的使用">GCD的使用</h3>
+<p>GCD的使用非常简单, 我们创建一个队列,然后将想要执行的任务添加到队列中;</p>
+<h4 id="创建队列">创建队列</h4>
+<pre tabindex="0"><code>// 串行队列的创建方法
+dispatch_queue_t queue = dispatch_queue_create(&#34;com.test.gcd&#34;, DISPATCH_QUEUE_SERIAL);
+// 并发队列的创建方法
+dispatch_queue_t queue = dispatch_queue_create(&#34;com.test.gcd&#34;, DISPATCH_QUEUE_CONCURRENT);
+//全局并发队列
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+//主队列
+dispatch_queue_t queue = dispatch_get_main_queue();
+</code></pre><h4 id="任务-1">任务</h4>
+<pre tabindex="0"><code>// 同步执行任务创建方法
+dispatch_sync(queue, ^{
+    // 这里放同步执行任务代码
+});
+// 异步执行任务创建方法
+dispatch_async(queue, ^{
+    // 这里放异步执行任务代码
+});
+</code></pre><p>实际使用当中,使用的比较多的就是<code>异步任务+并行队列</code> ,</p>
+<pre tabindex="0"><code>-(void)asyncWithParallelQueue{
+   NSLog(@&#34;currentThread---%@&#34;,[NSThread currentThread]);  // 打印当前线程
+    NSLog(@&#34;asyncConcurrent---begin&#34;);
+    dispatch_queue_t queue = dispatch_queue_create(&#34;com.test.gcd&#34;, DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        // 追加任务1
+        for (int i = 0; i &lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&#34;1---%@&#34;,[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    dispatch_async(queue, ^{
+        // 追加任务2
+        for (int i = 0; i &lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&#34;2---%@&#34;,[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    dispatch_async(queue, ^{
+        // 追加任务3
+        for (int i = 0; i &lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&#34;3---%@&#34;,[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    NSLog(@&#34;asyncConcurrent---end&#34;);
+    }
+</code></pre><p>可以看到除了主线程之外，系统开启了3个线程，并且任务可以看做是同时执行的。（异步执行具备开启新线程的能力。且并发队列可开启多个线程，同时执行多个任务）。所有任务是在打印的syncConcurrent&mdash;begin和syncConcurrent&mdash;end之后才执行的。说明当前线程没有等待，而是直接开启了新线程，在新线程中执行任务（异步执行不做等待，如果存在空闲的线程可以继续执行任务）。</p>
+<h3 id="线程之间的通信">线程之间的通信</h3>
+<p>如果我们在主线中使用了耗时任务例如下载,合成图片,I/O等操作时, 会对UI造成阻塞, 造成界面不能响应触摸,滚动,刷新等异常,所以我们一般会将这些耗时操作放到子线程中进行执行, 这样就会有一个不可避免的问题,就是我们在子线程中处理完操作后需要把处理结果放到主线程中进行更新数据或者UI,这就会有一个线程之间通信的问题, 万幸的是,GCD已经为我们提供了相应的方法;</p>
+<pre tabindex="0"><code>/**
+ * 线程间通信
+ */
+- (void)sendMSG{
+    // 获取全局并发队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // 获取主队列
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    dispatch_async(queue, ^{
+        // 异步追加任务
+        for (int i = 0; i &lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&#34;1---%@&#34;,[NSThread currentThread]);      // 打印当前线程
+        }
+        // 回到主线程
+        dispatch_async(mainQueue, ^{
+            // 追加在主线程中执行的任务
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&#34;2---%@&#34;,[NSThread currentThread]);      // 打印当前线程
+        });
+    });
+}
+</code></pre><h3 id="线程安全">线程安全</h3>
+<p>假设我们有这样一个出售车票的场景: 余票500张,同时存在两个或者多个窗口进行售票,如果我们同时访问了这个余票并进行出售是不是会存在问题呢?</p>
+<pre tabindex="0"><code>- (void)unSaveTicket{
+    NSLog(@&#34;currentThread---%@&#34;,[NSThread currentThread]);  // 打印当前线程
+    NSLog(@&#34;semaphore---begin&#34;);
+    self.ticketCount = 500;
+    // queue1 代表售卖窗口1
+    dispatch_queue_t queue1 = dispatch_queue_create(&#34;com.test.gcd&#34;, DISPATCH_QUEUE_SERIAL);
+    // queue2 代表售卖窗口2
+    dispatch_queue_t queue2 = dispatch_queue_create(&#34;com.test.gcd&#34;, DISPATCH_QUEUE_SERIAL);
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(queue1, ^{
+        [weakSelf saleTicketunSafe];
+    });
+    dispatch_async(queue2, ^{
+        [weakSelf saleTicketunSafe];
+    });
+}
+/**
+ * 售卖火车票(非线程安全)
+ */
+- (void)saleTicketunSafe {
+    while (1) {
+        if (self.ticketCount &gt; 0) {  //如果还有票，继续售卖
+            self.ticketCount--;
+            NSLog(@&#34;%@&#34;, [NSString stringWithFormat:@&#34;剩余票数：%d 窗口：%@&#34;, self.ticketCount, [NSThread currentThread]]);
+            [NSThread sleepForTimeInterval:0.2];
+        } else { //如果已卖完，关闭售票窗口
+            NSLog(@&#34;所有火车票均已售完&#34;);
+            break;
+        }
+    }
+}
+</code></pre><p><img src="https://52smile.vip/wp-content/uploads/2019/05/15568928052630.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="-w1086"
+	
+	
+>￼ 可以看到,这里的票的个数是不安全的;造成这样的原因是因为多个线程访问同一个资源造成的,如果我们想要避免这种问题,我们需要对这个数据进行加锁;</p>
+<pre tabindex="0"><code>/**
+ * 线程安全：使用 synchronized 加锁
+ * 初始化火车票数量、卖票窗口(线程安全)、并开始卖票
+ */
+- (void)initTicketStatusSave {
+    NSLog(@&#34;currentThread---%@&#34;,[NSThread currentThread]);  // 打印当前线程
+    NSLog(@&#34;semaphore---begin&#34;);
+    self.ticketCount = 50;
+    // queue1 代表票售卖窗口1
+    dispatch_queue_t queue1 = dispatch_queue_create(&#34;com.test.gcd&#34;, DISPATCH_QUEUE_SERIAL);
+    // queue2 代表售卖窗口2
+    dispatch_queue_t queue2 = dispatch_queue_create(&#34;com.test.gcd&#34;, DISPATCH_QUEUE_SERIAL);
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(queue1, ^{
+        [weakSelf saleTicketSafe];
+    });
+    dispatch_async(queue2, ^{
+        [weakSelf saleTicketSafe];
+    });
+}
+/**
+ * 售卖火车票(线程安全)
+ */
+- (void)saleTicketSafe {
+    while (1) {
+        @synchronized (self) {
+            if (self.ticketCount &gt; 0) {  //如果还有票，继续售卖
+                self.ticketCount--;
+                NSLog(@&#34;%@&#34;, [NSString stringWithFormat:@&#34;剩余票数：%zd 窗口：%@&#34;, self.ticketCount, [NSThread currentThread]]);
+            } else { //如果已卖完，关闭售票窗口
+                NSLog(@&#34;所有火车票均已售完&#34;);
+                break;
+            }
+        }
+    }
+}
+</code></pre><h3 id="栅栏任务">栅栏任务</h3>
+<p>有时候我们需要在某个函数后执行特定的任务. 这时候我们需要用到oc提供的栅栏函数'</p>
+<pre tabindex="0"><code>//栅格
+-(void)barrier{
+    /**
+     不能使用quan&#39;jue&#39;de全局的并发队列. 会出现紊乱
+     栅格函数使用后, 在栅格函数之前的, 先进行执行;
+     在栅格函数之后, 等待栅格函数执行完成后在执行;
+     */
+    dispatch_queue_t queue = dispatch_queue_create(&#34;dispatch_barrier&#34;, DISPATCH_CURRENT_QUEUE_LABEL);
+    dispatch_async(queue, ^{
+        NSLog(@&#34;---1----%@&#34;,[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@&#34;---2----%@&#34;,[NSThread currentThread]);
+    });
+    dispatch_barrier_async(queue, ^{
+        NSLog(@&#34;---barrier----%@&#34;,[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@&#34;---3----%@&#34;,[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@&#34;---4----%@&#34;,[NSThread currentThread]);
+    });
+}
+</code></pre><p>这个执行是执行完1,2之后执行<code>barrier</code>,然后等待<code>barrier</code>执行完成后,执行3,4; 栅栏作为阻挡3,4的屏障,等待1,2 执行完成后才开始下一步的执行;</p>
+<h3 id="延迟执行">延迟执行</h3>
+<p>在指定某个时间间隔后执行某段任务.</p>
+<pre tabindex="0"><code>//延时执行
+-(void)disafter{
+   //延时两秒钟执行 run
+//    [self performSelector:@selector(run:) withObject:@&#34;两好三坏&#34; afterDelay:2];
+    //可以传入其他队列
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+                       [self run:@&#34;两好三坏&#34;];
+    });
+    // 使用NSTimer, 作为定时器进行操作
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(run:) userInfo:nil repeats:NO];
+}
+</code></pre><h3 id="一次性代码">一次性代码</h3>
+<p>我们在创建单例、或者有整个程序运行过程中只执行一次的代码时，我们就用到了 GCD 的 dispatch_once 函数。使用 dispatch_once 函数能保证某段代码在程序运行过程中只被执行1次，并且即使在多线程的环境下，dispatch_once也可以保证线程安全。</p>
+<pre tabindex="0"><code>//一次性函数, 类似单例,资源加载等;注意与懒加载的区别;
+-(void)onceCode{
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        NSLog(@&#34;hhhh&#34;);
+    });
+}
+</code></pre><p>eg: 单例:</p>
+<pre tabindex="0"><code>static QKSingleton *_singleton;
+/**
+ 返回一个单例对象
+ @return 单例对象
+ */
++(instancetype)shareSingleton{
+        static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        _singleton = [[self alloc] init];
+    });
+    return _singleton;
+}
++(instancetype)allocWithZone:(struct _NSZone *)zone{
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        _singleton = [super allocWithZone:zone];
+    });
+    return _singleton;
+}
+-(id)copyWithZone:(NSZone *)zone{
+    return _singleton;
+}
+</code></pre><h3 id="快速迭代">快速迭代</h3>
+<p>一般我们使用for循环进行数据遍历,然后再循环内对单个元素进行操作; 这样的问题在于如果我的数据量足够大或者单个元素操作耗时很高,那么在效率上会很低,因为这个实际上是在一个时间线的一个任务列中进行操作的,相当于在同步队列中执行一个串行队列; 而GCD为我们提供了一个快速迭代的方案: 场景如下: 我想把<code>From</code>文件夹中的文件一个一个的移动或者复制到<code>TO</code>文件夹中, 我们都知道I/O操作是很耗时间的. 下面有两个方法,一个是使用普通的for循环进行遍历, 一个是使用GCD提供的<code>dispatch_apply</code>进行操作;大家可以看一下对比效果;</p>
+<pre tabindex="0"><code>//快速遍历
+-(void)quickBlock{
+    /**
+     可以i替代部分for循环的功能;
+     eg: w想将一个文件夹中的文件剪切或者拷贝到另外一个文件夹中,如果我们通过for循环
+     去做这件事情,当文件数量达到一定的数量的时候效率肯定降低; 但是如果我们使用GCD进行
+     处理, 会好很多;
+     */
+    // 使用常规操作移动文件
+    // [self  normalMoveFile];
+    // 使用 GCD 移动文件
+//    [self applayGCDMoveFile];
+}
+//使用 GCD 移动文件, 快速遍历
+-(void)applayGCDMoveFile{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // 常规操作
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    NSString *fromPath = @&#34;/User/su/Desktop/Form&#34;;
+    NSString *toPath = @&#34;/User/su/Desktop/To&#34;;
+    NSArray *subPaths = [mgr subpathsAtPath:fromPath];
+    dispatch_apply(subPaths.count, queue, ^(size_t index) {
+        NSString *subPath = subPaths[index];
+        NSString *fromFullPath = [fromPath stringByAppendingPathComponent:subPath];
+        NSString *toFullPath = [toPath stringByAppendingPathComponent:subPath];
+        [mgr moveItemAtPath:fromFullPath toPath:toFullPath error:nil];
+    });
+}
+//常规移动文件操作
+-(void)normalMoveFile{
+    // 常规操作
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    NSString *fromPath = @&#34;/User/su/Desktop/Form&#34;;
+    NSString *toPath = @&#34;/User/su/Desktop/To&#34;;
+    NSArray *subPaths = [mgr subpathsAtPath:fromPath];
+    for (NSString *subPath  in subPaths) {
+        NSString *fromFullPath = [fromPath stringByAppendingPathComponent:subPath];
+        NSString *toFullPath = [toPath stringByAppendingPathComponent:subPath];
+        [mgr moveItemAtPath:fromFullPath toPath:toFullPath error:nil];
+    }
+}
+</code></pre><h3 id="gcd队列组">GCD队列组</h3>
+<p>我们有的时候可能会遇到需要合并多个线程中的执行结果, 例如下载多个素材后进行合并; 或者是类似迅雷分块下载后的文件合并;</p>
+<pre tabindex="0"><code>//GCD队列组
+-(void)GCDWithGroup{
+    /*
+     合并两张图片或者多个任务处理完成后合并结果
+     */
+    //定义一个c并行队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //创建一个队列组
+    dispatch_group_t group = dispatch_group_create();
+    //异步任务添加到队列组
+    dispatch_group_async(group, queue, ^{
+        //sub task
+    });
+    //异步任务添加到队列组
+    dispatch_group_async(group, queue, ^{
+        //sub task
+    });
+    //异步任务添加到队列组
+    dispatch_group_async(group, queue, ^{
+        //sub task ....
+    });
+    //监听队列组各个子任务完成后的合并
+    dispatch_group_notify(group, queue, ^{
+        // sub task finish
+        //TODO
+    });
+}
+</code></pre><h2 id="nsoperation-nsoperationqueue">NSOPeration NSOperationQueue</h2>
+<p>与GCD的定义类似, 也存在任务和队列的概念,基本一致;在此就不在重复啦;</p>
+<h3 id="nsoperationqueue">NSOperationQueue</h3>
+<p>任务队列,可以开启串行&amp;并行队列 我们可以通过 <code>maxConcurrentOperationCount</code>进行设置,决定是以何种队列进行执行</p>
+<ul>
+<li>maxConcurrentOperationCount 默认情况下为-1，表示不进行限制，可进行并发执行。</li>
+<li>maxConcurrentOperationCount 为1时，队列为串行队列。只能串行执行。</li>
+<li>maxConcurrentOperationCount 大于1时，队列为并发队列。</li>
+</ul>
+<h3 id="nsoperation">NSOperation</h3>
+<p><code>NSOPeration</code>是一个抽象类, 不作具体事务;具体事务由他的子类进行操作; 他有三个子类</p>
+<ul>
+<li>使用子类 NSInvocationOperation</li>
+<li>使用子类 NSBlockOperation</li>
+<li>自定义继承自 NSOperation 的子类，通过实现内部相应的方法来封装操作。</li>
+</ul>
+<h4 id="nsinvocationoperation">NSInvocationOperation</h4>
+<pre tabindex="0"><code>    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    //通过suspened 可以执行挂起; 任务挂起后并咩有消失 , 通过设置suspended = NO. 继续任务
+    //注意如果实在自定义的op对象时,是否需要考虑到界面优化
+    //queue.suspended = YES;
+    //定义操作任务
+    NSInvocationOperation *opOne = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(run:) object:@&#34;xiaoxiaosu&#34;];
+    NSInvocationOperation *opTwo = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(run:) object:@&#34;xiaoxiaosu&#34;];
+    //添加任务
+    [queue addOperation:opOne];
+    [queue addOperation:opTwo];
+</code></pre><h4 id="nsblockoperation">NSBlockOperation</h4>
+<pre tabindex="0"><code>//测试并行OperationQueue
+-(void)operationQueue{
+/*
+    [NSOperationQueue mainQueue]; 如果使用mainqueueu, 那么获取到的是主队列
+    如果使用的是alloc 方法获取,那么是 并行
+ */
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    //设置最大并发数量, 值取1的时候可以看做是串行队列
+    queue.maxConcurrentOperationCount = 3;
+    //通过suspened 可以执行挂起; 任务挂起后并咩有消失 , 通过设置suspended = NO. 继续任务
+    //注意如果实在自定义的op对象时,是否需要考虑到界面优化
+    //queue.suspended = YES;
+    //定义操作任务
+    NSBlockOperation *opBlock = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&#34;opBlock&#34;);
+    }];
+    [opBlock addExecutionBlock:^{
+        NSLog(@&#34;opblock add block task&#34;);
+    }];
+    //添加任务
+    [queue addOperation:opBlock];
+    //还可以通过block直接添加task
+    [queue addOperationWithBlock:^{
+    }];
+    //取消所有队列, 注意与suspended的区别 ;
+//    [queue cancelAllOperations];
+}
+</code></pre><h4 id="自定义nsoperation子类实现">自定义NSOperation子类实现</h4>
+<p>这种子类一般可以做比较复杂的操作,我们可以省去在上面两种任务中大段又长又臭的代码,封装在子类实现;</p>
+<pre tabindex="0"><code>// QKOperation.h 文件
+#import &lt;Foundation/Foundation.h&gt;
+@interface QKOperation.h : NSOperation
+@end
+// QKOperation.h.m 文件
+#import &#34;QKOperation.h&#34;
+@implementation QKOperation.h
+- (void)main {
+    if (!self.isCancelled) {
+        for (int i = 0; i &lt; 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@&#34;1---%@&#34;, [NSThread currentThread]);
+        }
+    }
+}
+@end
+</code></pre><h3 id="依赖操作">依赖操作</h3>
+<p>我们有的时候可能会遇到这种情况: 任务1中的数据在任务2中是必须的,也就是说任务2是依赖于任务1的. 在GCD中我们可以使用栅栏进行操作, 在NSOperation中我们可以更方便的对任务进行设置依赖;</p>
+<pre tabindex="0"><code>//NSOperation的依赖和监听
+-(void)opRelyOnOp{
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&#34;task1&#34;);
+    }];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&#34;task2&#34;);
+    }];
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&#34;task3&#34;);
+    }];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:op3];
+    /*
+     如果想要设置op3依赖op1,2执行完成后执行,可以使用如下的代码:
+     也s可以op3 -&gt; op2  -&gt; op1
+     但是要注意防止出现循环依赖: op3 -&gt; op2  -&gt; op1 -&gt; op3
+     # 也可以设置不同队列进行依赖
+     queue queue1 两个不同队列之间的任务依赖
+     */
+    [op3 addDependency:op1];
+    [op3 addDependency:op2];
+    /*
+     监听操作完成
+     */
+    op3.completionBlock = ^{
+        NSLog(@&#34;op3 task finish&#34;);
+    };
+}
+</code></pre><h3 id="nsoperation-线程通信">NSOperation 线程通信</h3>
+<p>可以以很简明的代码实现GCD中的线程通信</p>
+<pre tabindex="0"><code>//NSOperation 的线程通信
+-(void)opMsg{
+    //eg:合成图片
+    NSBlockOperation *down1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&#34;img1 download&#34;);
+    }];
+    NSBlockOperation *down2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&#34;img2 download&#34;);
+    }];
+    NSBlockOperation *complate = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@&#34;合并 img1 &amp; img2&#34;);
+    }];
+    [complate addDependency:down1];
+    [complate addDependency:down2];
+    //线程间的基本通信;
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    [queue addOperationWithBlock:^{
+        NSURL *url = [NSURL URLWithString:@&#34;remoteImgURL&#34;];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:data];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            UIImageView *imgview = [UIImageView new];
+            imgview.image = image;
+        }];
+    }];
+}
+</code></pre><h3 id="nsoperation-线程安全">NSOperation 线程安全</h3>
+<pre tabindex="0"><code>-(void)safeSallTicket{
+    self.ticketCount = 50;
+    NSOperationQueue *queue1 = [[NSOperationQueue alloc] init];
+    NSOperationQueue *queue2 = [[NSOperationQueue alloc] init];
+    queue1.maxConcurrentOperationCount = queue2.maxConcurrentOperationCount = 1;
+    __weak typeof(self) weakSelf = self;
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        [weakSelf sallTicketWithOp];
+    }];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        [weakSelf sallTicketWithOp];
+    }];
+    [queue1 addOperation:op1];
+    [queue2 addOperation:op2];
+}
+-(void)sallTicketWithOp{
+    while (1) {
+        // 加锁
+        [self.lock lock];
+        if (self.ticketCount &gt; 0) {
+            //如果还有票，继续售卖
+            self.ticketCount--;
+            NSLog(@&#34;%@&#34;, [NSString stringWithFormat:@&#34;剩余票数:%zd 窗口:%@&#34;, self.ticketCount, [NSThread currentThread]]);
+            [NSThread sleepForTimeInterval:0.2];
+        }
+        // 解锁
+        [self.lock unlock];
+        if (self.ticketCount &lt;= 0) {
+            NSLog(@&#34;所有火车票均已售完&#34;);
+            break;
+        }
+    }
+}
+</code></pre><h3 id="nsoperation-常用属性和方法">NSOperation 常用属性和方法</h3>
+<ul>
+<li>取消操作方法
+<ul>
+<li>(void)cancel; 可取消操作，实质是标记 isCancelled 状态。</li>
+</ul>
+</li>
+<li>判断操作状态方法
+<ul>
+<li>(BOOL)isFinished; 判断操作是否已经结束。</li>
+<li>(BOOL)isCancelled; 判断操作是否已经标记为取消。</li>
+<li>(BOOL)isExecuting; 判断操作是否正在在运行。</li>
+<li>(BOOL)isReady; 判断操作是否处于准备就绪状态，这个值和操作的依赖关系相关。</li>
+</ul>
+</li>
+<li>操作同步
+<ul>
+<li>(void)waitUntilFinished; 阻塞当前线程，直到该操作结束。可用于线程执行顺序的同步。</li>
+<li>(void)setCompletionBlock:(void (^)(void))block; completionBlock 会在当前操作执行完毕时执行 completionBlock。</li>
+<li>(void)addDependency:(NSOperation *)op; 添加依赖，使当前操作依赖于操作 op 的完成。</li>
+<li>(void)removeDependency:(NSOperation *)op; 移除依赖，取消当前操作对操作 op 的依赖。 @property (readonly, copy) NSArray *dependencies; 在当前操作开始执行之前完成执行的所有操作对象数组。</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ios/">iOS</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/yong-bao-yi-xia-chen-mo-de-nsstring-ba/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">拥抱一下沉默的 NSString 吧~</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/ios-block-xiang-jie/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS  block详解</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/nsobject-size/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从 NSObject 占用的内存说起</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/iosarrayforin/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS中for 和 for-in 循环数组的小区别</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/kvo/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS中KVO使用和底层原理</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

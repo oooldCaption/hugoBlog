@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Alfred, 我叫它小红帽; 是 Mac 平台上一个能够大幅提升生产力的效率工具,通过强大的workflow 机制,能够帮助我们快速打开网页、快速进行自定义搜索、查看剪贴板历史、快速查询单词等一些基础功能,通过自己去编辑脚本,可以实现更多的功能,解决输入输出的痛点，极大的减少了重复的操作,减少不同程序之间的切换步骤,成吨的节约时间。
+先简单介绍一下常见的使用场景: 平常我们搜索关键词需要打开浏览器,然后输入关键词;执行搜索,但是用小红帽,配置好以后输入想要搜索关键词,然后按 enter 就好啦~
+有时候突然忘记一个单词的中文意思是什么，先移动下鼠标，打开词典工具，然后输入单词,但是用小红帽,我们通过一个 关键词唤起,然后输入想要查询的单词, enter 就出来了; 还可以通过 shift 键来预览其他释义;
+当然这只是一丢丢的功能;据统计大约扩展出来的 workflow 至少有500&#43;,有热心网友列了一个表格来管理; 你可以下载并免费使用其中任何一个 Workflow，甚至还可以基于一些不错的 Workflow 加入自己的想法，改造成属于自己的,符合自己工作习惯的 Workflow（前提是已解锁 Powerpack ）。
+如何安装 首先可以从Alfred 官网自行下载安装，免费用户可以使用除 Workflow 以外的其它功能，如需使用 Workflow，则需要购Powerpack。推荐大家使用正版 列出常用的一些功能:
+  应用搜索 输入关键词,小红帽自动罗列包含关键词的 application; 搜索结果列出后按住 command 键,会出现不同的功能   文件&amp;amp;目录搜索 输入空格或者 find开启命令,然后输入想要搜索的内容,快速定位到搜索文件;输入 enter 可直接打开文件或者文件夹; 搜索结果列出后按住 command 键,会出现不同的功能   文本搜索 输入 in 命令，以及待搜索的文本，列出磁盘中包含该文本的相关文件，可以快速定位文件，相当于简易的终端 find 命令。 ￼
+  计算器 可以计算简单的,复杂的运算   词典搜索 强烈推荐使用有道词典的 workflow; 可以自己去申请有道官方的秘钥,替换使用;'>
+<title>成吨节约您时间的效率神器--Alfred</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/usealfred/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='成吨节约您时间的效率神器--Alfred'>
+<meta property='og:description' content='Alfred, 我叫它小红帽; 是 Mac 平台上一个能够大幅提升生产力的效率工具,通过强大的workflow 机制,能够帮助我们快速打开网页、快速进行自定义搜索、查看剪贴板历史、快速查询单词等一些基础功能,通过自己去编辑脚本,可以实现更多的功能,解决输入输出的痛点，极大的减少了重复的操作,减少不同程序之间的切换步骤,成吨的节约时间。
+先简单介绍一下常见的使用场景: 平常我们搜索关键词需要打开浏览器,然后输入关键词;执行搜索,但是用小红帽,配置好以后输入想要搜索关键词,然后按 enter 就好啦~
+有时候突然忘记一个单词的中文意思是什么，先移动下鼠标，打开词典工具，然后输入单词,但是用小红帽,我们通过一个 关键词唤起,然后输入想要查询的单词, enter 就出来了; 还可以通过 shift 键来预览其他释义;
+当然这只是一丢丢的功能;据统计大约扩展出来的 workflow 至少有500&#43;,有热心网友列了一个表格来管理; 你可以下载并免费使用其中任何一个 Workflow，甚至还可以基于一些不错的 Workflow 加入自己的想法，改造成属于自己的,符合自己工作习惯的 Workflow（前提是已解锁 Powerpack ）。
+如何安装 首先可以从Alfred 官网自行下载安装，免费用户可以使用除 Workflow 以外的其它功能，如需使用 Workflow，则需要购Powerpack。推荐大家使用正版 列出常用的一些功能:
+  应用搜索 输入关键词,小红帽自动罗列包含关键词的 application; 搜索结果列出后按住 command 键,会出现不同的功能   文件&amp;amp;目录搜索 输入空格或者 find开启命令,然后输入想要搜索的内容,快速定位到搜索文件;输入 enter 可直接打开文件或者文件夹; 搜索结果列出后按住 command 键,会出现不同的功能   文本搜索 输入 in 命令，以及待搜索的文本，列出磁盘中包含该文本的相关文件，可以快速定位文件，相当于简易的终端 find 命令。 ￼
+  计算器 可以计算简单的,复杂的运算   词典搜索 强烈推荐使用有道词典的 workflow; 可以自己去申请有道官方的秘钥,替换使用;'>
+<meta property='og:url' content='http://47.99.84.217/post/usealfred/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='巧篆' /><meta property='article:published_time' content='2018-09-18T19:47:24&#43;08:00'/><meta property='article:modified_time' content='2018-09-18T19:47:24&#43;08:00'/>
+<meta name="twitter:title" content="成吨节约您时间的效率神器--Alfred">
+<meta name="twitter:description" content="Alfred, 我叫它小红帽; 是 Mac 平台上一个能够大幅提升生产力的效率工具,通过强大的workflow 机制,能够帮助我们快速打开网页、快速进行自定义搜索、查看剪贴板历史、快速查询单词等一些基础功能,通过自己去编辑脚本,可以实现更多的功能,解决输入输出的痛点，极大的减少了重复的操作,减少不同程序之间的切换步骤,成吨的节约时间。
+先简单介绍一下常见的使用场景: 平常我们搜索关键词需要打开浏览器,然后输入关键词;执行搜索,但是用小红帽,配置好以后输入想要搜索关键词,然后按 enter 就好啦~
+有时候突然忘记一个单词的中文意思是什么，先移动下鼠标，打开词典工具，然后输入单词,但是用小红帽,我们通过一个 关键词唤起,然后输入想要查询的单词, enter 就出来了; 还可以通过 shift 键来预览其他释义;
+当然这只是一丢丢的功能;据统计大约扩展出来的 workflow 至少有500&#43;,有热心网友列了一个表格来管理; 你可以下载并免费使用其中任何一个 Workflow，甚至还可以基于一些不错的 Workflow 加入自己的想法，改造成属于自己的,符合自己工作习惯的 Workflow（前提是已解锁 Powerpack ）。
+如何安装 首先可以从Alfred 官网自行下载安装，免费用户可以使用除 Workflow 以外的其它功能，如需使用 Workflow，则需要购Powerpack。推荐大家使用正版 列出常用的一些功能:
+  应用搜索 输入关键词,小红帽自动罗列包含关键词的 application; 搜索结果列出后按住 command 键,会出现不同的功能   文件&amp;amp;目录搜索 输入空格或者 find开启命令,然后输入想要搜索的内容,快速定位到搜索文件;输入 enter 可直接打开文件或者文件夹; 搜索结果列出后按住 command 键,会出现不同的功能   文本搜索 输入 in 命令，以及待搜索的文本，列出磁盘中包含该文本的相关文件，可以快速定位文件，相当于简易的终端 find 命令。 ￼
+  计算器 可以计算简单的,复杂的运算   词典搜索 强烈推荐使用有道词典的 workflow; 可以自己去申请有道官方的秘钥,替换使用;">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#如何安装">如何安装</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%A5%87%E5%B7%A7%E6%B7%AB%E6%8A%80/" >
+                奇巧淫技
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/usealfred/">成吨节约您时间的效率神器--Alfred</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 18, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Alfred, 我叫它小红帽; 是 Mac 平台上一个能够大幅提升生产力的效率工具,通过强大的workflow 机制,能够帮助我们快速打开网页、快速进行自定义搜索、查看剪贴板历史、快速查询单词等一些基础功能,通过自己去编辑脚本,可以实现更多的功能,解决输入输出的痛点，极大的减少了重复的操作,减少不同程序之间的切换步骤,成吨的节约时间。</p>
+<p><img src="https://img.52smile.vip/2018-09-18-114716.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="alfred"
+	
+	
+></p>
+<p>先简单介绍一下常见的使用场景: 平常我们搜索关键词需要打开浏览器,然后输入关键词;执行搜索,但是用小红帽,配置好以后输入想要搜索关键词,然后按 enter 就好啦~</p>
+<p><img src="https://img.52smile.vip/2018-09-18-2018-09-18%2020.06.41.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="search"
+	
+	
+></p>
+<p>有时候突然忘记一个单词的中文意思是什么，先移动下鼠标，打开词典工具，然后输入单词,但是用小红帽,我们通过一个 关键词唤起,然后输入想要查询的单词, enter 就出来了; 还可以通过 shift 键来预览其他释义;</p>
+<p><img src="https://img.52smile.vip/2018-09-18-2018-09-18%2020.08.44.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="translate"
+	
+	
+></p>
+<p>当然这只是一丢丢的功能;据统计大约扩展出来的 workflow 至少有500+,有热心网友列了一个<a class="link" href="http://www.alfredworkflow.com/"  target="_blank" rel="noopener"
+    >表格</a>来管理; 你可以下载并免费使用其中任何一个 Workflow，甚至还可以基于一些不错的 Workflow 加入自己的想法，改造成属于自己的,符合自己工作习惯的 Workflow（前提是已解锁 Powerpack ）。</p>
+<!-- raw HTML omitted -->
+<h3 id="如何安装">如何安装</h3>
+<p>首先可以从<a class="link" href="https://www.alfredapp.com/"  target="_blank" rel="noopener"
+    >Alfred 官网</a>自行下载安装，免费用户可以使用除 Workflow 以外的其它功能，如需使用 Workflow，则需要购Powerpack。推荐大家使用正版 列出常用的一些功能:</p>
+<ol>
+<li>
+<p>应用搜索 输入关键词,小红帽自动罗列包含关键词的 application; 搜索结果列出后按住 command 键,会出现不同的功能 <img src="https://img.52smile.vip/2018-09-18-123522.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>文件&amp;目录搜索 输入空格或者 find开启命令,然后输入想要搜索的内容,快速定位到搜索文件;输入 enter 可直接打开文件或者文件夹; 搜索结果列出后按住 command 键,会出现不同的功能 <img src="https://img.52smile.vip/2018-09-18-123722.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>文本搜索 输入 in 命令，以及待搜索的文本，列出磁盘中包含该文本的相关文件，可以快速定位文件，相当于简易的终端 find 命令。 <img src="https://img.52smile.vip/2018-09-18-124113.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="http://52smile.vip/wp-content/uploads/2018/09/15372745411544.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="-w601"
+	
+	
+>￼</p>
+</li>
+<li>
+<p>计算器 可以计算简单的,复杂的运算 <img src="https://img.52smile.vip/2018-09-18-124245.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="https://img.52smile.vip/2018-09-18-124423.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>词典搜索 强烈推荐使用有道词典的 <a class="link" href="https://github.com/wensonsmith/YoudaoTranslate"  target="_blank" rel="noopener"
+    >workflow</a>; <img src="https://img.52smile.vip/2018-09-18-124524.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+> 可以自己去申请有道官方的秘钥,替换使用;</p>
+</li>
+<li>
+<p>剪切板管理</p>
+<ul>
+<li>在小红帽偏好设置(command+,)中打开 features,点开 Clipboard, 可以看到如下的图片; viewerKeyboard 是命令快捷键,在小红帽中输入可快速唤起建起版管理,也可以自定义唤起命令; clearLeyword 是清除剪切板记录,同上,也可以自定义命令关键词;</li>
+<li>这样能极大地提升工作效率,避免在两个应用中来回切换的操作;</li>
+<li>不过我个人很少使用小红帽附带的剪切板,一直都在使用 <a class="link" href="https://pasteapp.me/"  target="_blank" rel="noopener"
+    >paste</a>,颜值高,谁用谁知道; <img src="https://img.52smile.vip/2018-09-18-124836.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="https://img.52smile.vip/2018-09-18-124828.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></li>
+</ul>
+</li>
+<li>
+<p>快递单号查询 输入快递单号: biubiubiu~ <img src="https://img.52smile.vip/2018-09-18-125700.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>ip查询 输入 <code>ip</code> ,直接显示; 再也不用 <code>ifconf</code> 了 <img src="https://img.52smile.vip/2018-09-18-125758.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>shell 命令 输入 <code>&gt;</code>,然后可以直接输入 <code>shell</code>命令; <img src="https://img.52smile.vip/2018-09-18-125919.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="https://img.52smile.vip/2018-09-18-130016.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+> 有些人可能不喜欢自带的终端,如果是使用<code>item2</code>; 可以通过自定的的脚本去切换默认的终端</p>
+<pre tabindex="0"><code>on alfred_script(q)
+tell application &#34;iTerm&#34;
+    set _length to count window
+if _length = 0 then
+    create window with default profile
+end if
+set aa to (get miniaturized of current window)
+if aa then
+    set miniaturized of current window to false
+end if
+set bb to (get visible of current window)
+if bb is false then
+    set visible of current window to true
+end if
+set cc to frontmost
+if cc is false then
+    activate
+end if
+    (*if _length = 0 then*)
+        set theResult to current tab of current window
+    (*else
+        set theResult to (create tab with default profile) of current window
+    end if*)
+    write session of theResult text q
+end tell
+end alfred_script
+</code></pre></li>
+<li>
+<p>系统命令 <img src="https://img.52smile.vip/2018-09-18-130201.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+> 常见命令如下: <img src="https://img.52smile.vip/2018-09-18-130246.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+</ol>
+<p>#END 这些常用的一些快捷操作会大大提升我们平时工作的效率; 前人栽树,后人乘凉;这次介绍的大多都是别人写好的 workflow, 但是对于大多数人来说，能做出自己的一个 WorkFlow 才是一件令人激动的事情。其实做出简单的 WorkFlow 是没啥问题,但如果你想实现一些复杂点的功能，那么你可能需要懂一门脚本语言。 今天简单的介绍一下简单又常用的操作, 下次我打算写一个从零开始打造一个 workflow, 自定义一个属于你自己的 workflow;</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%B7%A7%E7%AF%86/">巧篆</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/vi%E7%BC%96%E8%BE%91%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VI编辑器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">mac终端命令</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用Hexo&#43;Coding搭建个人博客</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/aria2%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Aria2的配置与使用;</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

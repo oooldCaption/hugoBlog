@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='修改UITextField文本输入框中的clearButton小图片 // 获取X按钮 UIButton *passwordBtn = [_passwordField valueForKey:@&amp;quot;_clearButton&amp;quot;]; // 修改按钮图片 [passwordBtn setImage:[UIImage imageNamed:@&amp;ldquo;login_checkbox_checked&amp;rdquo;] forState:UIControlStateNormal]; UIButton *accountBtn = [_accountField valueForKey:@&amp;quot;_clearButton&amp;quot;]; [accountBtn setImage:[UIImage imageNamed:@&amp;ldquo;login_checkbox_checked&amp;rdquo;] forState:UIControlStateNormal];
+  tableview不想显示没有内容的cell
+  self.tableview.tablefooterview = [UIView new];
+ 自定义了leftBarbuttonItem左滑返回手势失效了怎么办? self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)]; self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;   ScrollView在viewController终不能滑到顶  self.automaticallyAdjustsScrollViewInsets = NO;
+ 写键盘事件让你不爽了  github搜索 IQKeyboardManger
+ 怎么在不新建一个cell的情况下调整separaLine的位置?  self.tableview.separatorinset = UIEdgeInsetMake(0,100,0,0)
+ 点击self.view 就收起键盘  (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { [self.'>
+<title>iOS奇巧淫技</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/ios%E5%A5%87%E5%B7%A7%E6%B7%AB%E6%8A%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='iOS奇巧淫技'>
+<meta property='og:description' content='修改UITextField文本输入框中的clearButton小图片 // 获取X按钮 UIButton *passwordBtn = [_passwordField valueForKey:@&amp;quot;_clearButton&amp;quot;]; // 修改按钮图片 [passwordBtn setImage:[UIImage imageNamed:@&amp;ldquo;login_checkbox_checked&amp;rdquo;] forState:UIControlStateNormal]; UIButton *accountBtn = [_accountField valueForKey:@&amp;quot;_clearButton&amp;quot;]; [accountBtn setImage:[UIImage imageNamed:@&amp;ldquo;login_checkbox_checked&amp;rdquo;] forState:UIControlStateNormal];
+  tableview不想显示没有内容的cell
+  self.tableview.tablefooterview = [UIView new];
+ 自定义了leftBarbuttonItem左滑返回手势失效了怎么办? self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)]; self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;   ScrollView在viewController终不能滑到顶  self.automaticallyAdjustsScrollViewInsets = NO;
+ 写键盘事件让你不爽了  github搜索 IQKeyboardManger
+ 怎么在不新建一个cell的情况下调整separaLine的位置?  self.tableview.separatorinset = UIEdgeInsetMake(0,100,0,0)
+ 点击self.view 就收起键盘  (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { [self.'>
+<meta property='og:url' content='http://47.99.84.217/post/ios%E5%A5%87%E5%B7%A7%E6%B7%AB%E6%8A%80/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='iOS' /><meta property='article:published_time' content='2018-04-17T15:17:50&#43;08:00'/><meta property='article:modified_time' content='2018-04-17T15:17:50&#43;08:00'/>
+<meta name="twitter:title" content="iOS奇巧淫技">
+<meta name="twitter:description" content="修改UITextField文本输入框中的clearButton小图片 // 获取X按钮 UIButton *passwordBtn = [_passwordField valueForKey:@&amp;quot;_clearButton&amp;quot;]; // 修改按钮图片 [passwordBtn setImage:[UIImage imageNamed:@&amp;ldquo;login_checkbox_checked&amp;rdquo;] forState:UIControlStateNormal]; UIButton *accountBtn = [_accountField valueForKey:@&amp;quot;_clearButton&amp;quot;]; [accountBtn setImage:[UIImage imageNamed:@&amp;ldquo;login_checkbox_checked&amp;rdquo;] forState:UIControlStateNormal];
+  tableview不想显示没有内容的cell
+  self.tableview.tablefooterview = [UIView new];
+ 自定义了leftBarbuttonItem左滑返回手势失效了怎么办? self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)]; self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;   ScrollView在viewController终不能滑到顶  self.automaticallyAdjustsScrollViewInsets = NO;
+ 写键盘事件让你不爽了  github搜索 IQKeyboardManger
+ 怎么在不新建一个cell的情况下调整separaLine的位置?  self.tableview.separatorinset = UIEdgeInsetMake(0,100,0,0)
+ 点击self.view 就收起键盘  (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { [self.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ios/" >
+                iOS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/ios%E5%A5%87%E5%B7%A7%E6%B7%AB%E6%8A%80/">iOS奇巧淫技</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 17, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <ul>
+<li>
+<p>修改UITextField文本输入框中的clearButton小图片 // 获取X按钮 UIButton *passwordBtn = [_passwordField valueForKey:@&quot;_clearButton&quot;]; // 修改按钮图片 [passwordBtn setImage:[UIImage imageNamed:@&ldquo;login_checkbox_checked&rdquo;] forState:UIControlStateNormal]; UIButton *accountBtn = [_accountField valueForKey:@&quot;_clearButton&quot;]; [accountBtn setImage:[UIImage imageNamed:@&ldquo;login_checkbox_checked&rdquo;] forState:UIControlStateNormal];</p>
+</li>
+<li>
+<p>tableview不想显示没有内容的cell</p>
+</li>
+</ul>
+<p>self.tableview.tablefooterview = [UIView new];</p>
+<ul>
+<li>自定义了leftBarbuttonItem左滑返回手势失效了怎么办? self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)]; self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>ScrollView在viewController终不能滑到顶</li>
+</ul>
+<p>self.automaticallyAdjustsScrollViewInsets = NO;</p>
+<ul>
+<li>写键盘事件让你不爽了</li>
+</ul>
+<p>github搜索 IQKeyboardManger</p>
+<ul>
+<li>怎么在不新建一个cell的情况下调整separaLine的位置?</li>
+</ul>
+<p>self.tableview.separatorinset = UIEdgeInsetMake(0,100,0,0)</p>
+<ul>
+<li>点击self.view 就收起键盘
+<ul>
+<li>(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { [self.view endEditing:YES]; }</li>
+</ul>
+</li>
+<li>滑动的时候隐藏navigationbar?</li>
+</ul>
+<p>navigationController.hidesBarsonSwipe = YES</p>
+<ul>
+<li>ViewController 实现tableview那种悬停header</li>
+</ul>
+<p>CSStickyHeaderFlowLayout</p>
+<ul>
+<li>CoreData用来不爽?</li>
+</ul>
+<p>MagicalRecord</p>
+<ul>
+<li>
+<p>修改UITextField placeholder的文字颜色&amp;位置</p>
+<ul>
+<li>(void) drawPlaceholderInRect:(CGRect)rect {</li>
+</ul>
+<p>[[UIColor blueColor] setFill]; [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:UILineBreakModeTailTruncation alignment:self.textAlignment]; }</p>
+</li>
+<li>
+<p>navigationbar弄成透明的而不是带模糊的效果? [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault]; self.navigationBar.shadowImage = [UIImage new]; self.navigationBar.translucent = YES;</p>
+</li>
+<li>
+<p>修改tableview里面cell的小对勾颜色</p>
+</li>
+</ul>
+<p>tableview.tintcolor = [uicolor redcolor]</p>
+<ul>
+<li>
+<p>使用一个pan手势来代替UISwipegesture各个方向</p>
+<ul>
+<li>(void)pan:(UIPanGestureRecognizer *)sender {</li>
+</ul>
+<p>typedef NS_ENUM(NSUInteger, UIPanGestureRecognizerDirection) { UIPanGestureRecognizerDirectionUndefined, UIPanGestureRecognizerDirectionUp, UIPanGestureRecognizerDirectionDown, UIPanGestureRecognizerDirectionLeft, UIPanGestureRecognizerDirectionRight }; static UIPanGestureRecognizerDirection direction = UIPanGestureRecognizerDirectionUndefined; switch (sender.state) {</p>
+<pre tabindex="0"><code class="language-null" data-lang="null">case UIGestureRecognizerStateBegan: {
+    if (direction == UIPanGestureRecognizerDirectionUndefined) {
+        CGPoint velocity = [sender velocityInView:recognizer.view];
+        BOOL isVerticalGesture = fabs(velocity.y) &gt; fabs(velocity.x);
+        if (isVerticalGesture) {
+            if (velocity.y &gt; 0) {
+                direction = UIPanGestureRecognizerDirectionDown;
+            } else {
+                direction = UIPanGestureRecognizerDirectionUp;
+            }
+        }
+        else {
+            if (velocity.x &gt; 0) {
+                direction = UIPanGestureRecognizerDirectionRight;
+            } else {
+                direction = UIPanGestureRecognizerDirectionLeft;
+            }
+        }
+    }
+    break;
+}
+case UIGestureRecognizerStateChanged: {
+    switch (direction) {
+        case UIPanGestureRecognizerDirectionUp: {
+            [self handleUpwardsGesture:sender];
+            break;
+        }
+        case UIPanGestureRecognizerDirectionDown: {
+            [self handleDownwardsGesture:sender];
+            break;
+        }
+        case UIPanGestureRecognizerDirectionLeft: {
+            [self handleLeftGesture:sender];
+            break;
+        }
+        case UIPanGestureRecognizerDirectionRight: {
+            [self handleRightGesture:sender];
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+    break;
+}
+case UIGestureRecognizerStateEnded: {
+    direction = UIPanGestureRecognizerDirectionUndefined;
+    break;
+}
+default:
+    break;
+</code></pre><p>} }</p>
+</li>
+<li>
+<p>图片拉伸</p>
+</li>
+</ul>
+<p>在Storyboard或xib中拖入的控件都有Stretching属性，包含四个参数：X、Y、Width、Height。这些参数确定了进行拉伸的区域。 当X = Y = Width = Height = 1时，图片为原始大小。 若让X = Y = 0.5、Width = Height = 0，则按水平垂直位置的那个像素点进行拉伸，如图所示。</p>
+<ul>
+<li>
+<p>修改UISearchBar 的占位符文字颜色 /<strong>设置UISearchBar</strong>/ // 创建 UISearchBar *searchBar = [[UISearchBar alloc] init]; // 设置导航条背景色 self.navigationController.navigationBar.barTintColor = [UIColor hollyGreenColor]; // 风格 searchBar.searchBarStyle = UISearchBarStyleMinimal; // 光标色 searchBar.tintColor = [UIColor whiteColor]; // 占位文字 searchBar.placeholder = @&ldquo;搜索&rdquo;; // 设置占位文字色彩 UITextField *searchField = [searchBar valueForKey:@&ldquo;searchField&rdquo;];</p>
+<p>[searchField setValue:[UIColor whiteColor] forKeyPath:@&quot;_placeholderLabel.textColor&quot;];</p>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ios/">iOS</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/%E8%BF%90%E7%94%A8runtime%E6%89%A9%E5%A4%A7uibutton%E7%9A%84%E5%93%8D%E5%BA%94%E5%8C%BA%E5%9F%9F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">运用runtime扩大UIButton的响应区域</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/ios%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS设计模式之单例</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/ios-%E7%95%8C%E9%9D%A2%E4%BC%A0%E5%80%BC/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS 界面传值</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

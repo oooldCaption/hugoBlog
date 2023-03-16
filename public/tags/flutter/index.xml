@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>flutter on 煎人寿</title>
+        <link>http://47.99.84.217/tags/flutter/</link>
+        <description>Recent content in flutter on 煎人寿</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sun, 20 Nov 2022 17:52:38 +0800</lastBuildDate><atom:link href="http://47.99.84.217/tags/flutter/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Flutter 渐变</title>
+        <link>http://47.99.84.217/post/flutter-%E6%B8%90%E5%8F%98/</link>
+        <pubDate>Sun, 20 Nov 2022 17:52:38 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/flutter-%E6%B8%90%E5%8F%98/</guid>
+        <description>&lt;p&gt;太久没写技术博客啦.    最近一直在用&lt;code&gt;fluter&lt;/code&gt;做app,  前几天有个功能需要用渐变色来做一个文本.&lt;/p&gt;
+&lt;p&gt;我回想起几年前被我们UI设计师支配的恐惧, 那个UI特别喜欢用渐变色跟圆角, 以至于天天跟CALayer之类的打交道.&lt;/p&gt;
+&lt;p&gt;如果想要在flutter上实现渐变色就太简单了, 在&lt;code&gt;Container&lt;/code&gt;容器中有一个修饰器&lt;code&gt;decoration&lt;/code&gt;中 有一个 &lt;code&gt;gradient&lt;/code&gt;属性,  你只要给这个属性设置值, 就可以对容器设置渐变色了.
+代码如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Ajax AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。并不是一种开发语言,是聪明的程序员对 javascript 的创造性用法; Ajax 提供与服务器异步通信的能力,最简单的应用就是无需刷新整个页面而更新网页某一个部分的数据,更快,更高,更强~~~ 使用这个技术还是很简单的.
+1.创建 XMLHttpRequest 对象
+//创建对象的语法:
+variable = new XMLHttpRequest()lt;br/gt;
+//如果需要向下兼容 ie5,5,我们需要 ActiveX 对象lt;br/gt;
+variable = new ActiveXobject(quot;Microsoft.XMLHTTPquot;)lt;br/gt;
+var xmlhttp;
+if (window.XMLHttpRequest){
+xmlhttp=new XMLHttpRequest();
+}else{
+xmlhttp=new ActiveXObject(quot;Microsoft.XMLHTTPquot;);
+}
+这样我们就创建一个 XMLHttpRequest 的对象,我们就可以使用这个对象进行请求数据; ２.向服务器发送请求 如果我们向服务器发送请求，就需要用到xmlhttp 的 open()和send() 方法
+open()有三个参数,第一个参数是请求类型 put,get,post;
+第二个参数是 url,即文件在服务器上的地址
+第三个参数是同步 or 异步
+--
+open(method,url,asyns)
+!&amp;ndash;
+发送请求,string 用于 post 请求
+但我们需要提交一些表单之类的数据的时候,需要用到 post 提交
+需要在 setRequestHeader()中添加请求有信息,在后再 send()中添加数据
+--
+send(string)
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyStatelt;markgt;4 amp;amp; xmlhttp.'>
+<title>Ajax 初识</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/ajax-%E5%88%9D%E8%AF%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='Ajax 初识'>
+<meta property='og:description' content='Ajax AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。并不是一种开发语言,是聪明的程序员对 javascript 的创造性用法; Ajax 提供与服务器异步通信的能力,最简单的应用就是无需刷新整个页面而更新网页某一个部分的数据,更快,更高,更强~~~ 使用这个技术还是很简单的.
+1.创建 XMLHttpRequest 对象
+//创建对象的语法:
+variable = new XMLHttpRequest()lt;br/gt;
+//如果需要向下兼容 ie5,5,我们需要 ActiveX 对象lt;br/gt;
+variable = new ActiveXobject(quot;Microsoft.XMLHTTPquot;)lt;br/gt;
+var xmlhttp;
+if (window.XMLHttpRequest){
+xmlhttp=new XMLHttpRequest();
+}else{
+xmlhttp=new ActiveXObject(quot;Microsoft.XMLHTTPquot;);
+}
+这样我们就创建一个 XMLHttpRequest 的对象,我们就可以使用这个对象进行请求数据; ２.向服务器发送请求 如果我们向服务器发送请求，就需要用到xmlhttp 的 open()和send() 方法
+open()有三个参数,第一个参数是请求类型 put,get,post;
+第二个参数是 url,即文件在服务器上的地址
+第三个参数是同步 or 异步
+--
+open(method,url,asyns)
+!&amp;ndash;
+发送请求,string 用于 post 请求
+但我们需要提交一些表单之类的数据的时候,需要用到 post 提交
+需要在 setRequestHeader()中添加请求有信息,在后再 send()中添加数据
+--
+send(string)
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyStatelt;markgt;4 amp;amp; xmlhttp.'>
+<meta property='og:url' content='http://47.99.84.217/post/ajax-%E5%88%9D%E8%AF%86/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='前端' /><meta property='article:published_time' content='2018-04-17T15:01:46&#43;08:00'/><meta property='article:modified_time' content='2018-04-17T15:01:46&#43;08:00'/>
+<meta name="twitter:title" content="Ajax 初识">
+<meta name="twitter:description" content="Ajax AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。并不是一种开发语言,是聪明的程序员对 javascript 的创造性用法; Ajax 提供与服务器异步通信的能力,最简单的应用就是无需刷新整个页面而更新网页某一个部分的数据,更快,更高,更强~~~ 使用这个技术还是很简单的.
+1.创建 XMLHttpRequest 对象
+//创建对象的语法:
+variable = new XMLHttpRequest()lt;br/gt;
+//如果需要向下兼容 ie5,5,我们需要 ActiveX 对象lt;br/gt;
+variable = new ActiveXobject(quot;Microsoft.XMLHTTPquot;)lt;br/gt;
+var xmlhttp;
+if (window.XMLHttpRequest){
+xmlhttp=new XMLHttpRequest();
+}else{
+xmlhttp=new ActiveXObject(quot;Microsoft.XMLHTTPquot;);
+}
+这样我们就创建一个 XMLHttpRequest 的对象,我们就可以使用这个对象进行请求数据; ２.向服务器发送请求 如果我们向服务器发送请求，就需要用到xmlhttp 的 open()和send() 方法
+open()有三个参数,第一个参数是请求类型 put,get,post;
+第二个参数是 url,即文件在服务器上的地址
+第三个参数是同步 or 异步
+--
+open(method,url,asyns)
+!&amp;ndash;
+发送请求,string 用于 post 请求
+但我们需要提交一些表单之类的数据的时候,需要用到 post 提交
+需要在 setRequestHeader()中添加请求有信息,在后再 send()中添加数据
+--
+send(string)
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyStatelt;markgt;4 amp;amp; xmlhttp.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" >
+                软件开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/ajax-%E5%88%9D%E8%AF%86/">Ajax 初识</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 17, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Ajax AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。并不是一种开发语言,是聪明的程序员对 javascript 的创造性用法; Ajax 提供与服务器异步通信的能力,最简单的应用就是无需刷新整个页面而更新网页某一个部分的数据,更快,更高,更强~~~ 使用这个技术还是很简单的.</p>
+<!-- raw HTML omitted -->
+<p>1.创建 XMLHttpRequest 对象</p>
+<p>//创建对象的语法:</p>
+<p>variable = new XMLHttpRequest()lt;br/gt;</p>
+<p>//如果需要向下兼容 ie5,5,我们需要 ActiveX 对象lt;br/gt;</p>
+<p>variable = new ActiveXobject(quot;Microsoft.XMLHTTPquot;)lt;br/gt;</p>
+<p>var xmlhttp;</p>
+<p>if (window.XMLHttpRequest){</p>
+<p>xmlhttp=new XMLHttpRequest();</p>
+<p>}else{</p>
+<p>xmlhttp=new ActiveXObject(quot;Microsoft.XMLHTTPquot;);</p>
+<p>}</p>
+<p>这样我们就创建一个 XMLHttpRequest 的对象,我们就可以使用这个对象进行请求数据; ２.向服务器发送请求 如果我们向服务器发送请求，就需要用到xmlhttp 的 open()和send() 方法</p>
+<p>open()有三个参数,第一个参数是请求类型 put,get,post;</p>
+<p>第二个参数是 url,即文件在服务器上的地址</p>
+<p>第三个参数是同步 or 异步</p>
+<p>--</p>
+<p>open(method,url,asyns)</p>
+<p>!&ndash;</p>
+<p>发送请求,string 用于 post 请求</p>
+<p>但我们需要提交一些表单之类的数据的时候,需要用到 post 提交</p>
+<p>需要在 setRequestHeader()中添加请求有信息,在后再 send()中添加数据</p>
+<p>--</p>
+<p>send(string)</p>
+<p>xmlhttp.onreadystatechange=function()</p>
+<p>{</p>
+<p>if (xmlhttp.readyStatelt;markgt;4 amp;amp; xmlhttp.statuslt;/markgt;200)</p>
+<p>{</p>
+<p>// responseText amp; responseXML;一个是字符串形式的响应数据,一个是 xml 形式的响应数据XML 可以使用 name.getElementsByName(quot;节点名称quot;)进行读取</p>
+<p>document.getElementById(quot;myDivquot;).innerHTML=xmlhttp.responseText;</p>
+<p>}</p>
+<p>}</p>
+<p>xmlhttp.open(quot;GETquot;,url,true);</p>
+<p>xmlhttp.send();</p>
+<p>3</p>
+<p>上面的 readyState表示存有 XMLHttpRequest 的状态</p>
+<ul>
+<li>0:请求未初始化</li>
+<li>1:服务器连接已建立</li>
+<li>2:请求已经接受</li>
+<li>3:请求处理中</li>
+<li>4:请求已完成,响应就绪; 上面的 status</li>
+<li>200:”OK</li>
+<li>404:未找到页面</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

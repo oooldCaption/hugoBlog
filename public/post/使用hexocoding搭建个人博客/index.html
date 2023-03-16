@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前言 之前博客挂在 github pages 上,回到新疆之后发现访问不了了.一琢磨就买个个主机使用 wordpress搭建了个个人博客,当使用 wordpress 实在是不能提起我的写作欲望,又麻溜的切换到了 hexo.在网上看到了coding 也提供了类似 github pages 的服务 coding-pages,瞬间觉得太好了.于是我又开始了 hexo 之旅;
+正文
+ 环境：　mac　os ＋　hexo3.0　＋ iTerm　＋ Mou　＋ next &#43; homebrew １．　安装非常简单，只需要几分钟即可搞定；  ２．　查看你的电脑中有没有安装
+ Node.js Git. 如果您的电脑没有安装上诉的程序,可以点击访问安装;  好了,如果这些步骤都完成,您就可以安装 hexo 了;
+npm install -g hexo-cli
+建站 执行下面的命令,Hexo 会在文件夹中新建需要的文件
+hexo init folder hexo init ~Document/Hexo e.g. cd folder npm install
+完成这一步之后,您就可以在您的 hexo 文件夹下执行 hexo g hexo s 在浏览器中访问 http://localhost:4000,这是您就能看到 Hexo 的页面了,是不是很帅!'>
+<title>使用Hexo&#43;Coding搭建个人博客</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='使用Hexo&#43;Coding搭建个人博客'>
+<meta property='og:description' content='前言 之前博客挂在 github pages 上,回到新疆之后发现访问不了了.一琢磨就买个个主机使用 wordpress搭建了个个人博客,当使用 wordpress 实在是不能提起我的写作欲望,又麻溜的切换到了 hexo.在网上看到了coding 也提供了类似 github pages 的服务 coding-pages,瞬间觉得太好了.于是我又开始了 hexo 之旅;
+正文
+ 环境：　mac　os ＋　hexo3.0　＋ iTerm　＋ Mou　＋ next &#43; homebrew １．　安装非常简单，只需要几分钟即可搞定；  ２．　查看你的电脑中有没有安装
+ Node.js Git. 如果您的电脑没有安装上诉的程序,可以点击访问安装;  好了,如果这些步骤都完成,您就可以安装 hexo 了;
+npm install -g hexo-cli
+建站 执行下面的命令,Hexo 会在文件夹中新建需要的文件
+hexo init folder hexo init ~Document/Hexo e.g. cd folder npm install
+完成这一步之后,您就可以在您的 hexo 文件夹下执行 hexo g hexo s 在浏览器中访问 http://localhost:4000,这是您就能看到 Hexo 的页面了,是不是很帅!'>
+<meta property='og:url' content='http://47.99.84.217/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='巧篆' /><meta property='article:published_time' content='2018-04-17T15:10:01&#43;08:00'/><meta property='article:modified_time' content='2018-04-17T15:10:01&#43;08:00'/>
+<meta name="twitter:title" content="使用Hexo&#43;Coding搭建个人博客">
+<meta name="twitter:description" content="前言 之前博客挂在 github pages 上,回到新疆之后发现访问不了了.一琢磨就买个个主机使用 wordpress搭建了个个人博客,当使用 wordpress 实在是不能提起我的写作欲望,又麻溜的切换到了 hexo.在网上看到了coding 也提供了类似 github pages 的服务 coding-pages,瞬间觉得太好了.于是我又开始了 hexo 之旅;
+正文
+ 环境：　mac　os ＋　hexo3.0　＋ iTerm　＋ Mou　＋ next &#43; homebrew １．　安装非常简单，只需要几分钟即可搞定；  ２．　查看你的电脑中有没有安装
+ Node.js Git. 如果您的电脑没有安装上诉的程序,可以点击访问安装;  好了,如果这些步骤都完成,您就可以安装 hexo 了;
+npm install -g hexo-cli
+建站 执行下面的命令,Hexo 会在文件夹中新建需要的文件
+hexo init folder hexo init ~Document/Hexo e.g. cd folder npm install
+完成这一步之后,您就可以在您的 hexo 文件夹下执行 hexo g hexo s 在浏览器中访问 http://localhost:4000,这是您就能看到 Hexo 的页面了,是不是很帅!">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" >
+                软件开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用Hexo&#43;Coding搭建个人博客</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 17, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>前言 之前博客挂在 github pages 上,回到新疆之后发现访问不了了.一琢磨就买个个主机使用 wordpress搭建了个个人博客,当使用 wordpress 实在是不能提起我的写作欲望,又麻溜的切换到了 hexo.在网上看到了coding 也提供了类似 github pages 的服务 coding-pages,瞬间觉得太好了.于是我又开始了 hexo 之旅;</p>
+<!-- raw HTML omitted -->
+<p>正文</p>
+<ul>
+<li>环境：　mac　os ＋　hexo3.0　＋ iTerm　＋ Mou　＋ next + homebrew １．　安装非常简单，只需要几分钟即可搞定；</li>
+</ul>
+<p>２．　查看你的电脑中有没有安装</p>
+<ul>
+<li>Node.js</li>
+<li>Git.</li>
+<li>如果您的电脑没有安装上诉的程序,可以点击访问安装;</li>
+</ul>
+<p>好了,如果这些步骤都完成,您就可以安装 hexo 了;</p>
+<p><code>npm install -g hexo-cli</code></p>
+<p>建站 执行下面的命令,Hexo 会在文件夹中新建需要的文件</p>
+<p><code>hexo init folder hexo init</code>
+~Document/Hexo e.g. cd folder npm install</p>
+<p>完成这一步之后,您就可以在您的 hexo 文件夹下执行 <code>hexo g hexo s</code> 在浏览器中访问 <code>http://localhost:4000</code>,这是您就能看到 Hexo 的页面了,是不是很帅!</p>
+<p>轻轻松松就看到了效果,有没有觉得很有成就感;</p>
+<p>当然这个博客是存在于您的本地;</p>
+<p>先别着急,咱们看一下本地怎么配置,怎么配置主题;</p>
+<p>在 Hexo 文件夹下有一个<code>config.yml</code>,就叫他 站点配置文件吧;</p>
+<p>文件不大,加上注释空行也就八十多行;</p>
+<pre tabindex="0"><code> # Hexo Configuration ## Docs: http://hexo.io/docs/configuration.html ## Source: https://github.com/hexojs/hexo/ # Site 
+ 这下面的几项配置都很简单，你看我的博客就知道分别是什么意思 title: 两好三坏 #博客名 subtitle: 爱情,两好三坏 #副标题 description: 长恨人心不如水,等闲平地起波澜 #用于搜索，没有直观表现 author: 两好三坏 #作者 language: zh-CN #语言 timezone: #时区，此处不填写，hexo会以你目前电脑的时区为默认值 # URL 暂不配置，使用默认值 ## If your site is put in a subdirectory, set url as &#39;http://yoursite.com/child&#39; and root as &#39;/child/&#39; url: http://opiece.me #域名 root: / permalink: :year/:month/:day/:title/ permalink\_defaults: # Directory 暂不配置，使用默认值 source\_dir: source public\_dir: public tag\_dir: tags archive\_dir: archives category\_dir: categories code\_dir: downloads/code i18n\_dir: :lang skip\_render: # Writing 文章布局等，使用默认值 new\_post\_name: :title.md # File name of new posts default\_layout: post titlecase: false # Transform title into titlecase external\_link: true # Open external links in new tab filename\_case: 0 render\_drafts: false post\_asset\_folder: false relative\_link: false future: true highlight: enable: true line\_number: true tab\_replace: # Category Tag 暂不配置，使用默认值 default\_category: uncategorized category\_map: tag\_map: # Date / Time format 时间格式，使用默认值 ## Hexo uses Moment.js to parse and display date ## You can customize the date format as defined in ## http://momentjs.com/docs/#/displaying/format/ date\_format: YYYY-MM-DD time\_format: HH:mm:ss # Pagination ## Set per\_page to 0 to disable pagination per\_page: 10 #每页显示的文章数，0表示不分页 pagination\_dir: page # Extensions 插件配置，暂时不配置 ## Plugins: http://hexo.io/plugins/ ## Themes: http://hexo.io/themes/ theme: hexo-theme-next #使用的主题，即：themes文件夹下的主题文件夹名 feed: #之后配置rss会用，使用如下配置即可 type: path: limit: # Deployment 用于部署到github，之前已经配置过 ## Docs: http://hexo.io/docs/deployment.html deploy: type: git repo: https://git.coding.net/usename/usename.git #coding仓库地址 branch: coding-pages 再次运行 hexo,看看 hexo 比第一次打开之后顺眼多了,至少变成汉字了吧~哈哈哈哈哈哈 切换主题,主题配置文件 在iTerm进入到 Hexo 目录下,然后执行 git 下载 next 主题 git clone https://github.com/iissnan/hexo-theme-next.git 下载完成后会在 hexo 下的 theme 文件下,文件名夹名为 hexo-theme-next,在站点配置文件中将主题设置为 hexo-theme-next;再次运行 hexo s 查看效果,是不是跟开心啦~~~ 在hexo-theme-next中有\_config.yml,这是是主题的配置文件 你可以在Next 帮助文档查看如何个性化定制; 写作]
+
+*   你可以使用下列命令创建一个新的文章:
+*   hexo new \[layout\] &lt;title&gt; ,layout 是布局,title 是文章标题; 写作是使用 markdown语法,你可以在MarkDown 语法入门查看; 如果你需要标签功能和分类功能,在终端进入到您的hexo文件夹下 执行:
+*   hexo new page &#34;tags&#34; 创建标签页面,在hexo 文件夹下的 \\source\\tags\\index.md 中添加一个 type: “tags”
+* [[  hexo new page categories 创建分类页面,在hexo 文件夹下的 \\source\\categories\\index.md 中添加一个 type: “categories” 然后你也可以在hexo 文件夹下的 \\scaffolds\\post.md 中添加一个上 tags: categories: ,这个 post 是你每次书写的时候的一个模板;添加后每次创建行的文章就不用去在添加 tags 和 categories 了;]]
+
+部署 写作完成之后可以使用命令 hexo g生成静态页面.在后运行 hexo s查看效果; hexo d是部署到 coding 或者 github 上面,在站点配置文件中 deploy: type: git repo: https://git.coding.net/usename/usename.git #coding仓库地址 branch: coding-pages
+
+*   你可以先到 coding 上面去申请一个帐号,然后行创建一个与你 coding 用户名相同的项目;
+*   打开你刚才创建的项目,有一栏叫做 Page 服务,打开,然后选择部署;
+*   hexo d是提交到你这个 repo的仓库,如果你没有配置 ssh,那么可能就提示您输入您的从coding 上的用户名和密码来验证;
+*   如果宁蒗的输入,可以配置 ssh 公钥来进行配置点击查看配置 ssh 当您完成写作之后执行 hexo g &amp; hexo s,过上一会就可以访问您的文章了;
+
+绑定域名 如果您有自己的域名,你可以在在 dns 解析添加解析到 pages.coding.me;这样别人就可以通过域名访问您的博客了;
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%B7%A7%E7%AF%86/">巧篆</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/aria2%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Aria2的配置与使用;</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

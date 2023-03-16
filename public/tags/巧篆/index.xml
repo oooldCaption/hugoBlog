@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>巧篆 on 煎人寿</title>
+        <link>http://47.99.84.217/tags/%E5%B7%A7%E7%AF%86/</link>
+        <description>Recent content in 巧篆 on 煎人寿</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sat, 10 Nov 2018 09:04:33 +0800</lastBuildDate><atom:link href="http://47.99.84.217/tags/%E5%B7%A7%E7%AF%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Nas 安装人人影视</title>
+        <link>http://47.99.84.217/post/installrrshare/</link>
+        <pubDate>Sat, 10 Nov 2018 09:04:33 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/installrrshare/</guid>
+        <description>&lt;p&gt;喜欢看美剧和电影, 大二以后一直在人人看美剧和电影, 偶尔从射手下载字母来看生肉;好景不长,因为版权问题人人和射手被勒令关停, 我现在还依稀记得当年人人影视和射手字幕网被关停时候的心痛; 买了个 Nas , 发现 Docker 可以安装人人影视客户端, 我说着还得了, 咱赶紧弄一个呀; 网上研究了一下怎么安装, 花了十几分钟装好了; 美美哒,仿佛又回到了看美剧的时候啦; 哈哈哈&lt;/p&gt;
+&lt;h3 id=&#34;安装-docker&#34;&gt;安装 Docker&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装Docker, 在群辉的套件中心安装 Docker, 直接安装就好了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装人人影视&#34;&gt;安装人人影视&lt;/h3&gt;
+&lt;p&gt;打开 Docker&lt;br&gt;
+&lt;img src=&#34;https://img.52smile.vip/2018-11-10-014820.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 选择注册表, 输入&lt;code&gt;auska&lt;/code&gt;, 下载安装docker-rrshareweb 下载完成后对容器进行设置, 勾选&lt;code&gt;使用最高权限执行容器&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://img.52smile.vip/2018-11-10-014956.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 fileStation docker 文件夹中新建子文件夹, eg:&lt;code&gt;rrshare&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;给 人人影视容器 设置卷,点击添加文件夹, 选择刚刚创建的 rrshare; 然后选择一个文件夹用来存放下载后的资源, 我选择的是 video&lt;/li&gt;
+&lt;li&gt;设置端口, 可以默认, 也可以自定义一个&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://52smile.vip/wp-content/uploads/2018/11/15418148858533.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;￼ &lt;img src=&#34;https://img.52smile.vip/2018-11-10-015148.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; &lt;img src=&#34;https://52smile.vip/wp-content/uploads/2018/11/15418149291359.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;￼&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;设置环境改变量&lt;br&gt;
+通过 ssh 登录 Nas, 在终端执行 cat 命令获取UGID 和 PGID, 选择 admin的就可以1204,100&lt;br&gt;
+&lt;img src=&#34;https://img.52smile.vip/2018-11-10-015913.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; &lt;img src=&#34;https://52smile.vip/wp-content/uploads/2018/11/15418155867170.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;￼&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;到这就完成安装了,不要忘记点击&lt;strong&gt;应用&lt;/strong&gt; 然后在浏览器中输入你的群辉 IP, 端口号是刚才设置的端口号; 如果需要解锁, 默认解锁码是123456; tip: 如果不能下载,先停止容器类, 将 P/UGID 设置成 0;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>给你的Mac搭建开发环境</title>
+        <link>http://47.99.84.217/post/macworkspace/</link>
+        <pubDate>Sun, 21 Oct 2018 20:40:18 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/macworkspace/</guid>
+        <description>&lt;p&gt;本文主要讲述 Mac 一些常用配置,优秀的软件,常见实用技巧&lt;/p&gt;
+&lt;h1 id=&#34;系统设置&#34;&gt;系统设置&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;启用触摸板右键;系统设置 -&amp;gt; 触摸板 -&amp;gt;光标与点按 -&amp;gt; 辅助点按; 可以选择轻点右下角或者双指头触摸&lt;/li&gt;
+&lt;li&gt;启用触摸板三指拖移; 系统设置 -&amp;gt; 辅助功能 -&amp;gt; 鼠标与触控板 -&amp;gt; 触控板设定&lt;/li&gt;
+&lt;li&gt;苹果的 F1 ~ F12是常用的影音娱乐功能, 对于码农来讲,会更习惯将 F1~F12 设定为功能按键, 你可以打开你的终端 输入以下代码 &lt;code&gt;defaults write -globalDomain com.apple.keyboard.fnState -int 1&lt;/code&gt; 将 F1~F12设定为IDE功能按钮&lt;/li&gt;
+&lt;li&gt;我们在安装一些破解软件的时候, 有时候会提示&lt;strong&gt;无法打开已损坏的安装包&lt;/strong&gt;; 命令行执行&lt;code&gt;sudo spctl --master-disable&lt;/code&gt; ,关闭验证&lt;/li&gt;
+&lt;li&gt;Dock 栏优化, 移除不常用的 app, 打开自动隐藏 dock 快捷键 &lt;code&gt;command + option +D&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;设置触发角,出发常用的锁屏,开启屏保等功能; 系统设置-&amp;gt;桌面与屏幕保护程序-&amp;gt;桌面保护程序-&amp;gt;触发角; 设定后光标移动到屏幕四个角,会触发不同的操作;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;扩展优化&#34;&gt;扩展优化&lt;/h1&gt;
+&lt;p&gt;mac 系统有一个很强大的预览工具; 选中文件后按空格可以预览选中文件,支持很多格式,但是如果我们想获取&lt;strong&gt;更好的阅读体验&lt;/strong&gt;和&lt;strong&gt;更多的文件支持类型&lt;/strong&gt;,我们就需要安装一些扩展; 在安装扩展之前需要安装一个超级强大的 brew , brew 是 mac 系统上的一个包管理器,就像 linux 上的 yum 和 apt-get ;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!--在终端执行下面这个语句进行安装--&amp;gt;
+/usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装完成之后在终端输入 &lt;code&gt;brew -h&lt;/code&gt; , 可以查看 brew 的帮助文档; brew 安装完成以后就可以通过 brew 安装一些常用的插件和软件包; 安装上面说到的预览扩张工具,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;qlcolorcode ,这是一个代码高亮的插件，效果如图所示：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew cask install qlcolorcode
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-21-131556.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;qlcolorcode&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;qlmarkdown, 这个插件能让我们预览 markdown 文件的渲染效果:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew cask install qlmarkdown
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-21-131813.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;qlstephen&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;* qlstephen, 这个插件能让我们预览没有后缀的文本文件，效果如图所示：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew cask install qlstephen
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-21-131944.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;brew cask install qlstephen&#34;
+	
+	
+&gt; * quicklook-json, 这个插件也很容易理解，提供对 JSON 文件的格式化和高亮支持：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew cask install quicklook-json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-21-132017.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 以上是和程序员相关的常用插件，还有一些设计师可能用到的插件，可以点击去&lt;a class=&#34;link&#34; href=&#34;https://github.com/sindresorhus/quick-look-plugins&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;quick-look-plugins&lt;/a&gt;查看更多可用扩展;&lt;/p&gt;
+&lt;h1 id=&#34;终端替换&#34;&gt;终端替换&lt;/h1&gt;
+&lt;p&gt;上面提到了一个个工具叫做终端, apple 提供的终端工具并不是那么好用, &lt;a class=&#34;link&#34; href=&#34;https://www.iterm2.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;iTerm2&lt;/a&gt;是Apple终端的开源替代品。它具有高度可定制性，并具有许多有用的功能。 你可以使用 &lt;code&gt;brew cask install iterm2&lt;/code&gt;,来安装,也可以在官网下载; 它是开源免费的; iterm 有一个很好用的功能, 他可以悬停到最上层; &lt;img src=&#34;https://img.52smile.vip/2018-10-21-135026.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 打开iTerm设置 &lt;img src=&#34;https://img.52smile.vip/2018-10-21-134507.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 配置快捷键 &lt;img src=&#34;https://img.52smile.vip/2018-10-21-134623.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Frp 内网穿透,把你的 NAS 放到公网上</title>
+        <link>http://47.99.84.217/post/frpnas/</link>
+        <pubDate>Mon, 08 Oct 2018 10:15:53 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/frpnas/</guid>
+        <description>&lt;p&gt;前段时间觉得自己的硬盘不够用,而且有一些远程访问资源和远程下载任务的需求; 跟女朋友商量一下, 批了资金买了一个群辉 NAS; 因为家里的网络条件没有公网 ip, 光猫拨号上网, 群辉自带的 quickconnect 连接速度太慢了; 趁着国庆在家就研究了一下内网穿透的技术;想通过内网穿透来访问家里的群辉&lt;/p&gt;
+&lt;h3 id=&#34;关于内网穿透&#34;&gt;关于内网穿透&lt;/h3&gt;
+&lt;p&gt;本来打算用路由器做内网穿透,然后给 nas 做端口转发, 但是华硕 AC66U-B1刷了梅林之后打游戏老掉包, 于是就在 nas 上做了内网转发; 内网穿透的服务有好几种: eg: * 花生壳 &amp;mdash;&amp;ndash;&amp;gt; 死贵 * nat123 &amp;mdash;&amp;ndash;&amp;gt; 没用过 * ngork &amp;mdash;&amp;ndash;&amp;gt; 刚开始用的这个, 但是找了好几个帖子,提供的客户端的配置文件和应用程序都不能下载了(不想花钱); 放弃了; * frp &amp;mdash;&amp;ndash;&amp;gt; 当前使用的 * 还有一些淘宝上的盒子, 都比较贵 选择 frp 是因为之前购买的 vps 除了 ss 服务没有其他业务运行, 放着也是浪费, 而且测了一下连接速度很快,不得不提我这个 vps速度真的很快, &lt;a class=&#34;link&#34; href=&#34;https://www.vultr.com/?ref=7205024&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;vultr的vps&lt;/a&gt;加了 bbr 之后在线看4K无压力的 ;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;需要准备的材料&#34;&gt;需要准备的材料&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;一台有独立 IP 的服务器 (例如:&lt;a class=&#34;link&#34; href=&#34;https://www.vultr.com/?ref=7205024&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;vps&lt;/a&gt;, 阿里&lt;a class=&#34;link&#34; href=&#34;https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=whtofl6r&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ECS&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;一台 NAS 或者需要做内网穿透的客户端&lt;/li&gt;
+&lt;li&gt;frp 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;h4 id=&#34;服务器端配置&#34;&gt;服务器端配置&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;登录到服务器,选择适合自己服务器的文件下载, &lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;eg: 我的服务器是 arm64, 系统版本是 linux-centOS
+wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_arm64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载后完成解压&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tar -xzf  frp_0.21.0_linux_arm64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入到服务器 frp 目录,并删除无用文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd frp_0.21.0_linux_arm64
+//frpc 开头的是客户端的配置文件和资源, 服务端可删除
+//frps 开头的是服务端的配置文件和资源, 客户端可删除
+rm -f frpc.ini frpc_full.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑服务端配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[common]
+bind_port = 7000
+vhost_http_port = 8080
+dashboard_port = 7500
+dashboard_user = you&amp;#39;s name
+dashboard_pwd = you&amp;#39;s psw
+max_pool_count = 5
+authentication_timeout = 900
+subdomain_host = lekee.cc
+[ssh]
+listen_port = 6000
+auth_token = you&amp;#39;s token,(客户端的保持一致)
+/**
+[common] 必填的
+bind_port Frp 服务端口（可自定义）
+vhost_http_port http 访问端口（可自定义）
+dashboard_port dashboard 界面端口
+dashboard_user 登录 dashboard 用户名
+dashboard_pwd 登录 dashboard 密码
+max_pool_count 最大连接池数量
+authentication_timeout 超时验证时间
+subdomain_host 自定义二级域名
+[ssh]
+listen_port ssh 访问端口
+auth_token 用户身份认证
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果需要更详细的,可以参考&lt;a class=&#34;link&#34; href=&#34;https://github.com/fatedier/frp/blob/master/README_zh.md#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;保存配置文件, 然后运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./frps -c ./frps.ini
+也可以通过 screen 或者 nohup 命令进行后台运行
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;客户端配置&#34;&gt;客户端配置&lt;/h4&gt;
+&lt;p&gt;客户端配置与服务端很相似, 区别在于配置文件的不同; frp 客户端支持 windows, Mac, 路由器,和linux 内核设备;群辉 nas 是基于 linux 的, 可以使用 linux 版本的 frp 客户端;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;开启 shh 登录,控制面板打开终端机和 SNMP, 勾选启动 ssh ; &lt;img src=&#34;https://img.52smile.vip/2018-10-08-030049.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登录到 nas ,下载 frp&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;eg:
+ssh xiaoxiaosu@192.168.xxx.xxx
+ssh user@ipAdd
+//下载
+wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_arm64.tar.gz
+//解压
+tar -xzf  frp_0.21.0_linux_arm64.tar.gz
+//删除无用配置文件
+rm -f frps.ini frps_full.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑客户端配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vi frpc.ini
+[common]
+server_addr = xxx.xxx.xxx.xxx(服务器的 ip)
+server_port = 7000
+auth_token = password
+pool_count = 1
+[ssh]
+type = tcp
+local_ip = xxx.xxx.xxx.xxx(NAS 的局域网ip)
+local_port = 22
+remote_port = 6000
+[nas]
+type = http
+local_port = 5000
+subdomain = nas
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;[common] 必填的 server_addr &amp;mdash;&amp;ndash;&amp;gt;服务器端公网 server_port &amp;mdash;&amp;ndash;&amp;gt;frp 服务端口，和服务器端 bind_port 一致 auth_token &amp;mdash;&amp;ndash;&amp;gt; 和前面服务器端 [ssh] auth_token 一致 pool_count &amp;mdash;&amp;ndash;&amp;gt;连接池数量 [ssh] type &amp;mdash;&amp;ndash;&amp;gt; 服务类型（tcp、http、https、udp） local_ip &amp;mdash;&amp;ndash;&amp;gt; NAS 本地局域网内网 ip local_port &amp;mdash;&amp;ndash;&amp;gt; NAS 开启 ssh 服务端口号，默认 22 remote_port &amp;mdash;&amp;ndash;&amp;gt; 服务器端 ssh 端口，和服务器端 [ssh] listen_port 配置一致 [nas] NAS 管理界面 subdomain &amp;mdash;&amp;ndash;&amp;gt; 二级域名 nas.52smile.vip 访问 NAS type = http &amp;mdash;&amp;ndash;&amp;gt; 服务类型为 http local_port &amp;mdash;&amp;ndash;&amp;gt; NAS 默认端口 5000 [web] NAS web Station 服务，没用可以不用设置 type = http &amp;mdash;&amp;ndash;&amp;gt; 类型为 http local_port = 80 &amp;mdash;&amp;ndash;&amp;gt; NAS web 服务端口 subdomain = web &amp;mdash;&amp;ndash;&amp;gt; 二级域名 web.52smile.vip tip: 使用自定义二级域名的时候，域名 52smile.vip 要解析到服务器 IP&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;保存配置文件, 然后运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./frpc -c ./frpc.ini
+也可以通过 screen 或者 nohup 命令进行后台运行
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-10-08-031701.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;到此就完成了&#34;&gt;到此就完成了;&lt;/h3&gt;
+&lt;p&gt;我测试了一下在线观看视频, 包括下载文件的速度.都是可以的.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>成吨节约您时间的效率神器--Alfred</title>
+        <link>http://47.99.84.217/post/usealfred/</link>
+        <pubDate>Tue, 18 Sep 2018 19:47:24 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/usealfred/</guid>
+        <description>&lt;p&gt;Alfred, 我叫它小红帽; 是 Mac 平台上一个能够大幅提升生产力的效率工具,通过强大的workflow 机制,能够帮助我们快速打开网页、快速进行自定义搜索、查看剪贴板历史、快速查询单词等一些基础功能,通过自己去编辑脚本,可以实现更多的功能,解决输入输出的痛点，极大的减少了重复的操作,减少不同程序之间的切换步骤,成吨的节约时间。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-114716.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alfred&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;先简单介绍一下常见的使用场景: 平常我们搜索关键词需要打开浏览器,然后输入关键词;执行搜索,但是用小红帽,配置好以后输入想要搜索关键词,然后按 enter 就好啦~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-2018-09-18%2020.06.41.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;search&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;有时候突然忘记一个单词的中文意思是什么，先移动下鼠标，打开词典工具，然后输入单词,但是用小红帽,我们通过一个 关键词唤起,然后输入想要查询的单词, enter 就出来了; 还可以通过 shift 键来预览其他释义;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-2018-09-18%2020.08.44.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;translate&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;当然这只是一丢丢的功能;据统计大约扩展出来的 workflow 至少有500+,有热心网友列了一个&lt;a class=&#34;link&#34; href=&#34;http://www.alfredworkflow.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;表格&lt;/a&gt;来管理; 你可以下载并免费使用其中任何一个 Workflow，甚至还可以基于一些不错的 Workflow 加入自己的想法，改造成属于自己的,符合自己工作习惯的 Workflow（前提是已解锁 Powerpack ）。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;如何安装&#34;&gt;如何安装&lt;/h3&gt;
+&lt;p&gt;首先可以从&lt;a class=&#34;link&#34; href=&#34;https://www.alfredapp.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Alfred 官网&lt;/a&gt;自行下载安装，免费用户可以使用除 Workflow 以外的其它功能，如需使用 Workflow，则需要购Powerpack。推荐大家使用正版 列出常用的一些功能:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;应用搜索 输入关键词,小红帽自动罗列包含关键词的 application; 搜索结果列出后按住 command 键,会出现不同的功能 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-123522.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件&amp;amp;目录搜索 输入空格或者 find开启命令,然后输入想要搜索的内容,快速定位到搜索文件;输入 enter 可直接打开文件或者文件夹; 搜索结果列出后按住 command 键,会出现不同的功能 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-123722.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文本搜索 输入 in 命令，以及待搜索的文本，列出磁盘中包含该文本的相关文件，可以快速定位文件，相当于简易的终端 find 命令。 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-124113.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;img src=&#34;http://52smile.vip/wp-content/uploads/2018/09/15372745411544.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;-w601&#34;
+	
+	
+&gt;￼&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算器 可以计算简单的,复杂的运算 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-124245.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-124423.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;词典搜索 强烈推荐使用有道词典的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/wensonsmith/YoudaoTranslate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;workflow&lt;/a&gt;; &lt;img src=&#34;https://img.52smile.vip/2018-09-18-124524.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 可以自己去申请有道官方的秘钥,替换使用;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;剪切板管理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在小红帽偏好设置(command+,)中打开 features,点开 Clipboard, 可以看到如下的图片; viewerKeyboard 是命令快捷键,在小红帽中输入可快速唤起建起版管理,也可以自定义唤起命令; clearLeyword 是清除剪切板记录,同上,也可以自定义命令关键词;&lt;/li&gt;
+&lt;li&gt;这样能极大地提升工作效率,避免在两个应用中来回切换的操作;&lt;/li&gt;
+&lt;li&gt;不过我个人很少使用小红帽附带的剪切板,一直都在使用 &lt;a class=&#34;link&#34; href=&#34;https://pasteapp.me/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;paste&lt;/a&gt;,颜值高,谁用谁知道; &lt;img src=&#34;https://img.52smile.vip/2018-09-18-124836.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-124828.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;快递单号查询 输入快递单号: biubiubiu~ &lt;img src=&#34;https://img.52smile.vip/2018-09-18-125700.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ip查询 输入 &lt;code&gt;ip&lt;/code&gt; ,直接显示; 再也不用 &lt;code&gt;ifconf&lt;/code&gt; 了 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-125758.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;shell 命令 输入 &lt;code&gt;&amp;gt;&lt;/code&gt;,然后可以直接输入 &lt;code&gt;shell&lt;/code&gt;命令; &lt;img src=&#34;https://img.52smile.vip/2018-09-18-125919.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;img src=&#34;https://img.52smile.vip/2018-09-18-130016.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 有些人可能不喜欢自带的终端,如果是使用&lt;code&gt;item2&lt;/code&gt;; 可以通过自定的的脚本去切换默认的终端&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;on alfred_script(q)
+tell application &amp;#34;iTerm&amp;#34;
+    set _length to count window
+if _length = 0 then
+    create window with default profile
+end if
+set aa to (get miniaturized of current window)
+if aa then
+    set miniaturized of current window to false
+end if
+set bb to (get visible of current window)
+if bb is false then
+    set visible of current window to true
+end if
+set cc to frontmost
+if cc is false then
+    activate
+end if
+    (*if _length = 0 then*)
+        set theResult to current tab of current window
+    (*else
+        set theResult to (create tab with default profile) of current window
+    end if*)
+    write session of theResult text q
+end tell
+end alfred_script
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;系统命令 &lt;img src=&#34;https://img.52smile.vip/2018-09-18-130201.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt; 常见命令如下: &lt;img src=&#34;https://img.52smile.vip/2018-09-18-130246.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;#END 这些常用的一些快捷操作会大大提升我们平时工作的效率; 前人栽树,后人乘凉;这次介绍的大多都是别人写好的 workflow, 但是对于大多数人来说，能做出自己的一个 WorkFlow 才是一件令人激动的事情。其实做出简单的 WorkFlow 是没啥问题,但如果你想实现一些复杂点的功能，那么你可能需要懂一门脚本语言。 今天简单的介绍一下简单又常用的操作, 下次我打算写一个从零开始打造一个 workflow, 自定义一个属于你自己的 workflow;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>VI编辑器</title>
+        <link>http://47.99.84.217/post/vi%E7%BC%96%E8%BE%91%E5%99%A8/</link>
+        <pubDate>Tue, 18 Sep 2018 18:08:26 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/vi%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
+        <description>&lt;p&gt;vi(vim)是上Linux非常常用的代码编辑器，很多Linux发行版都默认安装了vi(vim)。vi(vim)命令繁多但是如果使用灵活之后将会大大提高效率。vi是“visual interface”的缩写，vim是vi IMproved(增强版的vi)。在一般的系统管理维护中vi就够用，如果想使用代码加亮的话可以使用vim&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;基本上vi可以分为三种状态，分别是命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode），各模式的功能区分如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;命令模式（command mode） 控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入插入模式、底行模式下。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;插入模式（Insert mode） 只有在插入模式下，才可以做文字输入，按ESC键可回到命令模式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;底行模式（last line mode） 将文件保存或退出vi，也可以设置编辑环境，如寻找字符串、列出行号。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不过一般我们在使用时把vi简化成两个模式，就是将底行模式也算入命令模式。&lt;/p&gt;
+&lt;h3 id=&#34;打开保存关闭文件&#34;&gt;打开/保存/关闭文件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;vi filename //打开filename 文件&lt;/li&gt;
+&lt;li&gt;:w //保存文件&lt;/li&gt;
+&lt;li&gt;:w filename //保存文件到 filename 文件&lt;/li&gt;
+&lt;li&gt;:q //推出编辑器, 且不保存&lt;/li&gt;
+&lt;li&gt;:q! //推出编辑器, 且不保存&lt;/li&gt;
+&lt;li&gt;wq //推出编辑器. 且保存文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;插入文本或行命令模式下使用-执行后进入插入模式-esc-退出插入模式&#34;&gt;插入文本或行(命令模式下使用, 执行后进入插入模式, esc 退出插入模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;a //在当前光标位置的右边添加文本&lt;/li&gt;
+&lt;li&gt;i //在当前光标位置的左边添加文本&lt;/li&gt;
+&lt;li&gt;A //在当前行的末尾位置添加文本&lt;/li&gt;
+&lt;li&gt;I //在当前行的开始处添加文本(非空字符的行首)&lt;/li&gt;
+&lt;li&gt;O //在当前行的上面新建一行&lt;/li&gt;
+&lt;li&gt;o //在当前行的下面新建一行&lt;/li&gt;
+&lt;li&gt;R //替换(覆盖)当前光标位置及后面的若干文本&lt;/li&gt;
+&lt;li&gt;J //合并光标所在行及下一行为一行(依然在命令模式)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;移动光标命令模式下&#34;&gt;移动光标(命令模式下)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;vi可以直接用键盘上的光标来上下左右移动，但正规的vi是用小写英文字母 h 、 j 、 k 、 l ，分别控制光标左、下、上、右移一格。&lt;/li&gt;
+&lt;li&gt;按 Ctrl+b ：屏幕往后移动一页。&lt;/li&gt;
+&lt;li&gt;按 Ctrl+f ：屏幕往前移动一页。&lt;/li&gt;
+&lt;li&gt;按 Ctrl+u ：屏幕往后移动半页。&lt;/li&gt;
+&lt;li&gt;按 Ctrl+d ：屏幕往前移动半页。&lt;/li&gt;
+&lt;li&gt;按数字 0 ：移到当前行的开头。&lt;/li&gt;
+&lt;li&gt;按 G ：移动到文章的最后。&lt;/li&gt;
+&lt;li&gt;按 $ ：移动到光标所在行的行尾。&lt;/li&gt;
+&lt;li&gt;按 ^ ：移动到光标所在行的行首。&lt;/li&gt;
+&lt;li&gt;按 w ：光标跳到下个字的开头。&lt;/li&gt;
+&lt;li&gt;按 e ：光标跳到下个字的字尾。&lt;/li&gt;
+&lt;li&gt;按 b ：光标回到上个字的开头。&lt;/li&gt;
+&lt;li&gt;按 #l ：光标往后移的第#个位置，如：5l,56l .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;删除恢复字符或者行命令模式下&#34;&gt;删除,恢复字符或者行(命令模式下)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;x ：每按一次，删除光标所在位置的后面一个字符。&lt;/li&gt;
+&lt;li&gt;#x ：删除光标所在位置的后面#个字符，例如， 6x 表示删除光标所在位置的后面6个字符。&lt;/li&gt;
+&lt;li&gt;X ：每按一次，删除光标所在位置的前面一个字符。&lt;/li&gt;
+&lt;li&gt;#X ：删除光标所在位置的前面#个字符，例如， 20X 表示删除光标所在位置的前面20个字符。&lt;/li&gt;
+&lt;li&gt;dd ：删除光标所在行。&lt;/li&gt;
+&lt;li&gt;#dd ：从光标所在行开始删除#行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;搜索-命令模式&#34;&gt;搜索 (命令模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;/xiaosu //向光标下搜索xiaosu字符串&lt;/li&gt;
+&lt;li&gt;?xiaosu //向光标上搜索xiaosu字符串&lt;/li&gt;
+&lt;li&gt;n //向下搜索前一个搜素动作&lt;/li&gt;
+&lt;li&gt;N //向上搜索前一个搜索动作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;跳转-命令模式&#34;&gt;跳转 (命令模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;n+ //向下跳n行&lt;/li&gt;
+&lt;li&gt;n- //向上跳n行&lt;/li&gt;
+&lt;li&gt;nG //跳到行号为n的行&lt;/li&gt;
+&lt;li&gt;G //跳至文件的底部&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;设置行号-命令模式&#34;&gt;设置行号 (命令模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;:set nu //显示行号&lt;/li&gt;
+&lt;li&gt;:set nonu //取消显示行号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;复制粘贴-命令模式&#34;&gt;复制/粘贴 (命令模式)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;yy //将当前行复制到缓存区，也可以用 “ayy 复制，”a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务。&lt;/li&gt;
+&lt;li&gt;nyy //将当前行向下n行复制到缓冲区，也可以用 “anyy 复制，”a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务。&lt;/li&gt;
+&lt;li&gt;yw //复制从光标开始到词尾的字符。&lt;/li&gt;
+&lt;li&gt;nyw //复制从光标开始的n个单词。&lt;/li&gt;
+&lt;li&gt;y^ //复制从光标到行首的内容。&lt;/li&gt;
+&lt;li&gt;y$ //复制从光标到行尾的内容。&lt;/li&gt;
+&lt;li&gt;p //粘贴剪切板里的内容在光标后，如果使用了前面的自定义缓冲区，建议使用”ap 进行粘贴。&lt;/li&gt;
+&lt;li&gt;P //粘贴剪切板里的内容在光标前，如果使用了前面的自定义缓冲区，建议使用”aP 进行粘贴。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;替换vi命令模式下使用&#34;&gt;替换(vi命令模式下使用)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;:s/old/new //用new替换行中首次出现的old&lt;/li&gt;
+&lt;li&gt;:s/old/new/g //用new替换行中所有的old&lt;/li&gt;
+&lt;li&gt;:n,m s/old/new/g //用new替换从n到m行里所有的old&lt;/li&gt;
+&lt;li&gt;:%s/old/new/g //用new替换当前文件里所有的old&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>mac终端命令</title>
+        <link>http://47.99.84.217/post/mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Tue, 17 Apr 2018 15:18:37 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;清除当前输入行 control + u&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除当前输入命令最后一个单词 control + w&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;跳转至行首/行尾 control + a/e&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;清除屏幕 control + l or clear&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建窗口终端标签 cmd + t&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;基本命令 :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;列出文件 ls 参数 目录名&lt;br&gt;
+eg:看看驱动目录下有什么:ls /System/Library/Extensions 参数: -w 显示中文， -l 详细信息， -a 包括隐藏文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;转换目录 cd&lt;br&gt;
+eg：想到驱动目录下溜达一圈 cd /System/Library/Extensions&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立新目录 mkdir 目录名 eg： 在驱动目录下建一个备份目录backup mkdir /System/Library/Extensions/backup 在桌面上建一个备份目录 backup mkdir /User/用户名/Desktop/backup&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拷贝文件 cp 参数 源文件 目标文件&lt;br&gt;
+eg： 将text.txt 拷贝到驱动目录中&lt;br&gt;
+cp -R /User/用户名/Desktop/text.txt /System/Library/Extensions 参数R表示对目录进行递归操作，kext在图形界面下看起来是个文件，实际上是个文件夹。 把驱动目录下的所有文件备份到桌面backup cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除文件 rm 参数 文件&lt;br&gt;
+eg： 删除驱动的缓存 rm -rf /System/Library/Extensions.kextcache&lt;br&gt;
+rm -rf /System/Library/Extensions.mkext 参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;移动文件 mv 文件&lt;br&gt;
+eg： 把AppleHDA.Kext 移到桌面&lt;br&gt;
+mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop 想把AppleHDA.Kext 移到备份目录中 mv /System/Library/Extensions/AppleHDA.kext /System/Library/Extensions/backup&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文本编辑 nano 文件名&lt;br&gt;
+eg ： 编辑 Info.plist&lt;br&gt;
+nano /System/Library/Extensions/Natit.kext/Info.plist vim 文件名 eg: 编辑 Info.plist&lt;br&gt;
+vim /System/Library/Extensions/Natit.kext/Info.plist&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目录操作: 命令名 功能描述 使用举例 mkdir 创建一个目录 mkdir dirname rmdir 删除一个目录 rmdir dirname mvdir 移动目录 mv dirname1 dirname2 cd 改变当前目录 cd desktop pwd 显示当前路径 psw ls 显示当前目录内容 ls 文件操作: 命令名 功能描述 使用举例 cat 显示或者链接文件 cat filename od 显示费文本的内容 od -c filename cp 复制 cp path path rm 删除文件 rm test.txt mv 移动文件 mv test.txt touch 创建文件 touch readme.md file 显示文件类型 file filename&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>使用Hexo&#43;Coding搭建个人博客</title>
+        <link>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Tue, 17 Apr 2018 15:10:01 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;p&gt;前言 之前博客挂在 github pages 上,回到新疆之后发现访问不了了.一琢磨就买个个主机使用 wordpress搭建了个个人博客,当使用 wordpress 实在是不能提起我的写作欲望,又麻溜的切换到了 hexo.在网上看到了coding 也提供了类似 github pages 的服务 coding-pages,瞬间觉得太好了.于是我又开始了 hexo 之旅;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;正文&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;环境：　mac　os ＋　hexo3.0　＋ iTerm　＋ Mou　＋ next + homebrew １．　安装非常简单，只需要几分钟即可搞定；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;２．　查看你的电脑中有没有安装&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Node.js&lt;/li&gt;
+&lt;li&gt;Git.&lt;/li&gt;
+&lt;li&gt;如果您的电脑没有安装上诉的程序,可以点击访问安装;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;好了,如果这些步骤都完成,您就可以安装 hexo 了;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;建站 执行下面的命令,Hexo 会在文件夹中新建需要的文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hexo init folder hexo init&lt;/code&gt;
+~Document/Hexo e.g. cd folder npm install&lt;/p&gt;
+&lt;p&gt;完成这一步之后,您就可以在您的 hexo 文件夹下执行 &lt;code&gt;hexo g hexo s&lt;/code&gt; 在浏览器中访问 &lt;code&gt;http://localhost:4000&lt;/code&gt;,这是您就能看到 Hexo 的页面了,是不是很帅!&lt;/p&gt;
+&lt;p&gt;轻轻松松就看到了效果,有没有觉得很有成就感;&lt;/p&gt;
+&lt;p&gt;当然这个博客是存在于您的本地;&lt;/p&gt;
+&lt;p&gt;先别着急,咱们看一下本地怎么配置,怎么配置主题;&lt;/p&gt;
+&lt;p&gt;在 Hexo 文件夹下有一个&lt;code&gt;config.yml&lt;/code&gt;,就叫他 站点配置文件吧;&lt;/p&gt;
+&lt;p&gt;文件不大,加上注释空行也就八十多行;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; # Hexo Configuration ## Docs: http://hexo.io/docs/configuration.html ## Source: https://github.com/hexojs/hexo/ # Site 
+ 这下面的几项配置都很简单，你看我的博客就知道分别是什么意思 title: 两好三坏 #博客名 subtitle: 爱情,两好三坏 #副标题 description: 长恨人心不如水,等闲平地起波澜 #用于搜索，没有直观表现 author: 两好三坏 #作者 language: zh-CN #语言 timezone: #时区，此处不填写，hexo会以你目前电脑的时区为默认值 # URL 暂不配置，使用默认值 ## If your site is put in a subdirectory, set url as &amp;#39;http://yoursite.com/child&amp;#39; and root as &amp;#39;/child/&amp;#39; url: http://opiece.me #域名 root: / permalink: :year/:month/:day/:title/ permalink\_defaults: # Directory 暂不配置，使用默认值 source\_dir: source public\_dir: public tag\_dir: tags archive\_dir: archives category\_dir: categories code\_dir: downloads/code i18n\_dir: :lang skip\_render: # Writing 文章布局等，使用默认值 new\_post\_name: :title.md # File name of new posts default\_layout: post titlecase: false # Transform title into titlecase external\_link: true # Open external links in new tab filename\_case: 0 render\_drafts: false post\_asset\_folder: false relative\_link: false future: true highlight: enable: true line\_number: true tab\_replace: # Category Tag 暂不配置，使用默认值 default\_category: uncategorized category\_map: tag\_map: # Date / Time format 时间格式，使用默认值 ## Hexo uses Moment.js to parse and display date ## You can customize the date format as defined in ## http://momentjs.com/docs/#/displaying/format/ date\_format: YYYY-MM-DD time\_format: HH:mm:ss # Pagination ## Set per\_page to 0 to disable pagination per\_page: 10 #每页显示的文章数，0表示不分页 pagination\_dir: page # Extensions 插件配置，暂时不配置 ## Plugins: http://hexo.io/plugins/ ## Themes: http://hexo.io/themes/ theme: hexo-theme-next #使用的主题，即：themes文件夹下的主题文件夹名 feed: #之后配置rss会用，使用如下配置即可 type: path: limit: # Deployment 用于部署到github，之前已经配置过 ## Docs: http://hexo.io/docs/deployment.html deploy: type: git repo: https://git.coding.net/usename/usename.git #coding仓库地址 branch: coding-pages 再次运行 hexo,看看 hexo 比第一次打开之后顺眼多了,至少变成汉字了吧~哈哈哈哈哈哈 切换主题,主题配置文件 在iTerm进入到 Hexo 目录下,然后执行 git 下载 next 主题 git clone https://github.com/iissnan/hexo-theme-next.git 下载完成后会在 hexo 下的 theme 文件下,文件名夹名为 hexo-theme-next,在站点配置文件中将主题设置为 hexo-theme-next;再次运行 hexo s 查看效果,是不是跟开心啦~~~ 在hexo-theme-next中有\_config.yml,这是是主题的配置文件 你可以在Next 帮助文档查看如何个性化定制; 写作]
+
+*   你可以使用下列命令创建一个新的文章:
+*   hexo new \[layout\] &amp;lt;title&amp;gt; ,layout 是布局,title 是文章标题; 写作是使用 markdown语法,你可以在MarkDown 语法入门查看; 如果你需要标签功能和分类功能,在终端进入到您的hexo文件夹下 执行:
+*   hexo new page &amp;#34;tags&amp;#34; 创建标签页面,在hexo 文件夹下的 \\source\\tags\\index.md 中添加一个 type: “tags”
+* [[  hexo new page categories 创建分类页面,在hexo 文件夹下的 \\source\\categories\\index.md 中添加一个 type: “categories” 然后你也可以在hexo 文件夹下的 \\scaffolds\\post.md 中添加一个上 tags: categories: ,这个 post 是你每次书写的时候的一个模板;添加后每次创建行的文章就不用去在添加 tags 和 categories 了;]]
+
+部署 写作完成之后可以使用命令 hexo g生成静态页面.在后运行 hexo s查看效果; hexo d是部署到 coding 或者 github 上面,在站点配置文件中 deploy: type: git repo: https://git.coding.net/usename/usename.git #coding仓库地址 branch: coding-pages
+
+*   你可以先到 coding 上面去申请一个帐号,然后行创建一个与你 coding 用户名相同的项目;
+*   打开你刚才创建的项目,有一栏叫做 Page 服务,打开,然后选择部署;
+*   hexo d是提交到你这个 repo的仓库,如果你没有配置 ssh,那么可能就提示您输入您的从coding 上的用户名和密码来验证;
+*   如果宁蒗的输入,可以配置 ssh 公钥来进行配置点击查看配置 ssh 当您完成写作之后执行 hexo g &amp;amp; hexo s,过上一会就可以访问您的文章了;
+
+绑定域名 如果您有自己的域名,你可以在在 dns 解析添加解析到 pages.coding.me;这样别人就可以通过域名访问您的博客了;
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>Aria2的配置与使用;</title>
+        <link>http://47.99.84.217/post/aria2%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Tue, 17 Apr 2018 15:02:30 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/aria2%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+        <description>&lt;p&gt;Aria2的配置与使用; 百度网盘现在很多人在用,但是对Mac用户并不太友好.客户端下载文件出现中断,浏览器下载速度太慢.得了,咱们花点时间来配置Aria2,再配上chrome或者Aria2的GUI工具,让您用着放心,下着舒心.早日与大姐姐相见~~&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Aria2是这么一款支持多种协议的命令行下载工具 可能有人看到命令行这三个字就不想再继续往下走了，不过这个配置起来真的很方便，很简单．而且支持多平台，OS X,Windows,Linux都可以使用; 开始配置吧~ 下载Aria2; 可以在Aria2下载安装程序,如果你的电脑安装的有brew,你只需要执行 brew install aria2 配置 这是别人做好的配置文件,在终端进入到您的当前用户目录下,然后执行 mkdir .aria2 创建一个文件夹 需要使用终端创建,因为以.开头的文件夹被系统预留,然后进入到创建好的文件夹中,执行 touch aria2.conf,来新建一个文件, 执行open aria2.conf,打开这个文件,将下面的代码复制进去,注意请将代码段dir=/Users/xxxx/Downloads中的xxxx换成你自己的用户名; 在返回到 .aria2 目录中执行touch aria2.session创建一个aria2.session文件; 　在终端输入 aria2c,查看是否可以运行;&lt;/p&gt;
+&lt;p&gt;#用户名&lt;/p&gt;
+&lt;p&gt;#rpc-user=user&lt;/p&gt;
+&lt;p&gt;#密码&lt;/p&gt;
+&lt;p&gt;#rpc-passwd=passwd&lt;/p&gt;
+&lt;p&gt;#上面的认证方式不建议使用,建议使用下面的token方式&lt;/p&gt;
+&lt;p&gt;#设置加密的密钥&lt;/p&gt;
+&lt;p&gt;#rpc-secret=token&lt;/p&gt;
+&lt;p&gt;#允许rpc&lt;/p&gt;
+&lt;p&gt;enable-rpc=true&lt;/p&gt;
+&lt;p&gt;#允许所有来源, web界面跨域权限需要&lt;/p&gt;
+&lt;p&gt;rpc-allow-origin-all=true&lt;/p&gt;
+&lt;p&gt;#允许外部访问，false的话只监听本地端口&lt;/p&gt;
+&lt;p&gt;rpc-listen-all=true&lt;/p&gt;
+&lt;p&gt;#RPC端口, 仅当默认端口被占用时修改&lt;/p&gt;
+&lt;p&gt;#rpc-listen-port=6800&lt;/p&gt;
+&lt;p&gt;#最大同时下载数(任务数), 路由建议值: 3&lt;/p&gt;
+&lt;p&gt;max-concurrent-downloads=5&lt;/p&gt;
+&lt;p&gt;#断点续传&lt;/p&gt;
+&lt;p&gt;continue=true&lt;/p&gt;
+&lt;p&gt;#同服务器连接数&lt;/p&gt;
+&lt;p&gt;max-connection-per-server=5&lt;/p&gt;
+&lt;p&gt;#最小文件分片大小, 下载线程数上限取决于能分出多少片, 对于小文件重要&lt;/p&gt;
+&lt;p&gt;min-split-size=10M&lt;/p&gt;
+&lt;p&gt;#单文件最大线程数, 路由建议值: 5&lt;/p&gt;
+&lt;p&gt;split=10&lt;/p&gt;
+&lt;p&gt;#下载速度限制&lt;/p&gt;
+&lt;p&gt;max-overall-download-limit=0&lt;/p&gt;
+&lt;p&gt;#单文件速度限制&lt;/p&gt;
+&lt;p&gt;max-download-limit=0&lt;/p&gt;
+&lt;p&gt;#上传速度限制&lt;/p&gt;
+&lt;p&gt;max-overall-upload-limit=0&lt;/p&gt;
+&lt;p&gt;#单文件速度限制&lt;/p&gt;
+&lt;p&gt;max-upload-limit=0&lt;/p&gt;
+&lt;p&gt;#断开速度过慢的连接&lt;/p&gt;
+&lt;p&gt;#lowest-speed-limit=0&lt;/p&gt;
+&lt;p&gt;#验证用，需要1.16.1之后的release版本&lt;/p&gt;
+&lt;p&gt;#referer=*&lt;/p&gt;
+&lt;p&gt;#文件保存路径, 默认为当前启动位置&lt;/p&gt;
+&lt;p&gt;dir=/Users/xxxx/Downloads&lt;/p&gt;
+&lt;p&gt;#文件缓存, 使用内置的文件缓存, 如果你不相信Linux内核文件缓存和磁盘内置缓存时使用, 需要1.16及以上版本&lt;/p&gt;
+&lt;p&gt;#disk-cache=0&lt;/p&gt;
+&lt;p&gt;#另一种Linux文件缓存方式, 使用前确保您使用的内核支持此选项, 需要1.15及以上版本(?)&lt;/p&gt;
+&lt;p&gt;#enable-mmap=true&lt;/p&gt;
+&lt;p&gt;#文件预分配, 能有效降低文件碎片, 提高磁盘性能. 缺点是预分配时间较长&lt;/p&gt;
+&lt;p&gt;#所需时间 none lt; falloc ? trunc « prealloc, falloc和trunc需要文件系统和内核支持&lt;/p&gt;
+&lt;p&gt;file-allocation=prealloc&lt;/p&gt;
+&lt;p&gt;启动rpc模式 在终端输入aria2c –conf-path=”/Users/xxxxxx/.aria2/aria2.conf” -D，然后Aria2就启动了,但是如果想使用Aria2下载百度网盘的资料,我们还需要下载插件。如果链接不了,请自行寻找梯子或者百度搜索BaiduExporter(百度云下载地址导出工具);迅雷也可以这样使用 安装完成之后再打开百度网盘的话,会发现网页上多出一个「导出下载」按钮，点击它弹出的「ARIA2 RPC」就自动添加到你的下载队列里了，然后利用 WebUI 提供的网页界面管理你的下载任务. BaiduExporter配置: 打开BaiduExporter设置,将User-agent设置为 : netdisk;5.2.7;PC;PC-Windows;6.2.9200;WindowsBaiduYunGuanJia referer 设置为：http://pan.baidu.com/disk/home 使用 打开百度云盘,找到你想要下载的文件,勾选,然后选择上面的导出到 aria 2选项即可. Aria2 JSON-RPC Path 配置如下 http://localhost:6800/jsonrpc&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

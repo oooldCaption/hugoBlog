@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前段时间觉得自己的硬盘不够用,而且有一些远程访问资源和远程下载任务的需求; 跟女朋友商量一下, 批了资金买了一个群辉 NAS; 因为家里的网络条件没有公网 ip, 光猫拨号上网, 群辉自带的 quickconnect 连接速度太慢了; 趁着国庆在家就研究了一下内网穿透的技术;想通过内网穿透来访问家里的群辉
+关于内网穿透 本来打算用路由器做内网穿透,然后给 nas 做端口转发, 但是华硕 AC66U-B1刷了梅林之后打游戏老掉包, 于是就在 nas 上做了内网转发; 内网穿透的服务有好几种: eg: * 花生壳 &amp;mdash;&amp;ndash;&amp;gt; 死贵 * nat123 &amp;mdash;&amp;ndash;&amp;gt; 没用过 * ngork &amp;mdash;&amp;ndash;&amp;gt; 刚开始用的这个, 但是找了好几个帖子,提供的客户端的配置文件和应用程序都不能下载了(不想花钱); 放弃了; * frp &amp;mdash;&amp;ndash;&amp;gt; 当前使用的 * 还有一些淘宝上的盒子, 都比较贵 选择 frp 是因为之前购买的 vps 除了 ss 服务没有其他业务运行, 放着也是浪费, 而且测了一下连接速度很快,不得不提我这个 vps速度真的很快, vultr的vps加了 bbr 之后在线看4K无压力的 ;
+需要准备的材料  一台有独立 IP 的服务器 (例如:vps, 阿里ECS) 一台 NAS 或者需要做内网穿透的客户端 frp 文件  安装 服务器端配置   登录到服务器,选择适合自己服务器的文件下载, 点击下载'>
+<title>Frp 内网穿透,把你的 NAS 放到公网上</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/frpnas/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='Frp 内网穿透,把你的 NAS 放到公网上'>
+<meta property='og:description' content='前段时间觉得自己的硬盘不够用,而且有一些远程访问资源和远程下载任务的需求; 跟女朋友商量一下, 批了资金买了一个群辉 NAS; 因为家里的网络条件没有公网 ip, 光猫拨号上网, 群辉自带的 quickconnect 连接速度太慢了; 趁着国庆在家就研究了一下内网穿透的技术;想通过内网穿透来访问家里的群辉
+关于内网穿透 本来打算用路由器做内网穿透,然后给 nas 做端口转发, 但是华硕 AC66U-B1刷了梅林之后打游戏老掉包, 于是就在 nas 上做了内网转发; 内网穿透的服务有好几种: eg: * 花生壳 &amp;mdash;&amp;ndash;&amp;gt; 死贵 * nat123 &amp;mdash;&amp;ndash;&amp;gt; 没用过 * ngork &amp;mdash;&amp;ndash;&amp;gt; 刚开始用的这个, 但是找了好几个帖子,提供的客户端的配置文件和应用程序都不能下载了(不想花钱); 放弃了; * frp &amp;mdash;&amp;ndash;&amp;gt; 当前使用的 * 还有一些淘宝上的盒子, 都比较贵 选择 frp 是因为之前购买的 vps 除了 ss 服务没有其他业务运行, 放着也是浪费, 而且测了一下连接速度很快,不得不提我这个 vps速度真的很快, vultr的vps加了 bbr 之后在线看4K无压力的 ;
+需要准备的材料  一台有独立 IP 的服务器 (例如:vps, 阿里ECS) 一台 NAS 或者需要做内网穿透的客户端 frp 文件  安装 服务器端配置   登录到服务器,选择适合自己服务器的文件下载, 点击下载'>
+<meta property='og:url' content='http://47.99.84.217/post/frpnas/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='巧篆' /><meta property='article:published_time' content='2018-10-08T10:15:53&#43;08:00'/><meta property='article:modified_time' content='2018-10-08T10:15:53&#43;08:00'/>
+<meta name="twitter:title" content="Frp 内网穿透,把你的 NAS 放到公网上">
+<meta name="twitter:description" content="前段时间觉得自己的硬盘不够用,而且有一些远程访问资源和远程下载任务的需求; 跟女朋友商量一下, 批了资金买了一个群辉 NAS; 因为家里的网络条件没有公网 ip, 光猫拨号上网, 群辉自带的 quickconnect 连接速度太慢了; 趁着国庆在家就研究了一下内网穿透的技术;想通过内网穿透来访问家里的群辉
+关于内网穿透 本来打算用路由器做内网穿透,然后给 nas 做端口转发, 但是华硕 AC66U-B1刷了梅林之后打游戏老掉包, 于是就在 nas 上做了内网转发; 内网穿透的服务有好几种: eg: * 花生壳 &amp;mdash;&amp;ndash;&amp;gt; 死贵 * nat123 &amp;mdash;&amp;ndash;&amp;gt; 没用过 * ngork &amp;mdash;&amp;ndash;&amp;gt; 刚开始用的这个, 但是找了好几个帖子,提供的客户端的配置文件和应用程序都不能下载了(不想花钱); 放弃了; * frp &amp;mdash;&amp;ndash;&amp;gt; 当前使用的 * 还有一些淘宝上的盒子, 都比较贵 选择 frp 是因为之前购买的 vps 除了 ss 服务没有其他业务运行, 放着也是浪费, 而且测了一下连接速度很快,不得不提我这个 vps速度真的很快, vultr的vps加了 bbr 之后在线看4K无压力的 ;
+需要准备的材料  一台有独立 IP 的服务器 (例如:vps, 阿里ECS) 一台 NAS 或者需要做内网穿透的客户端 frp 文件  安装 服务器端配置   登录到服务器,选择适合自己服务器的文件下载, 点击下载">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#关于内网穿透">关于内网穿透</a></li>
+        <li><a href="#需要准备的材料">需要准备的材料</a></li>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#到此就完成了">到此就完成了;</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%A5%87%E5%B7%A7%E6%B7%AB%E6%8A%80/" >
+                奇巧淫技
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/frpnas/">Frp 内网穿透,把你的 NAS 放到公网上</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 08, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>前段时间觉得自己的硬盘不够用,而且有一些远程访问资源和远程下载任务的需求; 跟女朋友商量一下, 批了资金买了一个群辉 NAS; 因为家里的网络条件没有公网 ip, 光猫拨号上网, 群辉自带的 quickconnect 连接速度太慢了; 趁着国庆在家就研究了一下内网穿透的技术;想通过内网穿透来访问家里的群辉</p>
+<h3 id="关于内网穿透">关于内网穿透</h3>
+<p>本来打算用路由器做内网穿透,然后给 nas 做端口转发, 但是华硕 AC66U-B1刷了梅林之后打游戏老掉包, 于是就在 nas 上做了内网转发; 内网穿透的服务有好几种: eg: * 花生壳 &mdash;&ndash;&gt; 死贵 * nat123 &mdash;&ndash;&gt; 没用过 * ngork &mdash;&ndash;&gt; 刚开始用的这个, 但是找了好几个帖子,提供的客户端的配置文件和应用程序都不能下载了(不想花钱); 放弃了; * frp &mdash;&ndash;&gt; 当前使用的 * 还有一些淘宝上的盒子, 都比较贵 选择 frp 是因为之前购买的 vps 除了 ss 服务没有其他业务运行, 放着也是浪费, 而且测了一下连接速度很快,不得不提我这个 vps速度真的很快, <a class="link" href="https://www.vultr.com/?ref=7205024"  target="_blank" rel="noopener"
+    >vultr的vps</a>加了 bbr 之后在线看4K无压力的 ;</p>
+<!-- raw HTML omitted -->
+<h3 id="需要准备的材料">需要准备的材料</h3>
+<ul>
+<li>一台有独立 IP 的服务器 (例如:<a class="link" href="https://www.vultr.com/?ref=7205024"  target="_blank" rel="noopener"
+    >vps</a>, 阿里<a class="link" href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=whtofl6r"  target="_blank" rel="noopener"
+    >ECS</a>)</li>
+<li>一台 NAS 或者需要做内网穿透的客户端</li>
+<li>frp 文件</li>
+</ul>
+<h3 id="安装">安装</h3>
+<h4 id="服务器端配置">服务器端配置</h4>
+<ol>
+<li>
+<p>登录到服务器,选择适合自己服务器的文件下载, <a class="link" href="https://github.com/fatedier/frp/releases"  target="_blank" rel="noopener"
+    >点击下载</a></p>
+<pre tabindex="0"><code>eg: 我的服务器是 arm64, 系统版本是 linux-centOS
+wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_arm64.tar.gz
+</code></pre></li>
+<li>
+<p>下载后完成解压</p>
+<pre tabindex="0"><code>tar -xzf  frp_0.21.0_linux_arm64.tar.gz
+</code></pre></li>
+<li>
+<p>进入到服务器 frp 目录,并删除无用文件</p>
+<pre tabindex="0"><code>cd frp_0.21.0_linux_arm64
+//frpc 开头的是客户端的配置文件和资源, 服务端可删除
+//frps 开头的是服务端的配置文件和资源, 客户端可删除
+rm -f frpc.ini frpc_full.ini
+</code></pre></li>
+<li>
+<p>编辑服务端配置文件</p>
+<pre tabindex="0"><code>[common]
+bind_port = 7000
+vhost_http_port = 8080
+dashboard_port = 7500
+dashboard_user = you&#39;s name
+dashboard_pwd = you&#39;s psw
+max_pool_count = 5
+authentication_timeout = 900
+subdomain_host = lekee.cc
+[ssh]
+listen_port = 6000
+auth_token = you&#39;s token,(客户端的保持一致)
+/**
+[common] 必填的
+bind_port Frp 服务端口（可自定义）
+vhost_http_port http 访问端口（可自定义）
+dashboard_port dashboard 界面端口
+dashboard_user 登录 dashboard 用户名
+dashboard_pwd 登录 dashboard 密码
+max_pool_count 最大连接池数量
+authentication_timeout 超时验证时间
+subdomain_host 自定义二级域名
+[ssh]
+listen_port ssh 访问端口
+auth_token 用户身份认证
+*/
+</code></pre><p>如果需要更详细的,可以参考<a class="link" href="https://github.com/fatedier/frp/blob/master/README_zh.md#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"  target="_blank" rel="noopener"
+    >官方文档</a></p>
+</li>
+<li>
+<p>保存配置文件, 然后运行</p>
+<pre tabindex="0"><code>./frps -c ./frps.ini
+也可以通过 screen 或者 nohup 命令进行后台运行
+</code></pre></li>
+</ol>
+<h4 id="客户端配置">客户端配置</h4>
+<p>客户端配置与服务端很相似, 区别在于配置文件的不同; frp 客户端支持 windows, Mac, 路由器,和linux 内核设备;群辉 nas 是基于 linux 的, 可以使用 linux 版本的 frp 客户端;</p>
+<ol>
+<li>
+<p>开启 shh 登录,控制面板打开终端机和 SNMP, 勾选启动 ssh ; <img src="https://img.52smile.vip/2018-10-08-030049.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p>登录到 nas ,下载 frp</p>
+<pre tabindex="0"><code>eg:
+ssh xiaoxiaosu@192.168.xxx.xxx
+ssh user@ipAdd
+//下载
+wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_arm64.tar.gz
+//解压
+tar -xzf  frp_0.21.0_linux_arm64.tar.gz
+//删除无用配置文件
+rm -f frps.ini frps_full.ini
+</code></pre></li>
+<li>
+<p>编辑客户端配置文件</p>
+<pre tabindex="0"><code>vi frpc.ini
+[common]
+server_addr = xxx.xxx.xxx.xxx(服务器的 ip)
+server_port = 7000
+auth_token = password
+pool_count = 1
+[ssh]
+type = tcp
+local_ip = xxx.xxx.xxx.xxx(NAS 的局域网ip)
+local_port = 22
+remote_port = 6000
+[nas]
+type = http
+local_port = 5000
+subdomain = nas
+</code></pre><blockquote>
+<p>[common] 必填的 server_addr &mdash;&ndash;&gt;服务器端公网 server_port &mdash;&ndash;&gt;frp 服务端口，和服务器端 bind_port 一致 auth_token &mdash;&ndash;&gt; 和前面服务器端 [ssh] auth_token 一致 pool_count &mdash;&ndash;&gt;连接池数量 [ssh] type &mdash;&ndash;&gt; 服务类型（tcp、http、https、udp） local_ip &mdash;&ndash;&gt; NAS 本地局域网内网 ip local_port &mdash;&ndash;&gt; NAS 开启 ssh 服务端口号，默认 22 remote_port &mdash;&ndash;&gt; 服务器端 ssh 端口，和服务器端 [ssh] listen_port 配置一致 [nas] NAS 管理界面 subdomain &mdash;&ndash;&gt; 二级域名 nas.52smile.vip 访问 NAS type = http &mdash;&ndash;&gt; 服务类型为 http local_port &mdash;&ndash;&gt; NAS 默认端口 5000 [web] NAS web Station 服务，没用可以不用设置 type = http &mdash;&ndash;&gt; 类型为 http local_port = 80 &mdash;&ndash;&gt; NAS web 服务端口 subdomain = web &mdash;&ndash;&gt; 二级域名 web.52smile.vip tip: 使用自定义二级域名的时候，域名 52smile.vip 要解析到服务器 IP</p>
+</blockquote>
+</li>
+<li>
+<p>保存配置文件, 然后运行</p>
+<pre tabindex="0"><code>./frpc -c ./frpc.ini
+也可以通过 screen 或者 nohup 命令进行后台运行
+</code></pre></li>
+</ol>
+<p><img src="https://img.52smile.vip/2018-10-08-031701.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="到此就完成了">到此就完成了;</h3>
+<p>我测试了一下在线观看视频, 包括下载文件的速度.都是可以的.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%B7%A7%E7%AF%86/">巧篆</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/usealfred/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">成吨节约您时间的效率神器--Alfred</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/vi%E7%BC%96%E8%BE%91%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VI编辑器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">mac终端命令</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/%E4%BD%BF%E7%94%A8hexocoding%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用Hexo&#43;Coding搭建个人博客</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/aria2%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Aria2的配置与使用;</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

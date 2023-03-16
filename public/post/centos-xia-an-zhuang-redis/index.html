@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前言  安装Redis需要知道自己需要哪个版本，有针对性的安装，比如如果需要redis GEO这个地理集合的特性，那么redis版本就不能低于3.2版本，由于这个特性是3.2版本才有的。另外需要注意的是，Redis约定次版本号（即第一个小数点后的数字）为偶数的版本是稳定版（如2.8版、3.0版），奇数版本是非稳定版（如2.7版、2.9版），生产环境下一般需要使用稳定版本。
+ 下载安装包 wget http://download.redis.io/releases/redis-4.0.2.tar.gz 解压并安装 tar xzf redis-4.0.2.tar.gz cd redis-4.0.2 make make install  Redis没有其他外部依赖，安装过程很简单。编译后在Redis源代码目录的src文件夹中可以找到若干个可执行程序，安装完后，在/usr/local/bin目录中可以找到刚刚安装的redis可执行文件。 如下:
+ 那你也可以通过命令 redis -server 命令来执行启动 redis; 启动后界面如下: 配置   配置初始化脚本
+ 首先将初始化脚本复制到/etc/init.d 目录中，文件名为 redis_端口号，其中端口号表示要让Redis监听的端口号，客户端通过该端口连接Redis。然后修改脚本第6行的REDISPORT变量的值为同样的端口号。
+   建立需要使用的文件夹
+目录名
+配置项
+/etc/redis
+存放redis 的配置文件
+/etc/redis/端口号
+存放 redis持久化文件
+  tip: vim 模式下使用 ? 命令进行搜索, n跳转到下一个搜索结果;N跳转上一个搜索结果 3.修改配置文件
+ 首先将配置文件模板（redis-4.0.2/redis.conf）复制到/etc/redis 目录中，以端口号命名（eg: “6379.conf”），然后按照下表对其中的部分参数进行编辑。
+ params
+value
+tip
+daemonize
+yes
+redis 以守护进程模式运行
+pidfile
+/var/run/redis_端口号.pid'>
+<title>CentOS 下安装 Redis</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/centos-xia-an-zhuang-redis/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='CentOS 下安装 Redis'>
+<meta property='og:description' content='前言  安装Redis需要知道自己需要哪个版本，有针对性的安装，比如如果需要redis GEO这个地理集合的特性，那么redis版本就不能低于3.2版本，由于这个特性是3.2版本才有的。另外需要注意的是，Redis约定次版本号（即第一个小数点后的数字）为偶数的版本是稳定版（如2.8版、3.0版），奇数版本是非稳定版（如2.7版、2.9版），生产环境下一般需要使用稳定版本。
+ 下载安装包 wget http://download.redis.io/releases/redis-4.0.2.tar.gz 解压并安装 tar xzf redis-4.0.2.tar.gz cd redis-4.0.2 make make install  Redis没有其他外部依赖，安装过程很简单。编译后在Redis源代码目录的src文件夹中可以找到若干个可执行程序，安装完后，在/usr/local/bin目录中可以找到刚刚安装的redis可执行文件。 如下:
+ 那你也可以通过命令 redis -server 命令来执行启动 redis; 启动后界面如下: 配置   配置初始化脚本
+ 首先将初始化脚本复制到/etc/init.d 目录中，文件名为 redis_端口号，其中端口号表示要让Redis监听的端口号，客户端通过该端口连接Redis。然后修改脚本第6行的REDISPORT变量的值为同样的端口号。
+   建立需要使用的文件夹
+目录名
+配置项
+/etc/redis
+存放redis 的配置文件
+/etc/redis/端口号
+存放 redis持久化文件
+  tip: vim 模式下使用 ? 命令进行搜索, n跳转到下一个搜索结果;N跳转上一个搜索结果 3.修改配置文件
+ 首先将配置文件模板（redis-4.0.2/redis.conf）复制到/etc/redis 目录中，以端口号命名（eg: “6379.conf”），然后按照下表对其中的部分参数进行编辑。
+ params
+value
+tip
+daemonize
+yes
+redis 以守护进程模式运行
+pidfile
+/var/run/redis_端口号.pid'>
+<meta property='og:url' content='http://47.99.84.217/post/centos-xia-an-zhuang-redis/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='后端' /><meta property='article:published_time' content='2018-09-15T14:51:47&#43;08:00'/><meta property='article:modified_time' content='2018-09-15T14:51:47&#43;08:00'/>
+<meta name="twitter:title" content="CentOS 下安装 Redis">
+<meta name="twitter:description" content="前言  安装Redis需要知道自己需要哪个版本，有针对性的安装，比如如果需要redis GEO这个地理集合的特性，那么redis版本就不能低于3.2版本，由于这个特性是3.2版本才有的。另外需要注意的是，Redis约定次版本号（即第一个小数点后的数字）为偶数的版本是稳定版（如2.8版、3.0版），奇数版本是非稳定版（如2.7版、2.9版），生产环境下一般需要使用稳定版本。
+ 下载安装包 wget http://download.redis.io/releases/redis-4.0.2.tar.gz 解压并安装 tar xzf redis-4.0.2.tar.gz cd redis-4.0.2 make make install  Redis没有其他外部依赖，安装过程很简单。编译后在Redis源代码目录的src文件夹中可以找到若干个可执行程序，安装完后，在/usr/local/bin目录中可以找到刚刚安装的redis可执行文件。 如下:
+ 那你也可以通过命令 redis -server 命令来执行启动 redis; 启动后界面如下: 配置   配置初始化脚本
+ 首先将初始化脚本复制到/etc/init.d 目录中，文件名为 redis_端口号，其中端口号表示要让Redis监听的端口号，客户端通过该端口连接Redis。然后修改脚本第6行的REDISPORT变量的值为同样的端口号。
+   建立需要使用的文件夹
+目录名
+配置项
+/etc/redis
+存放redis 的配置文件
+/etc/redis/端口号
+存放 redis持久化文件
+  tip: vim 模式下使用 ? 命令进行搜索, n跳转到下一个搜索结果;N跳转上一个搜索结果 3.修改配置文件
+ 首先将配置文件模板（redis-4.0.2/redis.conf）复制到/etc/redis 目录中，以端口号命名（eg: “6379.conf”），然后按照下表对其中的部分参数进行编辑。
+ params
+value
+tip
+daemonize
+yes
+redis 以守护进程模式运行
+pidfile
+/var/run/redis_端口号.pid">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#下载安装包">下载安装包</a></li>
+        <li><a href="#解压并安装">解压并安装</a></li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#正确的停止-redis">正确的停止 redis</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" >
+                软件开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/centos-xia-an-zhuang-redis/">CentOS 下安装 Redis</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 15, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h3 id="前言">前言</h3>
+<blockquote>
+<p>安装Redis需要知道自己需要哪个版本，有针对性的安装，比如如果需要redis GEO这个地理集合的特性，那么redis版本就不能低于3.2版本，由于这个特性是3.2版本才有的。另外需要注意的是，Redis约定次版本号（即第一个小数点后的数字）为偶数的版本是稳定版（如2.8版、3.0版），奇数版本是非稳定版（如2.7版、2.9版），生产环境下一般需要使用稳定版本。</p>
+</blockquote>
+<h3 id="下载安装包">下载安装包</h3>
+<pre tabindex="0"><code>wget http://download.redis.io/releases/redis-4.0.2.tar.gz
+</code></pre><h3 id="解压并安装">解压并安装</h3>
+<pre tabindex="0"><code>tar xzf redis-4.0.2.tar.gz
+cd redis-4.0.2
+make
+make install
+</code></pre><blockquote>
+<p>Redis没有其他外部依赖，安装过程很简单。编译后在Redis源代码目录的src文件夹中可以找到若干个可执行程序，安装完后，在/usr/local/bin目录中可以找到刚刚安装的redis可执行文件。 如下:</p>
+</blockquote>
+<p><img src="https://img.52smile.vip/2018-09-15-134934.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="redis 安装目录"
+	
+	
+> 那你也可以通过命令 <code>redis -server</code> 命令来执行启动 redis; 启动后界面如下: <img src="https://img.52smile.vip/2018-09-15-135404.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="redis 启动界面"
+	
+	
+></p>
+<!-- raw HTML omitted -->
+<h3 id="配置">配置</h3>
+<ol>
+<li>
+<p>配置初始化脚本</p>
+<blockquote>
+<p>首先将初始化脚本复制到/etc/init.d 目录中，文件名为 redis_端口号，其中端口号表示要让Redis监听的端口号，客户端通过该端口连接Redis。然后修改脚本第6行的REDISPORT变量的值为同样的端口号。</p>
+</blockquote>
+</li>
+<li>
+<p>建立需要使用的文件夹</p>
+<p>目录名</p>
+<p>配置项</p>
+<p>/etc/redis</p>
+<p>存放redis 的配置文件</p>
+<p>/etc/redis/端口号</p>
+<p>存放 redis持久化文件</p>
+</li>
+</ol>
+<p>tip: vim 模式下使用 <code>?</code> 命令进行搜索, <code>n</code>跳转到下一个搜索结果;<code>N</code>跳转上一个搜索结果 3.修改配置文件</p>
+<blockquote>
+<p>首先将配置文件模板（redis-4.0.2/redis.conf）复制到/etc/redis 目录中，以端口号命名（eg: “6379.conf”），然后按照下表对其中的部分参数进行编辑。</p>
+</blockquote>
+<p>params</p>
+<p>value</p>
+<p>tip</p>
+<p>daemonize</p>
+<p>yes</p>
+<p>redis 以守护进程模式运行</p>
+<p>pidfile</p>
+<p>/var/run/redis_端口号.pid</p>
+<p>设置Redis的PID文件位置</p>
+<p>port</p>
+<p>端口号</p>
+<p>被监听的端口号 dir /var/redis/端口号 redis持久化文件</p>
+<p>配置完成以后你可以通过命令行启动 redis</p>
+<pre tabindex="0"><code>/etc/init.d/redis_6379 start
+/etc/init.d/redis_6379 stop
+</code></pre><p>别忘记配置自动启动~ 修改配置文件: <code>etc/init.d/redis_6379.conf;</code></p>
+<pre tabindex="0"><code>vim etc/init.d/redis_6379.conf
+在头部的第五行添加
+# chkconfig: 2345 90 10
+# description: Redis is a persistent key-value database
+</code></pre><h3 id="正确的停止-redis">正确的停止 redis</h3>
+<blockquote>
+<p>考虑到 Redis 有可能正在将内存中的数据同步到硬盘中，强行终止 Redis 进程可能会导致数据丢失。正确停止Redis的方式应该是向Redis发送SHUTDOWN命令，方法为：</p>
+</blockquote>
+<p><code>redis-cli SHUTDOWN</code></p>
+<blockquote>
+<p>当Redis收到SHUTDOWN命令后，会先断开所有客户端连接，然后根据配置执行持久化，最后完成退出。Redis可以妥善处理 SIGTERM信号，所以使用 kill Redis 进程的 PID也可以正常结束Redis，效果与发送SHUTDOWN命令一样。</p>
+</blockquote>
+<p><a class="link" href="https://www.ioser.net/archives/27"  target="_blank" rel="noopener"
+    >参考基友Martin的文章</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%90%8E%E7%AB%AF/">后端</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/%E4%BD%BF%E7%94%A8thinkphp%E5%88%86%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用thinkphp分页&amp;上传图片</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用cookie实现自动登录</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

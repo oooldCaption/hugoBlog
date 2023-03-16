@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='CALayer -&amp;gt; content显示内容, 实际是合成了一个个位图; 用来展示 我们平常所说的掉帧也是因为位图合成后未来得及显示绘制造成的 view 提供内容, 负责处理触摸事件,参与视图响应链 layer, 负责内容上的显示, contents; 之所以这样设计是因为单一元件负责单元任务, 即单一原则;
+事件传递: //返回响应事件的视图 -(UIView *)hitTest:(CGPoint)point WithEvent:(UIEvent *)event; //判断是否在响应区域内 -(BOOL)pointInside(CGPoint)point WithEvent:(UIEvent *)event; 事件传递流程: 如何寻找合适的响应者来处理事件: 1. 判断主窗口是否可以接受触摸事件 2. 判断触摸点是否在自己的区域内( pointInside: withEvent:) 3. 子控件数组中从后往前遍历子控件，重复前面的两个步骤（所谓从后往前遍历子控件，就是首先查找子控件数组中最后一个元素，然后执行1、2步骤） 事件传递给一个控件就会调用hitTest: withEvent:, 通过这个特性, 可以重写hitTest: withEvent方法返回指定的 view 用来接收事件的处理; eg: 在实际中响应事件是的viewB1,虽然点击的位置在 viewA2 和 ViewB1的重复处, 但是由于 view B1 的视图索引在 viewA2 之上, 所以响应事件的是 ``viewB1`;
+hitTest:withEvent: 系统实现 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event { if (!self.isUserInteractionEnabled self.isHidden self.alpha &amp;lt;= 0.01) { return nil; } if ([self pointInside:point withEvent:event]) { for (UIView *subview in [self.'>
+<title>UI事件传递以及事件响应原理</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/iostouchevent/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='UI事件传递以及事件响应原理'>
+<meta property='og:description' content='CALayer -&amp;gt; content显示内容, 实际是合成了一个个位图; 用来展示 我们平常所说的掉帧也是因为位图合成后未来得及显示绘制造成的 view 提供内容, 负责处理触摸事件,参与视图响应链 layer, 负责内容上的显示, contents; 之所以这样设计是因为单一元件负责单元任务, 即单一原则;
+事件传递: //返回响应事件的视图 -(UIView *)hitTest:(CGPoint)point WithEvent:(UIEvent *)event; //判断是否在响应区域内 -(BOOL)pointInside(CGPoint)point WithEvent:(UIEvent *)event; 事件传递流程: 如何寻找合适的响应者来处理事件: 1. 判断主窗口是否可以接受触摸事件 2. 判断触摸点是否在自己的区域内( pointInside: withEvent:) 3. 子控件数组中从后往前遍历子控件，重复前面的两个步骤（所谓从后往前遍历子控件，就是首先查找子控件数组中最后一个元素，然后执行1、2步骤） 事件传递给一个控件就会调用hitTest: withEvent:, 通过这个特性, 可以重写hitTest: withEvent方法返回指定的 view 用来接收事件的处理; eg: 在实际中响应事件是的viewB1,虽然点击的位置在 viewA2 和 ViewB1的重复处, 但是由于 view B1 的视图索引在 viewA2 之上, 所以响应事件的是 ``viewB1`;
+hitTest:withEvent: 系统实现 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event { if (!self.isUserInteractionEnabled self.isHidden self.alpha &amp;lt;= 0.01) { return nil; } if ([self pointInside:point withEvent:event]) { for (UIView *subview in [self.'>
+<meta property='og:url' content='http://47.99.84.217/post/iostouchevent/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='iOS' /><meta property='article:published_time' content='2018-12-11T20:47:22&#43;08:00'/><meta property='article:modified_time' content='2018-12-11T20:47:22&#43;08:00'/>
+<meta name="twitter:title" content="UI事件传递以及事件响应原理">
+<meta name="twitter:description" content="CALayer -&amp;gt; content显示内容, 实际是合成了一个个位图; 用来展示 我们平常所说的掉帧也是因为位图合成后未来得及显示绘制造成的 view 提供内容, 负责处理触摸事件,参与视图响应链 layer, 负责内容上的显示, contents; 之所以这样设计是因为单一元件负责单元任务, 即单一原则;
+事件传递: //返回响应事件的视图 -(UIView *)hitTest:(CGPoint)point WithEvent:(UIEvent *)event; //判断是否在响应区域内 -(BOOL)pointInside(CGPoint)point WithEvent:(UIEvent *)event; 事件传递流程: 如何寻找合适的响应者来处理事件: 1. 判断主窗口是否可以接受触摸事件 2. 判断触摸点是否在自己的区域内( pointInside: withEvent:) 3. 子控件数组中从后往前遍历子控件，重复前面的两个步骤（所谓从后往前遍历子控件，就是首先查找子控件数组中最后一个元素，然后执行1、2步骤） 事件传递给一个控件就会调用hitTest: withEvent:, 通过这个特性, 可以重写hitTest: withEvent方法返回指定的 view 用来接收事件的处理; eg: 在实际中响应事件是的viewB1,虽然点击的位置在 viewA2 和 ViewB1的重复处, 但是由于 view B1 的视图索引在 viewA2 之上, 所以响应事件的是 ``viewB1`;
+hitTest:withEvent: 系统实现 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event { if (!self.isUserInteractionEnabled self.isHidden self.alpha &amp;lt;= 0.01) { return nil; } if ([self pointInside:point withEvent:event]) { for (UIView *subview in [self.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">潮平两岸阔</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#事件传递">事件传递:</a></li>
+        <li><a href="#hittestwithevent-系统实现">hitTest:withEvent: 系统实现</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ios/" >
+                iOS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/iostouchevent/">UI事件传递以及事件响应原理</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 11, 2018</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>CALayer -&gt; content显示内容, 实际是合成了一个个位图; 用来展示 我们平常所说的掉帧也是因为位图合成后未来得及显示绘制造成的 view 提供内容, 负责处理触摸事件,参与视图响应链 layer, 负责内容上的显示, contents; 之所以这样设计是因为单一元件负责单元任务, 即单一原则;</p>
+<h3 id="事件传递">事件传递:</h3>
+<pre tabindex="0"><code>//返回响应事件的视图
+-(UIView *)hitTest:(CGPoint)point WithEvent:(UIEvent *)event;
+//判断是否在响应区域内
+-(BOOL)pointInside(CGPoint)point WithEvent:(UIEvent *)event;
+</code></pre><h4 id="事件传递流程">事件传递流程:</h4>
+<p>如何寻找合适的响应者来处理事件: 1. 判断主窗口是否可以接受触摸事件 2. 判断触摸点是否在自己的区域内( pointInside: withEvent:) 3. 子控件数组中从后往前遍历子控件，重复前面的两个步骤（所谓从后往前遍历子控件，就是首先查找子控件数组中最后一个元素，然后执行1、2步骤） 事件传递给一个控件就会调用<code>hitTest: withEvent:</code>, 通过这个特性, 可以重写<code>hitTest: withEvent</code>方法返回指定的 view 用来接收事件的处理; <img src="https://img.52smile.vip/2018-12-12-070429.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+> eg: <img src="https://img.52smile.vip/2018-12-12-082050.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+> 在实际中响应事件是的<code>viewB1</code>,虽然点击的位置在 <code>viewA2</code> 和 <code>ViewB1</code>的重复处, 但是由于 <code>view B1</code> 的视图索引在 <code>viewA2</code> 之上, 所以响应事件的是 ``viewB1`;</p>
+<!-- raw HTML omitted -->
+<h3 id="hittestwithevent-系统实现">hitTest:withEvent: 系统实现</h3>
+<p><img src="https://img.52smile.vip/2018-12-12-083719.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="hitTest:withEvent: 系统实现"
+	
+	
+></p>
+<pre tabindex="0"><code>- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (!self.isUserInteractionEnabled  self.isHidden  self.alpha &lt;= 0.01) {
+        return nil;
+    }
+    if ([self pointInside:point withEvent:event]) {
+        for (UIView *subview in [self.subviews reverseObjectEnumerator]) {
+            CGPoint convertedPoint = [subview convertPoint:point fromView:self];
+            UIView *hitTestView = [subview hitTest:convertedPoint withEvent:event];
+            if (hitTestView) {
+                return hitTestView;
+            }
+        }
+        return self;
+    }
+    return nil;
+}
+</code></pre><p><code>hitTest:withEvent:</code> 首先检测是否允许视图接受触摸事件, 如果出现下面的情况, 不允许被触摸:</p>
+<ul>
+<li>视图被隐藏 <code>self.hidden == no</code></li>
+<li>未启用用户交互 <code>self.userInteractionEnabled == NO</code></li>
+<li>视图的透明度小于0.001 <code>self.alpha &lt; 0.01</code></li>
+<li>视图的 pointInside:withEvent 返回 NO <code>pointInside:withEvent: == NO</code></li>
+</ul>
+<p>通过重写<code>hitTest:withEvent:</code>方法, 我们可以给某些控件增大可点击范围, 或者让某个控件的指定区域响应点击事件;</p>
+<h4 id="eg--修改触摸范围-向上偏移10个点">eg : 修改触摸范围, 向上偏移10个点</h4>
+<pre tabindex="0"><code>- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (!self.isUserInteractionEnabled  self.isHidden  self.alpha &lt;= 0.01) {
+        return nil;
+    }
+    CGRect touchRect = CGRectInset(self.bounds, -10, -10);
+    if (CGRectContainsPoint(touchRect, point)) {
+        for (UIView *subview in [self.subviews reverseObjectEnumerator]) {
+            CGPoint convertedPoint = [subview convertPoint:point fromView:self];
+            UIView *hitTestView = [subview hitTest:convertedPoint withEvent:event];
+            if (hitTestView) {
+                return hitTestView;
+            }
+        }
+        return self;
+    }
+    return nil;
+}
+</code></pre><h4 id="eg--定义一个方形的-button-只允许圆形区域内才可以接受响应">eg : 定义一个方形的 button, 只允许圆形区域内才可以接受响应</h4>
+<p><img src="https://img.52smile.vip/2018-12-12-090217.jpg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<pre tabindex="0"><code>- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    if (!self.userInteractionEnabled 
+        [self isHidden] 
+        self.alpha &lt;= 0.01) {
+        return nil;
+    }
+    if ([self pointInside:point withEvent:event]) {
+        //遍历当前对象的子视图
+        __block UIView *hit = nil;
+        [self.subviews enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            // 坐标转换
+            CGPoint vonvertPoint = [self convertPoint:point toView:obj];
+            //调用子视图的hittest方法
+            hit = [obj hitTest:vonvertPoint withEvent:event];
+            // 如果找到了接受事件的对象，则停止遍历
+            if (hit) {
+                *stop = YES;
+            }
+        }];
+        if (hit) {
+            return hit;
+        }
+        else{
+            return self;
+        }
+    }
+    else{
+        return nil;
+    }
+}
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    CGFloat x1 = point.x;
+    CGFloat y1 = point.y;
+    CGFloat x2 = self.frame.size.width / 2;
+    CGFloat y2 = self.frame.size.height / 2;
+    double dis = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    // 67.923
+    if (dis &lt;= self.frame.size.width / 2) {
+        return YES;
+    }
+    else{
+        return NO;
+    }
+}
+</code></pre><h4 id="eg--将触摸事件传递给下一层的视图">eg : 将触摸事件传递给下一层的视图</h4>
+<p>有时候我们需要忽略当前视图的触摸事件, 让他下一级的视图去响应触摸; 我们可以覆盖此方法, 返回其中一个包含触摸点的子视图;</p>
+<pre tabindex="0"><code>- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *hitTestView = [super hitTest:point withEvent:event];
+    if (hitTestView == self) {
+        hitTestView = nil;
+    }
+    return hitTestView;
+}
+</code></pre><h4 id="eg--将触摸事件传递给子视图">eg : 将触摸事件传递给子视图</h4>
+<p>假设一个scrollview 构成的图像轮播, pagungEnable=YES, clipsToBounds 设置为 NO , scrollveiw 的响应不仅在自己的边界内, 而且在父视图的边界也要可以响应</p>
+<pre tabindex="0"><code>- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIView *hitTestView = [super hitTest:point withEvent:event];
+    if (hitTestView) {
+        hitTestView = self.scrollView;
+    }
+    return hitTestView;
+}
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ios/">iOS</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/reusecell/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">模仿 tableViewCell 实现一个简易的重用视图</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/groupwithtime/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">对 tableView 数据源中的时间进行分组排序</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/uitableview%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">UITableView性能优化</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/ios%E4%B9%8Buiappearance/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS之UIAppearance</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/ios%E5%A5%87%E5%B7%A7%E6%B7%AB%E6%8A%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iOS奇巧淫技</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2022 煎人寿
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -3,7 +3,7 @@ title: CentOS 下安装 Redis
 date: 2018-09-15T14:51:47+08:00 
 draft: false
 tags: ['后端']
-categories: ['南腔北调']
+categories: ['软件开发']
 ---
 
 ### 前言
