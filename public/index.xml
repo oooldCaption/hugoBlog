@@ -6,7 +6,125 @@
         <description>Recent content on 煎人寿</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 03 Dec 2022 21:44:50 +0800</lastBuildDate><atom:link href="http://47.99.84.217/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 16 Mar 2023 15:18:02 +0800</lastBuildDate><atom:link href="http://47.99.84.217/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用Flutter创建樱花落下动画</title>
+        <link>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8flutter%E5%88%9B%E5%BB%BA%E6%A8%B1%E8%8A%B1%E8%90%BD%E4%B8%8B%E5%8A%A8%E7%94%BB/</link>
+        <pubDate>Thu, 16 Mar 2023 15:18:02 +0800</pubDate>
+        
+        <guid>http://47.99.84.217/post/%E4%BD%BF%E7%94%A8flutter%E5%88%9B%E5%BB%BA%E6%A8%B1%E8%8A%B1%E8%90%BD%E4%B8%8B%E5%8A%A8%E7%94%BB/</guid>
+        <description>&lt;p&gt;在本篇博客中，我们将学习如何使用 Flutter 制作一个樱花落下的动画效果。我们将实现一个简单的樱花落下动画，并加入微风效果以及淡入淡出效果。我们的最终目标是让樱花以不同的速度和初始位置落下，并在屏幕上按照一定的轨迹随微风飘动。
+&lt;img src=&#34;https://img.52smile.vip/1678950904.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1678950904.gif&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;开始之前
+确保你已经安装了 Flutter 开发环境。本教程适用于具有一定 Flutter 基础知识的开发者。&lt;/p&gt;
+&lt;h3 id=&#34;创建动画&#34;&gt;创建动画&lt;/h3&gt;
+&lt;p&gt;首先，我们需要创建一个 StatefulWidget，因为我们需要使用动画控制器。接下来，我们在 State 类中使用 SingleTickerProviderStateMixin 来创建 AnimationController。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class FallingLeavesAnimation extends StatefulWidget {
+  @override
+  _FallingLeavesAnimationState createState() =&amp;gt; _FallingLeavesAnimationState();
+}
+
+class _FallingLeavesAnimationState extends State&amp;lt;FallingLeavesAnimation&amp;gt;
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+  final _leaves = List.generate(20, (index) =&amp;gt; Leaf());
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 15),
+      vsync: this,
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们创建了一个 _controller，并设置动画持续时间为 15 秒。然后调用 repeat() 方法，让动画循环播放。&lt;/p&gt;
+&lt;h3 id=&#34;美化动画&#34;&gt;美化动画&lt;/h3&gt;
+&lt;p&gt;接下来，我们创建一个 Leaf 类来生成随机的初始位置、速度和旋转角度。这将使动画看起来更自然。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+class Leaf {
+  final double startX;
+  final double startY;
+  final double speedX;
+  final double speedY;
+  final double rotation;
+
+  Leaf()
+      : startX = Random().nextDouble() * 300,
+        startY = -Random().nextDouble() * 300,
+        speedX = 20 + Random().nextDouble() * 50,
+        speedY = 50 + Random().nextDouble() * 100,
+        rotation = Random().nextDouble() * 4 * pi;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;执行动画并更新&#34;&gt;执行动画并更新&lt;/h3&gt;
+&lt;p&gt;现在，我们将使用 AnimatedBuilder 在 build 方法中创建动画效果。在每次 build 方法调用时，动画进度会被更新，根据动画进度计算樱花的位置、旋转角度和透明度。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text(&amp;#39;Falling Leaves Animation with Breeze&amp;#39;),
+    ),
+    body: Stack(
+      children: [
+        for (final leaf in _leaves)
+          AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              final progress = _controller.value;
+              final screenWidth =MediaQuery.of(context).size.width;
+          final screenHeight = MediaQuery.of(context).size.height;
+          final breeze = 50 * sin(2 * pi * progress);
+          final leafX = leaf.startX + leaf.speedX * progress + breeze;
+          final leafY = leaf.startY +
+              leaf.speedY * progress +
+              0.5 * 9.8 * pow(progress, 2);
+          final rotation = leaf.rotation * progress;
+          final opacity = (1 - progress) * (1 - progress);
+          return Positioned(
+            left: leafX,
+            top: leafY % screenHeight,
+            child: Transform.rotate(
+              angle: rotation,
+              child: Opacity(
+                  opacity: opacity,
+                child: SvgPicture.asset(
+                  &amp;#39;assets/cherry_blossom.svg&amp;#39;,
+                  width: 25,
+                  height: 25,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+  ],
+),
+);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们使用了 &lt;code&gt;Stack&lt;/code&gt; 组件来确保樱花动画可以覆盖在其他组件上。然后，我们使用 &lt;code&gt;for&lt;/code&gt; 循环遍历 &lt;code&gt;_leaves&lt;/code&gt; 列表中的每个 &lt;code&gt;Leaf&lt;/code&gt; 对象，并使用 &lt;code&gt;AnimatedBuilder&lt;/code&gt; 更新动画效果。&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;builder&lt;/code&gt; 函数中，我们首先获取动画的进度值 &lt;code&gt;_controller.value&lt;/code&gt;，然后计算屏幕的宽度和高度。我们使用正弦函数创建一个微风效果，使樱花在水平方向上随风飘动。接着，我们根据 &lt;code&gt;Leaf&lt;/code&gt; 对象的初始位置和速度以及动画进度来计算樱花的当前位置和旋转角度。&lt;/p&gt;
+&lt;p&gt;为了使樱花在落下过程中逐渐消失，我们计算透明度值 &lt;code&gt;opacity&lt;/code&gt;。最后，我们使用 &lt;code&gt;Positioned&lt;/code&gt; 组件来设置樱花的位置，并使用 &lt;code&gt;Transform.rotate&lt;/code&gt; 组件来设置旋转角度。为了实现淡入淡出效果，我们使用 &lt;code&gt;Opacity&lt;/code&gt; 组件来设置樱花的透明度。&lt;/p&gt;
+&lt;h3 id=&#34;代码地址&#34;&gt;代码地址&lt;/h3&gt;
+&lt;p&gt;相关的代码实现你可以在这里找到: &lt;a class=&#34;link&#34; href=&#34;https://github.com/oooldCaption/flutter_blog/blob/main/lib/2023_03/leaf_fall_anim.dart&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;git_repo&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;在本教程中，我们学习了如何使用 Flutter 制作一个樱花落下的动画效果，包括微风效果和淡入淡出效果。我们了解了如何使用 &lt;code&gt;AnimationController&lt;/code&gt; 控制动画进度，以及如何使用 &lt;code&gt;AnimatedBuilder&lt;/code&gt; 更新动画效果。希望本教程对你有所帮助，祝你在 Flutter 开发中取得更多进步！&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Python修改音频文件元信息</title>
         <link>http://47.99.84.217/post/python%E4%BF%AE%E6%94%B9%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%85%83%E4%BF%A1%E6%81%AF/</link>
         <pubDate>Sat, 03 Dec 2022 21:44:50 +0800</pubDate>
@@ -549,7 +667,10 @@ print(&amp;#34;Length:&amp;#34;, length)
       ),
     );
   }
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;代码地址&#34;&gt;代码地址&lt;/h3&gt;
+&lt;p&gt;相关的代码实现你可以在这里找到: &lt;a class=&#34;link&#34; href=&#34;https://github.com/oooldCaption/flutter_blog/blob/main/lib/2023_03/gradient_view.dart&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;git_repo&lt;/a&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>2019买票记</title>

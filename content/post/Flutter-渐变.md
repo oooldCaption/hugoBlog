@@ -213,3 +213,6 @@ SweepGradient 的简单应用, 代码 以及 图例 如下:
 
 ```
 
+
+### 代码地址
+相关的代码实现你可以在这里找到: [git_repo](https://github.com/oooldCaption/flutter_blog/blob/main/lib/2023_03/gradient_view.dart)

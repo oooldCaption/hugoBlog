@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='在本篇博客中，我们将学习如何使用 Flutter 制作一个樱花落下的动画效果。我们将实现一个简单的樱花落下动画，并加入微风效果以及淡入淡出效果。我们的最终目标是让樱花以不同的速度和初始位置落下，并在屏幕上按照一定的轨迹随微风飘动。 开始之前 确保你已经安装了 Flutter 开发环境。本教程适用于具有一定 Flutter 基础知识的开发者。
+创建动画 首先，我们需要创建一个 StatefulWidget，因为我们需要使用动画控制器。接下来，我们在 State 类中使用 SingleTickerProviderStateMixin 来创建 AnimationController。
+class FallingLeavesAnimation extends StatefulWidget { @override _FallingLeavesAnimationState createState() =&amp;gt; _FallingLeavesAnimationState(); } class _FallingLeavesAnimationState extends State&amp;lt;FallingLeavesAnimation&amp;gt; with SingleTickerProviderStateMixin { late final AnimationController _controller; final _leaves = List.generate(20, (index) =&amp;gt; Leaf()); @override void initState() { super.initState(); _controller = AnimationController( duration: const Duration(seconds: 15), vsync: this, )..repeat(); } @override void dispose() { _controller.dispose(); super.dispose(); } } 我们创建了一个 _controller，并设置动画持续时间为 15 秒。然后调用 repeat() 方法，让动画循环播放。'>
+<title>使用Flutter创建樱花落下动画</title>
+
+<link rel='canonical' href='http://47.99.84.217/post/%E4%BD%BF%E7%94%A8flutter%E5%88%9B%E5%BB%BA%E6%A8%B1%E8%8A%B1%E8%90%BD%E4%B8%8B%E5%8A%A8%E7%94%BB/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='使用Flutter创建樱花落下动画'>
+<meta property='og:description' content='在本篇博客中，我们将学习如何使用 Flutter 制作一个樱花落下的动画效果。我们将实现一个简单的樱花落下动画，并加入微风效果以及淡入淡出效果。我们的最终目标是让樱花以不同的速度和初始位置落下，并在屏幕上按照一定的轨迹随微风飘动。 开始之前 确保你已经安装了 Flutter 开发环境。本教程适用于具有一定 Flutter 基础知识的开发者。
+创建动画 首先，我们需要创建一个 StatefulWidget，因为我们需要使用动画控制器。接下来，我们在 State 类中使用 SingleTickerProviderStateMixin 来创建 AnimationController。
+class FallingLeavesAnimation extends StatefulWidget { @override _FallingLeavesAnimationState createState() =&amp;gt; _FallingLeavesAnimationState(); } class _FallingLeavesAnimationState extends State&amp;lt;FallingLeavesAnimation&amp;gt; with SingleTickerProviderStateMixin { late final AnimationController _controller; final _leaves = List.generate(20, (index) =&amp;gt; Leaf()); @override void initState() { super.initState(); _controller = AnimationController( duration: const Duration(seconds: 15), vsync: this, )..repeat(); } @override void dispose() { _controller.dispose(); super.dispose(); } } 我们创建了一个 _controller，并设置动画持续时间为 15 秒。然后调用 repeat() 方法，让动画循环播放。'>
+<meta property='og:url' content='http://47.99.84.217/post/%E4%BD%BF%E7%94%A8flutter%E5%88%9B%E5%BB%BA%E6%A8%B1%E8%8A%B1%E8%90%BD%E4%B8%8B%E5%8A%A8%E7%94%BB/'>
+<meta property='og:site_name' content='煎人寿'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='flutter' /><meta property='article:published_time' content='2023-03-16T15:18:02&#43;08:00'/><meta property='article:modified_time' content='2023-03-16T15:18:02&#43;08:00'/>
+<meta name="twitter:title" content="使用Flutter创建樱花落下动画">
+<meta name="twitter:description" content="在本篇博客中，我们将学习如何使用 Flutter 制作一个樱花落下的动画效果。我们将实现一个简单的樱花落下动画，并加入微风效果以及淡入淡出效果。我们的最终目标是让樱花以不同的速度和初始位置落下，并在屏幕上按照一定的轨迹随微风飘动。 开始之前 确保你已经安装了 Flutter 开发环境。本教程适用于具有一定 Flutter 基础知识的开发者。
+创建动画 首先，我们需要创建一个 StatefulWidget，因为我们需要使用动画控制器。接下来，我们在 State 类中使用 SingleTickerProviderStateMixin 来创建 AnimationController。
+class FallingLeavesAnimation extends StatefulWidget { @override _FallingLeavesAnimationState createState() =&amp;gt; _FallingLeavesAnimationState(); } class _FallingLeavesAnimationState extends State&amp;lt;FallingLeavesAnimation&amp;gt; with SingleTickerProviderStateMixin { late final AnimationController _controller; final _leaves = List.generate(20, (index) =&amp;gt; Leaf()); @override void initState() { super.initState(); _controller = AnimationController( duration: const Duration(seconds: 15), vsync: this, )..repeat(); } @override void dispose() { _controller.dispose(); super.dispose(); } } 我们创建了一个 _controller，并设置动画持续时间为 15 秒。然后调用 repeat() 方法，让动画循环播放。">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huf0f369220dab0d5707a6a13ef36fbc83_37198_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥰</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">煎人寿</a></h1>
+            <h2 class="site-description">唯见月寒日暖来煎人寿</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#创建动画">创建动画</a></li>
+        <li><a href="#美化动画">美化动画</a></li>
+        <li><a href="#执行动画并更新">执行动画并更新</a></li>
+        <li><a href="#代码地址">代码地址</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" >
+                软件开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E4%BD%BF%E7%94%A8flutter%E5%88%9B%E5%BB%BA%E6%A8%B1%E8%8A%B1%E8%90%BD%E4%B8%8B%E5%8A%A8%E7%94%BB/">使用Flutter创建樱花落下动画</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 16, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>在本篇博客中，我们将学习如何使用 Flutter 制作一个樱花落下的动画效果。我们将实现一个简单的樱花落下动画，并加入微风效果以及淡入淡出效果。我们的最终目标是让樱花以不同的速度和初始位置落下，并在屏幕上按照一定的轨迹随微风飘动。
+<img src="https://img.52smile.vip/1678950904.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1678950904.gif"
+	
+	
+></p>
+<p>开始之前
+确保你已经安装了 Flutter 开发环境。本教程适用于具有一定 Flutter 基础知识的开发者。</p>
+<h3 id="创建动画">创建动画</h3>
+<p>首先，我们需要创建一个 StatefulWidget，因为我们需要使用动画控制器。接下来，我们在 State 类中使用 SingleTickerProviderStateMixin 来创建 AnimationController。</p>
+<pre tabindex="0"><code>class FallingLeavesAnimation extends StatefulWidget {
+  @override
+  _FallingLeavesAnimationState createState() =&gt; _FallingLeavesAnimationState();
+}
+
+class _FallingLeavesAnimationState extends State&lt;FallingLeavesAnimation&gt;
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+  final _leaves = List.generate(20, (index) =&gt; Leaf());
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 15),
+      vsync: this,
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}
+</code></pre><p>我们创建了一个 _controller，并设置动画持续时间为 15 秒。然后调用 repeat() 方法，让动画循环播放。</p>
+<h3 id="美化动画">美化动画</h3>
+<p>接下来，我们创建一个 Leaf 类来生成随机的初始位置、速度和旋转角度。这将使动画看起来更自然。</p>
+<pre tabindex="0"><code>
+class Leaf {
+  final double startX;
+  final double startY;
+  final double speedX;
+  final double speedY;
+  final double rotation;
+
+  Leaf()
+      : startX = Random().nextDouble() * 300,
+        startY = -Random().nextDouble() * 300,
+        speedX = 20 + Random().nextDouble() * 50,
+        speedY = 50 + Random().nextDouble() * 100,
+        rotation = Random().nextDouble() * 4 * pi;
+}
+</code></pre><h3 id="执行动画并更新">执行动画并更新</h3>
+<p>现在，我们将使用 AnimatedBuilder 在 build 方法中创建动画效果。在每次 build 方法调用时，动画进度会被更新，根据动画进度计算樱花的位置、旋转角度和透明度。</p>
+<pre tabindex="0"><code>Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text(&#39;Falling Leaves Animation with Breeze&#39;),
+    ),
+    body: Stack(
+      children: [
+        for (final leaf in _leaves)
+          AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              final progress = _controller.value;
+              final screenWidth =MediaQuery.of(context).size.width;
+          final screenHeight = MediaQuery.of(context).size.height;
+          final breeze = 50 * sin(2 * pi * progress);
+          final leafX = leaf.startX + leaf.speedX * progress + breeze;
+          final leafY = leaf.startY +
+              leaf.speedY * progress +
+              0.5 * 9.8 * pow(progress, 2);
+          final rotation = leaf.rotation * progress;
+          final opacity = (1 - progress) * (1 - progress);
+          return Positioned(
+            left: leafX,
+            top: leafY % screenHeight,
+            child: Transform.rotate(
+              angle: rotation,
+              child: Opacity(
+                  opacity: opacity,
+                child: SvgPicture.asset(
+                  &#39;assets/cherry_blossom.svg&#39;,
+                  width: 25,
+                  height: 25,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+  ],
+),
+);
+}
+</code></pre><p>我们使用了 <code>Stack</code> 组件来确保樱花动画可以覆盖在其他组件上。然后，我们使用 <code>for</code> 循环遍历 <code>_leaves</code> 列表中的每个 <code>Leaf</code> 对象，并使用 <code>AnimatedBuilder</code> 更新动画效果。</p>
+<p>在 <code>builder</code> 函数中，我们首先获取动画的进度值 <code>_controller.value</code>，然后计算屏幕的宽度和高度。我们使用正弦函数创建一个微风效果，使樱花在水平方向上随风飘动。接着，我们根据 <code>Leaf</code> 对象的初始位置和速度以及动画进度来计算樱花的当前位置和旋转角度。</p>
+<p>为了使樱花在落下过程中逐渐消失，我们计算透明度值 <code>opacity</code>。最后，我们使用 <code>Positioned</code> 组件来设置樱花的位置，并使用 <code>Transform.rotate</code> 组件来设置旋转角度。为了实现淡入淡出效果，我们使用 <code>Opacity</code> 组件来设置樱花的透明度。</p>
+<h3 id="代码地址">代码地址</h3>
+<p>相关的代码实现你可以在这里找到: <a class="link" href="https://github.com/oooldCaption/flutter_blog/blob/main/lib/2023_03/leaf_fall_anim.dart"  target="_blank" rel="noopener"
+    >git_repo</a></p>
+<h2 id="总结">总结</h2>
+<p>在本教程中，我们学习了如何使用 Flutter 制作一个樱花落下的动画效果，包括微风效果和淡入淡出效果。我们了解了如何使用 <code>AnimationController</code> 控制动画进度，以及如何使用 <code>AnimatedBuilder</code> 更新动画效果。希望本教程对你有所帮助，祝你在 Flutter 开发中取得更多进步！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/flutter/">flutter</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/flutter-%E6%B8%90%E5%8F%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Flutter 渐变</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2023 煎人寿
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://beian.miit.gov.cn/" target="_blank">备案号</a> <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备18022498号</a> <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
